@@ -193,17 +193,55 @@ function tb4d_rooms_vote_inline_js() {
     e.preventDefault();
     var postId = bar.getAttribute('data-post-id');
     var vote = btn.getAttribute('data-vote');
+    // Optimistic UI — snapshot current state for rollback, then apply locally.
+    var snapshot = [];
+    var prevMine = '';
+    bar.querySelectorAll('.tb4d-vote-btn').forEach(function(b){
+      var k = b.getAttribute('data-vote');
+      var c = b.querySelector('.tb4d-vote-count');
+      var n = c ? parseInt(c.textContent, 10) || 0 : 0;
+      var isMine = b.classList.contains('is-mine');
+      if(isMine) prevMine = k;
+      snapshot.push({ btn:b, count:c, n:n, mine:isMine });
+    });
+    var sEl = bar.querySelector('.tb4d-vote-score');
+    var prevScoreText = sEl ? sEl.textContent : '';
+    // Apply optimistic change.
+    snapshot.forEach(function(s){
+      var delta = 0;
+      var willBeMine = false;
+      if(prevMine === vote){
+        // toggling off
+        if(s.btn.getAttribute('data-vote') === vote){ delta = -1; }
+      } else {
+        if(s.btn.getAttribute('data-vote') === vote){ delta = 1; willBeMine = true; }
+        else if(s.btn.getAttribute('data-vote') === prevMine && prevMine !== ''){ delta = -1; }
+      }
+      if(s.count && delta !== 0){ s.count.textContent = Math.max(0, s.n + delta); }
+      if(willBeMine){ s.btn.classList.add('is-mine'); s.btn.setAttribute('aria-pressed','true'); }
+      else { s.btn.classList.remove('is-mine'); s.btn.setAttribute('aria-pressed','false'); }
+    });
     var fd = new FormData();
     fd.append('action','tb4d_vote');
     fd.append('nonce',NONCE);
     fd.append('post_id',postId);
     fd.append('vote',vote);
     btn.disabled = true;
+    btn.classList.add('is-loading');
+    function rollback(){
+      snapshot.forEach(function(s){
+        if(s.count){ s.count.textContent = s.n; }
+        if(s.mine){ s.btn.classList.add('is-mine'); s.btn.setAttribute('aria-pressed','true'); }
+        else { s.btn.classList.remove('is-mine'); s.btn.setAttribute('aria-pressed','false'); }
+      });
+      if(sEl){ sEl.textContent = prevScoreText; }
+    }
     fetch(AJAX,{method:'POST',credentials:'same-origin',body:fd})
       .then(function(r){return r.json();})
       .then(function(j){
         btn.disabled = false;
-        if(!j || !j.success){ return; }
+        btn.classList.remove('is-loading');
+        if(!j || !j.success){ rollback(); return; }
         var counts = j.data.counts || {};
         var mine = j.data.mine || '';
         bar.querySelectorAll('.tb4d-vote-btn').forEach(function(b){
@@ -216,7 +254,7 @@ function tb4d_rooms_vote_inline_js() {
         var s = bar.querySelector('.tb4d-vote-score');
         if(s){ s.textContent = 'คะแนน ' + (j.data.score || 0); }
       })
-      .catch(function(){ btn.disabled = false; });
+      .catch(function(){ btn.disabled = false; btn.classList.remove('is-loading'); rollback(); });
   }, false);
 })();
 </script>
