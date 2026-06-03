@@ -191,14 +191,14 @@ $tb4_ads_text          = get_theme_mod( 'tb4_sidebar_ads_text', 'สนใจล
   <?php endif; ?>
 
   <?php if ( $tb4_show_wp_widgets ) : ?>
-    <section class="tb4-wp-widget-zone" aria-label="<?php esc_attr_e( 'WordPress Widgets', 'thinkb4do' ); ?>">
+    <section class="tb4-wp-widget-zone" aria-label="<?php esc_attr_e( 'ส่วนเสริมไซด์บาร์', 'thinkb4do' ); ?>">
       <?php if ( is_active_sidebar( 'sidebar-main' ) ) : ?>
-        <div class="tb4-wp-widget-title"><?php esc_html_e( 'ส่วนเสริมจาก WordPress', 'thinkb4do' ); ?></div>
+        <div class="tb4-wp-widget-title"><?php esc_html_e( 'ส่วนเสริมไซด์บาร์', 'thinkb4do' ); ?></div>
         <?php dynamic_sidebar( 'sidebar-main' ); ?>
-      <?php else : ?>
+      <?php elseif ( current_user_can( 'edit_theme_options' ) ) : ?>
         <div class="tb4-smart-card">
-          <h4><?php esc_html_e( 'ยังไม่มี Widget เพิ่มเติม', 'thinkb4do' ); ?></h4>
-          <p class="tb4-muted"><?php esc_html_e( 'เพิ่มได้ที่ Appearance > Widgets > Sidebar หลัก', 'thinkb4do' ); ?></p>
+          <h4><?php esc_html_e( 'ยังไม่มีส่วนเสริมเพิ่มเติม', 'thinkb4do' ); ?></h4>
+          <p class="tb4-muted"><?php esc_html_e( 'เพิ่มได้ที่หน้าตั้งค่าธีม → ส่วนเสริมไซด์บาร์', 'thinkb4do' ); ?></p>
         </div>
       <?php endif; ?>
     </section>
