@@ -316,7 +316,7 @@ thinkb4do_post",
 
     private function base_css() {
         return '
-.tcb4d-csbar{position:fixed;top:max(var(--tcb4d-cs-top),126px);bottom:var(--tcb4d-cs-bottom);width:var(--tcb4d-cs-width);z-index:var(--tcb4d-cs-z);font-family:"Noto Sans Thai","Roboto","Kanit",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;box-sizing:border-box;pointer-events:none;transition:width .18s ease,opacity .18s ease;}
+.tcb4d-csbar{position:fixed;top:max(var(--tcb4d-cs-top),126px);bottom:var(--tcb4d-cs-bottom);width:var(--tcb4d-cs-width);z-index:var(--tcb4d-cs-z);font-family:var(--font-main,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans Thai","Kanit",sans-serif);box-sizing:border-box;pointer-events:none;transition:width .18s ease,opacity .18s ease;}
 .tcb4d-csbar[data-side="left"]{left:var(--tcb4d-cs-side-offset);}
 .tcb4d-csbar[data-side="right"]{right:var(--tcb4d-cs-side-offset);}
 .tcb4d-csbar *{box-sizing:border-box;}

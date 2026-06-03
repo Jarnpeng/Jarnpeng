@@ -12,7 +12,7 @@
   --tb4d-page-top:#fbfdfb;
   --tb4d-page-mid:#f6fbf7;
   --tb4d-page-bottom:#edf8f1;
-  --tb4d-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans Thai","Kanit",sans-serif;
+  --tb4d-font:var(--font-main,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans Thai","Kanit",sans-serif);
 }
 html{scrollbar-gutter:stable;background:var(--tb4d-page-top);}
 body.tb4-discovery-view-active,
