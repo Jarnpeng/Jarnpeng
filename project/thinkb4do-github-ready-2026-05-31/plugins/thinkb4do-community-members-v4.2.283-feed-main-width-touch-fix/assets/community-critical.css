@@ -196,3 +196,16 @@ body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-vi
     border-radius:16px!important;
   }
 }
+
+/* v4280 proportion-safety: avatar img must not be flattened by generic post-card img height:auto cascade */
+.tb4c-post-card :is(.tb4c-avatar,.tb4c-profile-avatar,.tb4c-member-avatar,.tb4c-member-profile-avatar,.tb4c-comment-avatar,.tb4c-comment-preview-avatar) img,
+.tb4c-member-card :is(.tb4c-avatar,.tb4c-member-avatar,.tb4c-member-profile-avatar) img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+/* v4280 proportion-safety: enforce circular aspect on baseline avatar containers */
+.tb4c-avatar,.tb4c-avatar-mini,.tb4c-comment-preview-avatar{
+  aspect-ratio:1/1;
+}
