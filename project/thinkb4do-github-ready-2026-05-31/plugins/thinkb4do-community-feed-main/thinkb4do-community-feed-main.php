@@ -1871,8 +1871,11 @@ function tb4cf_get_community_feed_query_args( $active_topic = 'all', $search_que
             case 'saved':
                 $uid = get_current_user_id();
                 if ( $uid ) {
-                    $saved_ids = (array) get_user_meta( $uid, '_tb4d_saved_posts', true );
-                    $saved_ids = array_filter( array_map( 'absint', $saved_ids ) );
+                    // Reuse existing bookmark store from Feed Main.
+                    $saved_ids = function_exists( 'tb4cf_get_user_meta_ids' )
+                        ? tb4cf_get_user_meta_ids( $uid, 'tb4c_bookmarked_post_ids' )
+                        : (array) get_user_meta( $uid, 'tb4c_bookmarked_post_ids', true );
+                    $saved_ids = array_filter( array_map( 'absint', (array) $saved_ids ) );
                     if ( empty( $saved_ids ) ) {
                         $query_args['post__in'] = [ 0 ]; // force empty result
                     } else {

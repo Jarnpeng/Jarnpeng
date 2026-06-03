@@ -99,6 +99,7 @@ $tb4c_track_reels = isset( $reel_items, $reel_item_ids ) && is_array( $reel_item
               <?php endif; ?>
             </div>
 
+            <?php if ( function_exists( 'tb4d_get_post_room_chip' ) ) { $tb4d_room_chip = tb4d_get_post_room_chip( $post_id ); if ( $tb4d_room_chip ) { echo '<div class="tb4d-room-chip-row" aria-label="ห้องสนทนา">' . $tb4d_room_chip . '</div>'; } } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
             <a class="tb4c-post-inline-text" href="<?php echo esc_url( tb4cf_get_post_link( get_the_ID() ) ); ?>">
               <h2><?php the_title(); ?></h2>
               <?php if ( $post_caption_text ) : ?><p><?php echo esc_html( $post_caption_text ); ?></p><?php endif; ?>
@@ -121,4 +122,5 @@ $tb4c_track_reels = isset( $reel_items, $reel_item_ids ) && is_array( $reel_item
               <button type="button" data-tb4c-react="bookmark" data-post-id="<?php echo esc_attr( $post_id ); ?>" aria-label="บันทึก"><i class="ph ph-bookmark-simple"></i><span><?php echo esc_html( $bookmarks ); ?></span></button>
               <span class="tb4c-action-view-chip" aria-label="ยอดเข้าชม"><i class="ph ph-eye"></i><span><?php echo esc_html( $views ); ?></span></span>
             </div>
+            <?php if ( function_exists( 'tb4d_render_vote_bar' ) ) { echo tb4d_render_vote_bar( $post_id ); } // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
           </article>
