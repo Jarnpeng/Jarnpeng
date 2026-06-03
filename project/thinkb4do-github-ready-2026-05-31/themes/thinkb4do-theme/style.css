@@ -1734,6 +1734,20 @@ body {
 }
 
 :focus-visible {
+  outline: 2px solid var(--tb4-orange, #F97316);
+  outline-offset: 2px;
+}
+
+/* Batch 8: ensure tappable targets on mobile (WCAG 2.5.5 AAA / Apple HIG 44pt). */
+@media (max-width: 768px) {
+  .tb4d-action-btn,
+  .tb4c-action-btn,
+  .tb4hm-menu-btn,
+  .tb4d-vote-btn,
+  button.tb4d-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
 
 .no-js .hamburger,
