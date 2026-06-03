@@ -1,0 +1,25 @@
+AiRA System Monitor v1.3.1
+โดย Thinkb4do
+
+สิ่งที่เพิ่มในรอบนี้:
+- เพิ่มตัวเลือก "เลือกดูสถานะ" ในหน้า Monitor
+- เพิ่มตัวกรองแบบปุ่มลัด: ทั้งหมด, เปิดอยู่, ปิดอยู่, Network, ต้องตรวจ, ตัวหลัก
+- เพิ่มการ์ดสรุปจำนวนแบบกดได้
+- ตารางด้านล่างจะแสดงเฉพาะสถานะที่เลือก
+- REST API รองรับการกรองด้วย status query แล้ว
+
+สถานะที่รองรับ:
+1) all = แสดงทั้งหมด
+2) active = ปลั๊กอินที่เปิดใช้งานอยู่
+3) inactive = ปลั๊กอินที่ติดตั้งแล้วแต่ปิดอยู่
+4) network = ปลั๊กอินที่เปิดทั้งเครือข่าย WordPress Multisite
+5) paused = ปลั๊กอินที่ WordPress Recovery Mode หยุดไว้/ควรตรวจ
+6) protected = ปลั๊กอินตัวหลักที่ไม่ควรปิดจากหน้านี้
+
+Endpoint ตัวอย่าง:
+/wp-json/aira-suite-export/v1/plugin-monitor?status=active
+/wp-json/aira-suite-export/v1/plugin-monitor?status=inactive
+/wp-json/aira-suite-export/v1/plugin-monitor?status=paused
+
+หมายเหตุความปลอดภัย:
+ระบบนี้ยังอยู่ใน Manual Safe Mode คืออ่านสถานะและให้เปิด/ปิดอย่างปลอดภัยเท่านั้น ไม่ลบไฟล์ ไม่เขียนทับปลั๊กอินอื่น และไม่ปิดปลั๊กอินตัวหลักจากหน้า Monitor

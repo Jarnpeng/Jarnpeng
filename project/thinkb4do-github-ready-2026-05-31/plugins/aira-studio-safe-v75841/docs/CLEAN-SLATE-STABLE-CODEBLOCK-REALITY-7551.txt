@@ -1,0 +1,46 @@
+AiRA Studio v7.5.5.1 Stable Codeblock Reality Patch
+
+ฐานหลัก:
+- ต่อจาก v7.5.5 Continuous Choice Composer
+- ไม่ใช้ logic composer จาก v7.5.6/v7.5.7 ที่ทำให้ตำแหน่งบนมือถือมีความเสี่ยงจม/ลอยผิดจังหวะ
+- รักษา Answer / ตัวเลือก 1 2 3 / Composer continuation เดิมไว้
+
+สิ่งที่เพิ่ม:
+1) Real Code Workflow panel ใต้ code block
+- Preview
+- Click Test
+- QC
+- Package
+- Install Gate
+- แสดง realness score เป็นเปอร์เซ็นต์
+
+2) System Builder realness summary
+- เพิ่มสรุป Preview / Click / Package ใน System Builder
+- ช่วยให้เห็นว่า code block พร้อมต่อยอดเป็นระบบจริงแค่ไหนก่อนติดตั้ง
+
+3) Runtime status sync
+- เมื่อเปิด Preview, ทดลองกด Sandbox, ตรวจ QC, โหลดแพ็ก, ติดตั้ง หรืออัปเกรด ระบบจะอัปเดตสถานะ workflow ใน code block ทันที
+
+ของเดิมยังอยู่:
+- Code block เดิม
+- Copy / Download / Preview
+- Debug สด / ตรวจโค้ด
+- สร้างระบบ / System Builder
+- Package / Install / Upgrade gate
+- Answer continuation และตัวเลือก 1 2 3
+- Composer ของ v7.5.5 เป็นฐานหลัก ไม่ถูกรื้อ
+
+วิธีทดสอบหลังติดตั้ง:
+1. เปิดหน้า AiRA Studio ใน WordPress Admin
+2. ส่งคำสั่งให้ AiRA สร้าง code block
+3. ดูแผง Real Code Workflow ใต้ code block
+4. กด Preview / ลองก่อนติดตั้ง
+5. กดทดสอบปุ่มทั้งหมดใน Sandbox
+6. กด Debug สด / ตรวจโค้ด
+7. กดโหลดแพ็กหรืออัปเกรด แล้วดูสถานะ workflow ว่าเปลี่ยนตามจริง
+
+สถานะ:
+- PHP syntax ผ่าน
+- JS syntax ผ่าน
+- ZIP integrity ผ่าน
+- พร้อมทดสอบใน WordPress runtime จริง

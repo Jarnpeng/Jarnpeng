@@ -1,0 +1,28 @@
+AiRA Studio Clean Slate v7.5.8.27 — Prompt Processor Auto Dismiss
+
+ฐานที่ใช้:
+- v7.5.8.26-answer-release-soft-gate
+
+เป้าหมาย:
+- Prompt Processor ต้องแสดงระหว่างประมวลผลเท่านั้น
+- เมื่อคำตอบจริงแสดง/พิมพ์สไลด์เสร็จแล้ว การ์ด Prompt Processing ต้องค่อย ๆ หายไป
+- ห้ามบล็อกคำตอบจริง และไม่แตะปุ่ม/action router
+
+สิ่งที่แก้:
+1. เพิ่ม dismissPromptProcessingAfterAnswer(processor, reason)
+2. ปรับ addAssistantMessageWithSlide ให้รับ callback หลัง slide answer จบ
+3. เมื่อ answer slide จบ จะ fade/collapse prompt processor card แล้ว remove ออกจาก DOM
+4. Answer Rescue / render error / gate fail ก็สั่ง dismiss processor หลังแสดงคำตอบสำรอง
+5. เพิ่ม CSS is-auto-dismissing สำหรับ fade + collapse
+
+สิ่งที่ไม่แตะ:
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ Composer/Menu/Popup/Sidebar
+
+QC ที่ควรทดสอบ:
+1. ถาม 7+7 → เห็น Prompt Processor → เห็น 14 → Prompt Processor หาย
+2. ถามเรื่องทั่วไป → คำตอบแสดงได้ → Prompt Processor หาย
+3. กรณี API error → Answer Rescue แสดง → Prompt Processor หาย
+4. ปุ่มเดิมยังเท่าเดิมและทำงานเหมือนเดิม

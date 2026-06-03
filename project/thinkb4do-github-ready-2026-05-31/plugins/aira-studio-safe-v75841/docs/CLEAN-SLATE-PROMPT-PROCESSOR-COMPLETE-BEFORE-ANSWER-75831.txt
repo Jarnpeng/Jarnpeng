@@ -1,0 +1,19 @@
+AiRA Studio v7.5.8.31 — Prompt Processor Complete Before Answer
+
+ฐานที่ใช้:
+- v7.5.8.30 Processor Time Card Restored
+
+สิ่งที่แก้:
+- คำตอบจริงจะไม่ถูก append เข้า chat จนกว่า Prompt Processor card จะเปลี่ยนเป็นสถานะเสร็จแล้ว
+- เพิ่ม visual gate แบบรอ processor.done + timeout failsafe + double paint + delay สั้น ๆ ก่อนปล่อยคำตอบ
+- ถ้า animation/processer state มีปัญหา จะ force complete card ก่อน แล้วค่อยปล่อยคำตอบ ไม่ปล่อยให้ตอบไม่ได้
+- Processing Time Card หลังคำตอบยังคงอยู่เหมือนเดิม
+
+ไม่ได้แตะ:
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ Composer/Menu/Sidebar
+
+Expected flow:
+ผู้ใช้ถาม → Prompt Processor กำลังประมวล → Prompt Processor เสร็จแล้ว/พร้อมแสดงคำตอบจริง → คำตอบจริงแสดง → กล่อง processor เปลี่ยนเป็น Processing Time Card

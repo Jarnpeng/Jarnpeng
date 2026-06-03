@@ -1,0 +1,23 @@
+AiRA Studio v7.5.7.6 — Prompt Processor Insight Numbers
+
+เป้าหมาย:
+- ระหว่าง Prompt processor กำลังประมวลผล ต้องมีชุดรับรู้ความหมายขึ้นทันที ไม่ต้องรอคำตอบจริงจบก่อน
+- ปุ่มรับรู้ความหมายแสดงเป็นหมายเลขต่อเนื่อง และเมื่อกดให้ใส่เฉพาะตัวเลขเข้า Composer
+- เก็บ prompt ยาว/บริบท processor ไว้เบื้องหลัง เพื่อให้ช่องพิมพ์ไม่รกและผู้ใช้พิมพ์ต่อได้
+
+สิ่งที่เพิ่ม:
+1) ensurePromptProcessorInsightRow()
+   - สร้างชุดหมายเลข ความหมาย / ตัวอย่าง / เงื่อนไข / ใช้ต่อ ใต้ prompt-processing card
+   - แทรกก่อนจุดสามจุด processing เพื่อให้มองเห็นระหว่างรอ
+
+2) promptProcessorInsightSeedText()
+   - รวมสถานะ processor, ผลลัพธ์เป้าหมาย, และคำถามล่าสุด เพื่อใช้เป็น hidden prompt
+
+3) messageDataFromNode() fallback
+   - รองรับ transient message ที่ไม่ได้บันทึกลง room.messages เช่น prompt processor
+   - ทำให้กดหมายเลขจาก processor แล้วส่งต่อเข้า Composer ได้จริง
+
+QC:
+- JavaScript syntax: node --check
+- PHP lint: php -l
+- ZIP integrity: unzip -t

@@ -1,0 +1,6 @@
+Thinkb4do Community v4.2.191
+
+- Preserved the locked layout structure.
+- Polished mobile post-card positions: author row, admin tools, tag row, media frame, action row, and comment composer.
+- Refined video/embed framing to look cleaner inside cards.
+- Kept the interface lighter while improving spacing and balance.

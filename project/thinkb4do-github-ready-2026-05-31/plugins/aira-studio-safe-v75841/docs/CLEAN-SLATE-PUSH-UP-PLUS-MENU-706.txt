@@ -1,0 +1,21 @@
+AiRA Studio v7.0.6 Clean Slate Push-Up Plus Menu
+
+Goal
+- When the + menu is opened, the menu appears above the composer and pushes the chat area upward naturally.
+- The composer remains the bottom row of the chat panel.
+- On mobile, visualViewport measurement keeps the app height inside the visible viewport so the composer stays above the keyboard instead of being hidden behind it.
+
+Changed
+- Added CSS order contract inside #airaComposerDock: media stack -> plus menu -> smart tags -> hint -> composer.
+- Added composer-menu-open class sync in runtime.
+- Added keyboard inset / visualViewport measurement.
+- Added menu max-height formulas so long menus scroll internally instead of pushing composer out of the visible area.
+- Updated report text and communication guide to v7.0.6.
+
+Preserved
+- Clean Slate single shell.
+- All restored menus from v7.0.1.
+- User-side Show more / Show less from v7.0.5.
+- Message copy/edit/audio tools.
+- Header locked under WordPress admin bar.
+- ChatLog as the single native scroll container.

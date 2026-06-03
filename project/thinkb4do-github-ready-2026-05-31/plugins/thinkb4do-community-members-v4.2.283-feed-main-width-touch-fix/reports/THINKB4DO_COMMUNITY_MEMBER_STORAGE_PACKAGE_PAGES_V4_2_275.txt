@@ -1,0 +1,15 @@
+Thinkb4do Community Members v4.2.275
+
+เพิ่มเมนูพื้นที่ให้มี 2 หน้าหลัก:
+1) การใช้พื้นที่ — ตรวจพื้นที่ตาม User ID, โควตา, ไฟล์ล่าสุด และหมวดไฟล์
+2) เพิ่มแพ็กเกจพื้นที่ — แสดงแพ็กเกจ Free / Plus / Pro / Studio พร้อมปุ่มขอเพิ่มแพ็กเกจ
+
+ไฟล์ที่แก้:
+- thinkb4do-community-members.php
+- templates/member-area-content.php
+- assets/member-responsive-standard.css
+
+หมายเหตุ:
+- ยังไม่เชื่อมระบบชำระเงินจริง เพื่อป้องกันการทำงานมั่ว
+- เตรียม hook/filter สำหรับต่อยอดระบบ payment หรือ admin approval ภายหลัง
+- โควตาปัจจุบันยังผูกกับ User ID และ user meta: tb4c_member_storage_package / tb4c_member_storage_quota_mb

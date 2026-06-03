@@ -1,0 +1,17 @@
+Thinkb4do Theme Core v2.0.3
+
+แก้ไข: เมนูมือถือ / dropdown ให้เปิดชิดใต้ส่วนหัวจริง
+
+สิ่งที่ปรับ:
+1. mobile-menu-anchor-fix.js: เปลี่ยนการคำนวณตำแหน่งเมนูให้ยึด bottom ของ #site-header โดยตรง
+2. ไม่นำ tb4-dev-notice หรือ stack เก่ามาบวกตำแหน่งเมนูมือถือ เพื่อป้องกันเมนูเปิดต่ำเกินไป
+3. main.js: ปรับ TB4.alignMobileMenu ให้ไม่มีช่องว่าง 1px และเซ็ต --tb4-mobile-menu-hard-top
+4. style.css: เพิ่ม CSS guard v2.0.3 ให้ #mobileMenuOverlay.is-open ใช้ตำแหน่ง hard-top เหนือค่า stack เก่า
+5. เพิ่ม class body.tb4-mobile-menu-head-locked ระหว่างเปิดเมนู เพื่อบังคับเมนูชิด header
+6. อัปเวอร์ชันเป็น 2.0.3 เพื่อบังคับโหลด CSS/JS ใหม่หลังติดตั้ง
+
+ผลลัพธ์ที่คาดหวัง:
+- กดสามขีดแล้วเมนูเปิดทันทีใต้ส่วนหัว
+- เมนูไม่ลอยห่างจาก header
+- ไม่ถูกดันลงด้วย development notice / stack เก่า
+- เมื่อขยายกลับ desktop เมนูมือถือถูกปิดและไม่ค้าง

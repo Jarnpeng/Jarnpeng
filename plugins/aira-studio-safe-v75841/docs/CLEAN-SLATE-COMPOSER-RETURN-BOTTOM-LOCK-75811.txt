@@ -1,0 +1,27 @@
+AiRA Studio v7.5.8.11 Composer Return Bottom Lock
+
+ฐานที่ใช้: v7.5.8.10-stable-rebase-command-core
+
+ปัญหาที่แก้:
+- หลังเก็บแป้นคีย์บอร์ดบน Android Chrome/Samsung Internet Composer ยังลอยค้างทับเนื้อหา ไม่กลับไปเป็นแถวล่างสุดของ chat panel
+
+สิ่งที่เพิ่ม/แก้:
+1. เพิ่ม resetComposerDockPosition() เพื่อเคลียร์ inline style ของ composer dock เมื่อ keyboard ปิด
+2. syncKeyboardFusion(false) จะคืน composer กลับตำแหน่งปกติทันที
+3. measure() แยก state keyboardOpen ชัดเจน: เปิด = lock to keyboard, ปิด = reset to bottom row
+4. blur ของ composer เรียก reset ซ้ำ 2 จังหวะ ป้องกัน visualViewport คืนค่าช้า
+5. CSS closed-keyboard override บังคับ #airaComposerDock:not(.keyboard-open) ให้กลับเป็น position:relative final row
+
+ไม่แตะระบบ:
+- ไม่เพิ่ม data-action
+- ไม่ลบ data-action
+- ไม่แก้ action router
+- ไม่ยกสาขา 7.5.9.x กลับมา
+- Thought Prompt Compiler และ System Command Matrix เดิมยังอยู่
+
+วิธีทดสอบ:
+1. เปิด AiRA Studio บน Android Chrome
+2. แตะ composer ให้ keyboard ขึ้น
+3. กดปุ่มเก็บ keyboard
+4. Composer ต้องกลับไปอยู่แถวล่างสุด ไม่ลอยทับ continuation row หรือ message tools
+5. แตะใหม่/เก็บใหม่ซ้ำ 5 รอบ ต้องไม่ค้าง

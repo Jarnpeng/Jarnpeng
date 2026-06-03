@@ -1,0 +1,49 @@
+AiRA Studio v7.5.8.36 — System Relationship Answer Selector
+
+Goal
+- เชื่อมความสัมพันธ์ระบบเพื่อคัดเลือกคำตอบที่เหมาะสมก่อนแสดงผล
+- แก้ปัญหาคำถามง่าย/คำถามทั่วไปไม่ตอบ เพราะ context ภายในหรือ Prompt Processor กลบคำถามล่าสุด
+- รักษา Prompt Processor ให้เป็นสถานะภาพประกอบ ไม่ให้บล็อกคำตอบ
+
+Added
+1) Client Relationship Answer Selector
+- buildAnswerRelationshipContext()
+- formatAnswerRelationshipSelector()
+- scoreAnswerPackage()
+- chooseRelationshipAnswerPackage()
+
+2) Answer package scoring
+Priority:
+- local direct answer สำหรับคำถามง่าย เช่น 7+7
+- API answer ที่ไม่ว่างและไม่ใช่ error template
+- Answer Rescue fallback เมื่อ API ช้า/พัง
+- ถ้า candidate ใช้ไม่ได้ ระบบสร้าง relationship rescue แทน ไม่ปล่อยว่าง
+
+3) Backend relationship context
+- รับ answer_relationship_selector_context_75836
+- ใส่เข้า command_understanding_context
+- ย้ำ Latest User Message เป็นตัวหลัก
+
+4) System prompt policy
+- เพิ่ม System Relationship Answer Selector v7.5.8.36
+- คัดเลือกคำตอบจาก Latest User Message, Prompt Processor, Context Reader, Result Resolver, System Command Matrix, API, Local Direct Answer และ Answer Rescue
+
+Not changed
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ Composer/Menu/Sidebar layout
+
+QC
+- PHP lint passed
+- JS syntax check passed
+- ZIP integrity should pass after packaging
+- data-action unchanged vs v7.5.8.35
+
+Manual test
+1) Ask: 7+7
+Expected: Prompt Processor shows, completes, then answer 14 appears.
+2) Ask: สวัสดี
+Expected: normal greeting answer appears.
+3) Ask: เชื่อมต่อความสัมพันธ์ระบบ ให้คัดเลือกคำตอบมา
+Expected: system-level answer selected from latest message, not an empty/API error template.

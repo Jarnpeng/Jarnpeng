@@ -1,0 +1,25 @@
+AiRA Studio Power Core v7.5.8.40
+
+สิ่งที่อัปเกรด:
+- ดูดแนวคิดและโครงความสามารถจาก AiRA Builder Studio Core v1.3 เข้าสู่ AiRA Studio โดยตรง
+- ไม่สร้างปลั๊กอิน Builder แยกใหม่
+- เพิ่ม Power Core เป็นแกนคิดระบบแบบ Prompt → Blueprint → Preview/Edit/Code → API/QC → Export
+- เพิ่มสถานะและโมดูล Power Core ในหน้า WordPress Admin > AiRA Studio > Power Core
+- เพิ่ม AJAX endpoint สำหรับ power_status, power_blueprint, power_qc และ power_export_text
+- เพิ่ม Power Context เข้า system prompt ของ AiRA Studio เพื่อให้ทุกคำตอบเกี่ยวกับงานระบบคิดแบบ builder มากขึ้น
+
+โมดูลที่ผสาน:
+1. Prompt-to-App Blueprint
+2. Live Preview / Edit / Code
+3. Plugin / Module / Widget Packager
+4. Universal API Hub
+5. Database / Data Contract
+6. All Device / Browser Compatibility Guard
+7. Security / Permission / QC
+8. Commerce / License / Customer Delivery readiness
+9. System Closer / Necessity Analyzer
+
+ข้อจำกัดจริง:
+- เป็นการผสานพลัง/แกนคิดและ endpoint ภายใน AiRA Studio ไม่ใช่การเปิด payment หรือ delivery จริงทันที
+- การเชื่อม API จริงต้องใส่ key/endpoint และทดสอบผ่าน Real API Center ก่อน
+- ก่อนติดตั้งใช้งานจริงต้องทดสอบบน WordPress จริงทุกหน้า ทุกปุ่ม ทุกอุปกรณ์

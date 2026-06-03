@@ -1,0 +1,16 @@
+Thinkb4do Community v4.2.230
+
+Goal
+- Move post edit/delete controls to the right side of the user row.
+- Remove card shadows from the single post/comment layout.
+
+Changes
+1. Moved the post owner tools markup inside .tb4c-single-post-head.
+2. Added tb4c-v42230-post-owner-right class to the owner tools.
+3. Added body/html runtime classes for v4.2.230 selectors.
+4. Forced the single post header into a 3-column grid: avatar / user meta / owner actions.
+5. Removed box-shadow/filter from the main post card and comment-area cards/wrappers.
+
+Expected result
+- Edit/delete for the post appears at the far right of the author row.
+- The post/comment card shadow is removed for a flatter, cleaner layout.

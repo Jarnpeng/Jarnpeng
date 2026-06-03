@@ -1,0 +1,17 @@
+Thinkb4do Theme v2.2.1
+
+เพิ่ม Smart Daily Sidebar เพื่อแทน Sidebar WordPress แบบดิบที่แสดง ค้นหา/เรื่องล่าสุด/คลังเก็บ/หมวดหมู่ แบบไม่สวยในหลายหน้า
+
+สิ่งที่เพิ่ม:
+- Daily Hub การ์ดหลัก
+- Daily Planning card for public lifestyle ideas
+- Quick Actions: คู่มือระบบ, ผลิตภัณฑ์, ชุมชน, นโยบาย
+- Search Card แบบใหม่
+- Thinkb4do Tip
+- Recent Content แบบการ์ด
+- Customizer: Smart Daily Sidebar
+- Mode: Smart / Mixed / WordPress Widgets
+
+สถานะ:
+- ค่าเริ่มต้นใช้ Smart Daily Sidebar เพื่อไม่ให้เห็น Sidebar เดิมแบบดิบ
+- ถ้าต้องการใช้ Widget เดิม ให้เลือก Mixed หรือ WordPress ใน Customizer

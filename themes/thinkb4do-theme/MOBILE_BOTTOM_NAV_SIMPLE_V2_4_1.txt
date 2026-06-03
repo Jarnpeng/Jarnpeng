@@ -1,0 +1,7 @@
+Thinkb4do Theme Core v2.4.1 — Mobile Bottom Nav Simple
+
+Changed:
+- Removed Search from mobile bottom navigation.
+- Removed Menu from mobile bottom navigation.
+- Mobile bottom navigation now shows only Home, Community, and Products.
+- Existing Community Clean Shell behavior remains: community pages hide mobile bottom nav, footer, and theme-level community links.

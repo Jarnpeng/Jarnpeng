@@ -1,0 +1,24 @@
+THINKB4DO COMMUNITY — ESSENTIAL MEMBER COMMENT CLEAN V4.2.202
+
+สิ่งที่ปรับรอบนี้
+- คงตำแหน่งซ้าย / กลาง / ขวาของหน้า community หลักไว้ก่อน
+- เอาเมนูส่วนล่างออกต่อเนื่อง
+- ตัดส่วนซ้ำและส่วนไม่จำเป็นเพิ่มจาก v4.2.201
+- หน้าแสดงความคิดเห็น: ลดเหลือหัว count + ปุ่มเขียนความคิดเห็น + popup comment
+- หน้า single post: เอา toolbar ซ้ำ, privacy/feeling chip, follow chip และ view chip ออก
+- หน้า single post: จำกัด tag เหลือ 3 แท็ก
+- หน้าสมาชิก: ลด hero ให้เหลือ avatar / ชื่อ / ข้อมูลสั้น / ปุ่มหลัก
+- หน้าสมาชิก: ลด tabs เหลือ รวม / โพสต์ / คอมเมนต์ / บันทึก / โปรไฟล์
+- หน้าสมาชิก: ถอด sidebar สมาชิกที่ซ้ำกับ hero และแท็บออกจาก DOM
+- หน้าสมาชิก: ลด form settings ให้เหลือข้อมูลสำคัญมากขึ้น
+
+องค์ประกอบสำคัญที่ยังอยู่
+- Composer
+- Reels
+- Feed หลัก
+- Post actions หลัก
+- Comments popup
+- Member profile / stats / posts / comments / saved / settings
+
+สถานะตรวจสอบ
+- ต้องทดสอบบน WordPress จริงหลังติดตั้ง เพราะ sandbox ไม่มี runtime ของ WordPress

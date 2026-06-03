@@ -1,0 +1,20 @@
+Thinkb4do Community v4.2.228
+
+Goal
+- Put responder profile/avatar in the standard user position.
+- Move edit/delete into the standard user-name row.
+- Remove dotted/bottom guide line below the comment composer.
+- Keep comment thread flat and clean.
+
+Changes
+1. Added body class tb4c-v42228-comment-identity-actions-body.
+2. Aligned comment avatar with the comment username row.
+3. Forced comment owner tools to stay in the same top line as username/time.
+4. Converted edit/delete labels to accessible icon-only round buttons for cleaner standard placement.
+5. Removed pseudo-elements and bottom borders that produced the unwanted dotted line under comment input.
+6. Preserved centered desk/phone layout from v4.2.227.
+
+Expected result
+- Profile of responder appears in correct user-row position.
+- Edit/delete are positioned standard at the right of the comment user row.
+- Comment input no longer shows the unwanted bottom dotted line.

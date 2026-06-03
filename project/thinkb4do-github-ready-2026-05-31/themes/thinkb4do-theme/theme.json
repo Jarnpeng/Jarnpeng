@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        { "name": "Green", "slug": "tb4-green", "color": "#1E6B45" },
+        { "name": "Green Dark", "slug": "tb4-green-dark", "color": "#154d31" },
+        { "name": "Green Light", "slug": "tb4-green-light", "color": "#e8f5ee" },
+        { "name": "Orange", "slug": "tb4-orange", "color": "#F97316" },
+        { "name": "Black", "slug": "tb4-black", "color": "#111827" },
+        { "name": "White", "slug": "tb4-white", "color": "#ffffff" },
+        { "name": "Gray", "slug": "tb4-gray", "color": "#6b7280" }
+      ],
+      "gradients": [
+        {
+          "name": "Hero Gradient",
+          "slug": "tb4-hero",
+          "gradient": "linear-gradient(135deg, #f0faf5 0%, #ffffff 50%, #fff8f3 100%)"
+        },
+        {
+          "name": "Green Gradient",
+          "slug": "tb4-green-gradient",
+          "gradient": "linear-gradient(135deg, #1E6B45 0%, #154d31 100%)"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Kanit",
+          "slug": "kanit",
+          "fontFamily": "'Kanit', 'Sarabun', sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "name": "Small", "slug": "small", "size": "0.875rem" },
+        { "name": "Normal", "slug": "normal", "size": "1rem" },
+        { "name": "Medium", "slug": "medium", "size": "1.125rem" },
+        { "name": "Large", "slug": "large", "size": "1.5rem" },
+        { "name": "X-Large", "slug": "x-large", "size": "2rem" }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "em", "rem", "%", "vh", "vw"]
+    },
+    "border": {
+      "radius": true,
+      "color": true,
+      "width": true
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#ffffff",
+      "text": "#111827"
+    },
+    "typography": {
+      "fontFamily": "'Kanit', 'Sarabun', sans-serif",
+      "fontSize": "1rem",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "link": {
+        "color": { "text": "#1E6B45" }
+      },
+      "h1": { "typography": { "fontSize": "clamp(2rem, 4vw, 3rem)", "fontWeight": "700" } },
+      "h2": { "typography": { "fontSize": "clamp(1.5rem, 3vw, 2.25rem)", "fontWeight": "600" } },
+      "h3": { "typography": { "fontSize": "1.5rem", "fontWeight": "600" } }
+    }
+  }
+}

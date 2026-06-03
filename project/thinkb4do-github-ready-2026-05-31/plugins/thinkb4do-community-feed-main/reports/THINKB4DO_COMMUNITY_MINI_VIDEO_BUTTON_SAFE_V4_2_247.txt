@@ -1,0 +1,6 @@
+THINKB4DO Community Feed Main v4.2.247
+
+Patch summary:
+- Moved mini video popup controls out of the video picture area.
+- Added a dedicated bottom control bar for pause and close buttons.
+- Kept video fully visible without controls covering the content.

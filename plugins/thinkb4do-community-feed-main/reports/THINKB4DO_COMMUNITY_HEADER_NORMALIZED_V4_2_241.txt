@@ -1,0 +1,11 @@
+THINKB4DO Community Feed Main v4.2.241
+
+Patch: normalized mobile post header layout.
+
+Changes:
+- Force post header into 3 columns: avatar | author metadata | edit/delete tools.
+- Keep visibility row directly under author/time.
+- Keep edit/delete tools at the right side of the top header area.
+- Added runtime normalizer for old/cached/AJAX-rendered cards.
+- Added high-specificity CSS override loaded at the end of community-clean-ui-reset.css.
+- Kept member/sidebar split from Feed Main.

@@ -1,0 +1,23 @@
+/**
+ * Thinkb4do Theme Core v2.3.6 — Community Footer Hidden
+ * Purpose: remove public footer space only on community contexts while preserving wp_footer().
+ */
+body.tb4-community-footer-hidden #site-footer {
+  display: none !important;
+}
+
+body.tb4-community-footer-hidden #main-content,
+body.tb4-community-footer-hidden .tb4-page-main {
+  min-height: calc(100svh - var(--header-h, 68px) - var(--tb4-sticky-top, 0px));
+}
+
+body.tb4-community-footer-hidden .tb4-page-main {
+  padding-bottom: clamp(24px, 5vw, 56px) !important;
+}
+
+@supports not (height: 100svh) {
+  body.tb4-community-footer-hidden #main-content,
+  body.tb4-community-footer-hidden .tb4-page-main {
+    min-height: calc(100vh - var(--header-h, 68px) - var(--tb4-sticky-top, 0px));
+  }
+}

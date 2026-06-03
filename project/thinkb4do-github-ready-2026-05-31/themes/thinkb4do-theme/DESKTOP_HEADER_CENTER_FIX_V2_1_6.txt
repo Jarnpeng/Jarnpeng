@@ -1,0 +1,12 @@
+Thinkb4do Theme v2.1.6 — Desktop Header Center + Menu Bullet Fix
+
+แก้ไขหลัก:
+1. เอาจุดสีทึบหน้ารายการเมนูออก โดยจัดการ list marker ของ WordPress menu <li> โดยตรง
+2. ย้ายกลุ่มเมนูหลัก + ช่องค้นหาให้อยู่ตำแหน่งกลางของส่วนหัวสีขาวบน Desktop
+3. คงจุดสีส้ม animation ไว้เฉพาะแถบเขียวสถานะการพัฒนา
+4. ไม่กระทบปุ่มแจ้งเตือน ข้อความ โปรไฟล์ และเมนูมือถือ
+
+ไฟล์ที่เพิ่ม/แก้:
+- functions.php: update version/enqueue CSS v2.1.6
+- style.css: update version + fallback CSS
+- css/tb4-header-center-v216.css: final desktop header alignment layer

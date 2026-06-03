@@ -1,0 +1,19 @@
+Thinkb4do Community v4.2.222
+
+Goal
+- Remove the card-on-card feeling on the single post comment page.
+- Widen the main card.
+- Make the desktop layout more flexible and responsive.
+
+Changes
+1. Added a new body class: tb4c-v42222-wide-flex-desk-body.
+2. Expanded the single layout container up to 1320–1380px on larger desktop screens while keeping fluid width.
+3. Increased the usable width and padding behavior of the main single card.
+4. Flattened comments wrappers further so the page reads as one main card, not nested cards.
+5. Kept the comment empty-state light and simple, with no extra card feel.
+6. Preserved mobile behavior with tighter padding and responsive sizing.
+
+Expected result
+- Wider primary card.
+- Cleaner single-card feel.
+- More flexible desktop width behavior.

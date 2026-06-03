@@ -1,0 +1,72 @@
+/* Thinkb4do v2.4.10 — Community clean shell adjusted
+   Goal: keep community pages focused while keeping Discovery / ชุมชน / ผลิตภัณฑ์ visible.
+   Footer can stay hidden on community pages, but header/app-grid/mobile menu must remain available. */
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 0 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    background: linear-gradient(to top, rgba(255,255,255,.98), rgba(255,255,255,.82), rgba(255,255,255,0)) !important;
+  }
+
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__inner {
+    min-height: 68px !important;
+    border-radius: 22px !important;
+  }
+}
+
+body.thinkb4do-theme.tb4-is-community-page #site-footer,
+body.thinkb4do-theme.tb4-community-clean-shell #site-footer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body.thinkb4do-theme.tb4-is-community-page #site-header .main-nav a[href*="/community"],
+body.thinkb4do-theme.tb4-is-community-page #site-header .main-nav a[href*="thinkb4do-community"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-is-community-page .tb4-app-grid-panel a[href*="/community"],
+body.thinkb4do-theme.tb4-is-community-page .tb4-app-grid-panel a[href*="thinkb4do-community"],
+body.thinkb4do-theme.tb4-is-community-page .tb4-mobile-bottom-nav__item--community {
+  display: flex !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme.tb4-is-community-page,
+  body.thinkb4do-theme.tb4-community-clean-shell {
+    padding-bottom: calc(var(--tb4-mobile-bottom-nav-h, 76px) + env(safe-area-inset-bottom, 0px) + 14px) !important;
+  }
+
+  body.thinkb4do-theme.tb4-is-community-page .tb4-mobile-bottom-nav,
+  body.thinkb4do-theme.tb4-community-clean-shell .tb4-mobile-bottom-nav {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 0 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    background: linear-gradient(to top, rgba(255,255,255,.98), rgba(255,255,255,.82), rgba(255,255,255,0)) !important;
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+  }
+
+  body.thinkb4do-theme.tb4-is-community-page .tb4-mobile-bottom-nav__inner,
+  body.thinkb4do-theme.tb4-community-clean-shell .tb4-mobile-bottom-nav__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    max-width: 430px;
+    margin-inline: auto;
+    pointer-events: auto !important;
+  }
+
+  body.thinkb4do-theme.tb4-is-community-page #main-content,
+  body.thinkb4do-theme.tb4-community-clean-shell #main-content {
+    padding-bottom: calc(var(--tb4-mobile-bottom-nav-h, 76px) + env(safe-area-inset-bottom, 0px) + 14px) !important;
+  }
+}

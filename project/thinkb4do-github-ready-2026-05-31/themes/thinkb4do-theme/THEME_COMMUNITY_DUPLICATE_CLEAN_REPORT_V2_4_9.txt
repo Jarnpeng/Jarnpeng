@@ -1,0 +1,14 @@
+Thinkb4do Theme v2.4.9 — Duplicate Community Clean
+
+สิ่งที่ปรับ:
+1) ลบ logic Home Discovery Feed ออกจาก front-page.php ของธีม
+2) ให้ front-page.php เรียก shortcode จากปลั๊กอิน Thinkb4do Community แทน
+3) ถอด enqueue CSS Home Feed ที่ซ้ำในธีม
+4) ลบไฟล์ CSS Home Feed ของธีมที่ย้ายไปอยู่ในปลั๊กอินแล้ว
+5) เอา Member Label Fix ที่เปลี่ยนพื้นที่สมาชิกเป็นสมาชิกออก เพื่อไม่ให้ชนกับแนวทางเหลือเฉพาะ member-area
+6) คง bridge ของ /member-area/ ไว้ เพื่อกันหน้าโดนกรอบ theme ตัดพื้นที่
+
+สถานะ:
+- ธีมเบาลงและไม่ถือระบบชุมชนซ้ำ
+- ฟีดหน้าแรกอยู่ในปลั๊กอินชุมชน
+- member-area ยังรองรับ layout เต็มพื้นที่

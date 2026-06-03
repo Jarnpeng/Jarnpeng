@@ -1,0 +1,28 @@
+Thinkb4do Theme Core v2.1.2
+
+งานที่แก้:
+1) Header Master Stabilizer
+- จัดชั้นส่วนหัวใหม่: WordPress Admin Bar > ส่วนหัวสีขาว > แถบเขียว > เนื้อหา
+- แก้ส่วนหัวซ้อนและปุ่มกดไม่ได้จาก layer/pointer-events/z-index ที่ชนกัน
+- เมนูสามขีด, แจ้งเตือน และโปรไฟล์ ใช้ controller เดียวเพื่อไม่ให้ script เก่าชนกัน
+- Dropdown เปิดชิดใต้ส่วนหัวสีขาว และทับแถบเขียวตามโจทย์
+- ไม่ล็อก body overflow เพื่อลดอาการฝืด/ค้าง
+
+ไฟล์ที่เพิ่ม:
+- css/tb4-header-master-v212.css
+- js/tb4-header-master-v212.js
+
+2) WordPress Page + Component Sync
+- เพิ่มระบบสร้าง/ผูกหน้าเข้า WordPress อัตโนมัติเมื่อเปิดใช้/อัปโหลดธีมเวอร์ชันใหม่
+- หน้าแก้ไขต่อได้จาก Pages / Gutenberg Editor
+- ผูกหน้าเข้ากับ template ของธีม และสร้างเมนู Thinkb4do Main
+- เพิ่มหน้า admin: Appearance > เชื่อมหน้า / Components
+- เพิ่ม Customizer section: ซิงก์หน้า / Components
+
+ไฟล์ที่เพิ่ม:
+- inc/tb4-page-sync.php
+
+สถานะตรวจสอบ:
+- PHP lint ผ่านทุกไฟล์
+- JavaScript syntax check ผ่านทุกไฟล์
+- ZIP ตรวจสอบแล้วไม่เสีย

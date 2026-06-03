@@ -1,0 +1,13 @@
+AiRA Studio v7.4.0 Clean Slate Real Preview Next
+
+สิ่งที่เพิ่ม:
+- Preview ของ WordPress/PHP code block แสดงเป็นหน้าจริงแบบ Pre-install Sandbox อัตโนมัติเมื่อกด Result
+- ใน Preview มีช่อง Preview Next ให้พิมพ์คำสั่งสั้น ๆ แล้วส่งกลับไปที่ AiRA เพื่อปรับปรุง code block รอบถัดไปทันที
+- เพิ่มปุ่ม Fix สด ใน Preview เพื่อส่งรายงาน/คำสั่งแก้บั๊กสดกลับเข้าระบบ Live Dev QC
+- เมื่อ Preview เปิดแล้ว ระบบถือว่าเห็นหน้าจริงก่อนส่งมอบ/ติดตั้งและยังไม่ activate plugin อัตโนมัติ
+- ยังรักษาปุ่ม Copy, Download, Result, File, โหลดแพ็ก, อัปเกรด และ Next ใต้ code block ไว้ครบ
+
+ขอบเขตความจริง:
+- ทำงานจริงในระดับ UI/flow/package/static QC/server preinstall check
+- ไม่ execute PHP ดิบ, ไม่เขียนฐานข้อมูล, ไม่ activate plugin ก่อนยืนยัน
+- ถ้าต้องการ runtime จริง 100% ให้ติดตั้งบน WordPress staging แล้วทดสอบก่อนใช้งานจริง

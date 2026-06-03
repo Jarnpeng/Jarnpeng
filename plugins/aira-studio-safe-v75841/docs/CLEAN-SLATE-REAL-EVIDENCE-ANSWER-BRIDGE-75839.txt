@@ -1,0 +1,46 @@
+AiRA Studio v7.5.8.39 Real Evidence Answer Bridge
+
+Purpose
+- Fix answers that looked local even when internal/external relationship routing was requested.
+- Add server-side real connection evidence so AiRA can show whether the answer came from API/provider, internal context, local direct answer, or fallback.
+- Prevent client-side UI readiness from being treated as proof of real external connection.
+
+Changed files
+- aira-studio.php
+- assets/js/aira-studio-clean-slate.js
+
+Backend additions
+1. Real Connection Evidence v7.5.8.39
+   - Checks configured secret slots and settings server-side.
+   - Classifies providers as connected, partial/limited, or missing.
+   - Exposes only safe status metadata, never raw API keys.
+
+2. Answer source line
+   - Adds answer_source_line to each chat result.
+   - API provider replies are labeled as external API candidates.
+   - Local/fallback replies are labeled honestly as internal/local fallback.
+
+3. Prompt context bridge
+   - Injects Real Connection Evidence into the prompt context so the model cannot claim external connection without configured evidence.
+
+Frontend additions
+1. Connection Evidence Report
+   - For questions about internal/external/API/source/connection, the answer includes a visible source report.
+   - Shows selected source, internal systems used, server-confirmed external providers, missing settings, and selection order.
+
+2. Client-side readiness correction
+   - Real API Center UI is no longer treated as proof that keys/endpoints are configured.
+   - Google/GitHub/Custom/v0 readiness now waits for server evidence.
+
+3. Longer wait for system/external questions
+   - System/external questions wait longer for API/backend candidates before fallback, reducing local-looking answers.
+
+Not changed
+- No buttons added or removed.
+- No action router changes.
+- No Composer/Menu/Sidebar layout changes.
+
+QC
+- PHP lint: pass
+- JavaScript syntax: pass
+- ZIP integrity: pass

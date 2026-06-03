@@ -1,0 +1,14 @@
+Thinkb4do Community Members v4.2.246 AI Member Hub
+
+What changed:
+- Added responsive system menu: Desktop left rail, Tablet compact rail, Phone bottom navigation.
+- Added right widgets: profile completeness, AI Assistant, recent activity, admin-only debug status.
+- Kept single-page Member Hub architecture using /member-area/ and tb4c_area tabs.
+- Cleaned visual priority: center profile + post grid remains main content.
+- Added Products tab support as a core member module entry.
+- Scoped CSS under .tb4c-member-responsive-standard-page to reduce theme/plugin conflicts.
+
+QC:
+- PHP syntax checked.
+- Existing shortcode [thinkb4do_member_area] preserved.
+- Database and post/comment logic not changed.

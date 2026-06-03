@@ -1,0 +1,35 @@
+Thinkb4do Community v4.2.200 — Essential Focus Position Lock
+
+เป้าหมายรอบนี้
+- รื้อ UI/UX เยอะขึ้น โดยตัดส่วนซ้ำและส่วนไม่จำเป็นออกก่อน
+- คงตำแหน่งหลัก ซ้าย / กลาง / ขวา ไว้ก่อน ไม่ย้าย layout
+- เอาเมนูส่วนล่างออกต่อเนื่องจาก v4.2.199
+- เน้นส่วนหลัก: Composer, Reels แบบเบา, Post Feed, Left primary filters
+
+สิ่งที่ตัด/ลดจาก DOM
+- ปุ่ม floating create ที่ซ้ำกับ Composer
+- ปุ่มลัดรูป/วิดีโอและโหวตใน quick composer เพราะมีใน Composer modal แล้ว
+- หัวฟีดใหญ่ที่ซ้ำกับ header/global navigation
+- เมนู left filter ย่อยจำนวนมาก เหลือเฉพาะ วันนี้ / ติดตาม / ล่าสุด / มาแรง
+- query สถิติ/สมาชิกแนะนำที่ไม่ได้ใช้ในหน้าหลัก
+- right sidebar ผู้คน + follow button เหลือเฉพาะหัวข้อแนะนำ
+- ข้อความช่วยเหลือ/หมายเหตุซ้ำใน Composer modal
+- visible action label ใต้โพสต์ เหลือไอคอน+ตัวเลขเพื่อเบาขึ้น
+
+สิ่งที่คงไว้
+- Layout ซ้าย / กลาง / ขวา
+- Composer หลัก
+- Reels viewer และ rail แบบย่อ
+- Post feed / media / poll
+- Like / Comment / Share / Bookmark
+- ปุ่มแก้ไข/ลบของเจ้าของโพสต์
+- Responsive desktop/tablet/mobile
+
+การตรวจสอบใน sandbox
+- PHP syntax check
+- JavaScript syntax check
+- CSS brace balance check
+- ZIP integrity check
+
+หมายเหตุ
+- ยังไม่ได้ทดสอบ live render ใน WordPress runtime จริง เพราะ sandbox ไม่มี WordPress environment.

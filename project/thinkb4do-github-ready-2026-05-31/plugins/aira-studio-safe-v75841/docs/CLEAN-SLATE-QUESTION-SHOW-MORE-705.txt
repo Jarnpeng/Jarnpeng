@@ -1,0 +1,27 @@
+AiRA Studio v7.0.5 — Clean Slate Question Show More
+
+เป้าหมาย:
+- ย้าย Show more / Show less จากฝั่งผู้ตอบ ไปอยู่ฝั่งผู้ถาม
+- ลดความรกในคำตอบผู้ช่วย แต่ยังให้ผู้ใช้ย่อ/ขยายคำถามยาว ๆ ได้
+- รักษา Clean Slate UI: CSS หลัก 1 ไฟล์ + JS หลัก 1 ไฟล์ ไม่ดึง UI legacy กลับมาซ้อน
+
+สิ่งที่ปรับ:
+1. shouldCollapseMessage() เปลี่ยนเงื่อนไขให้ collapse เฉพาะ role=user
+2. messageEl() ย้ายปุ่ม data-action="message-show-more" ไปอยู่ในบล็อก role=user
+3. ฝั่ง assistant ไม่สร้างปุ่ม Show more / Show less แล้ว
+4. CSS collapse เปลี่ยนจาก .aira-message.assistant.is-collapsed เป็น .aira-message.user.is-collapsed
+5. toggleMessageMore() ปรับ aria-label ให้รู้ว่าเป็นคำถามหรือคำตอบตาม role
+
+สิ่งที่ยังอยู่:
+- ผู้ถาม: คัดลอก, แก้ไข, Show more / Show less เมื่อข้อความยาว
+- ผู้ตอบ: คัดลอก, เล่นเสียงแบบ inline player, แก้ไข
+- Header ชิด WordPress admin bar
+- Composer ชิดล่าง
+- ChatLog เป็น native scroll หลักตัวเดียว
+
+ทดสอบหลังติดตั้ง:
+1. ส่งคำถามยาวหลายบรรทัด ต้องเห็น Show more ฝั่งผู้ถาม
+2. กด Show more แล้วคำถามขยาย
+3. กด Show less แล้วคำถามย่อ
+4. ฝั่งผู้ตอบไม่ควรมี Show more / Show less
+5. ปุ่มคัดลอก แก้ไข เล่นเสียง และเมนูทั้งหมดต้องยังทำงาน

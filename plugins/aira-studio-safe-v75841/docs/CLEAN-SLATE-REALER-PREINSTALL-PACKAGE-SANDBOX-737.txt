@@ -1,0 +1,12 @@
+AiRA Studio v7.3.7 Clean Slate Realer Preinstall Package Sandbox
+
+เพิ่ม Sandbox ก่อนติดตั้ง/ก่อนโหลดแพ็กให้จริงขึ้น:
+- Admin Preview จำลอง WordPress Admin bar/menu/settings/form/button flow
+- Frontend/Shortcode preview
+- Module/Component/Theme/Widget/Block relationship preview
+- REST/AJAX tester แบบ simulated
+- Package manifest แสดงไฟล์ที่จะอยู่ใน ZIP ก่อนโหลด
+- QC readiness score พร้อมรายการที่ควรเติม เช่น nonce/capability/sanitize/uninstall
+- ปุ่มโหลดแพ็ก ZIP จาก code block โดยรวม main file, readme, manifest, preinstall report และ placeholder assets ถ้าตรวจพบ
+
+ยังไม่ execute PHP ดิบ ไม่เขียนฐานข้อมูล ไม่ Activate plugin อัตโนมัติ เพื่อความปลอดภัยก่อนติดตั้งจริง

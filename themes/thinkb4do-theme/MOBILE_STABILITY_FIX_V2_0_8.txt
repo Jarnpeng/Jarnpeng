@@ -1,0 +1,12 @@
+Thinkb4do Theme v2.0.8 — Mobile Stability Guard
+
+แก้ปัญหา:
+1) หน้าเว็บฝืด/ค้างจากสคริปต์ mobile menu หลายชุดทำงานซ้อนกัน
+2) ย่อแล้วขยายกลับไม่ได้ เพราะ body/menu class เก่าล็อก overflow ค้าง
+3) เมนูมือถือ/แจ้งเตือน/โปรไฟล์ล้นจอ และไม่ชิดใต้ส่วนหัว
+
+สิ่งที่เปลี่ยน:
+- ถอด enqueue ของ patch v2.0.5, v2.0.6, v2.0.7 และ inline fallback ที่ทำให้ event listener ซ้ำ
+- เพิ่มตัวควบคุมเดียว: css/tb4-mobile-stability-v208.css และ js/tb4-mobile-stability-v208.js
+- ล้าง class เก่าที่ล็อก scroll/touch เมื่อปิดเมนูหรือขยายกลับ desktop
+- เมนูมือถือยึดตำแหน่งจาก #site-header bottom เท่านั้น ไม่ตามแถบประกาศสีเขียว

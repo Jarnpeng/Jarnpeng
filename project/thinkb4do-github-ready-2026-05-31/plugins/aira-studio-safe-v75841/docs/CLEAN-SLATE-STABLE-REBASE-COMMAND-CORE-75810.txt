@@ -1,0 +1,41 @@
+AiRA Studio v7.5.8.10 Stable Rebase Command Core
+
+ฐานที่ใช้:
+- aira-studio-v7.5.8.9-stable-composer-thought-prompt.zip
+
+เป้าหมาย:
+- พัฒนาต่อจากฐาน 7.5.8.9 เท่านั้น
+- ไม่ดึงพฤติกรรมจาก v7.5.9.0 / v7.5.9.1 ที่ทำให้ Composer/Menu แย่ลง
+- เพิ่มระบบดึงคำสั่งเดิมทั้งหมดมาประมวลผลแบบ passive
+- แปลงข้อความธรรมดา/ความคิดสั้น ๆ เป็น prompt ทำงานอัตโนมัติ
+
+สิ่งที่เพิ่ม:
+1) Stable Rebase Guard
+   - ล็อกนโยบายการพัฒนาต่อจากฐาน 7.5.8.9
+   - กัน regression จากสาขาที่ทำให้ Composer/Menu แย่ลง
+   - ส่ง context เข้า backend ผ่าน stable_rebase_guard_context_75810
+
+2) System Command Matrix
+   - อ่าน data-action เดิมทั้งหมดแบบ passive
+   - จัดกลุ่มคำสั่ง เช่น composer, message, code, file, preview, api, memory, room, voice, debug, settings
+   - ส่ง context เข้า backend ผ่าน system_command_matrix_context_75810
+   - ไม่เพิ่ม ไม่ลบ ไม่ rebind ปุ่ม
+
+3) Thought Prompt Compiler v7.5.8.10
+   - เพิ่ม passive command matrix เข้า auto-compiled prompt
+   - ยึดข้อความล่าสุดของผู้ใช้เป็นหลัก
+   - แปลงข้อความธรรมดาให้เป็น working prompt อัตโนมัติ
+
+ยืนยันสิ่งที่ไม่แตะ:
+- ไม่แก้ action router
+- ไม่เพิ่มปุ่มใหม่
+- ไม่ลบปุ่มเดิม
+- ไม่แก้ click/touch/pointer handler
+- ไม่ยก composer/menu behavior จาก 7.5.9.0/7.5.9.1 เข้ามา
+
+QC ที่ต้องทดสอบหลังติดตั้ง:
+1. Composer ยังทำงานเหมือนฐาน 7.5.8.9
+2. พิมพ์ข้อความสั้น เช่น "ทำต่อ", "แก้ตรงนี้", "พัฒนาให้ดีขึ้น" แล้วระบบต้องแปลงเป็น prompt อัตโนมัติ
+3. Export Bug All TXT ต้องเห็น System Command Matrix และ Stable Rebase Guard
+4. ปุ่มเดิมทั้งหมดต้องมีจำนวนเท่าเดิม
+5. Code block / Preview / Download / Memory / API Center ต้องยังอยู่

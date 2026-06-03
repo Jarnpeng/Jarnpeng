@@ -1,0 +1,7 @@
+THINKB4DO Community Feed Main v4.2.260
+
+Patch summary:
+- Fixed mini video pause/play so button action reaches HTML5 video and iframe embeds.
+- For iframe embeds, pause uses hard-unload fallback by replacing iframe src with a paused placeholder; play restores src.
+- Fixed drag-out-to-close behavior with YouTube-like threshold and snap-back when not dragged far enough.
+- Added close suppression to prevent old mini-video systems from immediately recreating the popup after close.

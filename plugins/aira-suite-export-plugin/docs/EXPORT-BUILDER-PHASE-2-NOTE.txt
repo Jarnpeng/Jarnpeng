@@ -1,0 +1,17 @@
+AiRA Export Builder Phase 2
+
+What was added:
+1. Tools > AiRA Export Builder
+2. Combined Plugin + Theme bundle export
+3. Live Preview counters before download
+4. package-manifest.json generator
+5. README-AIRA-EXPORT.txt generator
+6. Install-safe mode to skip heavy/unnecessary folders such as .git, node_modules, cache, backups, logs, and old ZIP files
+7. Full backup mode for complete file handoff
+8. Export Log saved in WordPress option aira_export_builder_history
+9. REST status endpoint: /wp-json/aira-suite-export/v1/builder-status
+
+Important:
+- This builder creates a bundle for backup, transfer, and developer handoff.
+- It does not include database, media uploads, user data, passwords, tokens, API keys, or secrets.
+- For normal single install ZIP files, use Tools > AiRA Export Center.

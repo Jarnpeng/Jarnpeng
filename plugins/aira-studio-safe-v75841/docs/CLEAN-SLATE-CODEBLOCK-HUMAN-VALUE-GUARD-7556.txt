@@ -1,0 +1,27 @@
+AiRA Studio v7.5.5.6 — Code Block Human Value Guard
+
+เป้าหมาย:
+- ใส่คุณค่าเข้าไปใน code block ทุกครั้ง
+- ทุกปุ่มและทุกคำสั่งต้องช่วยผู้ใช้หรือผู้อื่นจริง ไม่ใช่ปุ่มตกแต่ง
+- ทุกปุ่มต้องมี purpose, feedback, safety และ test path
+
+สิ่งที่เพิ่ม:
+1. Human Value Guard panel ใน code block
+   - แสดงคุณค่าของปุ่มหลัก เช่น Copy, Download, Preview, Debug, Build Until Success, Package, Upgrade
+   - บอกกติกาว่าปุ่มต้องมี handler/feedback, ลดความเสี่ยงก่อนติดตั้ง, อ่านง่ายบนมือถือ, ไม่ตัดของเดิมที่มีประโยชน์
+
+2. data-human-value / data-command-purpose
+   - ปุ่มใน code block ถูกใส่ metadata เพื่อบอกเป้าหมายของปุ่ม
+   - ช่วยตรวจในอนาคตว่าปุ่มไหนมีประโยชน์จริงหรือเป็นปุ่มลอย
+
+3. Success Loop Prompt Upgrade
+   - บังคับให้รอบถัดไปมี Human Value Map
+   - ทุกปุ่มต้องตอบคำถาม: ช่วยใคร / ทำอะไรจริง / feedback คืออะไร / ป้องกันความเสี่ยงอะไร / ทดสอบอย่างไร
+
+4. Accessibility + Safety
+   - เพิ่ม aria-label/title ให้ปุ่ม code block
+   - ปุ่มเสี่ยงต้องมี preview/confirmation/permission/rollback
+
+สถานะ:
+- ใช้งานได้ทันทีบน code block ใหม่หลังติดตั้งและ hard refresh
+- ของเดิมยังอยู่ครบ: Success Loop, Composer Bottom Lock, Contrast Guard, Preview, Debug, Package, Upgrade

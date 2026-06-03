@@ -1,0 +1,11 @@
+Thinkb4do Theme Core v2.0.4 — Mobile Dropdown Tight Clamp Fix
+
+แก้จาก v2.0.3:
+1. เมนูมือถือใช้ .header-inner เป็น anchor เพื่อเปิดชิดใต้ส่วนหัวสีขาวจริง ไม่ถูกดันลงใต้แถบประกาศสีเขียว
+2. เพิ่ม CSS/JS hard clamp กัน dropdown ล้นซ้าย/ขวาและกัน horizontal scroll
+3. เพิ่ม dynamic variable --tb4-mobile-menu-tight-top และ --tb4-visual-vh เพื่อคุมความสูงบนมือถือ/Chrome Android
+4. บังคับ nav/link ภายในเมนูให้ width 100%, box-sizing border-box, max-width 100%
+5. ปรับ popup แจ้งเตือนและบัญชีให้ไม่ล้นหน้าจอมือถือ
+6. เพิ่ม body class tb4-mobile-menu-tight-open ขณะเมนูเปิด เพื่อควบคุมชั้น z-index และ overflow
+
+สถานะ: ตรวจ syntax JS/PHP และสร้าง ZIP พร้อมติดตั้งแล้ว

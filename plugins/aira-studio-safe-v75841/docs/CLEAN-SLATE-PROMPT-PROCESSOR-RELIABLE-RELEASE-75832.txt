@@ -1,0 +1,17 @@
+AiRA Studio v7.5.8.32 - Prompt Processor Reliable Release
+
+แก้ปัญหา: หลังสั่งให้ Prompt Processor เสร็จก่อนคำตอบ บางเครื่องไม่เห็นคำตอบหรือสถานะเสร็จไม่มา
+
+สิ่งที่ปรับ:
+- หยุด slide-typing เดิมของ Prompt Processor ก่อนเขียนสถานะเสร็จแล้ว
+- กัน callback เก่าที่อาจเขียนสถานะกลับเป็น reading
+- เปลี่ยน gate ให้รอสั้นและปล่อยคำตอบแน่นอน
+- คำตอบยังแสดงหลัง Processor เสร็จก่อนตามลำดับ
+- หลังคำตอบแสดงเสร็จยังเหลือ Processing Time Card ตามเดิม
+
+ไม่แตะ:
+- ปุ่ม
+- action router
+- composer
+- popup menu
+- sidebar

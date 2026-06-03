@@ -1,0 +1,198 @@
+/* Thinkb4do Community v4.2.115 — Critical CSS: fast first paint before full CSS preload */
+:root{--tb4c-green:#1e6b45;--tb4c-orange:#f97316;--tb4c-black:#111;--tb4c-white:#fff;--tb4c-soft:#f6f8f5;--tb4c-border:rgba(17,17,17,.1);--tb4c-radius:22px;--tb4c-admin-offset:var(--wp-admin--admin-bar--height,0px);--tb4c-footer-safe:0px}*{box-sizing:border-box}.tb4c-shell,.tb4c-member-area-shell,.tb4-home-feed-main,.tb4c-home-menu-feed{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans Thai","Kanit",sans-serif;color:var(--tb4c-black)}.tb4c-shell,.tb4c-feed-shell,.tb4c-member-area-shell,.tb4-home-feed-main{width:min(100%,1280px);margin-inline:auto}.tb4c-feed-column,.tb4c-home-feed-column{width:min(100%,720px);margin-inline:auto}.tb4c-post-card,.tb4c-comments-card,.tb4c-member-card,.tb4c-home-menu-card,.tb4c-home-discovery-card{background:#fff;border:1px solid var(--tb4c-border);border-radius:var(--tb4c-radius);box-shadow:0 10px 28px rgba(17,17,17,.06);overflow:hidden}.tb4c-post-card,.tb4c-comments-card{margin:0 0 16px}.tb4c-post-body,.tb4c-card-body{padding:16px}.tb4c-post-media img,.tb4c-album-image img,.tb4c-comment-image-slot img,.tb4c-member-avatar img,.tb4c-post-card img{max-width:100%;height:auto;display:block}.tb4c-post-video-slot video,.tb4c-post-video-slot iframe,.tb4c-comment-video-slot video{width:100%;max-width:100%;height:auto;background:#000;border-radius:18px}.tb4c-button,.tb4c-btn,.tb4c-action-btn,.tb4c-post-actions button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;border-radius:999px;border:1px solid var(--tb4c-border);background:#fff;color:var(--tb4c-black);font:inherit;cursor:pointer}.tb4c-primary,.tb4c-submit,.tb4c-button-primary{background:var(--tb4c-green);color:#fff;border-color:var(--tb4c-green)}.tb4c-composer-modal,.tb4c-modal{position:fixed;inset:calc(var(--tb4c-admin-offset) + 64px) 16px var(--tb4c-footer-safe);z-index:99999;display:none;align-items:center;justify-content:center}.tb4c-composer-modal.is-open,.tb4c-modal.is-open{display:flex}.tb4c-composer-panel,.tb4c-modal-card{width:min(100%,760px);max-height:100%;overflow:auto;background:#fff;border-radius:24px;border:1px solid rgba(17,17,17,.12);box-shadow:0 22px 70px rgba(0,0,0,.24);-webkit-overflow-scrolling:touch}.tb4c-composer-panel textarea,.tb4c-composer-panel input,.tb4c-composer-panel select,.tb4c-form input,.tb4c-form textarea{width:100%;font:inherit;border:1px solid var(--tb4c-border);border-radius:16px;padding:10px 12px;background:#fff}.tb4c-reel-shell,.tb4c-reel-rail{max-width:100%;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.tb4c-reel-slide{scroll-snap-align:center;flex:0 0 auto}.tb4c-hidden,[hidden]{display:none!important}@media(max-width:782px){:root{--tb4c-admin-offset:46px;--tb4c-footer-safe:0px}.tb4c-shell,.tb4c-member-area-shell,.tb4-home-feed-main{padding-inline:10px}.tb4c-post-card,.tb4c-comments-card,.tb4c-member-card{border-radius:18px}.tb4c-post-body,.tb4c-card-body{padding:12px}.tb4c-composer-modal,.tb4c-modal{inset:calc(var(--tb4c-admin-offset) + 56px) 8px var(--tb4c-footer-safe)}}
+
+/* v4.2.201: no lower mobile menu reservation in active UI. */
+.tb4c-mobile-bottom-nav,.tb4c-app-bottom-nav,.tb4c-global-mobile-nav,.tb4c-canonical-mobile-nav{display:none!important}
+/* v4.2.201 Essential Focus guard: no bottom menu, no duplicate floating create in active community UI. */
+body.tb4c-v42200-essential-focus-position-lock-body :where(.tb4c-mobile-bottom-nav,.tb4c-app-bottom-nav,.tb4c-global-mobile-nav,.tb4c-canonical-mobile-nav),#tb4c-community-app.tb4c-v42200-essential-focus-position-lock :where(.tb4c-mobile-bottom-nav,.tb4c-app-bottom-nav,.tb4c-global-mobile-nav,.tb4c-canonical-mobile-nav,.tb4c-floating-create,.tb4c-app-floating-create){display:none!important;visibility:hidden!important;pointer-events:none!important;height:0!important;min-height:0!important;padding:0!important;margin:0!important;border:0!important;box-shadow:none!important}
+
+
+/* v4.2.231 — Main Community center-only, no built-in sidebars.
+   Left / Right sidebars are now separate desktop-only plugins. */
+body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-social-left,
+body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-social-right,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-left,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-right{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  width:0!important;
+  min-width:0!important;
+  max-width:0!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-container.tb4c-social-layout,
+body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-module-grid,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-container.tb4c-social-layout,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-module-grid{
+  width:min(100%,760px)!important;
+  max-width:760px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,720px)!important;
+  justify-content:center!important;
+  gap:0!important;
+  column-gap:0!important;
+}
+body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-social-feed,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-feed{
+  width:100%!important;
+  max-width:720px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+@media (max-width: 860px){
+  body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-module-grid,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-module-grid{
+    width:100%!important;
+    max-width:720px!important;
+    display:block!important;
+  }
+  body.tb4c-v42231-main-no-sidebar-body #tb4c-community-app .tb4c-social-feed,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-feed{
+    max-width:100%!important;
+  }
+}
+
+
+/* v4.2.232 — Main no-sidebar size fix
+   Purpose: after moving left/right sidebars to separate plugins, keep Community main feed centered and correctly sized on desktop/tablet/phone. */
+:root{
+  --tb4c-main-feed-width-v232: 840px;
+  --tb4c-main-shell-width-v232: 920px;
+}
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-social-left,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-social-right,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-left,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-right{
+  display:none!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  width:0!important;
+  min-width:0!important;
+  max-width:0!important;
+  height:0!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  box-shadow:none!important;
+  overflow:hidden!important;
+}
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app{
+  width:100%!important;
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-shell,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-container.tb4c-social-layout,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-module-grid,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-shell,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-container.tb4c-social-layout,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-module-grid{
+  width:min(100%, var(--tb4c-main-shell-width-v232))!important;
+  max-width:var(--tb4c-main-shell-width-v232)!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  padding-left:clamp(10px, 2vw, 20px)!important;
+  padding-right:clamp(10px, 2vw, 20px)!important;
+  display:grid!important;
+  grid-template-columns:minmax(0, var(--tb4c-main-feed-width-v232))!important;
+  justify-content:center!important;
+  align-items:start!important;
+  gap:0!important;
+  column-gap:0!important;
+  box-sizing:border-box!important;
+}
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-social-feed,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-feed-column,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-home-feed-column,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-feed,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-feed-column,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-home-feed-column{
+  width:100%!important;
+  max-width:var(--tb4c-main-feed-width-v232)!important;
+  min-width:0!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  grid-column:1 / -1!important;
+  box-sizing:border-box!important;
+}
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-card,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-composer-card,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-feed-search,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-post-card,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-composer-card,
+html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-feed-search{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+}
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-media,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-video-slot,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-media img,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-video-slot iframe,
+body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-video-slot video{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+@media (min-width: 1280px){
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-shell,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-module-grid{
+    --tb4c-main-feed-width-v232: 860px;
+    --tb4c-main-shell-width-v232: 960px;
+  }
+}
+@media (max-width: 1024px){
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-shell,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-module-grid,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-shell,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-module-grid{
+    width:100%!important;
+    max-width:860px!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-social-feed,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-feed-column,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-home-feed-column,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-social-feed,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-feed-column,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-home-feed-column{
+    max-width:100%!important;
+  }
+}
+@media (max-width: 767px){
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-shell,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-module-grid,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-shell,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-container.tb4c-social-layout,
+  html.tb4c-v42231-main-no-sidebar #tb4c-community-app .tb4c-module-grid{
+    width:100%!important;
+    max-width:none!important;
+    padding-left:10px!important;
+    padding-right:10px!important;
+    display:block!important;
+  }
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-post-card,
+  body.tb4c-v42232-main-no-sidebar-size-fix-body #tb4c-community-app .tb4c-composer-card{
+    border-radius:16px!important;
+  }
+}

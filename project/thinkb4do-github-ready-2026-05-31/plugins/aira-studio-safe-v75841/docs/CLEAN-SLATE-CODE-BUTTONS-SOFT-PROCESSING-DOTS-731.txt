@@ -1,0 +1,11 @@
+AiRA Studio v7.3.1 Clean Slate Code Buttons + Soft Processing Dots
+
+สิ่งที่เพิ่ม/แก้:
+1. คืนปุ่มใต้ code block ให้เห็นชัดอีกครั้ง: Copy, Download, Result, File.
+2. ปุ่ม File ใต้ code block เชื่อมกับแผงรายละเอียดไฟล์เดิมและย่อ/ขยายได้.
+3. ปุ่มติดตั้ง Plugin / อัปเกรด / Next Loop เดิมยังอยู่สำหรับ WordPress Plugin ที่ติดตั้งได้.
+4. เพิ่มจุดสามจุดนุ่ม ๆ ใต้ Prompt Processing ระหว่างรอคำตอบจริง.
+5. เมื่อ Prompt Processing เสร็จ จุดสามจุดจะหาย และการ์ดจะเปลี่ยนเป็นเวลาในการประมวลผลตามเดิม.
+6. รักษา flow เดิม: code block แรก, Result toggle, File relationship, Install/Upgrade, Next ต่อเรื่อย ๆ จนพอใจ.
+
+สถานะ: พร้อมติดตั้งทับ v7.3.0

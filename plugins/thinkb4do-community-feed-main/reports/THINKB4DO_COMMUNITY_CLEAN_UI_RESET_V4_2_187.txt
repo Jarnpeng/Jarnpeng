@@ -1,0 +1,26 @@
+Thinkb4do Community v4.2.187 — Clean UI Reset
+
+สิ่งที่แก้จริง:
+1. อัปเดตเวอร์ชันปลั๊กอินเป็น 4.2.187
+2. หยุด enqueue CSS patch เก่าหลายไฟล์ที่ทำให้หน้าเละและตำแหน่งชนกัน
+3. เพิ่ม final CSS layer ใหม่: assets/community-clean-ui-reset.css
+4. ลบ inline style เก่าจาก template community-content.php ที่เคยบังคับหลายเวอร์ชันพร้อมกัน
+5. เปลี่ยน wrapper หน้า Community เป็น class เดียว: tb4c-v42187-clean-ui-reset
+6. ลด body class เก่าที่ซ้อนกัน เหลือ class จำเป็น + v42187 เท่านั้น
+7. Desktop: ซ้าย 260px / Feed 700px / ขวา 300px
+8. Tablet: ซ้าย + Feed และซ่อนขวา
+9. Phone: 1 คอลัมน์ + เมนูซ้ายเป็น horizontal nav
+10. Sidebar ซ้าย/ขวาไม่มีพื้นหลัง ขอบ หรือเงาหนัก
+11. Feed กลางเป็น Social Network มากขึ้น: Composer, Reels, Post Card, Actions, Comments
+12. ลดไอคอนซ้ำด้วย CSS และโครง icon renderer เดิมที่ซ่อน fallback
+
+สถานะทดสอบ:
+- PHP lint: ผ่าน
+- JS syntax: ผ่าน
+- CSS brace balance: ผ่าน
+- ZIP test: ผ่าน
+
+คำแนะนำหลังติดตั้ง:
+- ล้าง cache ทุกชั้น
+- ตรวจว่า data-ui-version="4.2.187"
+- ถ้ายังเห็นของเก่า ให้ตรวจว่าไฟล์ assets/community-clean-ui-reset.css ถูกโหลดจริงหรือไม่

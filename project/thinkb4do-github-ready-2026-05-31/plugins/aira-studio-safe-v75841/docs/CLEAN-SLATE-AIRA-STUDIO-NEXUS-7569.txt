@@ -1,0 +1,32 @@
+AiRA Studio v7.5.6.9 — AiRA Studio Nexus Engine
+
+เป้าหมาย
+- เพิ่มประสิทธิภาพและเชื่อมต่อความสัมพันธ์ทั้ง AiRA Studio ไม่ใช่เฉพาะ code block เดี่ยว
+- ทุกปุ่ม ทุกคำสั่ง ทุก API ทุก state ทุก panel ต้องรู้หน้าที่และมี feedback/QC
+
+สิ่งที่เพิ่ม
+1) ปุ่มใหม่ใต้ Code block: AiRA Nexus
+2) แผง AiRA Studio Nexus Engine พร้อม Nexus %
+3) Studio Relationship Map สำหรับ Header/Admin bar, Chat Log, Composer, Code block, Preview, Debug, Package, API Center, Memory/Rooms, Settings และ Docs/Handoff
+4) Universal Action Registry: action → handler → feedback → error/retry → permission → test path
+5) Command Router Contract: intent, mode, source, latest-command anchor, prompt digest และ fallback
+6) API Connector Mesh: endpoint, method, auth/key, request/response shape, timeout, retry, status render, log และ Test Connection
+7) State/Data Sync Contract: input → validation → state/local/server → render → export/package → rollback
+8) Performance/Safety/QC Matrix: lazy panel, content-visibility, AbortController, debounce/throttle, nonce/capability/sanitize/escape/privacy/rollback
+
+ของเดิมยังอยู่
+- System Connection Engine
+- Beyond Limit
+- Universal Platform
+- Code Quality
+- Performance Builder
+- Humanity Value / Mission
+- Dev Master
+- Success Loop
+- Preview / Debug / Package / Upgrade
+
+วิธีทดสอบ
+- สร้าง code block แล้วกด AiRA Nexus
+- ตรวจว่ามี Nexus %, matrix, จุดที่ผ่าน/ยังขาด
+- กดแล้ว Composer/API ต้องส่ง prompt แบบย่อแต่ครบ ไม่ค้าง และมีสถานะ feedback
+- ทดสอบบนมือถือ/แท็บเล็ต/เดสก์ท็อป พร้อม hard refresh หลังติดตั้ง

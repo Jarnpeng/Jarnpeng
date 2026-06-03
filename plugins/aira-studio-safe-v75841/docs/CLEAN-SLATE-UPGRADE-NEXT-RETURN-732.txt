@@ -1,0 +1,22 @@
+AiRA Studio v7.3.2 Clean Slate Upgrade Next Return
+
+เป้าหมาย:
+- คืนปุ่ม อัปเกรด และ Next ให้เห็นชัดใต้ code block อีกครั้ง
+- รักษาปุ่ม Copy / Download / Result / File เดิมจาก v7.3.1
+- ให้ WordPress Plugin code block มีทั้งปุ่มในแถวล่างและใน file row เพื่อกดต่อได้ง่าย
+
+สิ่งที่เพิ่ม/แก้:
+1. เพิ่มปุ่ม อัปเกรด ในแถวปุ่มใต้ code block เมื่อโค้ดมี <?php และ Plugin Name
+2. เพิ่มปุ่ม Next ในแถวปุ่มใต้ code block เมื่อโค้ดมี <?php และ Plugin Name
+3. ปุ่ม Next ยังต้องใช้ช่องพิมพ์ข้อความสั้น ๆ ก่อนกด เพื่อให้ระบบรู้ว่าจะปรับต่ออะไร
+4. เมื่อกด Next ระบบส่งบริบทโค้ด เวอร์ชัน ไฟล์ และคำสั่งสั้น ๆ ให้ AiRA ทำงานต่อแบบ loop ได้
+5. เมื่อกดอัปเกรด ระบบยังถามยืนยันและไม่ Activate อัตโนมัติ เพื่อความปลอดภัย
+
+ของเดิมยังอยู่:
+- Code block แรก
+- Copy / Download / Result / File
+- File panel: Module / Component / Theme / Widget / REST / AJAX / Security
+- Install Plugin
+- Upgrade backend + backup
+- Next Loop จนกว่าจะพอใจ
+- Soft dots ใต้ Prompt Processing

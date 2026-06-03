@@ -1,0 +1,33 @@
+Thinkb4do Community Members v4.2.255
+Identity + Equal Feed Polish
+
+ทวนโจทย์:
+- จุดที่ขีดแดงหมายถึงขนาด hero / tabs / ข้อมูลซ้าย / ฟีดสมาชิกขวายังไม่อยู่แกนเดียวกัน
+- ฟีดสมาชิกต้องใกล้การ์ดฟีดหลักมากขึ้น
+- ทุกหน้าในพื้นที่สมาชิกต้องมีเอกลักษณ์ Thinkb4do เดียวกัน
+
+สิ่งที่แก้:
+1) เพิ่ม identity layer ใหม่: tb4c-member-identity-v4255
+2) ล็อกความกว้างหลักทั้งหน้าเป็นแกนเดียวกัน: hero, tabs, overview split
+3) ปรับ overview เป็น 2 คอลัมน์ชัดเจน: ซ้ายข้อมูลสมาชิก 300px / ขวาฟีด 760px / gap 18px
+4) ปรับการ์ดฟีดสมาชิกให้ใกล้ฟีดหลัก:
+   - การ์ดเท่ากัน
+   - media เต็มความกว้างการ์ด
+   - action row แบ่งช่องเท่ากัน
+   - ปุ่มแก้ไข/ลบเป็นไอคอน compact
+   - ซ่อน summary/comment preview ที่ซ้ำ
+5) ใส่เอกลักษณ์ทุกแท็บใน member area:
+   - overview
+   - posts
+   - comments
+   - saved
+   - following
+   - products
+   - settings
+6) ปรับ responsive: desktop / tablet / phone
+7) PHP lint ผ่านทุกไฟล์
+
+สถานะ:
+- ใช้งานได้แล้วในระดับ CSS/markup override ของปลั๊กอิน
+- ไม่แก้ฐานข้อมูล
+- ไม่ลบระบบโพสต์/โหลดเพิ่มเติม/ตั้งค่าเดิม

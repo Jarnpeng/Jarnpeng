@@ -1,0 +1,14 @@
+Thinkb4do Community v4.2.185 — Desk / Phone UI UX
+
+สิ่งที่ปรับ:
+- เพิ่ม final CSS layer สำหรับ Desktop และ Phone แยกกัน
+- Desktop: คงตำแหน่งซ้าย/กลาง/ขวา, ลดน้ำหนักเงา, ทำ Feed กลางอ่านง่ายขึ้น, ปรับ Composer/Reels/Post actions ให้เป็น Social Network มากขึ้น
+- Phone: เมนูซ้ายเป็นแถบเลื่อนแนวนอน, Feed เต็มจอ, ซ่อน sidebar ขวา, ลดปุ่มที่ซ้ำและทำปุ่มใต้โพสต์ไม่ล้น
+- เอาช่องค้นหาใน Feed ออกต่อเนื่อง เพราะค้นหาซ้ำกับส่วนหัว
+- ไม่เพิ่มไลบรารีใหม่ และไม่เพิ่ม JS หนัก
+
+ตรวจสอบก่อนส่งมอบ:
+- PHP lint ผ่าน
+- JS syntax check ผ่าน
+- CSS brace balance ผ่าน
+- ZIP test ผ่าน

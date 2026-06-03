@@ -1,0 +1,18 @@
+Thinkb4do Theme Core v2.0.7 — Mobile Header Popup Clamp Fix
+
+จุดที่แก้:
+1. บังคับเมนูสามขีดให้เปิดชิดใต้ส่วนหัวสีขาวจริง ไม่ถูกดันลงใต้แถบเขียวสถานะเว็บไซต์
+2. ย้ายและล็อก mobileMenuOverlay แบบ fixed + ported เพื่อไม่ให้โดน header/container/transform/contain ทำให้ตำแหน่งเพี้ยน
+3. กันเมนูมือถือไม่ล้นซ้าย/ขวา ด้วย 100vw, max-width 100vw, overflow-x hidden และ box-sizing border-box
+4. จัด notification dropdown และ user dropdown บนมือถือให้ชิดใต้ส่วนหัวเดียวกัน และ clamp ขอบซ้าย/ขวา 12px
+5. เพิ่ม JS controller ใหม่ tb4-mobile-header-popup-clamp-v207.js ที่จับ hamburger ด้วย priority สูงกว่า script เดิมและแก้ double toggle จาก touch/click
+6. เพิ่ม CSS ไฟล์ใหม่ tb4-mobile-header-popup-clamp-v207.css และ inline fallback ใน wp_footer เพื่อกัน cache/optimizer ถือไฟล์เก่า
+7. อัปเดตเวอร์ชันธีมเป็น 2.0.7 เพื่อบังคับโหลด asset ใหม่
+
+ทดสอบก่อนส่ง:
+- PHP lint ผ่านทุกไฟล์
+- JS syntax check ผ่านทุกไฟล์
+- ZIP integrity ผ่าน
+
+หมายเหตุ:
+ถ้าติดตั้งแล้วหน้าตายังเหมือนเดิม ให้ล้าง cache plugin/CDN/browser แล้วเปิด URL ด้วย ?v=207

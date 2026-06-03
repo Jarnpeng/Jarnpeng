@@ -1,0 +1,39 @@
+AiRA Studio v7.1.7 — Clean Slate Context Communication Reader
+
+สิ่งที่เพิ่ม:
+1) เพิ่ม Context Reader อ่านบริบททุกรูปแบบแบบ privacy-safe ก่อนส่งคำถาม
+   - ข้อความปัจจุบัน
+   - ประวัติห้องล่าสุดแบบย่อ
+   - โค้ด / WordPress / UI UX / ลิงก์ / ไฟล์ / ภาพ / เสียง / ตัวเลข
+   - คำสั่งต่อเนื่อง เช่น ต่อ, เอาเลย, แก้ต่อ, จากไฟล์ล่าสุด
+
+2) คำนวณการสื่อสารผู้ถาม
+   - language
+   - content forms
+   - intent
+   - continuity
+   - urgency
+   - clarity
+   - complexity
+   - communication score
+
+3) เพิ่ม Context chips เหนือ Composer
+   - แสดงคะแนนและรูปแบบบริบทแบบไม่รก
+   - กดเพื่อเปิด Workplace · context ได้
+
+4) เพิ่ม Context panel / Export Context TXT
+   - ดูรายละเอียดการคำนวณ
+   - ส่งออกเป็น TXT เพื่อ debug ระบบได้
+
+5) Privacy rule
+   - ไม่เดาเพศ อายุ อาชีพ สุขภาพ ศาสนา การเมือง หรือข้อมูลอ่อนไหว
+   - ใช้เฉพาะข้อมูลที่ผู้ใช้ให้มาในบริบทงานเท่านั้น
+
+ของเดิมยังอยู่:
+- Composer ล่าง
+- Menu + popup
+- Code block first + Result toggle
+- Image click popup + save/download
+- Voice / Rooms / Artifact / Settings
+
+Settings | โดย Thinkb4do | ดูรายละเอียด

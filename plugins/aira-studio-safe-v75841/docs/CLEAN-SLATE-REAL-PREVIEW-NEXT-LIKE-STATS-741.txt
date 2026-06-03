@@ -1,0 +1,12 @@
+AiRA Studio v7.4.1 Clean Slate Real Preview Next Like Stats
+
+เพิ่มจาก v7.4.0:
+1) Preview แสดงหน้าจริงจากการเขียนโค้ดก่อนเป็นแท็บแรก
+2) ดึง HTML จาก echo / print / return / heredoc ใน PHP code block เพื่อแสดง UI จริงที่เขียนไว้โดยตรง
+3) หากไม่มี HTML ตรง ๆ ระบบประกอบหน้าจาก Plugin Header, shortcode, menu, REST/AJAX และ component ที่ตรวจพบ
+4) Preview Next ยังพิมพ์คำสั่งแล้วส่งกลับไปให้ AiRA ปรับปรุง code block ทันที
+5) เพิ่มปุ่มไอคอนถูกใจใต้ข้อความผู้ถาม/ผู้ตอบ เพื่อเก็บสถิติข้อความที่สื่อสารดีหรือน่าสนใจ
+6) เพิ่ม Workplace > สถิติถูกใจ และ Export Interest TXT
+7) เก็บสถิติทั้ง localStorage และ server option สำหรับผู้ใช้ที่ล็อกอิน admin โดยจำกัดข้อมูลเป็น snippet เพื่อไม่ให้เก็บข้อความยาวเกินจำเป็น
+
+สถานะ: พร้อมอัปโหลดทดสอบบน WordPress staging ก่อนใช้งานจริง

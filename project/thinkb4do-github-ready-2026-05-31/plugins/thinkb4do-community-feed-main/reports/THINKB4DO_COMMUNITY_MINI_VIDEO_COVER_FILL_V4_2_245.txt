@@ -1,0 +1,7 @@
+THINKB4DO Community Feed Main v4.2.245
+
+Patch summary:
+- Changed mini video behavior from contain-style display to cover/fill display.
+- Crops/scales embedded black bars so the mini popup looks fuller on mobile.
+- Keeps the mini video control bar separate and visible.
+- Keeps previous media popup polish and scroll guards.

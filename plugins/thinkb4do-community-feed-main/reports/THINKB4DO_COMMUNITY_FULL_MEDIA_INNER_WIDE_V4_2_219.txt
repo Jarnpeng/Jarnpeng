@@ -1,0 +1,5 @@
+Thinkb4do Community v4.2.219
+- ขยายรูป/วิดีโอให้เต็มการ์ดมากขึ้น
+- ลด inner gutter ของการ์ดลงอีกเล็กน้อย
+- ขยาย composer ความคิดเห็นให้กว้างขึ้นตาม inner card
+- คง mood and tone ของ feed เดิมไว้

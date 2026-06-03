@@ -1,0 +1,32 @@
+AiRA Studio v7.5.6.0 — Codeblock Dev Master Engine
+
+Goal
+- Upgrade every code block from a passive code display into a system-development cockpit.
+- Aim for higher discipline than generic assistant code answers by requiring architecture, value, security, QC, preview, docs, and runnable code.
+
+Added
+1. New Code Block button: Dev Master
+2. New visible panel: Codeblock Dev Master Engine
+3. Dev Master score with dimensions:
+   - Architecture / File Roles
+   - State / Data Flow
+   - API / Connector Flow
+   - UI Feedback / Button Contract
+   - Security / Permission / QC
+   - Preview / Test / Debug
+   - Responsive / Accessibility
+   - Human Value Map
+   - Docs / Handoff
+   - Complete Runnable Code
+4. Dev Master prompt generator that forces full runnable code when possible.
+5. Human benefit remains mandatory for every button, command, module, and risky action.
+
+Safety
+- Does not claim impossible access or automatic real server execution.
+- Keeps preview/QC/preinstall safeguards.
+- Preserves existing buttons and previous Code Block engines.
+
+Test
+- JS syntax: node --check assets/js/aira-studio-clean-slate.js
+- PHP lint: php -l aira-studio.php
+- ZIP integrity: unzip -t generated package

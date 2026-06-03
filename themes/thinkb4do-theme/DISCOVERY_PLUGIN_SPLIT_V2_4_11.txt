@@ -1,0 +1,15 @@
+Thinkb4do Theme Core v2.4.11
+Discovery Plugin Split
+
+สิ่งที่ปรับ:
+- แยกหน้า Discovery ออกจากธีมเป็นปลั๊กอิน Thinkb4do Discovery
+- front-page.php เปลี่ยนเป็น bridge เรียก shortcode [thinkb4do_home_discovery_feed]
+- ถ้าไม่มีปลั๊กอิน จะแสดงข้อความแจ้งให้ติดตั้ง Thinkb4do Discovery แทนการแบก logic หน้า Discovery ไว้ในธีม
+- เมนู Discovery / ชุมชน / ผลิตภัณฑ์ ยังอยู่ครบตามโครงเดิม
+- ธีมยังคงทำหน้าที่ Body layout / Footer / header fallback ตามเดิม
+
+วิธีใช้:
+1) อัปโหลด theme v2.4.11
+2) อัปโหลดปลั๊กอิน thinkb4do-discovery-v1.0.0.zip
+3) Activate ทั้งคู่
+4) หน้าแรก/Discovery จะดึงหน้าจากปลั๊กอินโดยอัตโนมัติ

@@ -1,0 +1,6 @@
+Thinkb4do Community Feed Main v4.2.272
+- เชื่อมคลิกอวาตาร์และชื่อ user ไปยังหน้าสมาชิกผ่าน Link Bridge
+- Feed Main ยังไม่สร้าง/ไม่โหลดหน้าสมาชิกเอง เพื่อลดระบบซ้อนกับปลั๊กอินสมาชิกแยก
+- tb4cf_get_member_link() จะค้นหาหน้าสมาชิกที่มีอยู่จริงก่อน เช่น member-area, members, profile
+- ถ้าไม่พบหน้าจริง จะ fallback ไป /member-area/?tb4c_user=USER_ID เพื่อให้ปลั๊กอินสมาชิกแยกรับต่อได้
+- เพิ่ม filter สำหรับระบบสมาชิกแยก: tb4cf_member_base_url, tb4cf_member_page_slug_candidates, tb4cf_member_user_query_arg, tb4cf_member_link

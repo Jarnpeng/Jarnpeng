@@ -1,0 +1,16 @@
+Thinkb4do Community v4.2.184 — Final Social Feed Reset
+
+แก้ตามโจทย์ล่าสุด:
+- หยุดแต่งซ้อนหลายไฟล์: ลด active CSS patch จาก v4.2.179-183 เหลือ final layer ตัวเดียว
+- ล็อกตำแหน่งซ้าย / กลาง / ขวา ไม่ขยับ layout ใหม่
+- เอาไอคอน/ชื่อซ้ำของ sidebar ซ้ายออกจากหัวซ้ำ
+- เอาช่องค้นหาใน Feed กลางออก เพราะซ้ำกับ header search
+- ปุ่มแก้ไข / ลบ อยู่ขวาบนของการ์ดโพสต์
+- Tag/context chips อยู่ใต้คำอธิบาย ก่อนภาพหรือวิดีโอ
+- Sidebar ขวาโปร่ง ไม่มีเส้นคั่น/พื้นหลัง/เงาหนัก
+- Feed กลางและ Reels ใช้โครง social network เบา
+
+ไฟล์สำคัญ:
+- thinkb4do-community.php
+- templates/community-content.php
+- assets/community-final-social-feed-reset.css

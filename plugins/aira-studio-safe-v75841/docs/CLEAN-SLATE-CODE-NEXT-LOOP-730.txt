@@ -1,0 +1,11 @@
+AiRA Studio v7.3.0 Clean Slate Code Next Loop Until Satisfied
+
+เพิ่มระบบ Next Loop ใต้ code block สำหรับโค้ด WordPress Plugin:
+- ผู้ใช้พิมพ์คำสั่งสั้น ๆ ก่อนกด Next เช่น ปรับ UI ต่อ / แก้บั๊กต่อ / เพิ่มระบบนี้
+- กด Next ต่อได้หลายรอบ ระบบจะส่งบริบทไฟล์ เวอร์ชัน โค้ด สถานะ install/upgrade และส่วนประกอบที่เกี่ยวข้องให้ AiRA ปรับต่อ
+- Prompt ภายในบังคับให้ตอบเป็นผลลัพธ์ที่นำไปใช้ต่อได้จริง และถ้าเป็น WordPress ต้องส่งโค้ดเต็มใน fenced code block เพื่อให้ปุ่ม Install/Upgrade/Next ทำงานต่อได้
+- เพิ่มสถานะรอบที่กำลังปรับ เช่น รอบที่ 1, รอบที่ 2
+- เพิ่มปุ่ม พอใจแล้ว เพื่อทำเครื่องหมายว่าจบรอบปรับนี้ แต่ยังสามารถพิมพ์แล้วกด Next ต่อได้หากต้องการ
+- ของเดิมยังอยู่: Code block แรก, Result toggle, File relationship, Install Plugin, Upgrade, Version line, Module/Component/Theme/Widget/REST/AJAX/Security relationship
+
+ตรวจโครงสร้าง: PHP syntax ผ่าน, JavaScript syntax ผ่าน, ZIP package พร้อมติดตั้งทับใน WordPress

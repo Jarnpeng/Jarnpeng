@@ -1,0 +1,29 @@
+Thinkb4do Community Feed Main v4.2.266 — Comment UI/UX Repair
+
+เป้าหมาย:
+- แก้หน้าแสดงความคิดเห็น/Single Post ที่ UI/UX เพี้ยนหลังปรับให้เท่าหน้าฟีด
+- คงความกว้างหลักเท่าหน้าฟีด 760px
+- ลดการ override กว้างเกินจำเป็นที่ทำให้ปุ่มกลับฟีด หัวโพสต์ action row และกล่องคอมเมนต์ดูผิดตำแหน่ง
+
+สิ่งที่แก้:
+1) ปรับ single-community-post.php
+   - เปลี่ยน critical CSS เป็น v4.2.266
+   - จัดการ์ด Single/Comment เป็น card เดียวเท่าฟีด
+   - ปรับ Back Feed ให้เป็นปุ่ม pill ไม่ยืดเต็มบรรทัด
+   - ปรับหัวโพสต์ให้ใช้ grid 3 ช่อง: avatar / meta / owner tools
+   - ปรับ action row และ comment section ให้อยู่ในขอบการ์ดเดียวกัน
+   - ปรับช่องพิมพ์ความคิดเห็นให้ไม่ยืดหรือซ้อนบนมือถือ
+
+2) เพิ่ม CSS patch v4.2.266
+   - community-clean-ui-reset.css
+   - community-critical.css
+   - community-runtime.css
+
+3) อัปเดต runtime class และ data-ui-version
+   - data-ui-version="4.2.266"
+   - เพิ่ม tb4c-v4266-comment-ui-repair
+
+สถานะทดสอบ:
+- PHP lint: ผ่าน
+- JS syntax check: ผ่าน
+- ตรวจพบว่ายังคงโครงฟีดหลัก 760px และหน้าคอมเมนต์ใช้ความกว้างเดียวกัน

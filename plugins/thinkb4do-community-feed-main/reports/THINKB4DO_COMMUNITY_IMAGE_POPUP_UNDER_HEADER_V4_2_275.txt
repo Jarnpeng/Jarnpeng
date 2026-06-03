@@ -1,0 +1,17 @@
+Thinkb4do Community Feed Main v4.2.275
+
+ปรับ popup รูปภาพให้เป็นพื้นหลังดำเต็มจอ โดยเริ่มแสดงใต้ส่วนหัวเมนู/header จริงของเว็บ ไม่ทับเมนูด้านบน
+
+สิ่งที่แก้ไข:
+- เพิ่ม CSS class tb4c-v4275-image-popup-under-header
+- เพิ่มตัวแปร --tb4c-popup-under-header-top สำหรับคำนวณจุดเริ่มต้น popup ใต้ header
+- เพิ่ม JS ตรวจจับความสูง/ตำแหน่ง header และ WordPress admin bar แบบ runtime
+- บังคับ lightbox ให้ full-width/full-height เฉพาะพื้นที่ใต้ header
+- พื้นหลัง popup เป็นสีดำเต็มพื้นที่
+- รูปภาพใช้ object-fit: contain เพื่อไม่ถูกครอป
+- คงระบบกดภาพ popup จาก v4.2.274 และ drag-to-scroll guard เดิม
+
+สถานะตรวจสอบ:
+- Feed Main ยังคงไม่รวมหน้าแสดงความคิดเห็นและหน้าสมาชิก
+- ลิงก์สมาชิกและคอมเมนต์ยังคงเชื่อมไว้
+- ไม่มีการเพิ่ม backend/ข้อมูลหลังบ้านให้แสดงฝั่งหน้าเว็บ

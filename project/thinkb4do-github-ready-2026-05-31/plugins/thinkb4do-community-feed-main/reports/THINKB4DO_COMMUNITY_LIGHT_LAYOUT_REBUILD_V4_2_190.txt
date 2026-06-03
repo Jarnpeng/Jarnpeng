@@ -1,0 +1,7 @@
+Thinkb4do Community v4.2.190
+
+- Rebuilt the UI/UX to feel lighter and more balanced.
+- Kept left / center / right layout stable on desktop.
+- Refined header, composer, reels, feed cards, action row, and comment preview.
+- Improved spacing and visual rhythm on phone.
+- Reduced heavy surfaces and kept a softer, cleaner social-network presentation.

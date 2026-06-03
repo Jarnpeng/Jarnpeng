@@ -1,0 +1,20 @@
+AiRA Studio v7.2.6 Clean Slate Real Image Diagnostics
+
+Goal:
+- Separate real API-generated images from local SVG fallback previews.
+- Show the reason when a real image does not appear.
+- Keep a visible image card in chat so the UI never looks empty.
+
+Changes:
+1. Image cards now label real API images as “ภาพจริงจาก API”.
+2. Fallback preview cards are labeled “ภาพตัวอย่างสำรอง” and show the API failure reason.
+3. OpenAI image requests use current Image API parameters for GPT image models: output_format, background, moderation, quality, size.
+4. Universal API Hub is not blindly sent to OpenAI Images API unless the key shape looks like OpenAI.
+5. Base64 images use the correct MIME type from output_format / API body.
+6. Image preview popup shows real/fallback status and debug detail.
+
+Real image requirements:
+- OpenAI API key must be configured.
+- Organization may need API verification for GPT image models.
+- Model/size/format must be supported.
+- WordPress uploads directory must be writable if saving to uploads is desired.

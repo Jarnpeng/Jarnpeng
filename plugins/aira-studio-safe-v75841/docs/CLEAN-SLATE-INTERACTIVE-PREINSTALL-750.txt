@@ -1,0 +1,15 @@
+AiRA Studio Clean Slate v7.5.0 — Interactive Pre-install Test
+
+เพิ่มระบบทดลองกดก่อนติดตั้งจริง:
+- Authorized Preview ยังต้องผ่านสิทธิ์ผู้ใช้ WordPress ก่อนเปิด
+- เพิ่ม Interactive Pre-install Test ใน Sandbox
+- ผู้ใช้สามารถกดปุ่มจริงในหน้า Preview, เติมข้อมูลจำลอง, และกดทดสอบปุ่มทั้งหมดได้ก่อน Package/Install/Upgrade
+- Install/Upgrade/Package ถูก gate ให้ต้องผ่าน Preview + Click Test ก่อน เพื่อช่วยลดการปรับซ้ำ
+- เพิ่ม CSS override ภายใน Sandbox เพื่อแก้สีจมและปุ่ม Save Settings/ปุ่มใหญ่ที่ล้นพื้นที่
+- ลด composer hint ไม่ให้เบียดช่องพิมพ์บนมือถือ
+
+ข้อจำกัดด้านความปลอดภัย:
+- Sandbox ไม่ execute PHP ดิบ
+- ไม่เขียนฐานข้อมูล
+- ไม่ Activate plugin อัตโนมัติ
+- ใช้สำหรับตรวจ UI, Flow, Form, ปุ่ม และ static/server readiness ก่อนส่งติดตั้ง

@@ -1,0 +1,16 @@
+Thinkb4do Community v4.2.225
+
+Goal
+- Remove the remaining card look from comment items.
+- Make the comments section cleaner and closer to the feed mood and tone.
+
+Changes
+1. Added body class tb4c-v42225-flat-comment-thread-body.
+2. Flattened comment items: no card background, no shadow, no rounded bubble container.
+3. Styled comment avatar, meta line, owner tools and action chips to be lighter and cleaner.
+4. Styled replies with a simple left guide line instead of a boxed card look.
+5. Kept the comment form from the previous pass, including the balanced circular send button.
+
+Expected result
+- Comment thread no longer looks like stacked cards.
+- Cleaner and prettier comment section.

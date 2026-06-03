@@ -1,0 +1,18 @@
+Thinkb4do Community Feed Main v4.2.238
+
+เป้าหมาย:
+- แก้ปัญหา “ตอนแรกดี พอคลิกแล้วพัง” บนมือถือ
+- ล็อกโครงโพสต์ ฟีด โหวต และ action row ไม่ให้ถูก CSS/JS เก่าทับหลังคลิก
+- คงการแยก Feed Main ออกจากปลั๊กอินสมาชิก/Sidebar เหมือน v4.2.237
+
+สิ่งที่เพิ่ม:
+1) Click Layout Stable Guard ใน CSS/JS
+2) Critical inline CSS ในหน้า Community และหน้า Single Post
+3) Runtime normalizer หลัง click/tap/AJAX/resize/pageshow
+4) event.stopPropagation เฉพาะ action ที่ legacy JS จัดการแล้ว เช่น poll, react, comment action, delete, copy
+5) ปรับ single post layout ให้เป็น block/one-column บนมือถือ
+
+สถานะ:
+- พร้อมทดสอบบน WordPress จริง
+- PHP syntax ผ่าน
+- JS syntax ผ่าน Node.js

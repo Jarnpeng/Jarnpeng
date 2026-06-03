@@ -1,0 +1,13 @@
+AiRA Studio v7.3.9 Clean Slate Live Progress Real Preview
+
+สิ่งที่เพิ่ม:
+1) Live Dev QC แสดงวงกลมเปอร์เซ็นต์แยกแต่ละ checkpoint เช่น Overall, Plugin Header, Nonce, Capability, Sanitize/Escape, Cleanup และ Risky Function
+2) เมื่อกด Fix สด ระบบแสดงสถานะกำลังแก้บั๊กสดแบบพัฒนาไปเรื่อย: วิเคราะห์ → แก้ → ตรวจซ้ำ → ส่ง code block ใหม่
+3) ก่อนติดตั้ง/อัปเกรด WordPress plugin ระบบบังคับเปิดหน้าจริงหรือ Pre-install Sandbox ก่อน 1 รอบ ผู้ใช้ต้องเห็น Preview ก่อนแล้วค่อยกดติดตั้ง/อัปเกรดอีกครั้ง
+4) ก่อนโหลดแพ็ก ZIP ระบบเปิด Preview/Live Debug ก่อน เพื่อให้ส่งมอบไฟล์หลังเห็นหน้าจริงแล้ว
+5) แก้บั๊ก package report ที่ readiness/missing อาจขึ้น undefined ใน docs/live-dev-qc.txt
+
+ขอบเขตความจริงก่อนติดตั้ง:
+- แสดง UI/flow/HTML/shortcode/admin screen mock จากโค้ดจริงใน sandbox
+- ตรวจ static/server capability โดยไม่ execute PHP ดิบ ไม่เขียนฐานข้อมูล และไม่ activate plugin อัตโนมัติ
+- runtime จริง 100% ต้องติดตั้งบน staging site แล้วทดสอบก่อนเปิดใช้จริง

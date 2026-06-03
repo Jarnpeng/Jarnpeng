@@ -1,0 +1,14 @@
+Thinkb4do Theme Core v2.4.5
+Product Plugin Split
+
+สิ่งที่ปรับ:
+- แยกระบบผลิตภัณฑ์ออกไปอยู่ในปลั๊กอิน Thinkb4do Products
+- Theme จะไม่ลงทะเบียน tb4_product และ tb4_product_cat ซ้ำ หากปลั๊กอินเปิดใช้งานอยู่
+- page-products.php เปลี่ยนเป็น bridge เรียก shortcode [thinkb4do_products]
+- Header และลิงก์ /products/ ยังใช้งานต่อได้ เพราะปลั๊กอินเป็นเจ้าของ archive /products/
+
+วิธีใช้:
+1. อัปโหลด theme v2.4.5
+2. อัปโหลดปลั๊กอิน thinkb4do-products-v1.0.0.zip
+3. Activate ทั้งคู่
+4. ไปที่ Settings > Permalinks แล้วกด Save Changes 1 ครั้ง หาก /products/ ยังไม่ขึ้น

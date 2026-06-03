@@ -1,0 +1,18 @@
+Thinkb4do Community v4.2.229
+
+Goal
+- Add reliable edit/delete icons for respondent comment actions.
+- Move post author edit/delete tools back to the far-right standard position.
+- Remove the straight top guide/border line marked in red.
+
+Changes
+1. Added body class tb4c-v42229-post-comment-action-fix-body.
+2. Moved single post owner tools out of the author text row into the post-head right slot.
+3. Added inline SVG icons for comment edit/delete so they display without relying on icon font loading.
+4. Forced comment owner actions to stay in the same row as commenter name/time.
+5. Removed top border/pseudo-line from the single card and suppressed comment form dotted/bottom lines.
+
+Expected result
+- Post edit/delete returns to the far-right of the post header.
+- Commenter edit/delete icons show clearly next to the respondent row.
+- The red-marked straight line/top card guide no longer appears.

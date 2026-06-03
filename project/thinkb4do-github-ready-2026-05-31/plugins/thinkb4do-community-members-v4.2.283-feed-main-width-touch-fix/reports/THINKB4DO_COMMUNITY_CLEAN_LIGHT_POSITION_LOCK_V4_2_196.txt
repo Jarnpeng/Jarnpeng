@@ -1,0 +1,25 @@
+Thinkb4do Community v4.2.196 — Clean Light Position Lock
+
+โจทย์จากผู้ใช้:
+- รื้อ UI/UX ให้สะอาด
+- ทำให้เบา
+- คงตำแหน่งเดิมไว้ก่อน
+
+สิ่งที่ปรับ:
+1. คง grid หลักเดิม: ซ้าย 190-220px / กลาง 700px / ขวา 220-260px
+2. เปลี่ยน class หลักเป็น tb4c-v42196-clean-light-position-lock เพื่อให้ CSS ใหม่ทำงานชัดเจน
+3. ลดเงา สีพื้นหลังไล่เฉด และกรอบหนักให้เบาลง
+4. ซ่อนส่วนซ้ำ/รก: stats บนหัวฟีด, search ซ้ำ, post context tags, reaction summary, view chip, reel action ซ้ำ, follow button บนการ์ด
+5. ย่อ Composer, Reels และ Post Card ให้ compact ขึ้นโดยไม่ย้ายตำแหน่ง
+6. ปรับ mobile ให้คงลำดับเดิมแต่ลดความแน่นของปุ่มและการ์ด
+7. เพิ่ม body/app marker ผ่าน JS สำหรับ cache bust และ modal style ใหม่
+
+สถานะตรวจ:
+- PHP syntax: ต้องผ่านก่อนส่งมอบ
+- JavaScript syntax: ต้องผ่านก่อนส่งมอบ
+- CSS parse: ต้องผ่านก่อนส่งมอบ
+- ZIP install package: ต้องแตกไฟล์ได้ปกติ
+
+System Closer:
+- รอบนี้จบตามโจทย์เฉพาะ “สะอาด เบา คงตำแหน่ง”
+- ยังไม่ได้ปรับ UX flow ใหม่หรือย้าย layout เพราะผู้ใช้สั่งให้คงตำแหน่งไว้ก่อน

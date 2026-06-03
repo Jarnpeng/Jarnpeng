@@ -1,0 +1,26 @@
+AiRA Studio v7.4.5 Clean Slate Codeblock Comfort
+
+เป้าหมาย:
+- ลดปุ่มซ้ำใน Code Block เพื่อให้หน้าจอสบายตาและใช้งานง่ายขึ้น โดยยังรักษาการทำงานหลักครบ
+
+สิ่งที่ปรับ:
+1) Top actions เหลือชุดหลัก: คัดลอก / โหลด / Preview
+2) Bottom actions ไม่ซ้ำกับด้านบนแล้ว
+   - WordPress-related: ลองก่อนติดตั้ง / Debug สด / โหลดแพ็ก / อัปเกรด
+   - Code ทั่วไป: ตรวจโค้ด / อัปเกรด
+3) File row เหลือไฟล์หลัก + ติดตั้ง Plugin เมื่อโค้ดติดตั้งได้ + สถานะ WP พร้อม Preview
+4) Next row กระชับขึ้น ใช้เป็นจุดเดียวสำหรับสั่งปรับต่อทันที
+5) เพิ่ม CSS comfort mode ให้ปุ่มเล็กลง เส้นขอบนุ่มขึ้น และ layout ไม่แน่นเกินไปบนมือถือ
+
+ของเดิมยังอยู่:
+- Preview จากโค้ดจริง
+- Preview Next
+- Live Debug / Fix สด
+- โหลดแพ็ก ZIP สำหรับ WordPress
+- Install / Upgrade / Next loop
+- Authorized ID Sync
+- Admin bar lock
+
+สถานะ:
+- พร้อมทดสอบบน WordPress staging
+- ไม่ลบ capability / nonce / static QC / sandbox safety

@@ -1,0 +1,40 @@
+Thinkb4do Products v2.2.0 — App Store / Payment / Email Delivery Bridge
+
+ทบทวนโจทย์
+- เพิ่มเมนูผลิตภัณฑ์และเชื่อมระบบเข้ากับพื้นที่สมาชิก
+- เมื่อมีผลิตภัณฑ์ใหม่ ผู้ใช้สามารถเข้าไปซื้อฟีเจอร์ใหม่เพื่อเพิ่มประสิทธิภาพการใช้งาน
+- รองรับระบบชำระเงิน ส่งบิลทางอีเมล ส่งไฟล์ทางอีเมล หรือติดตั้งได้ทันที
+- คลิกแอพแล้วมีหน้าแอพปรากฏคล้ายระบบ Mac
+
+ไฟล์ที่เพิ่ม/แก้
+1. thinkb4do-products.php
+   - อัปเดตเวอร์ชันเป็น 2.2.0
+   - require include ใหม่: includes/class-tb4-products-app-store.php
+2. includes/class-tb4-products-app-store.php
+   - เพิ่ม App Store Bridge
+   - เพิ่ม App Orders
+   - เพิ่ม meta box App Store / Payment / Delivery
+   - เพิ่ม shortcode [thinkb4do_app_store]
+   - เพิ่ม AJAX tb4_products_app_order สำหรับสร้างรายการ ซื้อ/เปิดใช้งาน และส่งอีเมล
+   - เพิ่ม hook เชื่อม Thinkb4do Community member-area
+3. assets/css/tb4-products.css
+   - เพิ่ม UI App Store แบบ Mac-like: Dock, App Window, Live App Area, App Cards
+4. assets/js/tb4-products.js
+   - เพิ่มระบบคลิกแอพ เปิดหน้าต่างแอพ
+   - เพิ่มระบบซื้อ/เปิดใช้งานผ่าน AJAX
+   - รองรับเปิด run URL หรือ iframe preview
+5. README-THINKB4DO-PRODUCTS.txt
+   - อัปเดตคู่มือใช้งาน v2.2.0
+
+สถานะทดสอบ
+- php -l ผ่านทุกไฟล์ PHP ที่เกี่ยวข้อง
+- node --check ผ่าน
+- ระบบเดิมยังอยู่: Product Portal, Detail, Affiliate, Booking, Compare, Wishlist, Locked CTA, Team Settings
+
+ข้อจำกัดที่ตั้งใจทำเพื่อความปลอดภัย
+- ระบบชำระเงินจริงใช้ Checkout URL/Payment Link จากผู้ให้บริการภายนอกก่อน
+- หากเปิดล็อกไฟล์หลังชำระเงิน ระบบจะยังไม่ส่งไฟล์จนกว่าทีมงานยืนยัน
+- ถ้าเป็นสินค้าฟรี/เดโมหรือไม่ล็อกไฟล์ ระบบสามารถส่งลิงก์ไฟล์ทางอีเมลได้
+
+สถานะใช้งานจริง
+- ใช้งานได้แล้วในระดับ App Store + Payment Bridge + Email Order/Delivery

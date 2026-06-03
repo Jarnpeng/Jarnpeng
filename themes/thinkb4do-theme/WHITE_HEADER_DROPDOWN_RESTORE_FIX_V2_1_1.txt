@@ -1,0 +1,25 @@
+Thinkb4do Theme Core v2.1.1 — White Header Dropdown Restore Fix
+
+เป้าหมายการแก้:
+- แก้ปัญหา Dropdown เมนูมือถือหายหลัง v2.1.0
+- ให้เมนูสามขีด / โปรไฟล์ / แจ้งเตือน ชิดใต้ส่วนหัวสีขาว (#site-header)
+- ไม่ให้ dropdown ไปอ้างอิงหรือชิดแถบสีเขียวประกาศ
+- ลดโอกาสหน้าฝืดหรือค้างจาก event ซ้ำ
+
+ไฟล์ที่แก้หลัก:
+- functions.php: อัปเวอร์ชันเป็น 2.1.1 และ enqueue ไฟล์ v211
+- style.css: อัปเวอร์ชันธีมเป็น 2.1.1
+- js/tb4-mobile-white-header-clamp-v211.js: ตัวจัดตำแหน่ง popup/dropdown ใหม่
+- css/tb4-mobile-white-header-clamp-v211.css: CSS กันหาย กันล้น และชิดใต้หัวสีขาว
+
+จุดแก้สำคัญ:
+1. main.js เรียก alignMobileMenu ก่อน remove hidden; v2.1.0 จึงมีโอกาส return ก่อน ทำให้เมนูหาย/ไม่แสดง
+2. v2.1.1 เพิ่ม forcePrepare ให้ alignMobileMenu สามารถจัด layout ได้แม้ overlay ยัง hidden อยู่
+3. เมนูจะถูกจัดตำแหน่งจาก .header-inner / #site-header เท่านั้น ไม่บวกแถบเขียว
+4. เพิ่ม CSS fallback สำหรับ #mobileMenuOverlay.is-open, [aria-hidden="false" และ .tb4-v211-open
+5. ป้องกัน dropdown ล้นขอบมือถือด้วย left/right/width/max-width ที่คุมจริง
+
+การทดสอบที่ทำในแพ็ก:
+- PHP lint ผ่าน
+- JavaScript syntax ผ่าน
+- ZIP integrity ผ่าน

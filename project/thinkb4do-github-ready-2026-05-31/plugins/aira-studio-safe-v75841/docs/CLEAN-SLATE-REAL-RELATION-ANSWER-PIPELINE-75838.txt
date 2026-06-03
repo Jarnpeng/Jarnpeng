@@ -1,0 +1,41 @@
+AiRA Studio v7.5.8.38 Real Relation Answer Pipeline
+
+Purpose
+- แก้ปัญหาคำตอบที่ดูเหมือนแค่พูดชื่อระบบ แต่ยังไม่ได้เชื่อมความสัมพันธ์ภายใน/ภายนอกจริง
+- เพิ่ม Answer Relationship Pipeline ที่แยก candidate ก่อนตอบ: Internal Context, External Readiness, API Candidate, Local Direct, Rescue Candidate
+- คำตอบง่ายยังตอบตรงได้ทันที ส่วนคำถามระบบ/ภายนอกจะรอ API candidate นานขึ้นอย่างมีขอบเขต ก่อน fallback
+
+What changed
+1. JavaScript
+- Added buildRealRelationPipeline()
+- Added formatRealRelationPipeline()
+- Added relationshipPipelineFallbackAnswer()
+- Added boundedAnswerPromise()
+- sendChat now sends relationship_connector_context_75838 to backend
+- answer release no longer races local fallback too early for system/external questions
+- simple direct answers such as 7+7 still release fast
+
+2. PHP backend
+- Reads relationship_connector_context_75838
+- Prepends Real Internal/External Relationship Pipeline into command understanding context
+- Adds local_relation_pipeline_answer() fallback when providers are missing/fail but the task is about internal/external relationship or communication skill
+- System prompt now tells providers to separate internal/external/API/local/rescue candidates before answering
+
+Button safety
+- No data-action added
+- No data-action removed
+- No action router changed
+
+QC
+- PHP lint: passed
+- JavaScript syntax check: passed
+- ZIP integrity: passed
+- data-action total/unique unchanged from v7.5.8.37
+
+Test path
+1. Ask: 7+7
+   Expected: Prompt Processor -> complete -> 14 -> Processing Time Card
+2. Ask: ทำไมไม่เชื่อมภายในภายนอกจริง
+   Expected: answer explains internal context, external readiness, missing API keys/endpoints if any, and candidate selection
+3. Ask a system repair question
+   Expected: API candidate is preferred when ready; fallback explains the real relationship state instead of blank answer

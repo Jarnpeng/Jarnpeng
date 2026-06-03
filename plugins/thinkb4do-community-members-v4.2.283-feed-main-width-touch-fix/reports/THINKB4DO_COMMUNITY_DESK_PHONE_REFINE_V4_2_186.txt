@@ -1,0 +1,20 @@
+Thinkb4do Community v4.2.186 — Desk / Phone Refine + Duplicate Icon Cleanup
+
+ทวนโจทย์:
+- ทำ UI/UX Desk/Phone ให้ดีขึ้นกว่ารอบก่อน
+- ลดไอคอนซ้ำ
+- ไม่ขยับตำแหน่งซ้าย/กลาง/ขวาหลักอีก
+
+สิ่งที่ทำ:
+1. เพิ่ม final CSS layer: assets/community-desk-phone-refine.css
+2. เพิ่ม inline critical CSS ใน templates/community-content.php เพื่อให้เห็นผลเร็วและกัน cache บางส่วน
+3. อัปเดต data-ui-version เป็น 4.2.186
+4. ซ่อน .tb4c-icon-fallback และ fallback icon ซ้ำ ให้เหลือไอคอนหลักชุดเดียว
+5. ปรับ Desktop: feed card, composer, reels, post action, sidebar ให้เบาและเป็น social มากขึ้น
+6. ปรับ Phone: เมนูซ้ายเป็น chip scroll, feed เต็มจอ, action bar ไม่แน่น, reel เล็กลง
+7. คง position grid เดิม: 260px / 700px / 300px และ responsive เดิม
+
+สถานะ:
+- ไม่เพิ่มไลบรารีใหม่
+- ไม่เพิ่ม JS หนัก
+- พร้อมติดตั้งทับ v4.2.185

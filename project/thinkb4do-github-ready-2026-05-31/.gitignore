@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+.cache/
+
+# Dependencies / build outputs
+node_modules/
+vendor/
+dist/
+build/
+
+# WordPress runtime uploads/cache - do not commit site-generated files
+wp-content/uploads/
+wp-content/cache/
+
+# Archives generated locally
+*.zip
+*.tar.gz
+*.rar

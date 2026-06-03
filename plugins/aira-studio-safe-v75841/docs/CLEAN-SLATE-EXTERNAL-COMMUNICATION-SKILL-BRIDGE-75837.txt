@@ -1,0 +1,30 @@
+AiRA Studio v7.5.8.37 External Communication Skill Bridge
+
+ฐานที่ใช้: v7.5.8.36 Relationship Answer Selector
+
+สิ่งที่เพิ่ม:
+1) External System Bridge
+- เชื่อมความสัมพันธ์คำถามล่าสุดกับระบบภายนอกที่เกี่ยวข้อง เช่น Real API Center, Google CSE, GitHub, Custom Endpoint, v0 และ Universal API Hub
+- ตรวจ readiness ก่อนใช้ระบบภายนอก
+- ถ้ายังไม่มี key/endpoint จะไม่ปล่อยคำตอบว่าง แต่ตอบจาก internal context ก่อนและบอกข้อจำกัดอย่างซื่อสัตย์
+
+2) Communication Skill Evolution
+- พัฒนาทักษะการสื่อสารอัตโนมัติ
+- เลือกคำตอบที่ตรงคำถามล่าสุด ลดคำซ้ำ สั้นก่อน ชัดขึ้น และมีขั้นตอนถัดไป
+- หากผู้ใช้แจ้งว่าผิด/ไม่ตรง ให้เข้าสู่ calm repair mode: รับผิดสั้น ๆ แล้วแก้ตรงจุด
+
+3) Prompt Processor / Context Bridge
+- เพิ่ม external_system_bridge_context_75837 และ communication_skill_evolution_context_75837 ส่งเข้า backend
+- Prompt Processing card แสดง External Bridge + ทักษะสื่อสารใน Processing Time Card
+
+สิ่งที่ไม่แตะ:
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ Composer/Menu/Sidebar layout
+
+วิธีทดสอบ:
+- ถาม: 7+7 ต้องตอบ 14
+- ถาม: ทำไมไม่เชื่อมระบบภายนอก ต้องอธิบายว่าระบบภายนอกต้องผ่าน key/endpoint และไม่บล็อกคำตอบ
+- ถาม: เพิ่มทักษะการสื่อสาร ต้องตอบแบบชัด ตรง สั้นก่อน และเชื่อมกับระบบเดิม
+- เปิด Context Reader ควรเห็น External Bridge และ Communication Skill card

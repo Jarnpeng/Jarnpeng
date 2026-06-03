@@ -1,0 +1,29 @@
+AiRA Studio v7.2.8 Clean Slate Code Upgrade Version Line
+
+เป้าหมาย:
+- เพิ่มบรรทัดข้อมูล Version/ประเภทไฟล์/ความพร้อมเหนือ code block 1 บรรทัด
+- เพิ่มปุ่มอัปเกรดข้างปุ่มติดตั้ง Plugin สำหรับ code block ที่เป็น WordPress Plugin
+- เมื่ออัปเกรดสำเร็จ ระบบไม่พาออกจากแชท และพร้อมตอบคำถามต่อไปตามปกติ
+
+สิ่งที่เพิ่ม:
+1) Code Version Line
+   - แสดง Version จาก Plugin Header ถ้ามี
+   - แสดงประเภท เช่น WordPress Plugin / WordPress Related / Code File
+   - แสดงสถานะ ติดตั้ง/อัปเกรดได้ หรือดู Result ได้
+
+2) WordPress Upgrade Button
+   - อยู่ข้างปุ่มติดตั้ง Plugin
+   - ใช้กับไฟล์ PHP ที่มี Plugin Name
+   - ถามยืนยันก่อนอัปเกรด
+   - ทำ backup ไฟล์เดิมก่อนเขียนทับ
+   - ไม่ Activate อัตโนมัติ
+
+3) Safe Upgrade Backend
+   - ค้นหา plugin เดิมจาก Plugin Name เฉพาะ target ที่ดูเป็น generated/AiRA/Thinkb4do หรือ slug สัมพันธ์กัน
+   - หากไม่พบ จะสร้าง target แบบปลอดภัยใน aira-upgrade-{slug}
+   - ป้องกันการอัปเกรด AiRA Studio ตัวหลักจาก code block
+
+สถานะ:
+- PHP syntax ผ่าน
+- JavaScript syntax ผ่าน
+- ZIP พร้อมติดตั้งทับ

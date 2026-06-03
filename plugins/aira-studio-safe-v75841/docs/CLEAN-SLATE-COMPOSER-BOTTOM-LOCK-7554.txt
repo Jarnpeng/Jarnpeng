@@ -1,0 +1,11 @@
+AiRA Studio v7.5.5.4 — Composer Bottom Lock
+
+What changed:
+- Keeps Composer as the final row of the chat panel instead of double-pushing it with fixed bottom + keyboard inset.
+- Fixes Android Chrome/VisualViewport behavior where the Composer could float too high when the Thai keyboard opens.
+- Preserves GPT-like layout: header stays under WordPress admin bar, chat scroll stays native, Composer remains directly above the keyboard.
+- Adds extra focus-time measure + scroll recovery so the latest message returns smoothly after keyboard open.
+
+QC:
+- CSS override is appended after older keyboard-fusion rules, so it wins without removing existing code.
+- JavaScript keeps VisualViewport measurement but uses it to size the shell, not double-position the Composer.

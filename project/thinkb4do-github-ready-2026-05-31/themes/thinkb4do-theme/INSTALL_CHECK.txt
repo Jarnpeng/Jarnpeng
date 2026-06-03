@@ -1,0 +1,4 @@
+Thinkb4do Theme v1.6.3
+สถานะ: พร้อมติดตั้งทดสอบ
+แพตช์: Single-row Compact Header
+ตรวจ: PHP lint + JS syntax + ZIP integrity

@@ -1,0 +1,22 @@
+AiRA Studio v7.2.7 Clean Slate Code File Relationship
+
+สิ่งที่เพิ่ม:
+1. เพิ่มแถวไอคอน File ใต้ code block ทุกก้อน โดยอยู่คนละบรรทัดกับปุ่ม Copy/Download/Result
+2. กด File เพื่อย่อ/ขยายรายละเอียดไฟล์ ดูชื่อไฟล์ ขนาด ภาษา และความสัมพันธ์ของระบบ
+3. เพิ่มปุ่ม ดูโค้ด ในรายละเอียดไฟล์ เพื่อกลับไปยัง source code ได้ทันที
+4. ถ้าโค้ดเป็น WordPress Plugin ที่ติดตั้งได้ ระบบจะแสดงปุ่ม ติดตั้ง Plugin ข้าง File
+5. ปุ่มติดตั้ง Plugin ใช้ AJAX เดิม install_generated_plugin พร้อม capability install_plugins และถามยืนยันก่อนติดตั้งจริง
+6. เพิ่มการแยกส่วนประกอบที่เกี่ยวข้อง เช่น Plugin, Module, Component, Theme, Widget, Gutenberg Block, Elementor Widget, AJAX, REST, Assets, Security
+7. ไม่เพิ่มปุ่ม Open และไม่เปลี่ยน flow หลักของ code block เดิม
+
+ของเดิมยังอยู่:
+- Code block แรกยังแสดงก่อน
+- Copy / Download / Result ยังอยู่
+- Result ยังแสดง inline ไม่เปิด popup
+- ระบบภาพจริง/ภาพสำรอง diagnostics ยังอยู่
+- Composer ล่าง, Context Reader, Prompt Processing Time, Result Resolver ยังอยู่
+
+สถานะทดสอบ:
+- PHP syntax ผ่าน
+- JavaScript syntax ผ่าน
+- ZIP package พร้อมติดตั้ง WordPress plugin

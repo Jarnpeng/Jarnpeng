@@ -1,0 +1,28 @@
+AiRA Studio v7.1.8 Clean Slate GPT Communication Slide Typing
+
+Goal
+- Add GPT-like communication behavior on top of the existing privacy-safe Context Reader.
+- Add assistant answer slide-letter/typewriter rendering similar to GPT while preserving completed answer stability.
+
+What changed
+1) GPT Communication Skill
+- Adds a communication profile for each question: direct_helpful, debug_solver, builder_update, continue_context, teacher_simple, or analyst.
+- Injects an answer contract into the request so AiRA answers directly first, stays warm, avoids repeated template answers, and keeps the latest command as the anchor.
+- For WordPress/system work, the answer shape is: existing parts kept, new/fixed parts, how to test, usable status.
+
+2) Assistant Slide Typing
+- New assistant replies render with smooth letter/word slide typing.
+- Uses Intl.Segmenter when available for safer Thai grapheme segmentation.
+- Automatically speeds up long answers to avoid making the user wait.
+- Honors prefers-reduced-motion by rendering instantly when motion reduction is enabled.
+- Image cards render instantly to avoid exposing internal card markers.
+
+3) UI Status
+- Composer context chips now show GPT talk + Slide typing.
+- Assistant meta shows a small typing status during reveal.
+- Existing code blocks, Result/Code toggle, image click-save, Voice, Rooms, Artifact, Settings and bottom composer remain intact.
+
+QC
+- PHP syntax checked.
+- JavaScript syntax checked with node --check.
+- ZIP package tested.

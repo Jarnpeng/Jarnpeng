@@ -1,0 +1,7 @@
+Thinkb4do Community v4.2.208
+- Expanded feed card width usage so the post card feels closer to a Facebook-like mobile feed.
+- Balanced card padding, spacing, and media width so the video/image area uses space more efficiently.
+- Kept edit and delete tools on the same line as the username/time.
+- Added a one-line action row: Like / Comment / Share / Save / View.
+- Added a view count chip in the community feed and single post template.
+- Added v4.2.208 runtime classes in community.js and dedicated CSS rules in community-clean-ui-reset.css.

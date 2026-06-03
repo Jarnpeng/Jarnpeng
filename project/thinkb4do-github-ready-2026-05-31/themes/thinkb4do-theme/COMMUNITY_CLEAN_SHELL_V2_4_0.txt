@@ -1,0 +1,9 @@
+Thinkb4do Theme Core v2.4.0 — Community Clean Shell
+
+Changes:
+- Mobile bottom icon bar is now fixed tight to the bottom edge.
+- On community pages, the mobile bottom bar is not rendered.
+- On community pages, the visible theme footer is hidden.
+- wp_footer() remains active, so WordPress scripts and plugins still work.
+- On community pages, theme-level community links in header/app-grid are removed or hidden.
+- Community detection supports slug /community/, /thinkb4do-community/, Thai page title, shortcode, and community block markers.

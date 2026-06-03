@@ -1,0 +1,23 @@
+AiRA Studio v7.5.8.26 — Answer Release Soft Gate
+
+Goal
+- Fix issue where AiRA could not answer after Prompt Processor hard gate.
+- Keep Prompt Processor visible first, but make it a visual status only and never a permanent answer blocker.
+
+Changed
+1. Replaced hard answer gate with soft answer release gate.
+2. Added client-side Answer Rescue fallback so a visible answer is always rendered even if ajax/gate/render fails.
+3. Added usable-reply check for empty or low-value API replies.
+4. Added client direct answers for simple math, greetings, and Thailand capital.
+5. Improved PHP best-effort fallback wording so it does not look like AiRA simply cannot answer.
+6. Kept buttons/action router unchanged.
+
+Expected flow
+User asks -> Prompt Processor appears -> Prompt Processor switches to complete -> Answer bubble is released.
+If API fails -> Prompt Processor still completes -> Answer Rescue bubble appears instead of a blank/error-only state.
+
+QC
+- PHP lint: pass
+- JS syntax: pass
+- ZIP integrity: pass
+- data-action count unchanged from base

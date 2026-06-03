@@ -1,0 +1,30 @@
+AiRA Studio v7.5.5.8 — Code Block Meaning + Value Engine
+
+เป้าหมาย:
+- ให้ code block พยายามอ่านความหมายของทุกปุ่มและทุกคำสั่งในโค้ด
+- ทุกปุ่มต้องตอบได้ว่า: ช่วยใคร, ทำอะไรจริง, ผู้ใช้เห็น feedback อะไร, ลดความเสี่ยงอะไร, ทดสอบอย่างไร
+- ทุกคำสั่งสำคัญต้องมีประโยชน์ต่อผู้ใช้งาน ไม่ใช่เขียนไว้เฉย ๆ
+
+สิ่งที่เพิ่ม:
+1) codeActionMeaningProfile()
+   - เพิ่ม meaning / benefit / helps / feedback / test ให้ปุ่มหลักทุกปุ่มของ code block
+   - บันทึกเป็น data-command-meaning, data-user-benefit, data-feedback-promise, data-value-test
+
+2) detectCodeCommandBenefits() รุ่นใหม่
+   - อ่านคำสั่งสำคัญ เช่น WordPress hook, shortcode, REST, AJAX, nonce, sanitize, option, enqueue, JS event, fetch, DOM, storage, timing, try/catch, form, accessibility, responsive, API status
+   - เพิ่ม meaning / benefit / feedback / test ให้แต่ละคำสั่ง
+
+3) detectButtonMeaningFromCode()
+   - อ่าน <button> ที่อยู่ในโค้ด และสรุปความหมาย/ประโยชน์/วิธีทดสอบของปุ่มในระบบที่กำลังสร้าง
+   - ช่วยลดปุ่มลอย ปุ่มหลอก หรือปุ่มไม่มี handler
+
+4) Human Value Guard UI
+   - เปลี่ยนหัวข้อเป็น Meaning + Human Value Engine
+   - แสดง “ความหมายและประโยชน์ของปุ่ม” และ “ความหมายและประโยชน์ของคำสั่งในโค้ด”
+   - เพิ่มคำอธิบาย feedback และ test path เพื่อให้ผู้ใช้เห็นว่าระบบผลิตสิ่งนี้เพื่อประโยชน์จริง
+
+สถานะ:
+- JavaScript syntax: ผ่าน
+- PHP lint: ผ่าน
+- ZIP integrity: ผ่านหลังแพ็ก
+- ของเดิมยังอยู่ครบจาก v7.5.5.7

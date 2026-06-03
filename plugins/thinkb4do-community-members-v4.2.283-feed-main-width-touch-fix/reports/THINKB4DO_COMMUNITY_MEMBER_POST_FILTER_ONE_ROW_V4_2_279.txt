@@ -1,0 +1,13 @@
+Thinkb4do Community Members v4.2.279
+Task: Make the Member > Posts status menu stay in a single row like Facebook.
+
+What was fixed:
+- Added a new page-level class: tb4c-member-post-filter-one-row-v4279
+- Forced .tb4c-member-area-status-filter to use flex-wrap: nowrap
+- Enabled horizontal scrolling on mobile instead of dropping the last item to a second line
+- Forced each filter chip (ทั้งหมด / เผยแพร่ / รอตรวจ / ฉบับร่าง / ส่วนตัว) to keep max-content width and no wrapping
+- Preserved active chip styling in Thinkb4do green
+
+Safe scope:
+- Only affects the member post status filter row
+- Does not remove Feed / Header / Sidebar / Comment systems

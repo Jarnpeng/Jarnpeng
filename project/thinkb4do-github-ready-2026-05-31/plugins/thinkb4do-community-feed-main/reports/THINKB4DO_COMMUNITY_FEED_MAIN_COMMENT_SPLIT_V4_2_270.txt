@@ -1,0 +1,21 @@
+Thinkb4do Community Feed Main v4.2.270
+
+สถานะการแยกปลั๊กอิน:
+- Feed Main รับผิดชอบหน้าฟีดหลัก / Composer / Reels / โหลดเพิ่มเติม
+- หน้าแสดงความคิดเห็น / Single Community Post ถูกแยกออกไปให้ปลั๊กอิน Thinkb4do Community Comment Page รับผิดชอบ
+
+สิ่งที่แก้:
+- ปิด template_include ของ single tb4_community_post ใน Feed Main
+- ลดการ enqueue asset บนหน้า single post เพื่อไม่ให้ CSS/JS ของฟีดไปทับหน้าแสดงความคิดเห็น
+- ลด body class ของ Feed Main บนหน้า single post
+- คง CPT, taxonomy, AJAX และ helper function เดิมไว้เพื่อให้ Comment Page ใช้ข้อมูลเดิมได้
+
+วิธีใช้:
+1. ติดตั้ง/อัปเดตปลั๊กอิน Feed Main v4.2.270
+2. ติดตั้งปลั๊กอิน Thinkb4do Community Comment Page v1.0.0
+3. เปิดใช้งานทั้งสองตัว
+4. ถ้า URL หน้าโพสต์ยังไม่ขึ้น ให้ไป Settings > Permalinks > Save
+
+QC:
+- PHP syntax: ผ่าน
+- โครงสร้างปลั๊กอิน: พร้อมใช้งาน

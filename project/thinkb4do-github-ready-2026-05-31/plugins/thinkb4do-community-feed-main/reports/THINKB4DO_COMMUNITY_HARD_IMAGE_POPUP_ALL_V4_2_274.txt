@@ -1,0 +1,13 @@
+Thinkb4do Community Feed Main v4.2.274
+
+แก้ไขหลัก:
+- เพิ่ม hard image popup delegation ระดับ window capture ให้จับคลิกภาพก่อน handler เก่า
+- เพิ่ม data-tb4c-hard-image-popup และ data-tb4c-v4274-image-trigger ให้ภาพที่ render จาก PHP
+- รองรับภาพใน post media, album, gallery, thumb และ comment image link
+- แยก tap/click เพื่อเปิด popup ออกจาก drag/scroll เพื่อไม่ให้แตะโดนภาพแล้วเลื่อนหน้าไม่ได้
+- Feed Main ยังไม่นำหน้าแสดงความคิดเห็นและหน้าสมาชิกกลับมา แต่ลิงก์เดิมยังคงเชื่อมไว้
+
+สถานะตรวจสอบ:
+- PHP syntax ผ่าน
+- JS syntax ผ่าน
+- ZIP แตกไฟล์ได้

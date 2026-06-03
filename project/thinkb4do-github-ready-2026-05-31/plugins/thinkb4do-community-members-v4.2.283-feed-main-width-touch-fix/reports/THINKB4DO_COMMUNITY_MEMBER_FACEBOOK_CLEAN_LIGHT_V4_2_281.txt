@@ -1,0 +1,24 @@
+Thinkb4do Community Members v4.2.281
+Task: Refine Member page to a cleaner Facebook-style social layout while keeping Thinkb4do identity.
+
+Scope:
+- Member page only.
+- CSS-first refinement.
+- No heavy JavaScript added.
+- Header / Feed / Comment / Sidebar systems are not removed.
+
+What changed:
+- Added version class: tb4c-member-facebook-clean-light-v4281.
+- Preserved existing v4.2.280 safety class and previous fixes.
+- Main Member tabs are kept in a single horizontal row with mobile scroll.
+- Member > Posts status menu is one row: ทั้งหมด / เผยแพร่ / รอตรวจ / ฉบับร่าง / ส่วนตัว / กลุ่ม / ตลาด / แชท.
+- Post cards use safer grid/flex layout with consistent padding, radius, border and softer shadow.
+- Media blocks use safe sizing, max-width 100%, object-fit cover, and normal document flow.
+- Action bar is forced to position: static below content to prevent overlay on media.
+- Mobile spacing is softened; small phones switch to one-column feed to prevent crowding.
+- Thai font stack set to Noto Sans Thai / Roboto / Kanit / system fonts.
+- Reduced animation/filter/backdrop costs inside Member posts for lighter rendering.
+
+Checks:
+- PHP syntax check passed for main plugin file and Member template.
+- ZIP package generated successfully.

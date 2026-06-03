@@ -1,0 +1,38 @@
+Thinkb4do Theme Core v2.3.2 — Modern Polish / Contrast & Position Fix
+
+ฐานที่ใช้:
+- ปรับต่อจาก thinkb4do-theme-core-v2.3.1-modern-refresh.zip
+- รักษาโครงธีมเดิมจาก v2.3.0 และชั้น Modern Refresh v2.3.1 ไว้
+
+สิ่งที่เพิ่ม:
+- css/tb4-modern-polish-v232.css
+- js/tb4-modern-polish-v232.js
+
+สิ่งที่แก้:
+1) สีจม / contrast
+- ปรับค่าสีข้อความหลักให้เข้มขึ้น
+- ลดการใช้สีเทาอ่อนบนพื้นเขียว/ขาว
+- ปรับปุ่ม CTA ให้สีชัดและอ่านง่าย
+- ปรับ card, feed, panel, footer และ side box ให้แยกพื้น/ข้อความชัดขึ้น
+
+2) ตำแหน่ง / spacing
+- ปรับ container ให้ไม่ชิดขอบเกินไปบนมือถือ
+- จัด hero, search, card grid, feed และ CTA ให้สมดุลขึ้น
+- ปรับ header ให้ไม่ทับ WordPress Admin Bar
+- ปรับ mobile bottom nav ให้ไม่ทับ safe area
+
+3) รองรับอุปกรณ์และบราวเซอร์
+- เพิ่ม fallback สำหรับ overflow, svh, backdrop-filter
+- เพิ่ม visual viewport guard ผ่าน JS
+- ปรับ media/table/code block ไม่ให้ล้นจอ
+- เพิ่ม forced-colors และ reduced-motion support
+
+สถานะตรวจ:
+- PHP syntax: ผ่าน
+- JavaScript syntax: ผ่าน
+- ZIP integrity: ผ่าน
+
+หมายเหตุ:
+- ไม่เพิ่มระบบใหม่ที่ไม่เกี่ยวข้อง
+- ไม่แสดงข้อความเบื้องหลังเรื่อง browser / OS / device บนหน้าเว็บ
+- ยังเปิด WordPress Admin Bar ตามปกติ

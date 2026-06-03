@@ -1,0 +1,26 @@
+Thinkb4do Community — v4.2.197 Cleaner Light Position Lock
+
+เป้าหมาย:
+- รื้อ UI/UX ให้สะอาดและเบาขึ้นอีกชั้น
+- คงตำแหน่งซ้าย / กลาง / ขวาเดิมไว้ก่อน
+- ไม่ย้าย layout หลัก และไม่เปลี่ยนโครงสร้างคอลัมน์
+
+สิ่งที่ปรับ:
+1. ลดน้ำหนักพื้นหลังเป็นสีเรียบ #F8FAF8 ลด gradient หนัก
+2. ลดเงา / กรอบ / border ให้เบากว่า v4.2.196
+3. ลด gap ของ feed แบบปลอดภัย โดยยังล็อกความกว้างเดิม: ซ้าย 190-220px / กลาง 700px / ขวา 220-260px
+4. ทำ left rail ให้เล็กและเบาขึ้น แต่ตำแหน่งเดิม
+5. ทำ header, composer, reels, post card, right rail ให้ compact และสะอาดขึ้น
+6. ซ่อน chip/stat/ปุ่มรองที่ซ้ำหรือรก โดยไม่ลบระบบหลัก
+7. ลดต้นทุน animation/backdrop blur เพื่อให้เบาขึ้นบนมือถือ
+
+สถานะ:
+- Plugin ZIP พร้อมใช้งาน
+- PHP syntax ผ่าน
+- JavaScript syntax ผ่าน
+- CSS brace balance ผ่าน
+- ZIP integrity ผ่าน
+
+หมายเหตุ:
+- รอบนี้เป็น visual cleanup และ performance-light pass ไม่ใช่การย้าย layout
+- หากดูผลไม่เปลี่ยน ให้ล้าง cache/CDN/browser cache ก่อนตรวจหน้า /community/

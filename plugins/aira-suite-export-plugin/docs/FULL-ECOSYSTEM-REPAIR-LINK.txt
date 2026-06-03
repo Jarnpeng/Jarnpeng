@@ -1,0 +1,23 @@
+AiRA Suite Export Plugin v1.3.1
+Full Ecosystem Repair Link + System Monitor Filter
+
+ระบบนี้เชื่อมหน้าที่เดิมของ Export Plugin เข้ากับระบบในเครือ AiRA แบบ Manual Safe Mode:
+- Export ZIP
+- Smart Chat Live Link
+- Knowledge Center Link
+- Plugin/System Monitor
+- Safe Activate/Deactivate
+- Status Filter สำหรับดูปลั๊กอินตามสถานะ
+
+ฟังก์ชันใหม่ v1.3.1:
+- เลือกดูเฉพาะปลั๊กอินที่เปิดอยู่
+- เลือกดูเฉพาะปลั๊กอินที่ปิดอยู่
+- เลือกดู Network Active
+- เลือกดู Paused / ต้องตรวจ
+- เลือกดู Protected / ตัวหลัก
+- REST endpoint รองรับ ?status=...
+
+สถานะพร้อมใช้งาน:
+- ใช้งานได้ในหน้า Tools > AiRA Plugin Export
+- ยังไม่ทำ background automation
+- ยังไม่ลบหรือแก้ไฟล์ของปลั๊กอินอื่นเอง

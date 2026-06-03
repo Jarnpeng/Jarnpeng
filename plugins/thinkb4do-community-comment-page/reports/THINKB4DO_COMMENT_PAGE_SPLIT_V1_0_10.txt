@@ -1,0 +1,5 @@
+v1.0.10
+- Force restored icons in the red-marked areas: comment title, reply, edit, delete, copy.
+- Replaced span/svg/dashicons rendering with b.tb4ccp-force-icon using CSS background-image data SVG.
+- This avoids old selectors that hide spans or SVGs and caused tiny red/green line artifacts.
+- Kept Enter send, Shift+Enter new line, sending dots, and media scroll safe behavior.

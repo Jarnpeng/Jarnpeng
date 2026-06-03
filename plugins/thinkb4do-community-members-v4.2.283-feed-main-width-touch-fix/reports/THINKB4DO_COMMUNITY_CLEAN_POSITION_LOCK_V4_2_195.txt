@@ -1,0 +1,34 @@
+Thinkb4do Community v4.2.195 — Clean Position Lock
+
+เป้าหมาย
+- รื้อ UI/UX ให้สะอาดขึ้นก่อน โดยไม่ย้ายตำแหน่งหลัก
+- คงซ้าย / กลาง / ขวา ของเวอร์ชันเดิมไว้
+- ลดความรกของการ์ด ปุ่ม ไอคอน ข้อความรอง และชั้นเงาที่ทำให้ภาพรวมหนัก
+
+สิ่งที่แก้
+1) ล็อก layout desktop เป็น 220px / 700px / 260px
+2) คงลำดับ responsive: เมนูซ้ายด้านบนบนมือถือ, ฟีดกลางต่อจากเมนู, sidebar ขวาซ่อนเมื่อพื้นที่ไม่พอ
+3) ลด header ให้เหลือข้อมูลหลัก ซ่อนสถิติและข้อความรองที่ทำให้แน่น
+4) Composer เหลือช่องโพสต์หลัก + ปุ่มรูป/วิดีโอ + โหวต แบบ icon compact
+5) การ์ดโพสต์ลดเงา ลดขอบหนา ซ่อนข้อมูลซ้ำ เช่น view chip / context chip / reaction summary
+6) ปุ่มแก้ไข/ลบอยู่ขวาเหมือนเดิม แต่ลดเป็น icon-only เพื่อไม่ดันบรรทัดชื่อ
+7) ปุ่มใต้โพสต์เหลือ action หลัก 4 ช่อง และซ่อนปุ่ม Reel ซ้ำใต้โพสต์
+8) Reels rail ยังคงอยู่ตำแหน่งเดิม แต่ลดขนาด/เงา/ข้อความรอง
+9) Right sidebar ยังอยู่ขวาเดิม แต่ลด card-wall feeling
+10) Modal composer ยังอยู่ใน safe zone ไม่เกิน header/footer
+
+ตรวจสถานะ
+- PHP syntax: ต้องผ่านก่อนส่งมอบ
+- JavaScript syntax: ต้องผ่านก่อนส่งมอบ
+- ZIP: ต้องสร้างใหม่พร้อมใช้งาน
+
+สถานะใช้งาน
+- ใช้งานได้เป็น plugin ZIP สำหรับ WordPress
+- ยังไม่ได้ทดสอบ live render จริงใน WordPress เพราะ sandbox ไม่มี runtime WordPress
+
+ผลการตรวจจริงใน sandbox
+- php -l ทุกไฟล์: ผ่าน
+- node --check assets/community.js: ผ่าน
+- tinycss2 parse assets/community-clean-ui-reset.css: css_errors = 0
+- Layout scope: class ใหม่ tb4c-v42195-clean-position-lock และ body class tb4c-v42195-clean-position-lock-body
+- หมายเหตุ: ยังต้องล้าง cache หลังติดตั้ง เพราะไฟล์ CSS/JS ใช้ชื่อเดิมแต่ version เปลี่ยนเป็น 4.2.195

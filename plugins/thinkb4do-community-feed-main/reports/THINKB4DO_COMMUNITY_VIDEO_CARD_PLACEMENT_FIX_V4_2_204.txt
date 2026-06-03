@@ -1,0 +1,25 @@
+Thinkb4do Community v4.2.204 — Video Card Placement Fix
+
+ทวนโจทย์:
+- จากภาพล่าสุด ปุ่ม “เล่นวิดีโอ” และปุ่ม “หยุด/ปิด” หลุดลงมาใต้ YouTube ในการ์ดโพสต์
+- ต้องจัดให้อยู่ตำแหน่งถูกต้อง ไม่ทำให้ฟีดรก และไม่ขยับ layout ซ้าย/กลาง/ขวา
+
+ตำแหน่งที่แก้:
+- assets/community-clean-ui-reset.css
+  - เพิ่ม layer v4.2.204 สำหรับ .tb4c-video-cover, .tb4c-mini-video-bar, .tb4c-video-mini-player
+- thinkb4do-community.php
+  - bump version เป็น 4.2.204 เพื่อให้ cache โหลด CSS ใหม่
+
+สิ่งที่แก้แล้ว:
+1) ปุ่มเล่นวิดีโอถูกจัดเป็น overlay ครอบพื้นที่วิดีโอ
+2) ไอคอน play อยู่กลางวิดีโอ
+3) ข้อความ “เล่นวิดีโอ” อยู่ใน pill ด้านล่างวิดีโอ ไม่หลุดออกจากกล่อง
+4) ปุ่ม “หยุด/ปิด” ถูกซ่อนในฟีดปกติ
+5) ปุ่ม “หยุด/ปิด” แสดงเฉพาะตอนวิดีโอเข้าสู่ mini-player
+6) YouTube iframe/video ถูกล็อก width 100% และรักษา aspect ratio 16:9
+7) รองรับมือถือจอเล็ก ไม่เบียดปุ่มใต้โพสต์
+
+สถานะ:
+- PHP syntax: ผ่าน
+- CSS brace balance: ผ่าน
+- ใช้งานได้แล้วหลังติดตั้งและล้าง cache

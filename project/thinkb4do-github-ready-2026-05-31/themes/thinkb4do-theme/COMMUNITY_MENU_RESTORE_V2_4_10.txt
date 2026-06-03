@@ -1,0 +1,15 @@
+Thinkb4do Theme v2.4.10 — Community Menu Restore
+
+สิ่งที่แก้:
+1) คืนเมนูกลางให้มี Discovery / ชุมชน / ผลิตภัณฑ์ ครบทุกหน้า
+2) ยกเลิก logic ที่ลบลิงก์ชุมชนออกจาก header และ app grid เมื่ออยู่หน้าชุมชน
+3) คืน mobile bottom nav บนหน้าชุมชน โดยยังคงซ่อน footer ของธีมบนหน้าชุมชนเพื่อลดความรก
+4) เพิ่ม filter guard: tb4_minimal_header_links, tb4_mobile_nav_items, tb4_app_grid_groups เพื่อกันปลั๊กอิน/ธีมลบเมนูชุมชนซ้ำ
+5) เพิ่ม runtime guard ใน wp_footer เพื่อเติมลิงก์ชุมชนกลับมา หาก Header/Menu plugin แสดงเมนูโดยไม่มีลิงก์ชุมชน
+6) ปรับ fallback header ของธีมให้ใช้ Discovery / ชุมชน / ผลิตภัณฑ์
+
+สถานะ QC:
+- PHP syntax check ผ่านทุกไฟล์
+- โครงเมนูหลักกลับมาครบ 3 รายการ
+- หน้าชุมชนยังคงไม่มี footer ตาม clean shell เดิม
+- ต้องทดสอบจริงหลังติดตั้งกับปลั๊กอิน Thinkb4do Header Menu เพราะ header หลักถูกแยกเป็นปลั๊กอิน

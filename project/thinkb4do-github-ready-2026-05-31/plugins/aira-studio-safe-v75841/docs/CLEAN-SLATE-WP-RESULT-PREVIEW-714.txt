@@ -1,0 +1,19 @@
+AiRA Studio v7.1.4 Clean Slate WP Result Preview
+
+Goal:
+- Keep the first code block as the default view.
+- Make Result show output from code instead of repeating PHP source.
+- For HTML/CSS/JS/SVG, render in the inline sandbox result area.
+- For PHP/WordPress plugin code, show a structured WordPress result preview extracted from Plugin Name, Description, Version, Author, hooks, shortcodes, REST routes, AJAX actions, and admin menu usage.
+
+Why PHP did not show a real visual result before:
+- PHP/WordPress code cannot execute inside a browser iframe by itself.
+- It needs WordPress + PHP runtime + hooks.
+- This version avoids showing Source Preview as the Result for PHP and replaces it with a useful WordPress runtime/result preview.
+
+UI status:
+- Copy remains.
+- Download remains.
+- Result/Code toggle remains.
+- Open remains removed.
+- Composer and popup plus menu remain unchanged.

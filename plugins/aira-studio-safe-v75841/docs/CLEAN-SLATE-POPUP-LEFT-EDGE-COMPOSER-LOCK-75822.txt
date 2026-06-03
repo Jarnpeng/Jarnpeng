@@ -1,0 +1,25 @@
+AiRA Studio v7.5.8.22 Popup Left Edge Composer Lock
+
+ฐานที่ใช้:
+- v7.5.8.21-popup-menu-chatbox-align
+
+สิ่งที่แก้:
+- แก้ Popup Menu ที่ยังเยื้องขวาเมื่อเปิดใน WordPress Admin Desktop
+- ให้ Popup Menu ยึดขอบซ้ายจากกล่อง Composer/Chat จริง
+- แก้กรณี position: fixed ถูก scope อยู่ใน #airaApp แล้วทำให้ค่าตำแหน่งถูกบวกขอบ Sidebar ซ้ำ
+- ใช้ fixedScopeLeftBase() หักฐานตำแหน่งออกก่อนตั้งค่า left
+- เปลี่ยน Popup จาก left:center + translateX(-50%) เป็น left-edge + transform none
+
+สิ่งที่ไม่แตะ:
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ click/touch/pointer handler
+- พื้นหลังเบลอ/backdrop ยังใช้แนวชิด Sidebar จากรอบก่อน
+
+วิธีทดสอบ:
+1. เปิด AiRA Studio ใน WordPress Admin บน Desktop
+2. กดปุ่ม + หรือ Menu
+3. พื้นหลังเทาควรเริ่มหลัง Sidebar
+4. Popup Menu ควรมีขอบซ้ายตรงกับกล่อง Composer/Chat ด้านล่าง
+5. Composer และ Chat Log ต้องไม่ถูกขยับ

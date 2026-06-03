@@ -1,0 +1,21 @@
+AiRA Studio v7.5.6.5 — Codeblock Quality Performance Engine
+
+เป้าหมาย:
+- เพิ่มคุณภาพการเขียนโค้ดใน Code block ให้สะอาด ปลอดภัย ทดสอบได้ ดูแลต่อได้ และสร้างประโยชน์ต่อผู้ใช้จริง
+
+เพิ่มใหม่:
+1) ปุ่ม “คุณภาพโค้ด” ใต้ Code block
+2) Codeblock Code Quality Engine พร้อมคะแนน 0-100
+3) ตรวจ 10 มิติ: structure, data flow, security, error guard, button contract, UX/A11y, maintainability, QC/test, command benefit, safe change
+4) Prompt ยกระดับโค้ดให้เป็น production-ready โดยคงของเดิมไว้
+5) บังคับให้ทุกปุ่ม/คำสั่งมีประโยชน์, feedback, handler และวิธีทดสอบ
+
+ของเดิมยังอยู่:
+- Smooth Typing, Performance Builder, Humanity Value, Humanity Mission, Dev Master, Success Loop, Preview, Debug, Package, Upgrade
+
+วิธีทดสอบ:
+1) ให้ AiRA สร้าง code block
+2) ตรวจว่ามีแผง Codeblock Code Quality Engine
+3) กดปุ่ม “คุณภาพโค้ด”
+4) ระบบต้องใส่/ส่ง prompt ยกระดับโค้ดพร้อมรายการจุดที่ควรแก้
+5) ปุ่มเดิมทุกปุ่มยังทำงานได้

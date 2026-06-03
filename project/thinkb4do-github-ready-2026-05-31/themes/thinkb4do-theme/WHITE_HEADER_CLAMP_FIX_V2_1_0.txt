@@ -1,0 +1,19 @@
+Thinkb4do Theme Core v2.1.0 — White Header Clamp Fix
+
+เป้าหมาย:
+- ให้เมนูสามขีด / แจ้งเตือน / โปรไฟล์ dropdown ชิดใต้ส่วนหัวสีขาว (#site-header)
+- ไม่ใช้แถบประกาศสีเขียวเป็นจุดอ้างอิง top
+- popup/menu ต้องทับแถบเขียว ไม่ถูกดันลงไปใต้แถบเขียว
+- กันล้นซ้าย/ขวาบนมือถือ และไม่ล็อก body จนหน้าค้าง
+
+ไฟล์ที่แก้:
+- functions.php: อัปเวอร์ชัน 2.1.0 และโหลด patch v210
+- style.css: อัปเวอร์ชัน 2.1.0
+- js/main.js: แก้ alignHeaderPopup/alignMobileMenu ให้ยึด bottom ของ #site-header
+- css/tb4-mobile-white-header-clamp-v210.css: CSS override ชั้นสุดท้าย
+- js/tb4-mobile-white-header-clamp-v210.js: JS clamp + MutationObserver กัน script เก่าดัน popup ลงใต้แถบเขียว
+
+คำทดสอบ:
+- เปิดมือถือแล้วกดไอคอนกระดิ่ง / โปรไฟล์ / สามขีด
+- dropdown ต้องเริ่มใต้ header สีขาวทันที และทับแถบเขียว
+- ย่อ/ขยายหน้าจอต้องไม่ค้าง

@@ -1,0 +1,17 @@
+Thinkb4do Community Feed Main v4.2.277
+
+ปรับ popup รูปภาพให้พื้นหลังดำเต็มจอแบบเบาลง ลดอาการหน่วง/หนักของ overlay โดยยังคงตำแหน่งใต้ header/menu ตาม v4.2.275
+
+สิ่งที่ปรับ:
+- ลด repaint ของพื้นหลังดำเต็มจอ
+- ปิด blur/filter/transition/animation ที่ทำให้เครื่องมือถือบางรุ่นหน่วง
+- เปลี่ยน backdrop เป็นชั้นโปร่งใส เพราะตัว popup มีพื้นหลังดำอยู่แล้ว ลด layer ซ้อน
+- จำกัด contain/isolation ให้ browser วาดเฉพาะส่วน popup
+- ตัดการคำนวณ header จาก event scroll เพื่อลดงานระหว่างเลื่อนหน้า
+- ลด MutationObserver จากทั้งหน้า+ทุก attribute เหลือสังเกต childList เฉพาะระดับบน
+- คง popup ใต้ header, คงการกดภาพเปิด popup, คงลิงก์สมาชิก/คอมเมนต์เดิม
+
+สถานะตรวจสอบ:
+- PHP syntax: ผ่าน
+- JS syntax: ผ่าน
+- ZIP: แตกไฟล์ได้ปกติ

@@ -1,0 +1,10 @@
+THINKB4DO Community Feed Main v4.2.262
+
+แก้จาก v4.2.261 ที่ยังมีระบบ mini-video หลายรุ่นทำงานซ้อนกัน
+- ตัด JS mini-video เก่าตั้งแต่ v4.2.243-v4.2.261 ออกจาก community.js
+- ปิด initMiniVideoPlayer ใน community-legacy.js เพื่อไม่ให้ legacy สร้าง popup/เสียงซ้อนอีก
+- เพิ่ม Single Real-Media Video Controller v4.2.262 ใช้ media node จริงเพียงตัวเดียว
+- ปิด popup/ลากออกจอ = คืนวิดีโอกลับตำแหน่งฟีด ไม่ pause อัตโนมัติ
+- Pause = หยุดวิดีโอจริง, Play = เล่นต่อ
+- Ended = คืนสถานะและจบ session
+- ตรวจลดเสียงซ้อนด้วยการ pause video/iframe อื่นเมื่อมี active media

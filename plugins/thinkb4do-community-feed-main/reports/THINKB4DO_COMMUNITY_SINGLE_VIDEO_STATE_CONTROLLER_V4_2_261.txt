@@ -1,0 +1,8 @@
+THINKB4DO Community Feed Main v4.2.261
+
+Patch summary:
+- Added a single video state controller to reduce duplicated mini-video systems and overlapping sound.
+- Changed close / drag-close behavior: return the same playing media node to the feed instead of stopping it.
+- Kept realtime playback while moving between feed and popup where the browser allows same-node reparenting.
+- Pause button targets the active media and pauses other duplicate videos/iframes.
+- Auto-restores the media to the feed when the original feed position is visible again.

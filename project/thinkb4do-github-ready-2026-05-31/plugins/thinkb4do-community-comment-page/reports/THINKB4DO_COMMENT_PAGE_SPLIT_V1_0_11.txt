@@ -1,0 +1,17 @@
+Thinkb4do Community Comment Page v1.0.11
+
+แก้จุดที่ผู้ใช้ขีดแดงจริง:
+- ปุ่มตอบกลับในแถวคอมเมนต์
+- ไอคอนแก้ไข/ลบใน bubble คอมเมนต์
+- ไอคอนหัวข้อความคิดเห็น
+
+แนวทางแก้:
+- เลิกพึ่ง SVG / CSS mask / background-image / Dashicons สำหรับแถวคอมเมนต์
+- เปลี่ยนเป็น native glyph icon ที่มองเห็นจริงด้วยตัวอักษร Unicode
+- เพิ่ม footer rescue CSS/JS โหลดท้ายหน้าเพื่อกัน CSS จากธีมหรือปลั๊กอินอื่นทับ
+- MutationObserver เติมไอคอนซ้ำหลัง AJAX เพิ่มคอมเมนต์ใหม่
+
+สถานะ:
+- PHP lint ผ่าน
+- JS syntax ผ่าน
+- ZIP พร้อมติดตั้ง

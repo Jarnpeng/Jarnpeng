@@ -1,0 +1,45 @@
+AiRA Studio v7.2.5 Clean Slate Result Resolver
+
+เป้าหมาย:
+แก้ปัญหาที่ระบบประมวล Prompt แล้ว แต่ยังไม่ตีความออกว่าผู้ใช้ต้องการเห็น “ผลลัพธ์อะไร” ทำให้คำตอบจริงหรือผลลัพธ์ที่ต้องขึ้นยังไม่แสดงตามคาด
+
+สิ่งที่เพิ่ม:
+1. Result Resolver
+- อ่านคำถามผู้ใช้และแปลงเป็นผลลัพธ์ที่ต้องแสดงจริงก่อนตอบ
+- แยกประเภทผลลัพธ์ เช่น direct answer, image card, vision interpretation, code block + rendered result, WordPress patch/package
+- กำหนด primary result, render rule, fallback rule และ visible checks
+
+2. Prompt Processing + Result Target
+- เมื่อ Prompt Processing เสร็จ จะแสดงเวลาในการประมวลผล
+- เพิ่มบรรทัด “ผลลัพธ์ที่ต้องแสดง” เพื่อให้เห็นว่า AiRA จะต้องสร้างหรือแสดงอะไรต่อ
+
+3. Backend Answer Contract
+- ส่ง desired_output_context_725 เข้า PHP/AJAX และใส่ใน command understanding context
+- เพิ่มกฎให้ API ตอบโดยเริ่มจากผลลัพธ์ที่ผู้ใช้ควรเห็นจริง ไม่จบแค่สถานะประมวลผล
+
+4. Reply Normalizer
+- ถ้าคำตอบ API ยังไม่แสดงผลลัพธ์ตามที่ถาม ระบบจะเติมหัวข้อ “ผลลัพธ์ที่ต้องแสดง” พร้อมสถานะการตีความก่อนคำตอบ
+- ช่วยกันไม่ให้คำตอบว่างหรือหลุดเป็นข้อความสถานะอย่างเดียว
+
+5. UI Indicator
+- เพิ่ม chip “ต้องแสดง: ...” เหนือ Composer
+- เพิ่ม Result Resolver card ใน Workplace/Context view
+
+ของเดิมที่ยังอยู่:
+- Composer ยึดล่าง
+- เมนู + แบบ Popup
+- Prompt Processing Slide + Processing Time
+- Slide typing ผู้ตอบ
+- Context Reader
+- Auto Question Reader
+- Vision Attachment Reader
+- ภาพขึ้นในแชท กดภาพเปิด popup และบันทึกได้
+- Code block แรก + Copy / Download / Result toggle
+- Voice / Rooms / Artifact / Real API Center
+
+การทดสอบที่ควรทำหลังติดตั้ง:
+1. เคลียร์ cache เบราว์เซอร์และปลั๊กอิน cache
+2. พิมพ์คำถาม เช่น “ทำไมผลลัพธ์ไม่ขึ้น” หรือ “สร้าง html ปุ่มสวย ๆ แล้วแสดงผลลัพธ์จริง”
+3. ตรวจว่าการ์ด Prompt Processing เปลี่ยนเป็นเวลาในการประมวลผล
+4. ตรวจว่ามีบรรทัด “ผลลัพธ์ที่ต้องแสดง”
+5. ตรวจว่าคำตอบจริงไม่ค้างแค่ข้อความประมวลผล

@@ -1,0 +1,18 @@
+AiRA Studio v7.2.2 Clean Slate Visible Image Flow
+
+Goal:
+- Make images visibly appear in chat, not only as metadata/chips.
+- User-attached images are saved to uploads when possible and rendered as clickable image cards in the user message.
+- Generated images keep the existing click-to-popup and save/download flow.
+- Image cards include fallback states if the image URL cannot load.
+
+Changed:
+1. Upload image endpoint now stores a preview/download URL in wp-content/uploads/aira-studio-images when possible.
+2. Sending a message with an attached image now inserts a visible image card into the chat bubble.
+3. Image card parser supports AIRA_VISIBLE_IMAGE_CARD markers.
+4. Popup preview uses preview_url/download_url/data_url fallbacks.
+5. Added CSS for attached-image cards and image-load failure state.
+
+Safety:
+- Vision still uses live base64 attachment for API context.
+- Chat history uses saved preview URL first to avoid storing huge base64 strings in localStorage.

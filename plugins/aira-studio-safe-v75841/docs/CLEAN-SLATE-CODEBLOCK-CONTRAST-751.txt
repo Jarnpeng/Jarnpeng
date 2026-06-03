@@ -1,0 +1,17 @@
+AiRA Studio Clean Slate Codeblock Contrast Rescue
+Version: 7.5.1-codeblock-contrast-rescue
+
+Purpose:
+- Fix code block color sinking after v7.5.0 interactive pre-install test.
+- Keep layout and button flow unchanged.
+
+Changes:
+- Dark code block shell now uses high-contrast text and borders.
+- Code toolbar buttons have explicit readable foreground/background colors.
+- Disabled code block buttons no longer fade to unreadable opacity.
+- Previewing mode keeps a light readable panel with stronger borders.
+- Live QC/debug cards, file chips, install/package/upgrade/preinstall buttons are explicitly colored.
+- Sandbox iframe button CSS receives stronger contrast and disabled-state styling.
+
+Status:
+- Ready for WordPress live test after cache clear.

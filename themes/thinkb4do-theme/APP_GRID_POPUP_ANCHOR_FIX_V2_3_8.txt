@@ -1,0 +1,20 @@
+Thinkb4do Theme Core v2.3.8 — App Grid Popup Anchor Fix
+
+สิ่งที่แก้:
+- ปรับตำแหน่ง popup เมนูสี่เหลี่ยม 9 ช่องให้ชิดกับปุ่ม 9 ช่องมากขึ้น
+- เปลี่ยนจากการวาง popup อิงขอบ container ของเว็บ เป็นการคำนวณจากตำแหน่งปุ่มจริง
+- บน desktop: popup จะ right-align ใต้ปุ่ม 9 ช่อง เพื่อไม่ลอยห่างไปทางซ้าย
+- บน mobile/tablet: popup จะเต็มความกว้างแบบมีระยะขอบปลอดภัย ไม่ล้นจอ
+- เพิ่มตัวชี้เล็ก ๆ ใต้ปุ่ม 9 ช่องตอนเปิด popup เพื่อให้รู้ว่าปุ่มไหนเป็นเจ้าของ popup
+- ปรับให้คำนวณใหม่เมื่อ resize/orientation change
+
+ไฟล์ที่เพิ่ม/แก้:
+- css/tb4-app-grid-menu-v238.css
+- js/tb4-app-grid-menu-v238.js
+- functions.php
+- style.css
+
+สถานะ:
+- โครงเมนูกลางยังเหลือ หน้าแรก / ชุมชน / ผลิตภัณฑ์ / ช่องค้นหา
+- WordPress Admin Bar ยังอยู่
+- Footer หน้าชุมชนยังถูกซ่อนตาม v2.3.6

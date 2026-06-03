@@ -1,0 +1,20 @@
+Thinkb4do Theme Core v2.1.3
+
+รายการแก้ไข:
+1) เพิ่ม Message Dropdown ให้ปุ่มข้อความ ไม่ใช้ alert และไม่เงียบเมื่อกด
+2) เปลี่ยนแถบเขียว "เว็บไซต์อยู่ระหว่างพัฒนา" จาก fixed overlay เป็น normal flow ใต้ส่วนหัวสีขาว เพื่อลดอาการซ้อนและทับปุ่ม
+3) Dropdown ของแจ้งเตือน / ข้อความ / โปรไฟล์ / เมนูมือถือ ยึดขอบล่างของส่วนหัวสีขาวเท่านั้น
+4) แก้ controller JS ไม่ให้ realign ซ้ำแบบ recursive ระหว่าง resize/orientationchange เพื่อลดอาการฝืดหรือค้าง
+5) กันล้นซ้ายขวาในมือถือด้วยกรอบ 12px และ max-width
+6) อัปเวอร์ชันเป็น 2.1.3 เพื่อบังคับโหลดไฟล์ใหม่
+
+ไฟล์หลักที่แก้:
+- functions.php
+- header.php
+- style.css
+- css/tb4-header-master-v213.css
+- js/tb4-header-master-v213.js
+
+สถานะตรวจสอบ:
+- PHP lint ผ่านทุกไฟล์
+- JavaScript syntax ผ่าน

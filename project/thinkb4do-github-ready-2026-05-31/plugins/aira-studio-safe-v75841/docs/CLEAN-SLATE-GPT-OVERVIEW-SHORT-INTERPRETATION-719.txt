@@ -1,0 +1,44 @@
+AiRA Studio v7.1.9 Clean Slate GPT Overview Short Interpretation
+
+Goal
+- Add GPT-like interpretation before answering so AiRA can read either the whole picture or a short command and return a clear visible result.
+- Keep v7.1.8 slide typing, context reader, code-first result toggle, image click/save popup, voice, rooms, artifact, composer bottom lock and popup plus menu.
+
+Added
+1. Overview / Short Interpretation Engine
+- Detects overview requests: ตีความภาพรวม, ภาพรวม, overall, overview, big picture.
+- Detects short requests: ตีความสั้น, สรุปสั้น, ย่อให้, brief, concise.
+- Falls back to auto interpretation when the user gives a short continuation command.
+
+2. Visible Interpretation Result
+- Context Reader now includes a card named “ผลลัพธ์การตีความ”.
+- Shows mode, confidence, meaning, target/context and expected output.
+- Composer chips show “ผลลัพธ์: ตีความภาพรวม / ตีความสั้น / ตีความอัตโนมัติ”.
+
+3. GPT-like Answer Contract
+- The prompt sent to the provider now includes an Interpretation Result block.
+- If the user asks for overview, the answer should start with a short “ผลลัพธ์ภาพรวม”.
+- If the user asks for short interpretation, the answer should start with “สรุปสั้น” and avoid long explanations.
+- The system must show the interpreted result without revealing hidden chain-of-thought.
+
+4. Menu Buttons
+- Added AI Mode buttons: ตีความภาพรวม and ตีความสั้น.
+- These buttons wrap the current composer text with the correct instruction and keep the composer focused.
+
+Files changed
+- aira-studio.php
+- assets/js/aira-studio-clean-slate.js
+- assets/css/aira-studio-clean-slate.css
+- docs/CLEAN-SLATE-GPT-OVERVIEW-SHORT-INTERPRETATION-719.txt
+
+Testing checklist
+- PHP lint passed.
+- JavaScript syntax check passed.
+- ZIP structure is WordPress plugin-ready.
+- Existing composer/menu/code/image/voice/context workflows remain present.
+
+Usage
+1. Type a command such as “แก้ต่อ”.
+2. Click Menu → AI Mode → ตีความภาพรวม or ตีความสั้น.
+3. Send the message.
+4. AiRA should answer in a GPT-like result-first format.

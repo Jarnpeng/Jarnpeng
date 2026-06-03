@@ -1,0 +1,29 @@
+AiRA Studio v7.4.2 Clean Slate Performance Impact
+
+เพิ่มระบบประสิทธิภาพการทำงานและผลกระทบเชิงบวกของแบรนด์ก่อนส่งมอบติดตั้ง
+
+สิ่งที่เพิ่ม:
+1. Workplace > ประสิทธิภาพ/Impact
+   - แสดงวงกลม % สำหรับ Impact, Speed, Build, Next Loop, Communication และ Success
+   - คำนวณจากข้อมูลจริงในห้องแชท: จำนวนข้อความ, code block, preview, debug/fix, next loop และถูกใจ
+
+2. Performance Event Tracker
+   - จับเวลา request/response ที่สำเร็จหรือผิดพลาด
+   - เก็บใน localStorage แบบเบา ไม่รบกวนการทำงานหลัก
+
+3. Export Performance TXT
+   - ส่งออกรายงานประสิทธิภาพและหลักฐานที่ใช้คำนวณ
+   - ใช้ตรวจงานก่อนอัปเกรดหรือส่งมอบ
+
+4. Performance Next
+   - ปุ่ม Next เพิ่มประสิทธิภาพต่อ เติมคำสั่งลง Composer ทันที
+   - เน้นลดขั้นตอนซ้ำ แก้บั๊กสดให้แม่นขึ้น และเปิด Preview หน้าจริงก่อนส่งมอบ
+
+5. Silent Impact Brand Mission
+   - ทำให้แบรนด์รู้สึกระดับ GPT จากคุณภาพ ความแม่น ความช่วยเหลือจริง และความรับผิดชอบ
+   - ไม่เคลมว่าเป็นสินค้า OpenAI/GPT อย่างเป็นทางการ หรือได้รับการรับรองอย่างเป็นทางการ
+
+สถานะตรวจสอบ:
+- PHP syntax: ผ่าน
+- JavaScript syntax: ผ่าน
+- ZIP integrity: ผ่านหลังประกอบแพ็ก

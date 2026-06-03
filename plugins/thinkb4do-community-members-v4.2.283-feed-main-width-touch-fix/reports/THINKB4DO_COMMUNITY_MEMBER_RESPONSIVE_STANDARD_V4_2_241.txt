@@ -1,0 +1,29 @@
+Thinkb4do Community Members v4.2.241
+หัวข้อ: Member Area Responsive Standard Layer
+
+สิ่งที่เพิ่ม:
+1) เพิ่ม assets/member-responsive-standard.css
+   - รองรับ Desktop / Tablet / Phone
+   - ปรับ Member Hero ให้เป็นมาตรฐาน Social Profile
+   - ปรับ Cover, Avatar, Action buttons, Stats, Tabs, Layout, Feed cards ให้ responsive
+   - ใช้สีแบรนด์ Thinkb4do: green / white / orange / black
+   - ลด overflow-x และแก้ media touch-action เพื่อช่วยไม่ให้แตะภาพแล้วเลื่อนหน้าไม่ได้
+
+2) แก้ thinkb4do-community-members.php
+   - อัปเดต Version เป็น 4.2.241
+   - enqueue stylesheet ใหม่หลัง clean-ui-reset เพื่อให้ override CSS เดิมได้
+
+3) แก้ templates/member-area-content.php
+   - เพิ่ม class tb4c-member-responsive-standard-page เฉพาะหน้า member-area
+   - ไม่เปลี่ยน query, shortcode, user data, post data, หรือ AJAX logic เดิม
+
+Breakpoint ที่รองรับ:
+- Desktop: >= 1200px
+- Tablet: 768px - 1199px
+- Phone: <= 767px
+- Small Phone: <= 389px
+
+สถานะตรวจงาน:
+- PHP syntax: ผ่าน
+- โครงสร้าง ZIP: พร้อมติดตั้งเป็น WordPress plugin
+- ความเสี่ยง: เป็น CSS responsive layer ไม่แตะ logic หลังบ้าน จึงลดโอกาสระบบโพสต์/คอมเมนต์พัง

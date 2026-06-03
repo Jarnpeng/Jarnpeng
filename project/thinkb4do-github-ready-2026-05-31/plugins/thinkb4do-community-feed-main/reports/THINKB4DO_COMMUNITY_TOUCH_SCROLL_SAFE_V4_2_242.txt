@@ -1,0 +1,25 @@
+Thinkb4do Community Feed Main v4.2.242 — Touch Scroll Safe
+
+แก้ปัญหาใหม่: แตะบางจุดแล้วเลื่อนหน้าไม่ได้บนมือถือ/ทัชสกรีน
+
+สิ่งที่เพิ่ม:
+1. Touch Scroll Safe Guard
+   - ตรวจและปลด class tb4c-modal-open ที่ค้างหลังปิด popup/modal
+   - คืน overflow-y:auto ให้หน้าเมื่อไม่มี modal เปิดจริง
+
+2. Hidden Overlay Dead-Zone Fix
+   - บังคับ modal/lightbox/comment popup ที่ปิดอยู่ให้ pointer-events:none
+   - ป้องกันกล่อง fixed ที่ซ่อนอยู่ทับ feed แล้วดักการแตะ
+
+3. Mobile Pan-Y Recovery
+   - กำหนด touch-action: pan-y ให้พื้นที่ feed/card/body
+   - คง touch-action: manipulation ให้ปุ่มและลิงก์ เพื่อให้กดได้ไว แต่ไม่ล็อกการเลื่อนหน้า
+
+4. Safety Runtime
+   - รันตอนโหลดหน้า, touchstart, touchend, click, resize และเมื่อ DOM เปลี่ยน
+   - ไม่ใช้ preventDefault กับการเลื่อนหน้า
+
+สถานะตรวจสอบ:
+- PHP syntax: ผ่าน
+- JS syntax: ผ่าน
+- ZIP install structure: ผ่าน

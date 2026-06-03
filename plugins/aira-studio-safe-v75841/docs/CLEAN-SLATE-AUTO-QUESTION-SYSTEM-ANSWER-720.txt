@@ -1,0 +1,29 @@
+AiRA Studio v7.2.0 Clean Slate Auto Question System Answer
+
+เป้าหมาย:
+- ผู้ใช้พิมพ์คำถามปกติได้ ไม่ต้องเลือกเมนูก่อน
+- ระบบอ่านคำถามล่าสุด ตีความ intent/forms/continuity และเชื่อมโมดูลที่เกี่ยวข้องก่อนตอบ
+- เชื่อมเฉพาะส่วนที่เกี่ยวข้องจริง เช่น Context, Memory/Topic, WordPress, Code, Image, Voice, Web, Artifact, Settings/API, Debug และ File
+
+สิ่งที่เพิ่ม:
+1. Auto Question Reader
+   - วิเคราะห์คำถามปกติแล้วสร้าง route เช่น bug fix, system build, latest context, analysis, simple explanation
+2. Auto System Connector
+   - สร้างรายการระบบที่เกี่ยวข้องจากรูปแบบคำถาม
+   - ส่ง context เข้า backend ผ่าน question_reader_context_720 และ auto_system_answer_context_720
+3. UI แสดงผล
+   - เพิ่ม chip อ่านคำถามอัตโนมัติ เหนือ Composer
+   - เพิ่ม Workplace · question สำหรับดู route/connectors/answer plan
+4. Answer Contract
+   - ให้ AiRA ตอบผลลัพธ์ทันทีแบบ GPT โดยไม่บังคับให้ผู้ใช้กดเมนู
+   - ถ้าระบบใดยังต้องใช้ API/สิทธิ์/ไฟล์ ให้บอกข้อจำกัดและ fallback
+
+ของเดิมยังอยู่:
+- Composer ล่าง, Popup menu, Context Reader, GPT Interpretation, Slide Typing
+- Code block + Result toggle
+- Image generation + click popup + save
+- Voice, Rooms, Artifact, Settings
+
+ทดสอบ:
+- พิมพ์คำถามปกติ เช่น "แก้ให้ภาพแสดงจริง" หรือ "สร้างระบบนี้ต่อ"
+- ระบบควรแสดง chip อ่านคำถามอัตโนมัติ และส่ง context เชื่อมระบบไปพร้อมคำถาม

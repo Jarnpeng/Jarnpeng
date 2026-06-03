@@ -1,0 +1,11 @@
+Thinkb4do Community Comment Page v1.0.8
+
+Fixed:
+- Hard restore standard comment title/reply/copy/edit/delete icons using CSS mask fallback on ::after.
+- Hide broken inline SVG only inside comment action controls and draw stable icons from plugin CSS.
+- Keep Enter send, Shift+Enter new line, sending dots, and natural media scroll behavior.
+
+Checks:
+- PHP lint required
+- JS syntax required
+- ZIP packaging required

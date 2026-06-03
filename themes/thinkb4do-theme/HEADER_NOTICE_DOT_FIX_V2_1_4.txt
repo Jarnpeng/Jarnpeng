@@ -1,0 +1,13 @@
+Thinkb4do Theme Core v2.1.4 — Header Notice Dot Cleanup
+
+แก้ไข:
+1) ลบจุดสีส้มที่แสดงอยู่บนแถบเขียว/ใกล้เมนู ซึ่งมาจาก .tb4-dev-dot ของแถบประกาศ "เว็บไซต์กำลังพัฒนา"
+2) เพิ่ม CSS fallback ซ่อน .tb4-dev-dot เผื่อหน้าเว็บยังมี HTML เก่าค้างจาก cache
+3) ไม่ลบจุดแจ้งเตือนบนไอคอนกระดิ่ง (.notif-dot) เพราะเป็นสถานะของ notification แยกจากเมนู
+4) อัปเวอร์ชันเป็น 2.1.4 เพื่อบังคับโหลด CSS/JS ใหม่
+
+ตำแหน่งไฟล์หลัก:
+- functions.php: ไม่ render <span class="tb4-dev-dot"> ในแถบประกาศแล้ว
+- style.css: เพิ่ม fallback ซ่อนจุดแถบประกาศ
+- css/tb4-header-master-v214.css: เพิ่ม fallback ซ่อนจุดและปรับ gap
+- js/tb4-header-master-v214.js: ใช้ controller เดิมจาก v2.1.3 เพื่อรักษาปุ่มและ dropdown ที่ใช้งานได้แล้ว

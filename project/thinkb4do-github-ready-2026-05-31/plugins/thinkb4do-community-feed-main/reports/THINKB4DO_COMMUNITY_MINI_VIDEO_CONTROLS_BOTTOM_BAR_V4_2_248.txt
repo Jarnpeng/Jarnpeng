@@ -1,0 +1,6 @@
+THINKB4DO Community Feed Main v4.2.248
+
+Patch summary:
+- Forced mini video popup to use a two-row grid: video row + bottom control bar row.
+- Prevented pause and close buttons from overlaying video content.
+- Hid mini-video placeholder layer in mini-player mode.

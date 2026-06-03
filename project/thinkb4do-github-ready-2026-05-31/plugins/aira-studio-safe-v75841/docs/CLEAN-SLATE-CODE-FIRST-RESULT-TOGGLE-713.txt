@@ -1,0 +1,25 @@
+AiRA Studio v7.1.3 Clean Slate Code First Result Toggle
+
+Goal
+- Restore the first raw code block as the default view.
+- Keep the beautiful rendered Result view available inline inside the same code card.
+- Remove Open/popup flow from code preview.
+
+Changes
+1) Code block first
+- Fenced code blocks now show source code first.
+- Header label starts as Code · aira-code-N.ext.
+
+2) Inline Result toggle
+- The Result button switches the same card into rendered output mode.
+- HTML/CSS/JS/SVG/Markdown render inside iframe sandbox.
+- Press Code to return to the raw code block.
+
+3) No Open button
+- Code UI keeps Copy, Download, Result/Code only.
+- Preview remains inside the code block area.
+
+QC
+- PHP syntax checked.
+- JavaScript syntax checked.
+- ZIP package checked.

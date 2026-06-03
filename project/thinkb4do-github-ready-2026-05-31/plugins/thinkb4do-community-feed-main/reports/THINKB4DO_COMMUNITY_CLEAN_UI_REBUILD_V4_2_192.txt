@@ -1,0 +1,18 @@
+Thinkb4do Community v4.2.192 — Clean UI Rebuild
+
+สิ่งที่ทำ:
+- รื้อ UI/UX layer ใหม่เป็นไฟล์หลักชุดเดียว: assets/community-clean-ui-reset.css
+- คงโครง Desktop ซ้าย / กลาง / ขวา แต่ปรับให้เบาและเป็น social network มากขึ้น
+- ปรับ Phone ให้เมนูเป็นแถบเลื่อนแนวนอน ฟีดเต็มจอ และการ์ดอ่านง่ายขึ้น
+- เอาช่องค้นหาใน Feed ออก เพราะซ้ำกับส่วนหัวเว็บ
+- Sidebar ซ้าย/ขวาโปร่ง ไม่มีพื้นหลัง/ขอบ/เงาหนัก
+- เมนูซ้ายเป็น icon + label และลดปัญหาไอคอนซ้ำ
+- Composer, Reels, Post Card, Media, Action Row และ Comment Preview ถูกจัดใหม่ในสไตล์เดียวกัน
+- ปุ่มแก้ไข/ลบอยู่ขวาบนของการ์ด
+- Tag/context อยู่ใต้คำอธิบาย ก่อนภาพ/วิดีโอ
+
+ตรวจสอบ:
+- PHP lint
+- JS syntax
+- CSS brace balance
+- ZIP test

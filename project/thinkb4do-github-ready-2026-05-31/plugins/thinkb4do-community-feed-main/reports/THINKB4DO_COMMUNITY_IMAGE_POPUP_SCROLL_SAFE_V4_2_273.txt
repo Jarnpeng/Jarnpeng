@@ -1,0 +1,16 @@
+Thinkb4do Community Feed Main v4.2.273
+
+แก้ไขตามโจทย์:
+1) กดดูภาพ Popup ไม่ได้
+   - เพิ่ม Image Popup Tap Guard ให้คลิก/แตะภาพเปิด lightbox ได้ชัดเจน
+   - ใช้ runtime lightbox เดียว ไม่คืนหน้าแสดงความคิดเห็นหรือหน้าสมาชิกเข้ามาใน Feed Main
+
+2) แตะโดนภาพแล้วเลื่อน scroll ไม่ได้
+   - แยก gesture: ถ้าลากเกิน 8px ให้ถือว่าเป็นการ scroll หน้า ไม่เปิด popup
+   - ถ้าแตะสั้น ๆ ไม่ลาก ให้เปิดภาพ popup
+   - เพิ่ม touch-action: pan-y pinch-zoom ให้ media surface
+
+สถานะ:
+- Feed Main ยังเป็น feed-only
+- ลิงก์สมาชิกเดิมยังอยู่
+- หน้าคอมเมนต์/หน้าสมาชิกยังไม่ถูกสร้างกลับมาในปลั๊กอินนี้

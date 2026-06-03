@@ -1,0 +1,4 @@
+Thinkb4do Community v4.2.215
+- บังคับเอาขอบโค้งของภาพ/วิดีโอที่แสดงในฟีดและหน้าแสดงความคิดเห็นออก
+- ใส่ override ทั้งใน community-clean-ui-reset.css และ community.css
+- เพิ่ม runtime class v42215 เพื่อกัน CSS เก่าทับ

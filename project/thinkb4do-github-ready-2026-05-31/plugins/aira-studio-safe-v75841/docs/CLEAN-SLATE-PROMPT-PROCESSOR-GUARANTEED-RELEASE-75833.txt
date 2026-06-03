@@ -1,0 +1,21 @@
+AiRA Studio v7.5.8.33 Prompt Processor Guaranteed Release
+
+Goal:
+- Prompt Processor must visually complete before the real answer appears.
+- The real answer must never be blocked permanently.
+
+Fix:
+- Replaced the waiting gate with a guaranteed release gate.
+- The gate no longer waits on the live processor animation promise.
+- It forces the processor into completed state, waits for browser paint, then resolves.
+- It includes an absolute timeout failsafe so the answer always renders.
+
+Preserved:
+- Processing Time Card after answer is visible.
+- Existing buttons and action router.
+- Composer, popup menu, sidebar layout.
+
+QC:
+- PHP lint passed.
+- JS syntax check passed.
+- ZIP integrity checked.

@@ -1,0 +1,7 @@
+THINKB4DO Community Feed Main v4.2.258
+
+Patch summary:
+- Fixed mini video dock button hit areas by disabling pointer events on the mini video stage/media and prioritizing the control bar.
+- Added window-level capture handlers for pause, close, and drag-to-close controls so old document listeners cannot block them.
+- Pause button now toggles to play icon for iframe-based videos as a UI fallback.
+- Close restores/stops the mini video through the stable portal state.

@@ -1,0 +1,16 @@
+Thinkb4do Community v4.2.188 — Complete Decoration
+
+สิ่งที่ทำ:
+1. เก็บ UI/UX ให้ครบในเลเยอร์เดียว: Desktop, Phone, Feed, Composer, Reels, Post Card, Sidebar ซ้าย/ขวา, ปุ่ม, Tag, Comment Preview, Form และ Reel Viewer
+2. คงตำแหน่งซ้าย / กลาง / ขวา ไม่ขยับ layout ใหม่
+3. เอาไอคอน/ชื่อซ้ำออกด้วย CSS ต้นทางของ final layer
+4. เอาช่องค้นหาใน Feed ออกตามโจทย์เดิม
+5. Feed กลางถูกจัดเป็น Social Card System มากขึ้น
+6. Reels เป็น rail 9:16 แบบเบา ไม่กินพื้นที่ฟีด
+7. Sidebar ซ้าย/ขวายังคงโปร่ง ไม่มีพื้นหลัง/เส้น/เงาหนัก
+8. Phone UI เหลือ 1 คอลัมน์ เมนูเป็นแถบเลื่อนแนวนอน
+
+ตรวจสอบหลังติดตั้ง:
+- data-ui-version ต้องเป็น 4.2.188
+- CSS หลักที่ใช้งานคือ assets/community-clean-ui-reset.css
+- ล้าง cache หลังติดตั้งทุกครั้ง

@@ -1,0 +1,13 @@
+/* Thinkb4do v2.4.1 — Simplified mobile bottom nav: remove Search and Menu */
+@media (max-width: 782px) {
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    max-width: 430px;
+    margin-inline: auto;
+  }
+
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__item--search,
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__item--menu {
+    display: none !important;
+  }
+}

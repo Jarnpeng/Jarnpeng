@@ -1,0 +1,9 @@
+Thinkb4do Community Feed Main v4.2.268
+
+แก้หน้าแสดงความคิดเห็นแบบ Hard Isolate:
+- เปลี่ยน single-community-post.php เป็นโครงใหม่ที่ไม่ใช้ root/class เดิมของหน้า single เก่า เพื่อตัด CSS legacy ที่ทับ layout
+- ขนาดหน้าแสดงความคิดเห็นเท่าหน้าฟีดหลัก 760px
+- ลำดับ UI: หัวผู้โพสต์ -> ชื่อ/เนื้อหา -> แท็ก/สื่อ/โพล -> actions -> ความคิดเห็น
+- ฟอร์มความคิดเห็นอยู่ในกรอบเดียวกับโพสต์ ไม่ลอย ไม่ซ้อน ไม่ดันผิดฝั่ง
+- template_include priority เพิ่มเป็น 9999 เพื่อให้ปลั๊กอินบังคับใช้ template นี้ได้ชัดเจนขึ้น
+- คง data attributes สำหรับ Like/Bookmark/Share/Delete/Edit/Comment AJAX

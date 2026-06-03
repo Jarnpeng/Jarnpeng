@@ -1,0 +1,24 @@
+Thinkb4do Theme Core v2.3.7 — App Grid Minimal Menu
+
+เป้าหมาย:
+- ทำให้เห็นผลจริงบน Header
+- เพิ่มปุ่มไอคอนสี่เหลี่ยม 9 ช่อง ทางซ้ายของปุ่มแจ้งเตือน
+- ปุ่ม 9 ช่องใช้เปิดแผง “เมนูและผลิตภัณฑ์”
+- เมนูกลางเหลือเฉพาะ หน้าแรก / ชุมชน / ผลิตภัณฑ์ / ช่องค้นหา
+- คง WordPress Admin Bar
+- คงระบบซ่อน Footer เฉพาะหน้าชุมชนจาก v2.3.6
+
+ไฟล์ที่เพิ่ม:
+- css/tb4-app-grid-menu-v237.css
+- js/tb4-app-grid-menu-v237.js
+
+ไฟล์ที่แก้:
+- header.php
+- functions.php
+- style.css
+
+หมายเหตุ:
+เมนูหลักใน Header ไม่ดึงเมนู WordPress แบบเต็มมาแสดงแล้ว เพื่อป้องกันรายการเกินและทำให้ Header ดูรก
+ถ้าต้องการเพิ่ม/เปลี่ยนรายการ สามารถใช้ filter:
+- tb4_minimal_header_links
+- tb4_app_grid_groups

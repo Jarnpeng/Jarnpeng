@@ -1,0 +1,8 @@
+AiRA Studio v7.5.5.3
+
+แก้ไขตามโจทย์ล่าสุด:
+1. เพิ่ม contrast guard สำหรับ code block เพื่อไม่ให้สีจม: หัว code, version line, ปุ่มบน, ปุ่มล่าง, file row, file panel และโค้ดจริงอ่านชัดขึ้น
+2. เพิ่ม real action guard: ปุ่มใน code block ใช้ pointer-events/touch-action/z-index ที่ชัดขึ้น ลดอาการกดไม่ติดจาก layer ซ้อน
+3. ปรับ prompt processor ให้เหลือจุดสามจุดนุ่มๆชุดเดียว โดยเอา inline dots ชุดเล็กออก
+4. ปรับ assistant slide typing cadence ให้ใกล้ GPT ขึ้น: แบ่ง chunk ตามความยาว, หน่วงตอนจบประโยค/ขึ้นย่อหน้า, และไม่ render code card ระหว่าง fence ยังไม่สมบูรณ์
+5. ระบบเขียนโค้ดยังรองรับ Preview, Live Debug, System Builder, Package, Install/Upgrade Gate โดยไม่ตัดฟังก์ชันเดิม

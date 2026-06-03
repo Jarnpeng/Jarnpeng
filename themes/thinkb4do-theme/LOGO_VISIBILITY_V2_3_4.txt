@@ -1,0 +1,22 @@
+Thinkb4do Theme Core v2.3.4 — Logo Visibility / Auto Logo Variant
+
+ปรับปรุง:
+- เพิ่มระบบโลโก้สีเข้มสำหรับพื้นสว่าง
+- เพิ่มระบบโลโก้สีสว่างสำหรับพื้นเข้ม
+- เพิ่มโหมดเลือกสีโลโก้: Auto / บังคับสีเข้ม / บังคับสีสว่าง
+- Auto mode จะตรวจพื้นหลัง Header/Footer แล้วเลือกโลโก้ให้เห็นชัดขึ้น
+- เพิ่ม logo plate, contrast, object-fit, mobile sizing และ forced-colors fallback
+
+ไฟล์ที่เพิ่ม:
+- css/tb4-logo-visibility-v234.css
+- js/tb4-logo-visibility-v234.js
+
+ไฟล์ที่แก้:
+- style.css
+- functions.php
+
+วิธีตั้งค่า:
+Appearance > Customize > Thinkb4do Settings > โลโก้ / อัตลักษณ์แบรนด์
+1) ใส่โลโก้สีเข้ม / ใช้บนพื้นสว่าง
+2) ใส่โลโก้สีสว่าง / ใช้บนพื้นเข้ม
+3) เลือกโหมด Auto เพื่อให้ธีมเลือกเองตามพื้นหลัง

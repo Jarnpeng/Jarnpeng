@@ -1,0 +1,5 @@
+Thinkb4do Community v4.2.217
+- เพิ่มความกว้างการ์ดให้ใกล้ภาพอ้างอิงมากขึ้น
+- ลด outer gutter ของ card เหลือเกือบเต็มจอ
+- ขยาย media slot และ hero area ให้เต็มขึ้น
+- ปรับ comment composer ให้บาลานซ์กับความกว้างใหม่

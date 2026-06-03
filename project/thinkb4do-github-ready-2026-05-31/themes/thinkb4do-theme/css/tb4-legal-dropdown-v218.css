@@ -1,0 +1,157 @@
+/*
+ * Thinkb4do v2.1.8 — Legal dropdown click/hover restore
+ * - Opens the “นโยบาย” submenu on desktop without being clipped by the centered header group.
+ * - Keeps the submenu attached to the white header layer, not the green development notice.
+ */
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme #site-header,
+  body.thinkb4do-theme #site-header .container,
+  body.thinkb4do-theme #site-header .header-inner,
+  body.thinkb4do-theme #site-header .tb4-header-center,
+  body.thinkb4do-theme #site-header .main-nav {
+    overflow: visible !important;
+  }
+
+  body.thinkb4do-theme #site-header .tb4-header-center {
+    position: relative !important;
+    z-index: 10040 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav {
+    position: relative !important;
+    z-index: 10060 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children {
+    position: relative !important;
+    isolation: isolate !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > a {
+    cursor: pointer !important;
+    gap: 4px !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > a::after,
+  body.thinkb4do-theme .tb4-header-center .main-nav > li.menu-item-has-children > a::after {
+    content: "▾" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 4px !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: .66rem !important;
+    line-height: 1 !important;
+    color: currentColor !important;
+    opacity: .75 !important;
+    background: transparent !important;
+    transform: translateY(1px) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children.tb4-submenu-open > a,
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children:hover > a,
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children:focus-within > a {
+    color: var(--tb4-green, #1E6B45) !important;
+    background: rgba(30, 107, 69, .08) !important;
+    border-radius: 999px !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children > .sub-menu {
+    display: grid !important;
+    position: absolute !important;
+    top: calc(100% + 12px) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) translateY(8px) !important;
+    min-width: 260px !important;
+    max-width: min(360px, calc(100vw - 32px)) !important;
+    padding: 10px !important;
+    margin: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 5px !important;
+    list-style: none !important;
+    border: 1px solid rgba(15, 23, 42, .08) !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, .98) !important;
+    box-shadow: 0 20px 52px rgba(15, 23, 42, .16) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 99999 !important;
+    overflow: visible !important;
+    transition: opacity .16s ease, transform .16s ease, visibility .16s ease !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children:hover > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children:focus-within > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children.tb4-submenu-open > .sub-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -7px !important;
+    left: 50% !important;
+    width: 14px !important;
+    height: 14px !important;
+    transform: translateX(-50%) rotate(45deg) !important;
+    background: #fff !important;
+    border-left: 1px solid rgba(15, 23, 42, .08) !important;
+    border-top: 1px solid rgba(15, 23, 42, .08) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li::before,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li::after,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li::marker {
+    list-style: none !important;
+    content: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 38px !important;
+    width: 100% !important;
+    padding: 9px 12px !important;
+    border-radius: 12px !important;
+    color: var(--tb4-gray-700, #374151) !important;
+    font-size: .86rem !important;
+    font-weight: 650 !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    text-decoration: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a:hover,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a:focus-visible {
+    background: rgba(30, 107, 69, .09) !important;
+    color: var(--tb4-green, #1E6B45) !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list li.menu-item-has-children > a::after {
+    content: "▾" !important;
+    display: inline-flex !important;
+    margin-left: auto !important;
+    opacity: .75 !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list li.menu-item-has-children > .sub-menu {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}

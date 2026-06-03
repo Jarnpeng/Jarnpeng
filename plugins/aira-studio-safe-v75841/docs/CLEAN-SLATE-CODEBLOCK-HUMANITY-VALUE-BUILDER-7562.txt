@@ -1,0 +1,37 @@
+AiRA Studio v7.5.6.2 — Codeblock Humanity Value Builder
+
+Goal
+- Code block is not only a code display. It becomes a system-development cockpit that produces real value for users and other people.
+
+Added
+- Humanity Value Builder panel inside every code block.
+- Humanity Value % score with ten dimensions:
+  1) real human problem
+  2) button value
+  3) command value
+  4) visible feedback
+  5) safety / risk reduction
+  6) privacy / permission
+  7) accessibility / responsive use
+  8) learning / documentation
+  9) testable benefit
+  10) sustainability / maintainability
+- New code block button: คุณค่ามนุษย์.
+- New data attributes: data-humanity-value-score and data-humanity-value-map.
+- New prompt loop: Humanity Impact Map + Button Value Contract + Command Benefit Map + Safety/Ethics Guard + full runnable code.
+
+Rules
+- Every button must help a real user, explain what happens, handle errors, and be testable.
+- Every command must have a meaningful benefit, not just exist as code.
+- Every system should reduce confusion, risk, wasted time, or unsafe outcomes.
+- Ambition is unlimited for helping people, but must respect safety, privacy, consent, law, copyright, and honest capability limits.
+
+Kept
+- Timeout Recovery Slim Dev v7.5.6.1.
+- Dev Master Engine v7.5.6.0.
+- Unlimited System Capability v7.5.5.9.
+- Meaning + Human Value Engine v7.5.5.8.
+- Typing Cadence + Command Benefit v7.5.5.7.
+- Human Value Guard v7.5.5.6.
+- Success Loop v7.5.5.5.
+- Composer Bottom Lock v7.5.5.4.

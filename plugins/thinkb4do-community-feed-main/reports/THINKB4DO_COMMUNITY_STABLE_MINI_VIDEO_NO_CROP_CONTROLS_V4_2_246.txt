@@ -1,0 +1,16 @@
+THINKB4DO Community Feed Main v4.2.246
+
+Fix target:
+- Mini video popup was cropped after v4.2.245.
+- Pause and close buttons disappeared from the mini video popup.
+
+Changes:
+- Removed forced zoom/transform from mini video media.
+- Restored full 16:9 video stage with object-fit: contain.
+- Moved pause/close controls to an always-visible overlay at bottom-right.
+- Kept black mini player background and rounded shell.
+- Kept prior touch-scroll/media guards.
+
+QC:
+- PHP syntax checked.
+- ZIP integrity checked.

@@ -1,0 +1,15 @@
+AiRA Suite Export Plugin — Knowledge Center Live Link
+Version: 1.2.8
+
+สิ่งที่เพิ่ม:
+- เชื่อม AiRA Knowledge Center แบบปลอดภัย
+- ส่งข้อมูลเฉพาะทางของปลั๊กอินเข้าคลังความรู้กลาง
+- ค้นหาคลังความรู้ผ่าน helper function ของตัวเอง
+- ซ่อน API key/token/secret/password อัตโนมัติ
+- ไม่มี auto sync หนัก, ไม่มีติดตั้งเอง, ไม่มีเขียนทับไฟล์จริง
+
+Endpoint ตรวจสถานะ:
+/wp-json/aira-knowledge-link/v1/export
+
+ห้องที่ใช้เป็นค่าเริ่มต้น:
+system-build-history

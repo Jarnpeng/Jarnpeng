@@ -1,0 +1,240 @@
+/*
+ * Thinkb4do Header Master Stabilizer v2.1.2
+ * One final layer for: admin bar -> white header -> green notice -> content.
+ */
+html {
+  --tb4-v212-admin-h: 0px;
+  --tb4-v212-header-h: 64px;
+  --tb4-v212-notice-h: 0px;
+  --tb4-v212-header-bottom: calc(var(--tb4-v212-admin-h) + var(--tb4-v212-header-h));
+  --tb4-v212-stack-h: calc(var(--tb4-v212-header-h) + var(--tb4-v212-notice-h));
+  --tb4-v212-popup-gap: 0px;
+}
+
+html.tb4-v212-admin-on { --tb4-v212-admin-h: 32px; }
+@media screen and (max-width: 782px) {
+  html.tb4-v212-admin-on { --tb4-v212-admin-h: 46px; }
+}
+
+body.thinkb4do-theme.tb4-sticky-header {
+  padding-top: var(--tb4-v212-stack-h) !important;
+  overflow-x: hidden !important;
+}
+
+body.admin-bar.thinkb4do-theme.tb4-sticky-header {
+  padding-top: var(--tb4-v212-stack-h) !important;
+}
+
+body.thinkb4do-theme.tb4-dev-notice-off,
+body.thinkb4do-theme.tb4-dev-notice-dismissed {
+  --tb4-v212-notice-h: 0px;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header {
+  position: fixed !important;
+  top: var(--tb4-v212-admin-h) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: var(--tb4-v212-header-h) !important;
+  min-height: var(--tb4-v212-header-h) !important;
+  max-height: var(--tb4-v212-header-h) !important;
+  background: rgba(255,255,255,.985) !important;
+  border-bottom: 1px solid rgba(15,23,42,.08) !important;
+  box-shadow: 0 8px 24px rgba(15,23,42,.045) !important;
+  z-index: 1000002 !important;
+  overflow: visible !important;
+  contain: none !important;
+  isolation: isolate !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header .container,
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: visible !important;
+  contain: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header a,
+body.thinkb4do-theme.tb4-sticky-header #site-header button,
+body.thinkb4do-theme.tb4-sticky-header #site-header input,
+body.thinkb4do-theme.tb4-sticky-header #site-header [role="button"],
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-icon-btn,
+body.thinkb4do-theme.tb4-sticky-header #site-header .user-avatar-btn,
+body.thinkb4do-theme.tb4-sticky-header #site-header .hamburger {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 1000006 !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header .tb4-dev-notice,
+body.thinkb4do-theme.tb4-sticky-header .tb4-dev-notice-topmost {
+  position: fixed !important;
+  top: var(--tb4-v212-header-bottom) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-height: var(--tb4-v212-notice-h) !important;
+  height: var(--tb4-v212-notice-h) !important;
+  max-height: var(--tb4-v212-notice-h) !important;
+  z-index: 1000001 !important;
+  overflow: hidden !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header .tb4-dev-notice a,
+body.thinkb4do-theme.tb4-sticky-header .tb4-dev-notice button,
+body.thinkb4do-theme.tb4-sticky-header .tb4-dev-notice__edit,
+body.thinkb4do-theme.tb4-sticky-header .tb4-dev-notice__close {
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-dev-notice-off .tb4-dev-notice,
+body.thinkb4do-theme.tb4-dev-notice-dismissed .tb4-dev-notice,
+body.thinkb4do-theme.tb4-dev-notice-off .tb4-dev-notice-topmost,
+body.thinkb4do-theme.tb4-dev-notice-dismissed .tb4-dev-notice-topmost {
+  display: none !important;
+}
+
+body.thinkb4do-theme .tb4-notification-panel,
+body.thinkb4do-theme #userMenuDropdown,
+body.thinkb4do-theme #searchResults,
+body.thinkb4do-theme #mobileMenuOverlay,
+body.thinkb4do-theme .tb4-mobile-menu-overlay {
+  contain: none !important;
+  max-width: calc(100vw - 20px) !important;
+  box-sizing: border-box !important;
+}
+
+body.thinkb4do-theme .tb4-notification-panel.is-open,
+body.thinkb4do-theme #userMenuDropdown.is-open,
+body.thinkb4do-theme #searchResults:not([hidden]) {
+  display: block !important;
+  position: fixed !important;
+  top: var(--tb4-v212-header-bottom) !important;
+  margin-top: 0 !important;
+  z-index: 1000012 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  transform: none !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay.is-open,
+body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open {
+  display: block !important;
+  position: fixed !important;
+  top: var(--tb4-v212-header-bottom) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  inset: var(--tb4-v212-header-bottom) 0 0 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: calc(100vh - var(--tb4-v212-header-bottom)) !important;
+  max-height: calc(100vh - var(--tb4-v212-header-bottom)) !important;
+  background: #fff !important;
+  z-index: 1000011 !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  padding: 18px max(16px, env(safe-area-inset-left)) 28px max(16px, env(safe-area-inset-right)) !important;
+  border-top: 1px solid rgba(15,23,42,.08) !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay a,
+body.thinkb4do-theme .tb4-mobile-menu-overlay a {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1024px) {
+  html { --tb4-v212-header-h: 72px; }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    gap: 8px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .site-logo {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-right {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    gap: 6px !important;
+  }
+
+  body.thinkb4do-theme .tb4-notification-panel.is-open,
+  body.thinkb4do-theme #userMenuDropdown.is-open,
+  body.thinkb4do-theme #searchResults:not([hidden]) {
+    top: var(--tb4-v212-header-bottom) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 24px) !important;
+    border-radius: 0 0 22px 22px !important;
+    max-height: calc(100vh - var(--tb4-v212-header-bottom) - 10px) !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme .tb4-notification-panel.is-open {
+    width: min(380px, calc(100vw - 40px)) !important;
+    right: var(--tb4-v212-popup-right, 24px) !important;
+    left: auto !important;
+    max-height: calc(100vh - var(--tb4-v212-header-bottom) - 12px) !important;
+  }
+
+  body.thinkb4do-theme #userMenuDropdown.is-open {
+    width: max-content !important;
+    min-width: 220px !important;
+    max-width: min(320px, calc(100vw - 40px)) !important;
+    right: var(--tb4-v212-popup-right, 24px) !important;
+    left: auto !important;
+    max-height: calc(100vh - var(--tb4-v212-header-bottom) - 12px) !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay,
+  body.thinkb4do-theme #mobileMenuOverlay.is-open,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open {
+    display: none !important;
+  }
+}
+
+body.tb4-menu-open {
+  overflow: auto !important;
+  touch-action: auto !important;
+}

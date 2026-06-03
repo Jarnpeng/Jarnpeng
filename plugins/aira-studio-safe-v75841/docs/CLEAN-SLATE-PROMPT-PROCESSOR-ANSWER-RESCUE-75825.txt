@@ -1,0 +1,25 @@
+AiRA Studio v7.5.8.25 Prompt Processor Answer Rescue Gate
+
+เป้าหมาย:
+- Prompt Processor ต้องแสดงสถานะเสร็จก่อนคำตอบจริง
+- Gate ต้องไม่ล็อกคำตอบจนระบบตอบไม่ได้
+- ใช้ original_message เป็นคำถามจริงล่าสุด เพื่อกัน prompt processor/system matrix กลบคำถามผู้ใช้
+
+สิ่งที่แก้:
+1. เพิ่ม safeCompletePromptProcessorGate() พร้อม fail-open timeout
+2. ถ้า gate error/ค้าง จะบังคับแสดง Processor complete แล้วปล่อยคำตอบ
+3. PHP อ่าน original_message และสร้าง Latest User Message Lock
+4. call_ai() ใช้ original_message สำหรับ intent routing
+5. fallback ใช้คำถามจริงล่าสุด ไม่ใช้ prompt processor ภายในยาว ๆ
+6. เพิ่ม local_direct_answer_if_possible สำหรับคำนวณง่าย เช่น 7+7
+
+ไม่แตะ:
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ Composer/Menu layout
+
+ทดสอบ:
+- ถาม 7+7 ต้องตอบ 14
+- ถามเรื่องทั่วไป ต้องไม่หยุดที่ “หาคำตอบไม่ได้” หาก API พร้อม
+- หาก API ไม่พร้อม ต้องมี fallback จากคำถามล่าสุด ไม่ใช่ prompt processor ภายใน

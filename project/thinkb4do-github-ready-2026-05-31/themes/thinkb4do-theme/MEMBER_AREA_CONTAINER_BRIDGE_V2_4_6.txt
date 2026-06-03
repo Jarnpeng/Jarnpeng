@@ -1,0 +1,9 @@
+Thinkb4do Theme v2.4.6 — Member Area Container Bridge
+
+แก้ page.php ที่เคยบีบเนื้อหาทุกหน้าไว้ที่ max-width:900px ทำให้หน้าพื้นที่สมาชิกถูกตัดบางส่วน
+
+สิ่งที่เปลี่ยน:
+1) ตรวจหน้า member-area หรือ shortcode/block ของ Thinkb4do Member Area
+2) ให้หน้านี้ใช้ container เต็มความกว้างอย่างปลอดภัย
+3) คุม h1 และ entry content ไม่ให้ตัด plugin layout
+4) เพิ่ม body class tb4-page-is-member-area เพื่อ CSS bridge

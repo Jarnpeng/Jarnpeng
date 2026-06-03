@@ -1,0 +1,42 @@
+AiRA Studio Clean Slate v7.4.8 — Authorized Preview Contrast
+
+เป้าหมาย:
+- ทำให้ Preview Sandbox เป็น Authorized Preview เห็นได้เฉพาะผู้ใช้ WordPress ที่มีสิทธิ์ตาม capability ของ AiRA Studio
+- ใช้ Preview เป็นด่านบังคับก่อนโหลดแพ็ก / ติดตั้ง / อัปเกรด เพื่อให้เห็นหน้าจริงจากโค้ดก่อนส่งใช้งาน
+- เอาชุดปุ่ม Next / ปรับทันที / Fix สด ออกจาก code block และ Preview เพื่อลดปุ่มซ้ำ ลดจุดกดไม่ติด และทำให้ flow ชัดขึ้น
+- แก้ปัญหาสีจม โดยเพิ่ม contrast ของปุ่ม ข้อความย่อย code block popup และ Live QC
+
+สิ่งที่เพิ่ม:
+1) previewAccess config จาก PHP → JS
+   - authorizedOnly: true
+   - policy: same_wordpress_user_with_required_capability
+   - capability: ใช้ค่าจาก AiRA capability ปัจจุบัน เช่น manage_options
+   - canPreview: ตรวจจาก current_user_can()
+
+2) Authorized Preview Gate ใน JS
+   - requireAuthorizedPreviewAccess()
+   - ถ้าไม่มีสิทธิ์ จะไม่เปิด WordPress Pre-install Sandbox
+   - ถ้ามีสิทธิ์ จะเห็น badge Policy / Capability / User ID / Fingerprint ใน Preview
+
+3) Flow ก่อนติดตั้งจริง
+   - กด Preview/ลองก่อนติดตั้ง → เปิด Authorized Preview
+   - กดโหลดแพ็ก/ติดตั้ง/อัปเกรด → ถ้ายังไม่เคย Preview ระบบจะเปิด Preview ให้ดูก่อน และให้กดซ้ำหลังตรวจแล้ว
+   - Preview ยังไม่ execute PHP ดิบ ไม่เขียนฐานข้อมูล ไม่ Activate plugin อัตโนมัติ
+
+4) ลดปุ่มซ้ำ
+   - ซ่อน .aira-code-next-row
+   - ซ่อน data-action code-wp-next / code-wp-next-done / code-live-fix
+   - เหลือปุ่มหลักที่จำเป็น: Copy, Download, Preview, ลองก่อนติดตั้ง, Debug/Live QC, โหลดแพ็ก, ติดตั้ง Plugin, อัปเกรด
+
+5) Contrast Guard
+   - ตัวอักษรหลัก #111111
+   - ข้อความรอง #374151
+   - ปุ่มเขียวใช้พื้น #E9F8EF + ตัวอักษร #14532D
+   - ปุ่มส้มใช้ #F97316 + ตัวอักษรขาว
+   - code block ใช้พื้น #0F172A + ตัวอักษร #E5E7EB
+
+ผลลัพธ์:
+- Preview Sandbox เป็นระบบตรวจจริงก่อนติดตั้งที่ปลอดภัยขึ้น
+- ผู้ที่ไม่มีสิทธิ์ไม่สามารถเปิด Preview WordPress ก่อนติดตั้งได้จากหน้า AiRA
+- ลดโอกาส UI ซ้อน ปุ่มซ้ำ และสีจม
+- พร้อมต่อยอดเป็นระบบแชร์ Preview เฉพาะผู้มีสิทธิ์แบบ link ภายในในอนาคต ถ้าต้องการ

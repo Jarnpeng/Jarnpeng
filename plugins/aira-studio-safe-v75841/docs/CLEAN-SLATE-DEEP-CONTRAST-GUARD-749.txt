@@ -1,0 +1,22 @@
+AiRA Studio Clean Slate v7.4.9 — Deep Contrast Guard
+
+Settings | โดย Thinkb4do | ดูรายละเอียด
+
+Purpose:
+- แก้ปัญหาสีจมเพิ่มจาก v7.4.8 โดยไม่รื้อโครง UI เดิม
+- เพิ่ม contrast ให้ข้อความรอง ปุ่ม popup code block preview sandbox live/debug และสถานะต่าง ๆ
+- ทำให้มองเห็นชัดขึ้นบนมือถือ จอสว่างมาก และโหมด prefers-contrast: more
+
+Changed:
+1. ปรับ --aira-muted จากเทาอ่อนเป็น #374151
+2. เพิ่มสีหลักสำหรับ readable text: #111827 / #374151
+3. ปรับปุ่มปกติให้พื้นขาว + border ชัดขึ้น
+4. ปรับปุ่มเขียว/ส้มให้ใช้สีเข้มบนพื้นอ่อนและสีขาวบนพื้นเข้ม
+5. ปรับ code block dark surface เป็น #0B1220 + #E5E7EB
+6. ปรับ Preview Sandbox iframe base style ให้ข้อความรองไม่จม
+7. เพิ่ม focus outline สีส้มเพื่อช่วยเห็นตำแหน่งปุ่มที่กำลังกด
+8. คงโครง Authorized Preview และซ่อน Next/Fix สด ตาม v7.4.8
+
+Status:
+- Ready for WordPress live test after cache clear
+- Still requires real device check for mobile keyboard/composer and real browser contrast check

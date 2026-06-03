@@ -1,0 +1,18 @@
+Thinkb4do Community v4.2.221
+
+Goal
+- Keep only one primary card on the single-post comment page.
+- Remove stacked/nested card feeling in the comments section.
+- Match the feed tone more closely.
+
+Changes
+1. Flattened .tb4c-comments-card so it reads as part of the main post card instead of a second card.
+2. Removed inner background/box-shadow/card feeling from comment wrappers.
+3. Kept empty-state as a lightweight dashed panel, not a separate white card.
+4. Added a simple divider before the composer instead of another card container.
+5. Kept the overall Thinkb4do mood and tone.
+
+Expected result
+- Single clean card feel.
+- No stacked-card appearance in the comments area.
+- Cleaner feed-like comment page.

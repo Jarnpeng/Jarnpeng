@@ -1,0 +1,12 @@
+AiRA Studio v7.5.7.8 — No Processor Insight Numbers
+
+เป้าหมาย:
+- เอาชุด "รับรู้ต่อด้วยเลข" ออกจาก Prompt processor โดยเด็ดขาด
+- ระหว่าง processor ให้แสดงเฉพาะสถานะอ่าน/ประมวลผล + จุดสามจุดนุ่ม ๆ
+- ชุดหมายเลขรับรู้ความหมายจะแสดงเฉพาะใต้คำตอบจริงหลังสไลด์อักษรจบ
+
+สิ่งที่แก้:
+1. ล้าง .message-answer-insights และ continuation rows ออกจาก prompt-processing card ทุกช่วง
+2. เพิ่ม data-no-insight-numbers="prompt-processor" เพื่อกันการแทรกซ้ำภายหลัง
+3. เพิ่ม CSS guard ซ่อน insight/choice rows ภายใน .prompt-processing เป็นชั้นป้องกันสุดท้าย
+4. คงระบบหมายเลขใต้คำตอบจริงไว้เหมือนเดิม

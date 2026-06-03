@@ -1,0 +1,30 @@
+Thinkb4do Theme v2.0.2 — Responsive + Hamburger Recovery Fix
+
+ปัญหาที่แก้:
+1) ย่อหน้าจอแล้วขยายกลับไม่คืน desktop layout
+2) ปุ่มสามขีดกดแล้วเมนูไม่เปิด หรือโดนสคริปต์เดิม/overlay เดิมชนกัน
+
+สาเหตุหลักที่พบ:
+- class html.tb4-actual-mobile อ้างอิงจาก physical device/touch screen มากเกินไป ทำให้มือถือ/แท็บเล็ต/desktop site mode ค้าง layout มือถือหลังขยาย viewport
+- mobile-menu-anchor-fix เดิมปิดเมนูเฉพาะเมื่อ viewport > 900 และไม่ใช่ actual mobile ทำให้เครื่อง touch บางกรณีไม่ปิด overlay เมื่อกลับ desktop
+- CSS v2.0.1 recovery ใช้ @media min-width:901px ทำให้ช่วง 901-1024px ไปซ่อน hamburger ทั้งที่ธีมยังใช้เมนูมือถือในช่วง tablet
+
+สิ่งที่แก้ใน v2.0.2:
+- ปรับ JS ให้ tb4-actual-mobile ติดเฉพาะตอน viewport <= 1024px และเป็นอุปกรณ์ touch/mobile จริงเท่านั้น
+- เพิ่ม tb4-viewport-mobile / tb4-viewport-desktop เป็น class ตาม viewport จริง
+- เปลี่ยน desktop recovery breakpoint เป็น 1025px เพื่อไม่ชนกับ tablet menu
+- แทนที่ mobile-menu-anchor-fix.js ด้วย controller ใหม่ที่จับคลิกปุ่มสามขีดด้วย capture phase เพื่อกัน handler เก่าทำงานซ้อน
+- เมื่อ viewport >= 1025px จะปิด mobile overlay, เอา body lock ออก, ซ่อน hamburger และคืน main nav/search กลับมา
+- เมื่อ viewport <= 1024px จะบังคับให้ hamburger คลิกได้และ overlay เปิดใต้ header จริง
+
+ทดสอบไฟล์:
+- node --check js/main.js: ผ่าน
+- node --check js/mobile-menu-anchor-fix.js: ผ่าน
+- php -l functions.php: ผ่าน
+
+วิธีทดสอบหลังติดตั้ง:
+1) ล้าง cache ทั้งเว็บ/ปลั๊กอิน/Cloudflare/เบราว์เซอร์
+2) เปิดหน้าเว็บ desktop แล้วค่อย ๆ ย่อหน้าจอจนเห็นปุ่มสามขีด
+3) กดสามขีด เมนูควรเปิดทันที
+4) ขยายกลับมากกว่า 1025px เมนูต้องปิดเอง และเมนู desktop ต้องกลับมา
+5) ทดสอบบนมือถือจริงอีกครั้ง ปุ่มสามขีดต้องเปิด/ปิดได้

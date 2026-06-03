@@ -1,0 +1,8 @@
+THINKB4DO Community Feed Main v4.2.259
+
+Patch summary:
+- Fixed mini video buttons that were visible but not receiving real touch/click events.
+- Exposed the stable portal mini-video API for hard fallback actions.
+- Pause/play now toggles label and includes iframe fallback when postMessage is ignored.
+- Close now cleans mini-player classes to prevent instant re-open.
+- Drag-to-close now has document/window capture fallbacks for touch and pointer events.

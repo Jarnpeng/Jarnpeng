@@ -1,0 +1,16 @@
+AiRA Studio v7.2.9 Clean Slate Code Upgrade Next Short Prompt
+
+เพิ่มระบบ Next ใต้ code block สำหรับโค้ด WordPress ที่ติดตั้ง/อัปเกรดได้
+
+สิ่งที่เพิ่ม:
+1. เพิ่มช่องพิมพ์ข้อความสั้น ๆ ก่อนกด Next ใต้ code block
+2. ปุ่ม Next จะส่งบริบทไฟล์ เวอร์ชัน ส่วนประกอบ และโค้ดล่าสุดให้ AiRA ทำงานต่อในแชท
+3. หลังติดตั้งหรืออัปเกรด Plugin แล้ว แถว Next จะพร้อมใช้งานและไม่พาออกจากหน้าแชท
+4. ข้อความที่ผู้ใช้เห็นในแชทจะสั้น ไม่ยัดโค้ดยาว แต่ backend ได้รับบริบทโค้ดสำหรับตอบต่อ
+5. ของเดิมยังอยู่: Code first, Result toggle, File icon, Install Plugin, Upgrade, Module/Component/Theme/Widget relationship
+
+วิธีใช้:
+- ให้ AiRA สร้าง/แก้โค้ด WordPress Plugin
+- กดติดตั้งหรืออัปเกรดตามต้องการ
+- พิมพ์สั้น ๆ ในช่อง เช่น "ตรวจบั๊กต่อ" หรือ "สรุปสิ่งที่อัปเกรด"
+- กด Next เพื่อให้ระบบทำงานต่อจาก code block เดิม

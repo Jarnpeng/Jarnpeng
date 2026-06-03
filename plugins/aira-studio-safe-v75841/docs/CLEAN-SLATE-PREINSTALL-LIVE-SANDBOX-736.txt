@@ -1,0 +1,16 @@
+AiRA Studio v7.3.6 Clean Slate Pre-install Live Sandbox
+
+Goal:
+- Make WordPress/PHP code usable inside the code block area before installing.
+- Add a visible “ลองใช้ก่อนติดตั้ง” control under each code block and in WordPress-related file rows.
+
+What changed:
+1. PHP/WordPress Result now renders an interactive Pre-install Sandbox instead of only saying PHP cannot run in iframe.
+2. Sandbox includes Admin Preview, Shortcode, Rendered HTML, and System Map tabs.
+3. The sandbox lets the user click demo buttons and check the expected plugin flow before install/upgrade.
+4. It does not execute raw PHP, write the database, activate plugins, or call real hooks before install, for safety.
+5. Install / Upgrade / Next remain available after previewing.
+
+Safety:
+- Real WordPress runtime still requires install/activate.
+- The pre-install sandbox is a safe emulation/rendering layer for UI, flow, shortcode/admin preview, and code relationship checks.

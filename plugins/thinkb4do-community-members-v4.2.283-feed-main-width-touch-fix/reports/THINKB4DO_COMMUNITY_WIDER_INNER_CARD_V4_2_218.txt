@@ -1,0 +1,5 @@
+Thinkb4do Community v4.2.218
+- ขยายการ์ดด้านในให้กว้างขึ้น
+- ลด padding ด้านในของ post/comment card
+- ขยาย media และ hero area ให้เกือบเต็มการ์ด
+- ปรับ composer ในหน้าแสดงความคิดเห็นให้กว้างขึ้นตามการ์ด

@@ -1,0 +1,41 @@
+AiRA Studio v7.5.8.24 — Prompt Processor Hard Gate
+
+Goal
+- Fix the remaining issue where the real answer could appear while the Prompt Processor card still visually said "กำลังประมวล Prompt...".
+- Required visible order: user asks → Prompt Processor processing → Prompt Processor visibly completed → real answer appears.
+
+Changed files
+- aira-studio.php
+  - Version updated to 7.5.8.24-prompt-processor-hard-gate.
+  - System instruction updated from Answer Gate to Hard Gate.
+
+- assets/js/aira-studio-clean-slate.js
+  - Added hard gate state: data-prompt-answer-gate.
+  - Added forcePromptProcessorCompleteVisible().
+  - Added processorStillLooksBusy() verification.
+  - Added nextPaint() double requestAnimationFrame wait so the completed processor state is painted before the real answer is rendered.
+  - Added late repaint protection inside animateAssistantText() so a pending animation frame cannot overwrite the completed Prompt Processor card.
+  - Updated completion text to clearly show: "Prompt Processor เสร็จแล้ว — พร้อมแสดงคำตอบจริง".
+
+What this fixes
+- The answer bubble is delayed until the Prompt Processor card is visibly complete.
+- If the Prompt Processor card still contains busy text after completion, the system forces the completed text again before releasing the answer.
+- Prevents late slide-typing animation from repainting the processor back to the old "กำลังประมวล" state.
+
+Not changed
+- No button added.
+- No button removed.
+- No action router change.
+- No popup/menu/composer layout change.
+
+QC
+- PHP lint: passed.
+- JavaScript syntax check: passed.
+- ZIP integrity: passed.
+- data-action count unchanged from base.
+
+Manual test
+1. Ask: 7+7
+2. Prompt Processor must show processing first.
+3. Prompt Processor must change to completed text first.
+4. Only after that should the answer "14" appear.

@@ -1,0 +1,13 @@
+AiRA Studio v7.5.7.1 — Deep Cognitive Communication Engine
+
+สิ่งที่เพิ่ม:
+- เพิ่มปุ่ม Code block: สื่อสารลึก
+- เพิ่มแผง Deep Cognitive Communication Engine พร้อม Deep Cognitive %
+- มองโจทย์หลายมิติ: เป้าหมาย ปัญหา ข้อจำกัด ความเร่งด่วน บริบทเดิม ระบบ/API/UI/ปุ่ม ความเสี่ยง คุณค่าผู้ใช้ และขั้นตอนถัดไป
+- เพิ่ม Cognitive Response Map: Attention, Memory, Reasoning, Emotion Regulation, Creativity, Decision, Action, Reflection
+- เพิ่ม Safe Intent Guard: ตีความเฉพาะเจตนาเชิงงาน ไม่อ้างว่าอ่านใจจริง ไม่วินิจฉัย ไม่เดาข้อมูลส่วนตัวอ่อนไหว
+- เพิ่ม Button/Command Thought Contract: ทุกปุ่ม/คำสั่งต้องมี purpose, benefit, feedback, error, retry, aria-label, test path
+
+สถานะ:
+- รักษาของเดิมจาก v7.5.7.0 ครบ
+- เพิ่มเฉพาะระบบสื่อสารลึกและการช่วยจัดโครงความคิดของผู้ใช้

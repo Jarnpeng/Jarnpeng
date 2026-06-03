@@ -1,0 +1,14 @@
+Thinkb4do Community Feed Main v4.2.277
+
+งานที่ปรับ:
+- ปรับพื้นหลัง popup รูปภาพให้บางประมาณ 10% opacity
+- คงระบบ popup อยู่ใต้ header/menu
+- คงระบบกดภาพเพื่อเปิด popup ทุกภาพ
+- คงระบบลากผ่านภาพเพื่อ scroll
+- ไม่นำหน้าแสดงความคิดเห็นและหน้าสมาชิกกลับมา
+- คง link bridge ของคอมเมนต์และสมาชิกไว้
+
+สถานะ QC:
+- PHP syntax: ผ่าน
+- JavaScript syntax: ผ่าน
+- ZIP install structure: ผ่าน

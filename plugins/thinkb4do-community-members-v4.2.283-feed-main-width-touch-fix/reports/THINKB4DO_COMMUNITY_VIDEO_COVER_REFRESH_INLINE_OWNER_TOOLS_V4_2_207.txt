@@ -1,0 +1,39 @@
+Thinkb4do Community v4.2.207 — Video Cover Refresh + Inline Owner Tools
+
+ทวนโจทย์:
+- พัฒนาระบบดึงปกวิดีโอใหม่ให้แสดงปกจากภายนอกจริง
+- ปรับการ์ดวิดีโอให้สะอาดและคงปุ่มเล่นตำแหน่งเหมาะสม
+- ใส่ไอคอนแก้ไขและไอคอนลบให้อยู่บรรทัดเดียวกับชื่อ user/admin
+
+ไฟล์ที่แก้:
+1) thinkb4do-community.php
+   - อัปเดต Version เป็น 4.2.207
+   - เพิ่มการค้นหา URL วิดีโอจาก Gutenberg/oEmbed/raw iframe/srcdoc/encoded URL/meta ที่เกี่ยวข้อง
+   - เพิ่ม candidate ปก YouTube/Vimeo หลายระดับ เช่น vi_webp, hq720, maxresdefault, sddefault, hqdefault
+   - เพิ่ม <img class="tb4c-video-cover-img"> สำหรับปกจริง พร้อม data candidate ให้ JS fallback
+
+2) assets/community.js
+   - เพิ่ม runtime v4.2.207
+   - เพิ่มระบบเลือกปกวิดีโอจาก candidate list
+   - ตรวจ naturalWidth/naturalHeight เพื่อข้าม thumbnail placeholder ขนาดเล็ก
+   - ดึง YouTube ID จาก watch/embed/shorts/live/youtu.be/ytimg/img.youtube/oEmbed encoded URL
+
+3) assets/community-clean-ui-reset.css
+   - เพิ่ม CSS สำหรับรูปปกจริงบนวิดีโอ
+   - จัด z-index: cover image / shade / play / text ให้ไม่ซ้อนผิด
+   - จัด owner tools inline: ปุ่มแก้ไข/ลบเป็นปุ่มไอคอนเล็ก อยู่บรรทัดเดียวกับชื่อผู้ใช้
+   - รองรับมือถือด้วยขนาดปุ่ม 36px
+
+4) templates/single-community-post.php
+   - ย้ายปุ่มแก้ไข/ลบของหน้า single post มาอยู่ใน author row เดียวกับชื่อ user
+
+สถานะตรวจงาน:
+- PHP syntax: ผ่านทุกไฟล์
+- JS syntax: ผ่าน community.js / community-runtime.js / community-legacy.js
+- CSS brace balance: ผ่าน
+
+สิ่งที่สร้างเพียงพอหรือยัง:
+- เพียงพอสำหรับแก้ปัญหาปกวิดีโอภายนอกไม่ขึ้น และปุ่มแก้ไข/ลบหลุดจากบรรทัดชื่อผู้ใช้
+
+สามารถใช้งานได้แล้วหรือยัง:
+- ใช้งานได้แล้วหลังติดตั้ง ZIP และล้าง cache เว็บไซต์/เบราว์เซอร์

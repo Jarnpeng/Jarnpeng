@@ -1,0 +1,42 @@
+AiRA Studio v7.5.8.7 Auto Evolution Core - No Button Touch
+
+ฐานไฟล์: v7.5.7.9-single-number-continuation-row
+เป้าหมาย: เพิ่มระบบพัฒนาการเนื้อหา/การสื่อสาร/ความก้าวหน้า/คุณภาพ/ประสิทธิภาพอัตโนมัติ โดยไม่ยุ่งกับปุ่มเดิม
+
+สิ่งที่เพิ่ม:
+1) Auto Evolution Core Profile
+- contentScore
+- progressScore
+- qualityScore
+- performanceScore
+- alignmentScore
+- overall score
+
+2) Context integration
+- ฝังเข้า buildAllFormContext()
+- แสดงใน Context Reader เป็นการ์ด passive ไม่มีปุ่ม ไม่มี data-action ใหม่
+- เพิ่มใน formatCommunicationContext()
+
+3) Prompt/backend integration
+- ส่ง auto_evolution_core_context_7587 เข้า ajax_send_chat
+- PHP รับและรวมเข้า command_understanding_context
+- เพิ่ม system rule ฝั่ง provider_request ให้ยกระดับคำตอบอัตโนมัติแต่ห้ามยุ่งปุ่ม
+
+4) No Button Touch Contract
+- ไม่เพิ่มปุ่มใหม่
+- ไม่เพิ่ม data-action
+- ไม่แก้ action router
+- ไม่แก้ click/pointer/touch handler
+- ไม่ลบ/เปลี่ยนชื่อ/disable ปุ่มเดิม
+
+การตรวจ QC:
+- PHP lint ต้องผ่าน
+- JS syntax ต้องผ่าน
+- ZIP integrity ต้องผ่าน
+- จำนวน data-action ใน JS ต้องเท่าเดิมเมื่อเทียบกับฐาน 7.5.7.9
+
+วิธีทดสอบหลังติดตั้ง:
+1) เปิด AiRA Studio แล้วพิมพ์คำสั่งงานระบบ/เนื้อหา/แก้บั๊กตามปกติ
+2) เปิด Context Reader ตรวจว่ามี Auto Evolution Core แสดงคะแนน
+3) ส่งคำถาม แล้วดูว่าคำตอบมีทิศทางพัฒนาการมากขึ้น: ของเดิมยังอยู่, สิ่งที่เพิ่ม, คุณภาพ, ประสิทธิภาพ, วิธีทดสอบ
+4) ทดสอบปุ่มเดิมตามปกติ ควรไม่มีปุ่มใหม่หรือ action ใหม่จากระบบนี้

@@ -1,0 +1,11 @@
+THINKB4DO Community Feed Main v4.2.243
+
+Patch: Media Touch Scroll + Mini Video Bottom Right Recovery.
+
+Fixes:
+- Dragging/scrolling from image/media areas on mobile could become stuck.
+- Media/lightbox buttons now allow native vertical pan before click handling.
+- Suppresses accidental lightbox click after vertical dragging.
+- Adds a lightweight scroll watcher only for active/played videos.
+- Restores the mini video popup as a small bottom-right player on mobile.
+- Keeps closed overlays from blocking touch scroll.

@@ -1,0 +1,23 @@
+AiRA Studio v7.2.3 Clean Slate Prompt Processing Slide
+
+Goal:
+- Add a GPT-like prompt processing phase before the real assistant answer appears.
+
+What changed:
+- After the user sends a normal prompt, AiRA builds the communication/context profile first.
+- AiRA displays a temporary Prompt Processing assistant bubble with slide-letter typing.
+- The bubble shows safe surface-level processing only: prompt summary, interpretation label, confidence score, detected forms, connected modules, and answer preparation status.
+- The temporary processing bubble is removed after it finishes and the real answer is ready.
+- The real answer still uses the existing assistant slide typing animation.
+
+Safety/UX:
+- This does not expose private chain-of-thought. It only shows a short status summary derived from visible prompt/context metadata.
+- Respects prefers-reduced-motion.
+- No popup and no Open button. Composer remains locked at the bottom.
+
+Existing systems kept:
+- Visible image flow and click-save image popup.
+- Vision attachments.
+- Context Reader and Auto Question Reader.
+- Code-first block with Result toggle.
+- Voice, Rooms, Artifact, Settings, and Export Context TXT.

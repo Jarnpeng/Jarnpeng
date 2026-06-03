@@ -1,0 +1,8 @@
+THINKB4DO Community Feed Main v4.2.263
+
+Patch summary:
+- Disabled stacked mini-video popup systems and forced videos to remain in the feed.
+- Disabled legacy lazy JS loading to prevent old video controllers from returning.
+- Added image/video touch-scroll guard so vertical page scrolling works when touching media.
+- Strengthened member/profile surface guard so Feed Main does not load on member pages.
+- Kept Feed Main focused on community feed, composer, load more, comments, and poll actions only.

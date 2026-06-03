@@ -1,0 +1,16 @@
+AiRA Smart Chat Live Link — AiRA Suite Export Plugin 1.2.7
+
+หน้าที่:
+- ให้ปลั๊กอินนี้สื่อสารกับ AiRA Smart Chat Studio ได้จริงผ่าน WordPress filter: aira_smart_chat_agent_profiles และ aira_smart_chat_agent_response
+- ให้ Smart Chat เห็นบทบาท ความสามารถ option/status ที่อ่านได้ และคำตอบเฉพาะทางของปลั๊กอินนี้
+- เพิ่ม REST status: /wp-json/aira-smart-chat-live/v1/export
+
+Safe Mode:
+- ไม่ติดตั้งปลั๊กอินเอง
+- ไม่ลบไฟล์
+- ไม่เขียนทับไฟล์จริง
+- ไม่เปิดเผย API key/token/secret จริง แสดงเฉพาะสถานะและความยาวข้อมูล
+
+บทบาทฝ่าย:
+ฝ่ายแพ็กไฟล์และส่งออก
+ตรวจแพ็กเกจ ZIP โครงสร้างไฟล์ manifest และเตรียม export หลังผู้ใช้ยืนยัน

@@ -1,0 +1,20 @@
+AiRA Studio v7.5.6.3 — Thinkb4do Humanity System Builder
+
+Goal:
+Make every code block act like a mission-driven system builder that starts from a real human problem, creates a minimal useful system, adds safety/accessibility/feedback, tests before handoff, and measures real benefit.
+
+Added:
+- New Code block button: ภารกิจช่วยโลก
+- New panel: Thinkb4do Humanity System Builder
+- New score: Mission %
+- Mission pipeline: Problem → Value → Build → Test → Impact
+- New prompt loop: Real Problem, Beneficiary, Minimal Useful System, Button/Command Value, Safety Gate, Inclusive UX, Impact Metric, full runnable code when possible, install/use/test guide
+- Keeps existing Humanity Value, Dev Master, Capability, Success Loop, Preview/QC, Debug, Package, Upgrade
+
+Safety:
+- Does not bypass law, privacy, copyright, consent, permissions or security
+- Avoids fake buttons, dead actions, dark patterns, unsafe commands
+- Requires feedback/error/retry and test path for each major action
+
+Status:
+PHP lint, JS syntax, and ZIP integrity should be checked before delivery.

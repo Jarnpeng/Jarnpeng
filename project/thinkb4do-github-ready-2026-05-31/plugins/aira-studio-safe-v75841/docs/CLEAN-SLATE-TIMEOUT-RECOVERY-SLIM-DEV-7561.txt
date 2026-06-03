@@ -1,0 +1,31 @@
+AiRA Studio v7.5.6.1 — Timeout Recovery + Slim Dev Gateway Guard
+
+Goal:
+- Fix raw HTTP 504 / nginx Gateway Timeout shown in chat when Codeblock Dev Master or long code prompts take too long.
+- Keep code block development powerful, but avoid sending oversized prompts that exceed admin-ajax/server wait limits.
+
+Added:
+1. Client-side AJAX timeout guard
+   - sendChat stops at 52s before raw gateway HTML appears.
+   - Non-chat AJAX uses 36s guard.
+   - HTML errors are stripped and replaced with a human-readable Thai message.
+
+2. Retry Slim recovery
+   - When timeout/504 is detected, AiRA prepares a shorter Retry Slim prompt in Composer.
+   - User can press send again without seeing raw HTML.
+   - Retry Slim asks AiRA to return essential code/patch first, then continue.
+
+3. Prompt compaction for code block actions
+   - Long code fences are compacted before sending to API.
+   - Original code block remains intact in the UI for Copy / Download / Preview / Upgrade.
+   - The AI receives head + tail + digest with plugin name, version, hooks, shortcodes, REST and buttons.
+
+4. Server gateway guard
+   - Server compacts very long contextual prompts above 28k chars.
+   - Provider request timeout is capped under common gateway limits.
+   - Long/gateway guarded requests reduce output token budget to avoid timeout loops.
+
+Result:
+- 504 should no longer appear as raw HTML in chat.
+- Long Dev Master / Build Until Success code block actions should recover gracefully.
+- Composer remains usable and receives a ready-to-send Retry Slim command after timeout.

@@ -1,0 +1,166 @@
+/* Thinkb4do Discovery v1.4.2
+   Public view: minimal development page. Public copy stays simple and safe.
+*/
+:root{
+  --tb4d-green:#1E6B45;
+  --tb4d-green-soft:rgba(30,107,69,.12);
+  --tb4d-orange:#F97316;
+  --tb4d-orange-soft:rgba(249,115,22,.10);
+  --tb4d-black:#111111;
+  --tb4d-white:#FFFFFF;
+  --tb4d-muted:#5f6b76;
+  --tb4d-page-top:#fbfdfb;
+  --tb4d-page-mid:#f6fbf7;
+  --tb4d-page-bottom:#edf8f1;
+  --tb4d-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans Thai","Kanit",sans-serif;
+}
+html{scrollbar-gutter:stable;background:var(--tb4d-page-top);}
+body.tb4-discovery-view-active,
+body.tb4-discovery-premium-shell,
+body.tb4-discovery-single-scroll{
+  overflow-x:hidden;
+  background:
+    linear-gradient(112deg,rgba(30,107,69,.115) 0%,rgba(255,255,255,.84) 42%,rgba(249,115,22,.085) 100%),
+    linear-gradient(180deg,var(--tb4d-page-top) 0%,var(--tb4d-page-mid) 54%,var(--tb4d-page-bottom) 100%);
+}
+body.tb4-discovery-view-active .site-main,
+body.tb4-discovery-view-active #primary,
+body.tb4-discovery-view-active .entry-content{
+  overflow:visible!important;
+  background:transparent!important;
+}
+.tb4-discovery,
+.tb4-discovery *,
+.tb4-discovery *:before,
+.tb4-discovery *:after{box-sizing:border-box;}
+.tb4-discovery{
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  min-height:calc(100svh - 96px);
+  margin:0;
+  color:var(--tb4d-black);
+  font-family:var(--tb4d-font);
+  overflow-x:clip;
+  background:
+    linear-gradient(112deg,rgba(30,107,69,.13) 0%,rgba(236,247,239,.58) 20%,rgba(255,255,255,.90) 51%,rgba(255,245,236,.52) 78%,rgba(249,115,22,.085) 100%),
+    linear-gradient(180deg,#fbfdfb 0%,#f7fbf8 50%,#eef8f1 100%);
+}
+.tb4-discovery:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(30,107,69,.095) 0%,rgba(30,107,69,.055) 22%,rgba(255,255,255,0) 48%,rgba(249,115,22,.045) 78%,rgba(249,115,22,.075) 100%),
+    linear-gradient(180deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.18) 46%,rgba(255,255,255,0) 100%);
+  opacity:1;
+}
+.tb4-discovery:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 42%,rgba(255,255,255,.16) 100%);
+  opacity:.86;
+}
+.tb4-discovery a{color:inherit;text-decoration:none;}
+.tb4-dev-hero{
+  position:relative;
+  z-index:1;
+  display:grid;
+  place-items:center;
+  width:100%;
+  max-width:none;
+  min-height:calc(100svh - 98px);
+  margin:0 auto;
+  padding:clamp(96px,12vw,170px) clamp(20px,5vw,84px) clamp(96px,12vw,160px);
+  text-align:center;
+  overflow:visible;
+}
+.tb4-dev-bg{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  z-index:0;
+  width:100vw;
+  min-width:100vw;
+  pointer-events:none;
+  overflow:hidden;
+  transform:translateX(-50%);
+  background:
+    linear-gradient(112deg,rgba(30,107,69,.105) 0%,rgba(30,107,69,.065) 25%,rgba(255,255,255,.64) 52%,rgba(249,115,22,.055) 79%,rgba(249,115,22,.088) 100%),
+    linear-gradient(180deg,rgba(255,255,255,.70) 0%,rgba(255,255,255,.12) 55%,rgba(238,248,241,.34) 100%);
+}
+.tb4-dev-bg:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(118deg,rgba(30,107,69,.070) 0%,rgba(255,255,255,0) 44%,rgba(249,115,22,.050) 100%),
+    linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,0) 58%,rgba(255,255,255,.16) 100%);
+  opacity:.94;
+}
+.tb4-dev-bg:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(251,253,251,.18) 0%,rgba(255,255,255,0) 46%,rgba(237,248,241,.16) 100%);
+  opacity:.92;
+}
+.tb4-dev-glow{display:none!important;}
+.tb4-dev-soft-line{display:none!important;}
+.tb4-dev-soft-line-one{display:none!important;}
+.tb4-dev-soft-line-two{display:none!important;}
+.tb4-dev-copy{
+  position:relative;
+  z-index:2;
+  width:min(920px,100%);
+  margin:0 auto;
+}
+.tb4-dev-copy h1{
+  margin:0;
+  color:#0d1117;
+  font-family:var(--tb4d-font);
+  font-size:clamp(54px,8.2vw,128px);
+  font-weight:650;
+  line-height:.95;
+  letter-spacing:-.07em;
+  text-wrap:balance;
+  text-shadow:0 1px 0 rgba(255,255,255,.86),0 18px 70px rgba(17,17,17,.05);
+}
+.tb4-dev-copy p{
+  margin:clamp(16px,2vw,22px) auto 0;
+  color:rgba(17,17,17,.72);
+  font-size:clamp(15px,1.45vw,21px);
+  font-weight:500;
+  letter-spacing:.18em;
+  line-height:1.4;
+}
+/* Keep public page clean even if old markup is cached by an optimizer. */
+.tb4-discovery .tb4-discovery-shell,
+.tb4-discovery .tb4-discovery-left,
+.tb4-discovery .tb4-discovery-feed,
+.tb4-discovery .tb4-discovery-right,
+.tb4-discovery .tb4-discovery-hero-actions,
+.tb4-discovery .tb4-discovery-kicker-soft,
+.tb4-discovery .tb4-discovery-ai-field{display:none!important;}
+@supports not (overflow:clip){.tb4-discovery{overflow-x:hidden;}}
+@media (max-width:782px){
+  .tb4-discovery{min-height:calc(100svh - 78px);}
+  .tb4-dev-hero{min-height:calc(100svh - 78px);padding:104px 20px 116px;}
+  .tb4-dev-copy h1{font-size:clamp(46px,15vw,76px);letter-spacing:-.055em;}
+  .tb4-dev-copy p{font-size:14px;letter-spacing:.12em;}
+  .tb4-dev-bg{width:100vw;min-width:100vw;}
+  .tb4-dev-bg:after{opacity:.78;}
+}
+@media (max-width:420px){
+  .tb4-dev-hero{padding-left:16px;padding-right:16px;}
+  .tb4-dev-copy h1{font-size:clamp(40px,16vw,62px);}
+}
+@media (prefers-reduced-motion:reduce){
+  .tb4-discovery *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+}

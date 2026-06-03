@@ -1,0 +1,27 @@
+Thinkb4do Theme Core v2.3.6 — Community Footer Hidden
+
+Goal
+- Hide the visible site footer only on Community pages, because the Community area should feel focused like a feed/app.
+
+What changed
+- footer.php now checks tb4_should_hide_footer_on_community().
+- If the current context is Community, the visible <footer id="site-footer"> markup is skipped.
+- wp_footer() is still called every time, so WordPress scripts, plugin scripts, admin bar, and tracking hooks remain safe.
+- Added css/tb4-community-footer-hidden-v236.css for community page spacing and fallback.
+- Added body class tb4-community-footer-hidden when the footer is hidden.
+
+Community detection
+- Page slugs: community, communities, thinkb4do-community, thinkb4do-community-feed, ชุมชน
+- Page title contains Community or ชุมชน
+- Content contains [thinkb4do_community], [thinkb4do_community_composer], wp:thinkb4do/community, thinkb4do/community, tb4-community, thinkb4do-community
+- Supports common community post types if a plugin adds them.
+- Filters available:
+  - tb4_is_community_context
+  - tb4_hide_footer_on_community
+
+Kept intact
+- WordPress Admin Bar
+- Header
+- Logo visibility system v2.3.4
+- Footer remains on non-community pages
+- wp_footer() remains active on every page

@@ -1,0 +1,29 @@
+AiRA Studio v7.0.1 Clean Slate All Menus
+
+เป้าหมาย:
+- เอาเมนูทั้งหมดกลับมา หลังจาก v7.0.0 รื้อสะอาดจนเมนูหายไปมากเกินไป
+- รักษา clean slate ไม่ให้ UI ซ้อนเหมือนเดิม
+- ใช้ CSS 1 ไฟล์ + JS 1 ไฟล์ เหมือน v7.0.0
+
+สิ่งที่เพิ่มกลับมา:
+- Workspace: New Chat, Rooms, Docs, Memory, Tags, Create, Knowledge, Behavior, Code, Web, Settings
+- AI Mode: Full System, GPT, Claude, v0, Gemini, GitHub, Prompt Helper, Universal Builder, Smart Tags
+- WordPress Build: Plugin, Module, Widget, Gutenberg Block, Elementor Widget, WP Blueprint
+- Visual/Image/Reference
+- Web/Code/Research
+- Voice/Audio/Translate
+- System/Debug/Export
+
+สิ่งที่ยังคุมไว้:
+- Header ชิด WordPress admin bar
+- Composer ชิดล่าง
+- ChatLog เป็น scroll หลักตัวเดียว
+- Floating panel เปิดทีละชุด ลดการซ้อน
+- Purge legacy AiRA assets ยังทำงาน
+
+ตรวจสอบก่อนส่ง:
+- PHP syntax
+- JS syntax
+- CSS braces
+- ZIP structure
+- data-action / id สำคัญ

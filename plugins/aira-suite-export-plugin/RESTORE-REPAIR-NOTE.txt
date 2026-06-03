@@ -1,0 +1,22 @@
+AiRA Suite Restored Repaired Full Build
+======================================
+
+ชุดนี้เอางานตัวเต็มกลับมาจากเวอร์ชันก่อนเกิด Critical Error แล้วซ่อมแนวทางติดตั้งให้ปลอดภัยขึ้น
+
+สิ่งที่ตั้งใจเอาออกจากชุดนี้:
+- Hard API Connect background layer
+- API Mesh background layer
+- Auto API Connect background layer
+- updated_option sync loop
+- auto sync ตอน plugins_loaded/init/admin_init ที่เกี่ยวกับ API
+- การเขียนทับไฟล์/ติดตั้งปลั๊กอินอัตโนมัติทันทีตอนโหลดเว็บ
+
+วิธีใช้:
+1. ติดตั้งทีละตัว
+2. หลังติดตั้งแต่ละตัว ให้รีเฟรชหน้าเว็บก่อน
+3. ติดตั้ง Relationship Bridge เป็นตัวสุดท้าย
+4. เข้า Relationship Bridge แล้วกด Sync เองเท่านั้น
+
+Settings | โดย Thinkb4do | ดูรายละเอียด
+
+Export Plugin: ใช้ฐาน v1.2.1 ตัวเต็ม เปลี่ยนโฟลเดอร์เป็น aira-suite-export-plugin ให้ตรงชื่อระบบ

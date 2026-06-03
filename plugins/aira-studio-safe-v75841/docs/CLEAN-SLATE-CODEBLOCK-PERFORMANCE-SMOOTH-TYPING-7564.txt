@@ -1,0 +1,28 @@
+AiRA Studio v7.5.6.4 — Codeblock Performance Builder + Smooth GPT-like Typing
+
+Goal
+- Upgrade every code block so it works better as a real system-development cockpit.
+- Add performance scoring for speed, feedback, retry/timeout, button handlers, responsive support, QC/test readiness and reduced duplicated work.
+- Make assistant answer slide typing smoother with better cadence, punctuation pauses and lower render cost on mobile.
+
+What changed
+1. Version updated to 7.5.6.4-codeblock-performance-smooth-typing.
+2. Added Codeblock Performance Builder panel.
+3. Added a new code block button: เพิ่มประสิทธิภาพ.
+4. Added performance score and bottleneck analysis.
+5. Added performance upgrade prompt that preserves existing valuable features and asks for complete runnable code.
+6. Improved slide typing:
+   - Uses requestAnimationFrame where available.
+   - Uses plain text during typing for normal/code-heavy answers, then renders rich code blocks once at the final pass.
+   - Adds softer punctuation, paragraph and Thai phrase breathing pauses.
+   - Reduces scroll/render frequency to improve mobile smoothness.
+7. Added CSS content-visibility hints for heavy code block panels.
+8. Kept existing systems intact: Humanity Mission, Humanity Value, Dev Master, Success Loop, Capability Engine, Preview, Debug, Package and Upgrade.
+
+Testing checklist
+- PHP lint passes.
+- JavaScript syntax check passes.
+- ZIP integrity passes.
+- Code block shows the new เพิ่มประสิทธิภาพ button.
+- Clicking เพิ่มประสิทธิภาพ opens/sends a performance-focused upgrade prompt.
+- Assistant answer typing feels smoother and no longer repeatedly rich-renders code blocks during the slide.

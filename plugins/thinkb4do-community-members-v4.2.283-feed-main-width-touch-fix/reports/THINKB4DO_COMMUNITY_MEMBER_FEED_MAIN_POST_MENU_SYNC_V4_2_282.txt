@@ -1,0 +1,28 @@
+Thinkb4do Community Members v4.2.282
+Task: Make Member > Posts menu feel closest to Thinkb4do Feed Main while preserving existing systems.
+
+Feed Main reference checked:
+- Center feed width: 760px
+- Card radius: 21-22px
+- Soft card line: rgba(17,17,17,.055-.08)
+- Soft shadow: 0 4px 12px rgba(17,17,17,.028) and 0 10px 26px rgba(17,17,17,.04)
+- Feed section spacing: compact header above cards
+- Mobile horizontal menu behavior uses overflow-x auto and no wrapping
+
+Files changed:
+- thinkb4do-community-members.php
+  - Updated version to 4.2.282
+- templates/member-area-content.php
+  - Added safe scope class: tb4c-member-feed-main-post-menu-v4282
+  - Added non-breaking menu helper class: tb4c-member-feed-main-status-tabs
+- assets/member-responsive-standard.css
+  - Added scoped CSS overrides for Member > Posts only
+  - Synced menu/card spacing, radius, shadow, button style, active/hover/focus states with Feed Main
+  - Forced menu to single horizontal row with mobile horizontal scroll
+  - Kept post cards and action icons in normal flow to prevent overlay
+
+Safety:
+- No JavaScript added
+- No Header / Feed / Comment / Sidebar removal
+- No core class renamed
+- Existing Member logic preserved

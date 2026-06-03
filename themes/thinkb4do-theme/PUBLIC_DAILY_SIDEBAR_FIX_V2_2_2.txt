@@ -1,0 +1,9 @@
+Thinkb4do Theme v2.2.2 — Public Daily Ideas Sidebar
+
+Changes:
+- Removed backend/API/internal connection wording from public sidebar defaults.
+- Replaced the sidebar with daily-life ideas: nearby events, weekend ideas, food suggestions, holidays, followed members, birthdays/community updates, and ad interest.
+- Added an editable Advertise page at /advertise/ but kept it out of the main menu by default.
+- Kept private contact details hidden from public UI.
+- Added Customizer controls for event, food, and advertising sidebar text.
+- No changes to the working Policy dropdown from v2.1.9 or the Community fatal guard from v2.2.0.

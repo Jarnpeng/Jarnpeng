@@ -1,0 +1,21 @@
+AiRA Studio v7.0.0 Clean Slate Single Shell
+
+Goal
+- รื้อ UI/UX ให้สะอาด ไม่เพิ่มเลเยอร์ซ้อนอีก
+- Header ชิด WordPress admin bar
+- Composer ชิดส่วนล่างของแชท
+- Chat ใช้ native scroll หลักตัวเดียว
+- รวม UI ที่ซ้ำและผิดรูปแบบออกจาก active package
+- รักษา backend AJAX / API / Voice / Audio / Rooms / Artifact / Export hooks เดิมเท่าที่อยู่ในระบบหลัก
+
+Clean changes
+- Active CSS เหลือ 1 ไฟล์: assets/css/aira-studio-clean-slate.css
+- Active JS เหลือ 1 ไฟล์: assets/js/aira-studio-clean-slate.js
+- เพิ่ม purge_legacy_assets() เพื่อลบ/dequeue asset AiRA เก่าบนหน้า AiRA ถ้ามีปลั๊กอินรุ่นเก่ายัง enqueue อยู่
+- Rebuilt render() เป็น single shell: Header / Chat Log / Bottom Composer / Artifact / Floating Panels
+- ลบ class เวอร์ชันซ้อนออกจาก #airaApp เหลือ aira-app + aira-clean-slate-shell
+
+Install note
+- แนะนำลบปลั๊กอิน AiRA รุ่นเก่าหรือปิดตัวเก่าก่อน
+- อัปโหลด ZIP นี้ แล้วกด Hard Refresh / Clear cache
+- ถ้ายังเห็น UI ซ้อน ให้เช็กว่าในหน้า Plugins มี AiRA Studio รุ่นเก่าหลายตัว active พร้อมกันหรือไม่

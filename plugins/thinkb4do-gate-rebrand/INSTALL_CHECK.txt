@@ -1,0 +1,7 @@
+Thinkb4do Think Control v1.2.9 Brand Header Patch
+- Removed the large identity/logo block from the login page.
+- Removed public “Gate” wording from the login title display; old saved title like “Thinkb4do Gate” now renders as “Thinkb4do”.
+- Added WordPress-style black admin bar to the privileged welcome page.
+- Corrected welcome/control UI colors to Thinkb4do policy: green #1E6B45, white #FFFFFF, orange #F97316, black #111111.
+- Kept small brand logo, central logo settings, identity setting, responsive guard, admin settings, and existing slugs intact.
+- Version bumped to 1.2.9 to refresh WordPress asset cache.

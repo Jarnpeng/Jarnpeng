@@ -1,0 +1,6 @@
+THINKB4DO Community Feed Main v4.2.244
+
+Patch summary:
+- Fixed black strip showing under inline image posts by removing black background on image-only slots and zeroing button media spacing.
+- Polished media popup/lightbox with black background, full media display, and no rounded media clipping.
+- Enlarged mini video popup and made the video fill a larger black stage.

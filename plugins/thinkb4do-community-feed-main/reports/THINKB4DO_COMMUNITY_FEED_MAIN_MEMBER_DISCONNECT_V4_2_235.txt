@@ -1,0 +1,13 @@
+Thinkb4do Community Feed Main v4.2.235
+
+งานที่ทำ:
+- เอาส่วนเชื่อมหน้าสมาชิก /member-area/ ออกจากปลั๊กอิน Feed Main
+- เอาเมนูพื้นที่สมาชิกที่ Feed Main เคยเติมให้ header/user menu/sidebar ออก
+- เอา block thinkb4do/member-area ออกจากการลงทะเบียนใน Feed Main
+- เอา AJAX hook สำหรับ member page/member profile ออกจาก Feed Main
+- ปุ่มซิงก์หน้าในแอดมินจะสร้างเฉพาะหน้า community ไม่สร้าง member-area
+- ลบไฟล์ template member-area-content.php ออกจากแพ็ก Feed Main เพื่อไม่ให้เป็นพื้นผิวสมาชิกซ้ำ
+
+สถานะ:
+- Feed Main เหลือหน้าที่หลักคือ /community/, composer, feed, reels, single community post, และโหลดเพิ่มเติม AJAX
+- ปลั๊กอินสมาชิกควรเป็นเจ้าของหน้าสมาชิกทั้งหมด

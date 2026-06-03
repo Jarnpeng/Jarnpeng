@@ -1,0 +1,21 @@
+Thinkb4do Community Members v4.2.283
+Focus: Member page Feed Main width + mobile image scroll fix.
+
+Changed files:
+- thinkb4do-community-members.php
+  Updated plugin version to 4.2.283.
+- templates/member-area-content.php
+  Added safe page class tb4c-member-feed-main-width-touch-v4283 to Member page.
+  Added draggable="false" to featured lightbox media trigger.
+- assets/member-responsive-standard.css
+  Added scoped CSS for Member > Posts only.
+
+Fixes:
+- Member > Posts max width now uses Feed Main reference width: 720px.
+- Member container/card/menu align to Feed Main central column.
+- Mobile image/video media uses touch-action: pan-y pinch-zoom.
+- Lightbox trigger overscroll reset to avoid blocking vertical page scroll.
+- Media children are not draggable/selectable and do not steal pointer events.
+- Action bar stays in normal document flow under content/media.
+- Horizontal post menu remains one row and scrolls smoothly on mobile.
+- No Header / Feed Main / Comment / Sidebar CSS changed directly.

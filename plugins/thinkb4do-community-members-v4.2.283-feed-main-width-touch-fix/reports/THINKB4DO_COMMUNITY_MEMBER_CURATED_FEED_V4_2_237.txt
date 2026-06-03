@@ -1,0 +1,13 @@
+Thinkb4do Community Members v4.2.237 — Member Curated Feed
+
+สิ่งที่เพิ่ม:
+- เพิ่มฟีดของสมาชิกในหน้า รวม / Overview ให้ดึงโพสต์ของสมาชิกจาก post type tb4_community_post จริง
+- ใช้การ์ดโพสต์แบบใกล้เคียงฟีดหลัก: avatar, ชื่อผู้โพสต์, เวลา, สถานะ, visibility, รูป/วิดีโอ/โพล/แท็ก, like/comment/share/bookmark/view
+- เปลี่ยนแท็บ ภาพรวม เป็น รวม ให้ใกล้กับภาพตัวอย่างมือถือ
+- เพิ่มจำนวนโพสต์ในหน้า รวม เป็น 5 รายการ เพื่อให้เห็นฟีดจริงมากขึ้น
+- เพิ่ม CSS scoped เฉพาะ .tb4c-member-curated-feed-v4237 ไม่ทับฟีดหลักหรือปลั๊กอิน sidebar
+
+สถานะ:
+- ใช้ shortcode เดิม [thinkb4do_member_area]
+- ไม่เพิ่ม dependency ใหม่
+- ต้องล้าง cache หลังอัปเดต

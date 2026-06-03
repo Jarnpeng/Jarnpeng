@@ -1,0 +1,21 @@
+Thinkb4do Theme Core v2.4.2 — Performance Lite
+
+สิ่งที่เพิ่ม:
+1) รวมไฟล์ CSS UI หลายชุดเป็น css/tb4-performance-bundle-v242.css เพื่อลดจำนวน HTTP requests
+2) รวมไฟล์ JS UI หลายชุดเป็น js/tb4-performance-bundle-v242.js เพื่อลดจำนวน HTTP requests
+3) ใส่ defer ให้สคริปต์หลักของธีมและ performance bundle
+4) ปิด WordPress emoji/oEmbed assets ที่ไม่จำเป็น เพื่อลดโหลดแฝง
+5) เพิ่ม preconnect/dns-prefetch สำหรับ Google Fonts และ Phosphor Icons
+6) เพิ่ม lazy/async media attributes สำหรับรูป/iframe/video
+7) เพิ่ม CSS content-visibility, contain และ viewport guard เพื่อลด reflow/repaint บนมือถือ
+
+ของเดิมยังอยู่:
+- แถบล่างมือถือยังเหลือ หน้าแรก / ชุมชน / สินค้า
+- ค้นหาและเมนูยังถูกเอาออกจากแถบล่าง
+- หน้าชุมชนยังซ่อนแถบล่างและ Footer ตามกฎเดิม
+- ไฟล์ layer เดิมยังอยู่ในแพ็กเพื่อย้อนกลับ/ตรวจเทียบได้ แต่ไม่ได้ enqueue แยกเป็นหลายไฟล์แล้ว
+
+สถานะ:
+- ใช้งานได้แล้วระดับ Performance Lite
+- เหมาะกับการลดอาการหน่วงจากจำนวนไฟล์และการ repaint/reflow
+- หากยังหน่วงมาก แนะนำขั้นถัดไปคือแยกโหลดเฉพาะหน้าชุมชน/หน้าสินค้า และตรวจปลั๊กอินที่รันหนักบนเว็บจริง

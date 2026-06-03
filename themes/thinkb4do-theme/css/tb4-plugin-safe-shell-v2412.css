@@ -1,0 +1,66 @@
+/* Thinkb4do v2.4.12 — Plugin Safe Shell
+   เคลียร์พื้นที่ทุกหน้าที่ปลั๊กอินเป็นเจ้าของ ไม่ให้ธีมซ้อน/ทับ UI ของปลั๊กอินเดิม */
+
+body.tb4-plugin-safe-shell {
+  --tb4-plugin-safe-padding-x: clamp(12px, 2.4vw, 24px);
+}
+
+#main-content {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+body.tb4-plugin-owned-page #main-content,
+body.tb4-plugin-owned-page .tb4-page-main--plugin-owned,
+body.tb4-plugin-owned-page .tb4-plugin-owned-shell,
+body.tb4-plugin-owned-page .tb4-plugin-owned-content {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.tb4-plugin-owned-page .tb4-page-main--plugin-owned {
+  min-height: 70vh;
+  padding: 0;
+  background: #fff;
+}
+
+body.tb4-plugin-owned-page .tb4-plugin-owned-content {
+  padding: 0;
+}
+
+body.tb4-plugin-owned-page .tb4-plugin-owned-content > :first-child {
+  margin-top: 0;
+}
+
+body.tb4-plugin-owned-page .tb4-plugin-owned-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* เมื่อ Header Menu plugin เปิดใช้งานแล้ว ให้ปลั๊กอินเป็นเจ้าของเมนูทั้งหมด ลดการซ้อนจากธีม */
+body.tb4-header-plugin-active .tb4-mobile-bottom-nav,
+body.tb4-plugin-owned-page .tb4-mobile-bottom-nav {
+  display: none !important;
+}
+
+/* ป้องกัน container/theme wrapper บีบหน้า plugin feed, community, products, member area */
+body.tb4-plugin-owned-page .tb4-page-main--plugin-owned > .container,
+body.tb4-plugin-owned-page .tb4-plugin-owned-content > .container,
+body.tb4-plugin-owned-page .tb4-discovery-plugin-bridge > .container,
+body.tb4-plugin-owned-page .tb4-products-plugin-bridge > .container {
+  max-width: min(100%, var(--container, 1280px));
+}
+
+/* กันปุ่ม/แถบ fixed จากธีมไปบังป๊อปอัปของปลั๊กอิน */
+body.tb4-plugin-owned-page [data-tb4-theme-floating="true"] {
+  pointer-events: none;
+}
+
+@media (max-width: 782px) {
+  body.tb4-plugin-owned-page .tb4-page-main--plugin-owned {
+    min-height: calc(100vh - var(--header-h, 68px));
+  }
+}

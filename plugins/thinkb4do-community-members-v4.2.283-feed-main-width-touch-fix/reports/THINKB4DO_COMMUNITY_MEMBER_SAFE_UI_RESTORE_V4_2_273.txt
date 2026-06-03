@@ -1,0 +1,24 @@
+Thinkb4do Community Members v4.2.273 - Safe UI Restore
+
+เป้าหมาย:
+- กู้คืน UI/UX หน้าสมาชิกให้กลับไปยังโครงที่ปลอดภัยก่อนการแก้ v4.2.269-v4.2.272
+- ยกเลิกการเปลี่ยน template ที่ทำให้หน้าโพสต์/ฟีดเพี้ยนหรือแตกเป็นการ์ดซ้อน
+- ยกเลิก CSS final override ที่เสี่ยงทับ layout เดิมหลายชั้น
+
+สิ่งที่คืนกลับ:
+1) templates/member-area-content.php
+   - คืน class root เดิมทั้งหมด เพื่อให้ CSS เดิมที่ผูกกับแต่ละ phase ทำงานครบ
+   - คืนการ render โพสต์ด้วย tb4cm_member_area_feed_post_card()
+   - ไม่ใช้ include feed-post-card.php โดยตรงในหน้าสมาชิก เพราะทำให้โครง Feed Main เพี้ยน
+
+2) assets/member-responsive-standard.css
+   - คืนเป็นชุดเดิมก่อนการ override v4.2.269-v4.2.272
+   - ตัดกฎที่บังคับ layout หนักเกินไปออก
+
+3) thinkb4do-community-members.php
+   - อัปเดต version เป็น 4.2.273 เพื่อบังคับให้ browser/plugin โหลด CSS/JS ใหม่
+
+สถานะตรวจสอบ:
+- PHP syntax ผ่าน
+- ZIP แตกไฟล์ได้
+- เป็นเวอร์ชันกู้คืนความปลอดภัยของ UI ก่อนปรับสวยต่อ

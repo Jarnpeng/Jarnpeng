@@ -1,0 +1,77 @@
+Thinkb4do Community Members v4.2.276
+หัวข้อ: เพิ่มระบบเมนูการใช้พื้นที่สมาชิกตาม User ID
+
+ทวนโจทย์:
+- เพิ่มเมนูพื้นที่ในหน้าสมาชิกโดยไม่รื้อ UI/UX เดิม
+- เพิ่ม 4 หน้า: พื้นที่ของฉัน, การใช้พื้นที่, เพิ่มแพ็กเกจพื้นที่, ประวัติการใช้พื้นที่
+- ผูกข้อมูลกับ User ID และมี fallback/mock data ที่ปลอดภัย
+- รองรับ Desktop / Tablet / Mobile
+- ใช้โทน Thinkb4do เขียว ขาว ส้ม ดำ แบบคลีน
+
+ไฟล์ที่แก้:
+1) thinkb4do-community-members.php
+   - อัปเดตเวอร์ชันเป็น 4.2.276
+   - เพิ่ม/ปรับแพ็กเกจพื้นที่: ฟรี, Basic, Pro, Business
+   - เพิ่ม alias เดิม plus -> basic และ studio -> business เพื่อไม่ทำให้ meta เดิมพัง
+   - เพิ่ม helper คำนวณพื้นที่แบบปลอดภัย:
+     tb4cm_storage_safe_bytes()
+     tb4cm_format_storage_size()
+     tb4cm_get_storage_status_data()
+     tb4cm_get_user_storage_post_data_bytes()
+     tb4cm_get_user_storage_history()
+     tb4cm_get_user_storage_dashboard_data()
+   - เตรียมโครงสร้างข้อมูลตาม User ID:
+     user_id, storage_limit, storage_used, storage_remaining,
+     current_package, package_expired_at, storage_history
+
+2) templates/member-area-content.php
+   - เพิ่มตัวแปร $member_storage_data
+   - เพิ่มหน้าเมนูพื้นที่ครบ 4 หน้า:
+     พื้นที่ของฉัน
+     การใช้พื้นที่
+     เพิ่มแพ็กเกจพื้นที่
+     ประวัติการใช้พื้นที่
+   - เพิ่มการ์ดสรุปพื้นที่ในหน้า Overview
+   - เพิ่มปุ่ม เพิ่มพื้นที่ / เพิ่มแพ็กเกจพื้นที่ / เลือกแพ็กเกจ
+   - ลดการแสดงข้อมูลเชิงหลังบ้านที่ไม่จำเป็นออกจาก UI ผู้ใช้ทั่วไป
+
+3) assets/member-responsive-standard.css
+   - เพิ่ม CSS เฉพาะระบบพื้นที่ v4.2.276
+   - รองรับ Desktop / Tablet / Mobile
+   - เมนูย่อยบนมือถือเป็นแนวนอนเลื่อนได้
+   - ปรับการ์ด, progress bar, ตารางประวัติ, แพ็กเกจ ให้ไม่ซ้อนและไม่รก
+
+สิ่งที่เพิ่มใน UI:
+- พื้นที่ของฉัน
+- การใช้พื้นที่
+- เพิ่มแพ็กเกจพื้นที่
+- ประวัติการใช้พื้นที่
+- Progress Bar 0-100%
+- สถานะพื้นที่: ปกติ / ใกล้เต็ม / เต็มแล้ว
+- ข้อความเตือน:
+  พื้นที่ใกล้เต็มแล้ว
+  พื้นที่เต็ม กรุณาเพิ่มแพ็กเกจพื้นที่
+- แพ็กเกจพื้นที่:
+  ฟรี
+  Basic
+  Pro
+  Business
+- ข้อความท้ายระบบ:
+  Settings | โดย Thinkb4do | ดูรายละเอียด
+
+ผลตรวจหลังแก้:
+- PHP syntax: ผ่าน
+- เมนูใหม่: มีครบ 4 หน้า
+- Progress bar: จำกัดไม่เกิน 100%
+- ค่า null/ว่าง/ติดลบ: fallback เป็น 0 อย่างปลอดภัย
+- ไม่แตะ Feed / Comment / Header / Sidebar
+- โครงสร้างพร้อมต่อระบบชำระเงินภายหลังผ่าน request URL และ data attributes ของปุ่มเลือกแพ็กเกจ
+
+สถานะใช้งาน:
+- ใช้งานได้แล้วในระดับโครงปลั๊กอินและ PHP template
+- ยังไม่ได้ทดสอบบน WordPress จริงของเว็บผู้ใช้ เพราะไม่มี environment เว็บจริงในเครื่องนี้
+
+สิ่งที่ยังเหลือถ้าจะต่อให้สมบูรณ์เชิงธุรกิจ:
+- เชื่อม payment gateway จริง
+- เพิ่มหน้าหลังบ้านให้ admin อนุมัติ/ปรับแพ็กเกจราย User ID
+- บันทึก history จริงทุกครั้งเมื่อ upload/delete/upgrade package

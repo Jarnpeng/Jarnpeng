@@ -1,0 +1,31 @@
+AiRA Studio v7.5.8.23 Prompt Processor Answer Gate
+
+เป้าหมาย
+- ให้คำตอบจริงแสดงหลัง Prompt Processor เสร็จเท่านั้น
+- ลำดับการแสดงผลต้องเป็น: ผู้ใช้ถาม → Prompt Processor อ่าน/แปลง prompt → Processor เสร็จ → คำตอบจริงค่อยแสดง
+
+สิ่งที่แก้
+1. เพิ่ม completePromptProcessorGate(processor, status)
+   - รอ processor.done
+   - บังคับขั้นต่ำให้ Prompt Processor แสดงสถานะได้จริงก่อนปล่อยคำตอบ
+   - finalizePromptProcessing() ก่อน render คำตอบจริง
+   - เว้นจังหวะสั้น ๆ หลังสถานะพร้อมแสดงคำตอบจริง
+
+2. Success flow
+   - เดิม: รอ animation เริ่มต้นแล้ว finalize + answer
+   - ใหม่: completePromptProcessorGate() เสร็จก่อน แล้วจึง addAssistantMessageWithSlide(reply)
+
+3. Error flow
+   - ถ้า API error/timeout ก็ยังรอ Prompt Processor ปิดสถานะก่อน แล้วค่อยแสดงข้อความ error
+
+ไม่แตะ
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ตำแหน่ง popup/composer/menu
+
+QC
+- PHP lint
+- JS syntax
+- ZIP integrity
+- data-action diff ต้องไม่เพิ่ม/ลด

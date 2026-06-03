@@ -1,0 +1,10 @@
+THINKB4DO Community Feed Main v4.2.239
+
+Patch: Post head alignment fix for mobile feed cards.
+
+Changes:
+- Fixed author name / time row alignment on mobile.
+- Fixed audience visibility row alignment under author row.
+- Fixed edit/delete owner tool alignment on the right side.
+- Overrode older stacked mobile CSS patches that caused drift.
+- Kept Feed Main separated from member/sidebar logic.

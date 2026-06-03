@@ -1,0 +1,13 @@
+AiRA Studio v7.4.7 Clean Slate Codeblock Action Bridge
+
+เป้าหมาย:
+- แก้บั๊ก Code block ที่ปุ่ม Next / Fix สด / Preview / Debug / โหลดแพ็ก / ติดตั้ง / อัปเกรด ไม่ตอบสนอง
+- ทำให้ปุ่ม Code block ใช้ event bridge แบบ capture-phase จับคลิกก่อน handler อื่น เพื่อกันปัญหา DOM ซ้อนหรือ event bubble ถูกขัด
+- เพิ่ม submitPrompt() wrapper และแก้ sendChat() ให้ return Promise เพื่อให้ Fix สด/Upgrade ที่เรียก .finally() ทำงานจริง
+- เพิ่มระบบปลดสถานะ sending ที่ค้างเกิน 65 วินาที เพื่อให้ Next/Fix ไม่ค้างถาวร
+- เพิ่ม CSS กัน overlay และเพิ่ม touch-action สำหรับมือถือ
+
+สถานะทดสอบ:
+- PHP syntax: PASS
+- JavaScript syntax: PASS
+- ZIP integrity: PASS

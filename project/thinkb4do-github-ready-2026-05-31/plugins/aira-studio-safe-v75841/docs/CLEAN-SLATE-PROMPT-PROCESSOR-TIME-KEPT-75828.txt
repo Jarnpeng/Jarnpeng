@@ -1,0 +1,25 @@
+AiRA Studio v7.5.8.28 — Processor Time Kept
+
+Goal
+- Prompt Processor card is still temporary while AiRA is thinking.
+- After the real answer is rendered, the big Prompt Processing card must not remain.
+- Keep only a compact Processor time receipt so the user can see processing duration.
+
+Changed
+- Replaced full-card auto dismiss with keepPromptProcessingTimeAfterAnswer().
+- Existing dismissPromptProcessingAfterAnswer() name is preserved for compatibility, but now converts the card into a time pill.
+- Added .processor-time-kept CSS for compact display.
+- No button/action router changes.
+
+Expected flow
+1. User sends a message.
+2. Prompt Processor appears and processes.
+3. Processor completes visually.
+4. Real answer appears.
+5. Full Prompt Processor card collapses into: Processor time · <duration>.
+
+QC
+- PHP lint required.
+- JavaScript syntax check required.
+- ZIP integrity required.
+- data-action count must remain unchanged.

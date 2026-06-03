@@ -1,0 +1,14 @@
+AiRA Studio v7.5.5.7 — Typing Cadence + Command Value Guard
+
+What changed
+- Assistant slide typing now uses GPT-like breathing cadence.
+- Added punctuation, paragraph, Thai polite ending, and code fence pause logic.
+- Code-heavy answers type in larger safe chunks but still pause at meaningful points.
+- Code block Human Value Guard now includes two maps: button benefits and command benefits.
+- Important commands such as add_action, register_rest_route, nonce, sanitize, addEventListener, fetch, localStorage, @media, aria/focus are detected and explained with real user value.
+
+Quality goal
+Every code-block button and important command must help someone complete a real task, reduce risk, save time, understand the system, or test the result.
+
+Install note
+Clear cache/hard refresh after replacing the plugin ZIP so the updated JS/CSS cadence and command benefit panel load correctly.

@@ -1,0 +1,31 @@
+AiRA Studio v7.5.8.30 — Processor Time Card Restored
+
+ฐานที่ใช้:
+- v7.5.8.29-processor-time-polish
+
+เป้าหมาย:
+- หลังคำตอบจริงแสดงเสร็จแล้ว ไม่ให้ Prompt Processing card ใหญ่ค้างในรูปแบบกำลังประมวลผล
+- ไม่ยุบเหลือชิปเล็กเกินไป
+- ให้เหลือเป็น Processing Time Card แบบสรุปสวยตามภาพอ้างอิงของผู้ใช้
+
+สิ่งที่แก้:
+1. เปลี่ยน keepPromptProcessingTimeAfterAnswer() ให้แปลงการ์ด Prompt Processing เป็นการ์ด Processing Time เต็มรูปแบบ
+2. แสดงหัวการ์ด: Processing Time + ประมวลผล Prompt เสร็จแล้ว
+3. แสดงเวลาในการประมวลผล, ตีความ, ผลลัพธ์ที่ต้องแสดง, ทักษะสื่อสาร, เชื่อมระบบ, สถานะ
+4. คง meta ด้านบน เช่น ประมวลผลแล้ว ... · เวลาในการประมวลผล
+5. ไม่ใช้ชิปเล็กแบบ v7.5.8.29 แล้ว
+6. ไม่แตะปุ่ม, data-action, action router, Composer, Popup Menu หรือ Sidebar
+
+QC:
+- PHP lint ผ่าน
+- JavaScript syntax check ผ่าน
+- ZIP integrity ผ่าน
+- data-action ไม่เพิ่ม/ไม่ลดจากฐาน
+
+วิธีทดสอบ:
+1. ติดตั้ง/อัปเดต ZIP
+2. ล้าง cache
+3. ถามคำถาม เช่น 7+7
+4. Prompt Processor แสดงระหว่างประมวลผล
+5. คำตอบจริงแสดง
+6. กล่อง Prompt Processing ต้องเปลี่ยนเป็น Processing Time Card แบบสรุป ไม่ใช่กล่องกำลังประมวลผล และไม่ใช่ชิปเล็ก

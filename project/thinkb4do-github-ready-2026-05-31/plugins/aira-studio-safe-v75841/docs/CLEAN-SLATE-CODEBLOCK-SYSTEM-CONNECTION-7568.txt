@@ -1,0 +1,20 @@
+AiRA Studio v7.5.6.8 — Codeblock System Connection Engine
+
+เป้าหมาย:
+- เพิ่มการเชื่อมต่อ เพิ่มความสามารถ และเพิ่มประสิทธิภาพของ code block ให้ทุกปุ่ม ทุกคำสั่ง ทุก API ทุก state/data ทุก feedback และทุกเอกสารเชื่อมเป็นระบบเดียวกัน
+- ลดปุ่มหลอก คำสั่งลอย โมดูลไม่เชื่อม และ flow ที่ผู้ใช้กดแล้วไม่รู้ว่าเกิดอะไรขึ้น
+
+สิ่งที่เพิ่ม:
+1) ปุ่มใหม่ใต้ code block: เชื่อมระบบ
+2) แผง System Connection Engine พร้อมคะแนน Connection %
+3) Relationship Map: Button → Handler → Command → Data/API → UI Feedback → QC/Test → User Benefit
+4) Button Contract: handler, feedback, error, retry, aria-label, test path
+5) Command Contract: input, output, validation, permission, fallback, user benefit
+6) Data/API Flow: input → validate → store/API → response → render → export/package
+7) Performance Connection: ลด handler/render ซ้ำ ใช้ delegation/lazy/debounce/cache/timeout/retry เมื่อเหมาะสม
+8) Safety Connection: nonce, capability, sanitize, escape, privacy, rollback ในจุดเสี่ยง
+
+ผลลัพธ์ที่คาดหวัง:
+- Code block ทำหน้าที่เป็นระบบสร้างระบบที่เชื่อมโยงจริง ไม่ใช่แค่กล่องโค้ด
+- ผู้ใช้เห็นความหมายและประโยชน์ของทุกปุ่ม/คำสั่ง
+- ปุ่มกดได้จริง มี feedback และมีแผนทดสอบชัดเจน

@@ -1,0 +1,30 @@
+AiRA Studio v7.5.8.9 Stable Composer + Thought Prompt Compiler
+
+ฐาน: v7.5.8.8-keyboard-composer-anchor
+
+สิ่งที่แก้:
+1) Composer keyboard docking
+- เปลี่ยนจากการล็อกด้วย top เป็น bottom edge docking
+- เพิ่ม fixed-position probe เพื่อตรวจว่า browser ยึด fixed bottom กับ visualViewport หรือ layoutViewport
+- ถ้า browser ยึดกับ visualViewport: bottom = 0
+- ถ้า browser ยึดกับ layoutViewport: bottom = keyboard inset
+- ลดอาการ composer ลอยกลางจอ / เว้นช่องขาวใหญ่ / เด้งระหว่าง keyboard animate
+
+2) Thought Prompt Compiler
+- ผู้ใช้พิมพ์ข้อความธรรมดาได้
+- ระบบอ่าน intent/forms/context/recent room
+- ดึง command systems ที่เกี่ยวข้อง เช่น Context Reader, Prompt Processor, Result Resolver, Auto Evolution Core, Quality Guard, Performance Guard, WordPress/Code/UI/UX เมื่อเกี่ยวข้อง
+- แปลงเป็น Auto-Compiled Working Prompt ก่อนส่ง AI
+- ไม่แสดง prompt ภายในให้ผู้ใช้เห็น เว้นแต่เปิด debug/context
+
+3) ไม่ยุ่งกับปุ่ม
+- ไม่เพิ่ม data-action ใหม่
+- ไม่ลบ data-action เดิม
+- ไม่เปลี่ยน action router/click/touch handler
+
+ทดสอบหลังติดตั้ง:
+- ล้าง cache/browser cache
+- เปิดมือถือ Chrome/Android
+- แตะ composer ให้ keyboard ขึ้น
+- composer ต้องติดขอบ keyboard ไม่ลอยกลางจอ
+- พิมพ์ข้อความสั้น เช่น "แก้ตรงนี้" หรือ "ทำให้ดีขึ้น" แล้วส่ง ระบบต้องแปลงเป็น prompt อัตโนมัติและตอบตรงบริบท

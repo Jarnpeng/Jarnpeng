@@ -1,0 +1,6 @@
+THINKB4DO Community Feed Main v4.2.256
+
+Patch summary:
+- Disabled overlapping legacy mini-video control systems and hid duplicate mini players.
+- Built one unified compact dock with video and attached bottom control bar in the same box.
+- Added drag-to-close on the inline drag button and preserved pause/close controls.

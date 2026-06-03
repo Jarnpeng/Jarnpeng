@@ -1,0 +1,19 @@
+Thinkb4do Community v4.2.223
+
+Goal
+- Remove stacked-card feeling on the comment page.
+- Keep only one main card visually.
+- Make the send button visually balanced with circular edges.
+
+Changes
+1. Added body class tb4c-v42223-one-card-comment-body.
+2. Flattened comments section wrappers, list wrappers and form wrappers.
+3. Removed the empty-state card feel (no border/card panel).
+4. Kept the comments block as part of the main post card.
+5. Tuned the textarea and send button proportions.
+6. Made the send button a true rounded circle with centered icon.
+
+Expected result
+- One-card comment page feel.
+- Cleaner and less nested UI.
+- Better-balanced send button.

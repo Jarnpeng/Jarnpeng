@@ -1,0 +1,14 @@
+Thinkb4do Community v4.2.210
+
+Goal:
+- Wider mobile feed card and full-width image/video media.
+- Display post type/category and custom/new tags under the description before media.
+- Make overall card/action/media closer to Instagram style while keeping Thinkb4do brand palette.
+
+Files changed:
+- thinkb4do-community.php
+- assets/community.js
+- assets/community-clean-ui-reset.css
+- includes/modules/center-feed.php
+- templates/member-area-content.php
+- templates/single-community-post.php

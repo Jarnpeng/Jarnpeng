@@ -1,0 +1,23 @@
+AiRA Studio v7.4.3 Clean Slate Admin Bar Lock
+
+Goal
+- Make the AiRA Studio header attach directly under the WordPress admin bar at all times.
+- Reduce header gaps during scroll, touch, keyboard open/close, orientation change, mobile browser viewport resize and WordPress admin menu changes.
+
+What changed
+1. Added dynamic admin-bar edge measurement from #wpadminbar.getBoundingClientRect().
+2. Added CSS variables: --aira-adminbar-top, --aira-adminbar-bottom and --aira-shell-top.
+3. The AiRA app shell now locks top/height from the actual admin bar bottom edge, not only a fixed 32/46px guess.
+4. The AiRA topbar is sticky inside the app shell and keeps its z-index above chat/artifact panels.
+5. Added passive re-measure triggers for resize, scroll, touch, pointer, focus, visualViewport and orientation events.
+
+Safety
+- Does not execute generated PHP before confirmation.
+- Does not write database values from this layout lock.
+- Keeps the existing composer, preview, live debug, next loop, like stats and performance monitor.
+
+QC
+- PHP syntax: must pass.
+- JavaScript syntax: must pass.
+- ZIP structure: aira-studio/ root folder only.
+- Runtime check: Export Bug All should show --aira-adminbar-bottom and --aira-shell-top values.

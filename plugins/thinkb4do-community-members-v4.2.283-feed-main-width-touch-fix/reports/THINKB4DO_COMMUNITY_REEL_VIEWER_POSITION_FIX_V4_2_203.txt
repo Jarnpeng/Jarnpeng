@@ -1,0 +1,18 @@
+Thinkb4do Community v4.2.203 — Reel Viewer Position Fix
+
+ตำแหน่งที่พบจากภาพ:
+- templates/community-content.php ประมาณบรรทัด 193-208 คือ markup ของ Thinkb4do Reels viewer, ปุ่ม X, ปุ่มก่อนหน้า และปุ่มถัดไป
+- assets/community-clean-ui-reset.css เดิมมีเฉพาะ safety style สั้น ๆ ทำให้ viewer ไม่ถูกซ่อน/ไม่ถูกล็อกเป็น fixed modal ใน active UI layer ล่าสุด
+
+สิ่งที่แก้:
+1) ซ่อน .tb4c-reel-viewer เป็นค่าเริ่มต้นเมื่อ aria-hidden=true / ยังไม่กดเปิด
+2) เมื่อ JS เติม .is-open ให้ viewer กลับมาเป็น fixed modal เหนือหน้าเว็บ ไม่แทรกกลางฟีด
+3) จัด .tb4c-reel-close ให้อยู่มุมขวาของ topbar
+4) จัด .tb4c-reel-nav-prev และ .tb4c-reel-nav-next ให้อยู่ซ้าย/ขวาภายใน panel
+5) เพิ่ม responsive สำหรับจอมือถือเล็ก ลดขนาดปุ่มและ padding เพื่อไม่ให้เบียด content
+6) คงโครงซ้าย/กลาง/ขวาเดิม และไม่แตะเมนูล่างที่ถูกเอาออกแล้ว
+
+สถานะ:
+- ของเดิมยังอยู่: template, module, data attributes, JS เปิด/ปิด Reels เดิมยังอยู่
+- สิ่งใหม่: CSS modal positioning layer v4.2.203
+- ระบบนี้ใช้งานได้แล้วในระดับ CSS/ตำแหน่ง แต่ควรล้าง cache และทดสอบบนหน้า Community จริงหลังติดตั้ง

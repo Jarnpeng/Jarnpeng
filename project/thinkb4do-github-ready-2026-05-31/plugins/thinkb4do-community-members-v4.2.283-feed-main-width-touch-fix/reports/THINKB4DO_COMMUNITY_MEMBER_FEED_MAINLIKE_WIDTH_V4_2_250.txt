@@ -1,0 +1,6 @@
+Thinkb4do Community Members v4.2.250 - Feed Mainlike Width
+- Reduced member page canvas from very wide layout to a focused 1040px max-width.
+- Kept the page slightly wider than a normal feed while removing left/right sidebars.
+- Converted member posts from Instagram/grid layout back to a main-feed-like single vertical column.
+- Media uses contain/natural height to avoid cropped square cards.
+- Maintained shortcode [thinkb4do_member_area] and original PHP functions for safer rollback.

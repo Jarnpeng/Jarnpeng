@@ -1,0 +1,30 @@
+THINKB4DO THEME CORE v2.3.3 — FOOTER QUIET
+
+เป้าหมาย:
+- ปรับ footer ให้เรียบ ไม่โดดเด่นเกินเนื้อหาหลัก
+- คงลิงก์สำคัญไว้
+- ลดสีเข้ม/สีจม/เงาหนัก
+- รองรับมือถือ แท็บเล็ต เดสก์ท็อป และ safe area
+
+สิ่งที่ปรับ:
+1) เปลี่ยน footer จากพื้นเข้มเด่นมาก เป็นพื้นอ่อน #f7faf8 พร้อมเส้นแบ่งบาง
+2) ลดขนาดตัวอักษร footer และลดน้ำหนัก heading
+3) ลดเงา ปุ่ม และ social button ให้ไม่แย่งสายตา
+4) เอา social placeholder ที่เป็นลิงก์ # ออก ถ้าไม่ได้ตั้งค่าลิงก์จริง
+5) ปรับ newsletter เป็นฟอร์มเรียบ สีขาว ขอบบาง
+6) ปรับ footer bottom ให้บางและอ่านง่าย
+7) เพิ่ม responsive footer: 4 columns > 2 columns > 1 column
+
+ไฟล์ที่เพิ่ม:
+- css/tb4-footer-quiet-v233.css
+- FOOTER_QUIET_V2_3_3.txt
+
+ไฟล์ที่ปรับ:
+- style.css
+- functions.php
+- footer.php
+
+สถานะ:
+- เป็นธีม WordPress ต่อจาก v2.3.2
+- คง WordPress Admin Bar เดิม
+- ไม่เพิ่มระบบใหม่ที่ไม่เกี่ยวข้อง

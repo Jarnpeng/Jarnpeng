@@ -1,0 +1,7 @@
+AiRA Studio v7.1.6 Clean Slate Image Click Save
+
+- Generated image now appears directly inside the chat message as a visual card.
+- Clicking the image card opens the image preview popup.
+- Popup includes save/download action and prompt metadata.
+- Removed forced popup opening after generation; popup opens by user tap/click.
+- Kept code block, result toggle, composer bottom lock, rooms, voice, artifact and settings.

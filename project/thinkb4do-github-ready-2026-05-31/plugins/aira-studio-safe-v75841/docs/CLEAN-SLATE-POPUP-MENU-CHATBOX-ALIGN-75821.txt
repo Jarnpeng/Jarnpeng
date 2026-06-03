@@ -1,0 +1,24 @@
+AiRA Studio v7.5.8.21 Popup Menu Chatbox Align
+
+ฐานที่ใช้:
+- v7.5.8.20-backdrop-grey-start-composer-stable
+
+สิ่งที่แก้:
+- แก้เฉพาะตำแหน่ง Popup Menu บน Desktop ให้ตรงกับกล่องแชท/Composer
+- พื้นหลังเบลอสีเทายังคงกติกาเดิมจาก v7.5.8.20
+- เปลี่ยนการคำนวณตำแหน่งเมนูจาก full composer dock เป็น .composer จริง
+- เมนูจึงมี center และ width ตรงกับกล่อง Composer/Chat box
+
+สิ่งที่ไม่แตะ:
+- ไม่ย้าย Chat Log
+- ไม่ย้าย Composer
+- ไม่แก้ปุ่ม
+- ไม่แก้ action router
+- ไม่เพิ่ม data-action ใหม่
+
+ทดสอบที่ควรทำ:
+1. เปิด Desktop WordPress admin
+2. กดปุ่ม + / Menu
+3. พื้นหลังเทายังเริ่มชิด Sidebar
+4. Popup Menu ต้องอยู่แนวเดียวกับกล่องแชท/Composer
+5. เลื่อนรายการในเมนูได้โดยไม่ลากหน้าแชท

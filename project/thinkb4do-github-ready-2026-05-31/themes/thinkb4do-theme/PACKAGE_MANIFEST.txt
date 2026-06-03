@@ -1,0 +1,46 @@
+Thinkb4do Theme Core v2.0.0
+===========================
+Root folder: thinkb4do-theme
+Purpose: Core visual theme only. Live editing, Gutenberg frontend tools, autosave, media/color designer and component editor are separated into the plugin "Thinkb4do Live Studio".
+
+Core theme includes:
+- WordPress templates: header.php, footer.php, front-page.php, page.php, single.php, archive.php, 404.php
+- Theme settings/customizer and Thinkb4do visual system
+- Header/mobile/dropdown/popup positioning fixes
+- Main frontend scripts: js/compat.js, js/main.js, js/mobile-menu-anchor-fix.js
+- Gutenberg is not disabled by the theme
+
+Install order:
+1) Install/activate this theme
+2) Install/activate thinkb4do-live-studio-v2.0.0.zip for live edit tools
+
+
+V2.4.7 HOME MENU FEED
+- front-page.php: ปรับหน้าแรกเป็นฟีดจากเมนูหลัก
+- functions.php: enqueue CSS ใหม่ และปรับ version constant เป็น 2.4.7
+
+V2.4.8 HOME DISCOVERY FEED
+- front-page.php: เพิ่มระบบดึง Reel จากชุมชน, โพสต์ชุมชนล่าสุด, ผลิตภัณฑ์ใหม่/แนะนำ และยังคงฟีดจากเมนูหลักเดิม
+- functions.php: enqueue CSS ใหม่ และปรับ version constant เป็น 2.4.8
+- style.css: ปรับ Version เป็น 2.4.8
+
+
+v2.4.9: Cleaned duplicate community/home feed logic from theme. Front page now bridges to Thinkb4do Community shortcode.
+
+V2.4.10 COMMUNITY MENU RESTORE
+- functions.php: คืนเมนู Discovery / ชุมชน / ผลิตภัณฑ์ ทุกหน้า และเพิ่ม guard กันเมนูชุมชนหาย
+- header.php: fallback header ใช้ Discovery / ชุมชน / ผลิตภัณฑ์
+- css/tb4-community-clean-shell-v240.css และ css/tb4-performance-bundle-v242.css: ไม่ซ่อนลิงก์ชุมชน/เมนูมือถือบนหน้าชุมชนแล้ว แต่ยังซ่อน footer ได้
+
+Discovery Plugin Split v2.4.11
+- front-page.php: ทำหน้าที่เป็น bridge เรียกปลั๊กอิน Thinkb4do Discovery เท่านั้น
+- เพิ่มไฟล์ DISCOVERY_PLUGIN_SPLIT_V2_4_11.txt
+- ใช้งานร่วมกับ thinkb4do-discovery-v1.0.0.zip
+
+V2.4.12 PLUGIN SAFE SHELL / CLEAN ALL PAGES
+- functions.php: เพิ่มตัวตรวจจับหน้าที่ปลั๊กอินเป็นเจ้าของ เช่น Discovery, ชุมชน, ผลิตภัณฑ์, Member Area และ shortcode/block ของ Thinkb4do
+- page.php: ถ้าหน้าเป็นของปลั๊กอิน ธีมจะไม่ครอบด้วยหัวข้อ/บทความ/container แคบ ลดอาการหน้าโดนบีบหรือซ้อน
+- footer.php/functions.php: ถ้า Header Menu plugin หรือหน้าปลั๊กอินเปิดใช้งาน ธีมจะไม่แสดง mobile bottom nav ซ้ำ
+- inc/tb4-page-sync.php: auto sync จะไม่เขียนทับ content/template/options ของหน้าเดิมที่ไม่มี marker ของธีม เพื่อลดการทับปลั๊กอินที่มีอยู่
+- functions.php: Product/Compare fallback CPT จะทำงานเฉพาะเมื่อไม่มี Thinkb4do Products plugin
+- css/tb4-plugin-safe-shell-v2412.css: เพิ่ม CSS guard เคลียร์พื้นที่และป้องกันการซ้อนทับจากธีม

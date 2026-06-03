@@ -1,0 +1,18 @@
+Thinkb4do Community Members v4.2.259
+
+Goal:
+- Make the member page closer to Facebook feed/profile layout while keeping Thinkb4do visual identity.
+
+Changed:
+- Added tb4c-member-facebook-style-v4259 scope and body class.
+- Added Facebook-like quick composer above member feed.
+- Rebuilt member tabs as a clear menu bar instead of a confusing/stat-like strip.
+- Made cover image clearer and larger with less overlay.
+- Tightened 2-column layout: left profile info, right feed.
+- Cleaned duplicated UI strips and tag/category noise in member feed.
+- Fixed media cards to fill full card width/height with 16:9 ratio, preventing gray empty side areas.
+- Kept Thinkb4do green/orange/white/black palette.
+
+QC:
+- PHP lint required after packaging.
+- CSS override is scoped to member page only.

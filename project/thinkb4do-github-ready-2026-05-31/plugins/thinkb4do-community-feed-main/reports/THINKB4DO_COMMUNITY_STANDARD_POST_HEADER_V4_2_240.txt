@@ -1,0 +1,14 @@
+THINKB4DO Community Feed Main v4.2.240
+
+Standard post header layout fix.
+
+Normal position on mobile:
+- Avatar: left side of the post header.
+- Username + time: top row, immediately to the right of avatar.
+- Visibility: directly below username/time, same left alignment.
+- Edit/Delete: far right of the header, aligned to the top row.
+
+Changes:
+- Moved owner edit/delete tools out of author-line into the post-head grid.
+- Added final CSS layer to override older post-head, owner-tools, author-line, and visibility drift.
+- Kept Feed Main separated from member/sidebar logic.

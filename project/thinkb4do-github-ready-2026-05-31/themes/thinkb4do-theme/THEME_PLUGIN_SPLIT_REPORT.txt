@@ -1,0 +1,11 @@
+Thinkb4do v2.0.0 Split Report
+==============================
+What changed:
+- Theme is now the visual/frontend base only.
+- Live edit, component editor, Gutenberg frontend overlay/toolbox, autosave sync, color/media tools and strict QC were moved out to a separate plugin.
+- Gutenberg disabling filters were removed from the theme.
+- Header/mobile popup fixes remain in the theme because they are part of the frontend layout.
+
+Status:
+- Theme core can run without the Live Studio plugin.
+- To edit pages live, activate the plugin package separately.

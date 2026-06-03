@@ -1,0 +1,132 @@
+/*
+ * Thinkb4do Header Center Fix v2.1.6
+ * Removes WordPress menu list bullets in the white header and centers the desktop nav/search group.
+ */
+body.thinkb4do-theme #site-header .main-nav,
+body.thinkb4do-theme #site-header .main-nav ul,
+body.thinkb4do-theme #site-header .main-nav li,
+body.thinkb4do-theme .tb4-header-center .main-nav,
+body.thinkb4do-theme .tb4-header-center .main-nav ul,
+body.thinkb4do-theme .tb4-header-center .main-nav li {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav li::marker,
+body.thinkb4do-theme .tb4-header-center .main-nav li::marker {
+  content: "" !important;
+  font-size: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav > li,
+body.thinkb4do-theme .tb4-header-center .main-nav > li {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-width: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav > li > a,
+body.thinkb4do-theme .tb4-header-center .main-nav > li > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav > li::before,
+body.thinkb4do-theme #site-header .main-nav > li::after,
+body.thinkb4do-theme .tb4-header-center .main-nav > li::before,
+body.thinkb4do-theme .tb4-header-center .main-nav > li::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme.tb4-sticky-header #site-header .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: clamp(20px, 3vw, 56px) !important;
+    padding-right: clamp(20px, 3vw, 56px) !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    display: grid !important;
+    grid-template-columns: minmax(190px, 280px) minmax(520px, 1fr) minmax(150px, 280px) !important;
+    align-items: center !important;
+    column-gap: clamp(12px, 2vw, 32px) !important;
+    width: 100% !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .site-logo.site-logo--header {
+    justify-self: start !important;
+    margin: 0 !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-header-center {
+    justify-self: center !important;
+    align-self: center !important;
+    width: min(100%, 940px) !important;
+    max-width: min(940px, calc(100vw - 520px)) !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(8px, 1.3vw, 18px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: hidden !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-header-center .main-nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(1px, .35vw, 7px) !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-desktop-header-search.header-search {
+    flex: 0 1 clamp(210px, 24vw, 360px) !important;
+    min-width: 190px !important;
+    max-width: 360px !important;
+    margin-left: 0 !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-right {
+    justify-self: end !important;
+    margin-left: 0 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.current-menu-item > a,
+  body.thinkb4do-theme #site-header .main-nav li.current_page_item > a,
+  body.thinkb4do-theme #site-header .main-nav li.current-menu-ancestor > a {
+    color: var(--tb4-green, #1E6B45) !important;
+    background: rgba(30,107,69,.09) !important;
+    font-weight: 750 !important;
+    border-bottom: 0 !important;
+    border-radius: 999px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1180px) {
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    grid-template-columns: minmax(165px, 220px) minmax(430px, 1fr) minmax(130px, 220px) !important;
+    column-gap: 10px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-header-center {
+    max-width: min(760px, calc(100vw - 400px)) !important;
+    gap: 7px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-desktop-header-search.header-search {
+    flex-basis: 190px !important;
+    min-width: 140px !important;
+    max-width: 220px !important;
+  }
+}

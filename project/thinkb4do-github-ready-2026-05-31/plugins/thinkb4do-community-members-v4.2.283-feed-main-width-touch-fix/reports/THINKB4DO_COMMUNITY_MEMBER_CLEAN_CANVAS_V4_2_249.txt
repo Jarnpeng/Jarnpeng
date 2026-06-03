@@ -1,0 +1,5 @@
+Thinkb4do Community Members v4.2.249 Clean Canvas
+- Safe no-sidebar layout: removes left/right rails from template without deleting core functions.
+- Keeps one member area page and shortcode.
+- Uses full-width center content, compact hero, stats, tabs, and cleaner feed grid.
+- CSS scoped to tb4c-member-clean-canvas-v4249 to avoid affecting other pages.

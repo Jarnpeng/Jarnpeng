@@ -1,0 +1,15 @@
+Thinkb4do Community v4.2.224
+
+Goal
+- Remove nested comment card that still appeared after CSS-only fixes.
+
+Changes
+1. Removed tb4c-comments-card and tb4c-social-comments-card classes from comments-community.php.
+2. Added tb4c-comments-inline class so comments cannot inherit the default card style.
+3. Added body class tb4c-v42224-remove-nested-comment-card-body.
+4. Flattened comments wrappers, empty state, list wrapper, and form wrapper.
+5. Tuned send button to be a balanced circle with centered icon.
+
+Expected result
+- Comments section is no longer rendered as a card inside the main card.
+- Only the main post card remains.

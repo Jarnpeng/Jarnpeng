@@ -1,0 +1,12 @@
+THINKB4DO Community Feed Main v4.2.255
+
+Mini Video Compact Lock Fix
+- Reduced mini video popup size on mobile.
+- Locks the video surface and external control bar using the same fixed left/top/width calculation.
+- Uses a 1px overlap between video and button bar to remove the visual seam/gap.
+- Prevents scroll/resize/browser toolbar changes from enlarging or separating the dock.
+- Keeps drag-out-to-close, pause, and close controls from v4.2.253.
+
+QC
+- PHP syntax check required after packaging.
+- JS syntax check required after packaging.

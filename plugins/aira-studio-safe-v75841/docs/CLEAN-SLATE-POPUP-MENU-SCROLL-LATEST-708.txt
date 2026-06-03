@@ -1,0 +1,31 @@
+AiRA Studio v7.0.8 — Clean Slate Popup Menu + Scroll Latest
+
+เป้าหมาย:
+- เอาปุ่มช่วยเลื่อนลง/กลับไปข้อความล่าสุดกลับมา
+- เปลี่ยนเมนูปุ่ม + จากแบบดัน layout เป็น popup ที่ดูน่าสนใจกว่า
+- Composer ยังตรึงล่างและผสานกับคีย์บอร์ดมือถือเหมือน v7.0.7
+- ไม่ดึง UI legacy กลับมาซ้อน
+
+สิ่งที่เพิ่ม/แก้:
+1) Scroll Latest Helper
+- เพิ่มปุ่ม scrollLatestBtn
+- แสดงเมื่อผู้ใช้เลื่อนขึ้นไปอ่านประวัติและไม่ได้อยู่ท้ายแชท
+- กดแล้วเลื่อนกลับไปข้อความล่าสุดใน #chatLog แบบ smooth เฉพาะใน chat container
+
+2) Plus Menu Popup
+- composerMenu เปลี่ยนเป็น fixed popup เหนือ composer
+- composerMenuBackdrop ปิดเมนูเมื่อแตะพื้นที่นอกเมนู
+- เมนูไม่ดัน composer ไม่ดันหน้าแชท และไม่ทำให้ composer หลุดล่าง
+- รองรับตอน mobile keyboard เปิด: popup จะอยู่เหนือ composer ที่แนบกับคีย์บอร์ด
+
+3) Compatibility
+- ใช้ CSS/JS มาตรฐาน: Chrome, Edge, Firefox, Safari, Android WebView
+- ยังคง Clean Slate: CSS หลัก 1 ไฟล์ + JS หลัก 1 ไฟล์
+- รักษา data-action และฟังก์ชันเมนูเดิม
+
+ทดสอบหลังติดตั้ง:
+1. พิมพ์หลายข้อความจนเลื่อนได้
+2. เลื่อนขึ้นไปอ่านข้อความเก่า ต้องเห็นปุ่ม “ล่าสุด/↓”
+3. กดปุ่ม ต้องเลื่อนกลับท้ายแชท
+4. กดปุ่ม + เมนูต้องเป็น popup เหนือ composer
+5. เปิดคีย์บอร์ดมือถือแล้วกด + เมนูต้องอยู่เหนือ composer ไม่ซ้อนคีย์บอร์ด

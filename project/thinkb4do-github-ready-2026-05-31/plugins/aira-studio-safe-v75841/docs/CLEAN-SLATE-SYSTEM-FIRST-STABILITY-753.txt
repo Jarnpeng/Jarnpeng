@@ -1,0 +1,21 @@
+AiRA Studio v7.5.3 System First Stability
+
+ฐานที่ใช้: v7.5.1-codeblock-contrast-rescue
+นโยบายรอบนี้: พัฒนาระบบก่อน ไม่แตะ UI/UX และไม่เปลี่ยน CSS หลัก
+
+สิ่งที่เพิ่ม:
+- Server-side pre-install gate token สำหรับยืนยันว่าโค้ดที่กำลังติดตั้ง/อัปเกรดเป็นโค้ดเดียวกับที่ผ่าน Preview/Interactive test แล้ว
+- Code hash verification ก่อน install/upgrade เพื่อกันกรณีโค้ดเปลี่ยนหลังทดสอบ
+- Gate token TTL 2 ชั่วโมง เพื่อบังคับให้ทดสอบใหม่เมื่อ token เก่า
+- Runtime write guard report: capability, writable plugin dir, auto-activate policy, self-overwrite protection
+- Install/Upgrade payload ส่ง strict_gate + preinstall_token จาก code card
+- Preinstall check คืน code_hash, gate_token, runtime_guard ให้ระบบใช้งานต่อ
+
+สิ่งที่ไม่แตะ:
+- ไม่เปลี่ยน layout
+- ไม่เปลี่ยนสี/contrast
+- ไม่เปลี่ยนขนาด/ตำแหน่ง composer/header/code block
+- ไม่นำระบบ runtime-assets-clicktest v7.5.2 กลับมา
+
+สถานะ:
+พร้อมทดสอบบน WordPress จริงหลังล้าง cache โดยใช้ลำดับ Preview → ทดสอบปุ่มใน Sandbox → Install/Upgrade

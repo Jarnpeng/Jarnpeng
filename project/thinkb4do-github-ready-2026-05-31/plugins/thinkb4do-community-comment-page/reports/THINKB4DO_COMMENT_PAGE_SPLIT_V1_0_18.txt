@@ -1,0 +1,39 @@
+Thinkb4do Community Comment Page v1.0.18
+
+เป้าหมาย:
+- แก้อาการเห็นไอคอนแก้ไข/ลบแวบเดียวแล้วโดนชั้นอื่นบัง
+- เอาส่วนบัง/ส่วนซ้ำของ owner action ออกจากตำแหน่งเดิม
+
+สิ่งที่แก้:
+1) ย้ายปุ่มแก้ไข/ลบของความคิดเห็นออกจาก .tb4c-comment-content และ .tb4c-comment-topline
+   - เดิมอยู่ในกล่องข้อความ ทำให้เสี่ยงโดน bubble/meta/pseudo/overlay ทับ
+   - ใหม่อยู่เป็นคอลัมน์ขวาโดยตรงของ <li> ความคิดเห็น
+
+2) เปลี่ยน class ปุ่มเจ้าของเป็นชุดใหม่ทั้งหมด
+   - tb4ccp-safe-owner-rail
+   - tb4ccp-safe-owner-btn
+   - tb4ccp-safe-owner-edit
+   - tb4ccp-safe-owner-delete
+   - tb4ccp-safe-icon
+   - tb4ccp-safe-sr
+
+3) ลบการพึ่งพา class เก่าที่เคยมีโอกาสถูก CSS เดิมทับ
+   - ไม่ใช้ tb4ccp-owner-action-rail
+   - ไม่ใช้ tb4ccp-owner-action-btn
+   - ไม่ใช้ tb4ccp-owner-action-edit/delete
+   - ไม่ใช้ tb4ccp-button-icon
+   - ไม่ใช้ has-tb4ccp-owner-actions ใน markup ใหม่
+
+4) คงเงื่อนไขล่าสุดของผู้ใช้
+   - คอมเมนต์หลัก: มีคัดลอก + ตอบกลับ
+   - คอมเมนต์ย่อย: ไม่มีตอบกลับ
+   - ความคิดเห็นที่ผู้ใช้เป็นเจ้าของ: มีแก้ไข/ลบด้านขวา
+
+5) ตรวจบั๊ก
+   - PHP syntax OK
+   - Template PHP syntax OK
+   - JS syntax OK
+   - CSS brace count OK
+   - ZIP แตกไฟล์ได้ปกติ
+
+โดย Thinkb4do

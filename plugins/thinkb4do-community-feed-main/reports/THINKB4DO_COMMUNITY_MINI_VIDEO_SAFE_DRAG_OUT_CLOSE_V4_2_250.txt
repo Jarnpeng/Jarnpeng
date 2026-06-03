@@ -1,0 +1,1 @@
+v4.2.250 emergency safe fix: rollback v4.2.249 invasive mini-video patch, restore v4.2.248 layout, add safe button recovery and drag-out-to-close using existing restore flow.

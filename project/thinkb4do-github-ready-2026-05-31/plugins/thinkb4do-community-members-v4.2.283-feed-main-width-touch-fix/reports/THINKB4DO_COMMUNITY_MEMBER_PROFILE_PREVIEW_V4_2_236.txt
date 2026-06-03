@@ -1,0 +1,44 @@
+Thinkb4do Community Members v4.2.236 — Member Profile Preview
+
+เป้าหมาย:
+- พัฒนาหน้าสมาชิกให้ใกล้ภาพตัวอย่างที่อนุมัติ: hero profile, avatar, action buttons, stat strip, tabs, activity area และ right summary column
+- คง shortcode เดิม [thinkb4do_member_area]
+- ไม่ดึง Sidebar/Feed หลักมาซ้อน และไม่แสดงข้อมูลหลังบ้านบนหน้าเว็บ
+
+สิ่งที่เพิ่ม/ปรับ:
+1) Hero สมาชิกแบบ Social Network
+   - Cover เขียวแบบพรีเมียม
+   - Avatar ขนาดใหญ่พร้อมปุ่มเปลี่ยนรูป
+   - ชื่อ, handle, bio, role/location/joined chips
+   - ปุ่ม แก้ไขโปรไฟล์ / สร้างโพสต์ / สิ่งที่บันทึก
+
+2) แถบสถิติใต้ Hero
+   - โพสต์ทั้งหมด
+   - ความคิดเห็น
+   - บันทึกไว้
+   - ผู้ติดตาม
+   - ยอดเข้าชม
+   - ความสมบูรณ์ของโปรไฟล์พร้อม progress bar
+
+3) Tab Bar
+   - ภาพรวม / โพสต์ / คอมเมนต์ / บันทึก / ติดตาม / ตั้งค่า
+   - Sticky แบบเบาและไม่กินพื้นที่
+
+4) Main + Sidebar Layout
+   - ซ้าย: กิจกรรมล่าสุด / โพสต์ของสมาชิก
+   - ขวา: ความสมบูรณ์ของโปรไฟล์ + ขั้นตอนถัดไป
+
+5) Responsive
+   - Desktop: hero 3 columns + stat strip + main/sidebar
+   - Tablet: ลดขนาด avatar และจัด sidebar เป็น 2 columns
+   - Mobile: hero compact, ปุ่มหลัก 2 ปุ่ม, stat card 2 columns, sidebar ลงล่าง
+
+การตรวจ:
+- PHP lint ผ่านทุกไฟล์
+- Scoped CSS อยู่ใต้ .tb4c-member-profile-preview-v4236
+- ไม่แก้ระบบฟีดหลัก/ปลั๊กอิน Sidebar แยก
+- ไม่เพิ่ม dependency ใหม่
+
+สถานะ:
+- ใช้งานได้แล้วระดับไฟล์ปลั๊กอิน
+- ต้องติดตั้งบน WordPress จริงเพื่อดูผลกับธีม/header/sidebar ที่ใช้งานจริง และล้าง cache หลังติดตั้ง

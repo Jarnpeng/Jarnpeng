@@ -1,0 +1,17 @@
+Thinkb4do Community Comment Page v1.0.4
+
+สิ่งที่แก้ไขแล้ว
+- คืนไอคอนมาตรฐานของปุ่ม ตอบกลับ / คัดลอก / แก้ไข / ลบ ด้วย SVG ที่กำหนด stroke ในตัวและ CSS กันธีมอื่นทับ
+- แก้สีและกรอบปุ่มแก้ไข/ลบของความคิดเห็นให้กลับมาตำแหน่งมาตรฐาน: แก้ไขสีเขียว, ลบสีแดง
+- แก้พื้นหลัง/เส้นดำที่อาจโผล่ใต้ภาพด้วยการล้าง background ดำของ media wrapper และตั้ง line-height เป็น 0
+- ตั้งรูปและปุ่มเปิดรูปให้รองรับ touch-action: pan-y เพื่อให้ลากเลื่อนหน้าได้เมื่อแตะโดนภาพ
+- เพิ่มตัวจับ drag/tap threshold: ถ้าผู้ใช้ลากเพื่อ scroll จะไม่เปิด lightbox และไม่ block scroll
+
+ไฟล์ที่แก้ไข
+- thinkb4do-community-comment-page.php
+- assets/comment-page.css
+- assets/comment-page.js
+
+ผลตรวจ
+- PHP lint ผ่าน
+- JS syntax ผ่าน

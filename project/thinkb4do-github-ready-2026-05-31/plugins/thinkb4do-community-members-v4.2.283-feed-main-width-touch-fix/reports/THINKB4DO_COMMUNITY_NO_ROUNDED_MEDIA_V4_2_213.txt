@@ -1,0 +1,4 @@
+Thinkb4do Community v4.2.213
+- บังคับเอาขอบโค้งของภาพที่แสดงในฟีดออก
+- ครอบคลุม image slot, video cover, album grid, gallery และ media wrapper หลัก
+- คงโครงฟีดและฟังก์ชันเดิมไว้

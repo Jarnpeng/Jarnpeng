@@ -1,0 +1,10 @@
+Thinkb4do Theme v2.1.9
+
+Fix: Policy menu dropdown did not open and navigated to /legal-center/.
+
+Changes:
+- Added body-level portal dropdown #tb4PolicyPortalDropdown.
+- Captures click on top-level “นโยบาย” before browser navigation.
+- Builds dropdown links from native WordPress submenu when available; falls back to legal policy pages when submenu is missing.
+- Keeps contact/privacy redaction from v2.1.8.
+- Avoids header overflow clipping and old submenu CSS conflicts.

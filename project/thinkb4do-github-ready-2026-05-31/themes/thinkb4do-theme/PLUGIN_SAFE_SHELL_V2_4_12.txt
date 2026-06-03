@@ -1,0 +1,39 @@
+Thinkb4do Theme v2.4.12 — Plugin Safe Shell / Clean All Pages
+================================================================
+
+เป้าหมาย
+- เคลียร์ทุกหน้าที่เป็นของปลั๊กอิน ไม่ให้ธีมซ้อน layout, title, container, mobile nav หรือ script restore เมนูทับปลั๊กอินที่มีอยู่
+- รักษา Body Layout / Footer / fallback theme ไว้เท่าที่จำเป็น
+- ลดการชนกับปลั๊กอิน Header Menu, Discovery, Community, Products และ Member Area
+
+สิ่งที่แก้
+1) เพิ่มตัวตรวจจับหน้าที่ปลั๊กอินเป็นเจ้าของ
+   - หน้าแรก / Discovery
+   - community / thinkb4do-community / ชุมชน
+   - products / product
+   - member-area
+   - shortcode: [thinkb4do_home_discovery_feed], [thinkb4do_discovery], [thinkb4do_community], [thinkb4do_products], [thinkb4do_member_area]
+   - block markers: wp:thinkb4do/discovery, community, products, member-area
+
+2) เคลียร์ page.php
+   - ถ้าเป็นหน้าปลั๊กอิน ธีมจะไม่แสดง h1 ซ้ำ
+   - ไม่ครอบด้วย article/container 900px
+   - ไม่เรียก extra components ของธีมซ้ำบนหน้าปลั๊กอิน
+
+3) กัน mobile bottom nav ซ้อน
+   - ถ้า Header Menu plugin ทำงาน ธีมจะไม่ render mobile bottom nav ซ้ำ
+   - ถ้าอยู่ในหน้าปลั๊กอิน ธีมจะไม่ render mobile bottom nav ซ้ำ
+
+4) กัน JS restore เมนูไปแก้ output ของปลั๊กอิน
+   - runtime restore community link จะหยุดทำงานเมื่อ Header Menu plugin เปิดอยู่
+
+5) กัน Page Sync ทับหน้าเดิม
+   - หน้าเดิมที่ไม่มี _tb4_component_key จะไม่ถูก update content/template/front-page/posts-page/privacy-policy โดยอัตโนมัติ
+   - เมนูยังอ้างอิงหน้าเดิมได้ แต่ไม่แก้เนื้อหา/เทมเพลตของหน้าเดิม
+
+6) กัน Product fallback ชนปลั๊กอิน
+   - tb4_product / tb4_compare_item / taxonomy fallback จะ register เฉพาะเมื่อไม่มีปลั๊กอิน Products เป็นเจ้าของ
+
+สถานะ
+- ทดสอบ PHP syntax แล้วผ่าน
+- พร้อมติดตั้งเป็นธีมอัปเดต

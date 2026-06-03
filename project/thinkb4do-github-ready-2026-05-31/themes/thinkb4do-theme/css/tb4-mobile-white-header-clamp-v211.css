@@ -1,0 +1,160 @@
+/*
+ * Thinkb4do Theme v2.1.1 — White Header Dropdown Restore
+ * เมนู/แจ้งเตือน/โปรไฟล์ต้องชิดใต้ส่วนหัวสีขาว (#site-header) และต้องไม่หาย
+ */
+:root{
+  --tb4-white-header-bottom:calc(var(--tb4-sticky-top,0px) + var(--tb4-header-real-h,var(--tb4-v172-header-h,72px)));
+  --tb4-popup-top:var(--tb4-white-header-bottom);
+  --tb4-mobile-menu-top:var(--tb4-white-header-bottom);
+  --tb4-v211-top:var(--tb4-white-header-bottom);
+}
+
+html,
+body.thinkb4do-theme{max-width:100%;overflow-x:hidden;}
+
+body.thinkb4do-theme #site-header{
+  overflow:visible !important;
+  contain:none !important;
+  isolation:isolate !important;
+  z-index:99991 !important;
+}
+
+@media (max-width:1024px){
+  body.thinkb4do-theme .tb4-dev-notice,
+  body.thinkb4do-theme .tb4-dev-notice-topmost,
+  body.thinkb4do-theme [data-tb4-dev-notice="topmost"]{z-index:99980 !important;}
+
+  body.thinkb4do-theme #mobileMenuToggle,
+  body.thinkb4do-theme .hamburger{
+    display:inline-flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    flex:0 0 auto !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay{
+    box-sizing:border-box !important;
+    max-width:100vw !important;
+    overflow-x:hidden !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay.is-open,
+  body.thinkb4do-theme #mobileMenuOverlay.tb4-v211-open,
+  body.thinkb4do-theme #mobileMenuOverlay[aria-hidden="false"],
+  body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay.tb4-v211-open,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay[aria-hidden="false"]{
+    display:block !important;
+    position:fixed !important;
+    top:var(--tb4-v211-top,var(--tb4-white-header-bottom)) !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    inset:var(--tb4-v211-top,var(--tb4-white-header-bottom)) 0 0 0 !important;
+    width:100vw !important;
+    max-width:100vw !important;
+    min-width:0 !important;
+    height:calc(100dvh - var(--tb4-v211-top,var(--tb4-white-header-bottom))) !important;
+    max-height:calc(100dvh - var(--tb4-v211-top,var(--tb4-white-header-bottom))) !important;
+    margin:0 !important;
+    padding:10px 12px calc(16px + env(safe-area-inset-bottom)) !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior:contain !important;
+    -webkit-overflow-scrolling:touch !important;
+    background:#fff !important;
+    border-top:1px solid rgba(15,23,42,.08) !important;
+    border-radius:0 !important;
+    box-shadow:0 18px 42px rgba(15,23,42,.12) !important;
+    transform:none !important;
+    translate:none !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    z-index:2147483000 !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay[hidden]:not(.is-open):not(.tb4-v211-open):not([aria-hidden="false"]),
+  body.thinkb4do-theme .tb4-mobile-menu-overlay[hidden]:not(.is-open):not(.tb4-v211-open):not([aria-hidden="false"]){
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay nav,
+  body.thinkb4do-theme #mobileMenuOverlay nav a,
+  body.thinkb4do-theme #mobileMenuOverlay .btn{
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay nav a,
+  body.thinkb4do-theme #mobileMenuOverlay .btn{
+    width:100% !important;
+    min-height:48px !important;
+    display:flex !important;
+    align-items:center !important;
+    margin:0 !important;
+    border:1px solid rgba(15,23,42,.08) !important;
+    border-radius:16px !important;
+    background:#fff !important;
+  }
+
+  body.thinkb4do-theme .tb4-notification-panel.is-open,
+  body.thinkb4do-theme .tb4-notification-panel.tb4-v211-popup,
+  body.thinkb4do-theme .tb4-notification-panel[aria-hidden="false"],
+  body.thinkb4do-theme #userMenuDropdown.is-open,
+  body.thinkb4do-theme #userMenuDropdown.tb4-v211-popup,
+  body.thinkb4do-theme #userMenuDropdown[aria-hidden="false"]{
+    display:block !important;
+    position:fixed !important;
+    top:var(--tb4-v211-top,var(--tb4-white-header-bottom)) !important;
+    left:12px !important;
+    right:12px !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:calc(100vw - 24px) !important;
+    max-height:calc(100dvh - var(--tb4-v211-top,var(--tb4-white-header-bottom)) - 8px) !important;
+    box-sizing:border-box !important;
+    margin:0 !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior:contain !important;
+    -webkit-overflow-scrolling:touch !important;
+    transform:none !important;
+    translate:none !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    z-index:2147483001 !important;
+    border-radius:0 0 22px 22px !important;
+  }
+
+  body.thinkb4do-theme .tb4-notification-panel.is-open *,
+  body.thinkb4do-theme #userMenuDropdown.is-open *,
+  body.thinkb4do-theme .tb4-notification-panel.tb4-v211-popup *,
+  body.thinkb4do-theme #userMenuDropdown.tb4-v211-popup *{
+    max-width:100% !important;
+    box-sizing:border-box !important;
+    overflow-wrap:anywhere !important;
+  }
+}
+
+@media (min-width:1025px){
+  body.thinkb4do-theme #mobileMenuOverlay,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
+  body.thinkb4do-theme #mobileMenuToggle,
+  body.thinkb4do-theme .hamburger{display:none !important;}
+  body.thinkb4do-theme #site-header .tb4-header-center,
+  body.thinkb4do-theme #site-header .main-nav{display:flex !important;}
+}

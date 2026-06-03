@@ -1,0 +1,23 @@
+AiRA Studio v7.5.8.13 Stable Desktop Menu Rebase
+
+Base used:
+- aira-studio-v7.5.8.11-composer-return-bottom-lock(1).zip
+
+Purpose:
+- Use the user-selected v7.5.8.11 file as the new base.
+- Rework desktop plus/menu scrolling without importing unstable composer/menu behavior from later branches.
+
+Changes:
+1. Desktop menu is anchored to the real #airaComposerDock rectangle.
+2. Menu left, bottom, width and max-height are recalculated from the composer position.
+3. Desktop wheel/trackpad scroll is contained inside #composerMenu.
+4. Opening the menu on desktop no longer forces scrollBottom(), preventing chat/composer drift.
+5. No data-action added or removed.
+6. Action router and button handlers are preserved.
+
+Test checklist:
+- Desktop: click + / Menu, popup stays above composer.
+- Desktop: wheel inside menu scrolls only the menu.
+- Desktop: wheel at menu top/bottom does not drag chat/composer.
+- Mobile: composer return-bottom behavior from v7.5.8.11 remains intact.
+- Existing buttons remain unchanged.

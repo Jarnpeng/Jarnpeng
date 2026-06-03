@@ -1,0 +1,123 @@
+/* Thinkb4do v2.3.9 — Mobile icon bar inspired by Instagram, with direct Community link */
+body.thinkb4do-theme {
+  --tb4-mobile-bottom-nav-h: 76px;
+}
+
+.tb4-mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme {
+    padding-bottom: calc(var(--tb4-mobile-bottom-nav-h) + env(safe-area-inset-bottom, 0px) + 14px);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+    z-index: 1008;
+    display: block;
+    pointer-events: none;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    align-items: center;
+    min-height: var(--tb4-mobile-bottom-nav-h);
+    padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, .16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    pointer-events: auto;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    min-height: 54px;
+    padding: 6px 2px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: #4b5563;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    transition: transform .14s ease, background-color .14s ease, color .14s ease;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item:active {
+    transform: scale(.97);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item:hover,
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item:focus-visible {
+    color: var(--tb4-green);
+    background: rgba(30, 107, 69, .08);
+    outline: none;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item.is-active {
+    color: var(--tb4-green);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item.is-active .tb4-mobile-bottom-nav__icon {
+    background: rgba(30, 107, 69, .10);
+    box-shadow: inset 0 0 0 1px rgba(30, 107, 69, .08);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: currentColor;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__label {
+    font-size: .69rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community .tb4-mobile-bottom-nav__icon,
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community.is-active .tb4-mobile-bottom-nav__icon {
+    color: var(--tb4-orange);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community.is-active {
+    color: var(--tb4-orange);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community.is-active .tb4-mobile-bottom-nav__icon {
+    background: rgba(249, 115, 22, .10);
+    box-shadow: inset 0 0 0 1px rgba(249, 115, 22, .08);
+  }
+
+  body.thinkb4do-theme #site-footer {
+    margin-bottom: calc(var(--tb4-mobile-bottom-nav-h) + env(safe-area-inset-bottom, 0px) + 14px);
+  }
+}

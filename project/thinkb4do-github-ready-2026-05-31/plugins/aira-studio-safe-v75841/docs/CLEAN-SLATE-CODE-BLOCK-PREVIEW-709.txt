@@ -1,0 +1,14 @@
+AiRA Studio v7.0.9 Clean Slate Code Block Preview
+
+สิ่งที่เพิ่มจาก v7.0.8:
+- แสดง fenced code block ภายในคำตอบเป็นกล่องโค้ดจริง
+- ทุกกล่องโค้ดมีปุ่ม Copy, Download และ Preview
+- Preview เปิดเป็น popup/iframe sandbox ไม่ทับ Composer และไม่ดัน Composer หลุดตำแหน่ง
+- Artifact > Code แสดง code block ทั้งหมดจากคำตอบล่าสุด
+- Artifact > Files สร้างรายการไฟล์จาก code block และดาวน์โหลดเป็นชื่อไฟล์อังกฤษสั้น
+- Export Bug All เพิ่มรายการตรวจจำนวน code block ล่าสุด
+
+QC:
+- คง Composer bottom lock, popup plus menu, Show more ฝั่งผู้ถาม, inline answer audio และ scroll latest helper จาก v7.0.8
+- Preview สำหรับ HTML/SVG/CSS/JavaScript/Markdown แสดงใน sandbox; PHP/WordPress/ภาษาอื่นแสดงเป็นโค้ดเพื่อความปลอดภัย
+- รองรับ responsive desktop/tablet/mobile และ keyboard fusion ตามโครงเดิม

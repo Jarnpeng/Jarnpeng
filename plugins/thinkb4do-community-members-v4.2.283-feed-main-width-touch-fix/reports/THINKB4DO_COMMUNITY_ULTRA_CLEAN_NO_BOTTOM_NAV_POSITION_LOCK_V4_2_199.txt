@@ -1,0 +1,21 @@
+Thinkb4do Community v4.2.200 — Essential Focus Position Lock
+
+สิ่งที่ทำ
+1. คงตำแหน่งซ้าย / กลาง / ขวาเดิมไว้ก่อน ไม่เปลี่ยน grid หลัก
+2. เอาเมนูส่วนล่างออกจาก DOM ด้วยการปิด tb4c_render_mobile_nav() เป็นค่าเริ่มต้น
+3. ลบการเรียกเมนูล่างจากหน้าฟีด / พื้นที่สมาชิก / หน้าโพสต์เดี่ยว
+4. ลด DOM ซ้ำในฟีด: ข้อความรองหัวฟีด, คำอธิบาย Reels, ลูกศร Reels, ข้อความรองลำดับฟีด, ช่องคอมเมนต์ preview ใต้ทุกโพสต์
+5. ลด DOM ซ้ำใน right sidebar: ลิงก์พื้นที่ของฉันซ้ำ และกฎสั้น ๆ ที่ทำให้แถบขวาแน่น
+6. ลดพื้นที่ bottom padding เพราะไม่มีเมนูล่างแล้ว
+7. ปรับ floating create ให้ลงมาเป็น CTA มุมล่างที่เบากว่าเดิม
+8. เพิ่ม CSS guard กันเมนูล่างจาก cache/legacy class กลับมาแสดง
+
+สถานะตรวจสอบ
+- PHP syntax: ต้องผ่านด้วย php -l ทุกไฟล์
+- JavaScript syntax: ต้องผ่านด้วย node --check
+- CSS brace balance: ต้องผ่าน
+- ZIP: ต้องแตกไฟล์ได้ปกติ
+
+หมายเหตุ
+- ยังไม่ได้ทดสอบ live render ใน WordPress จริง เพราะ sandbox ไม่มี WordPress runtime
+- หลังติดตั้งต้องล้าง cache/browser cache เพื่อให้ data-ui-version 4.2.200 ทำงานชัดเจน

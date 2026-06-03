@@ -1,0 +1,17 @@
+Thinkb4do Community v4.2.231
+
+Goal
+- Remove built-in left/right sidebar from main Community plugin.
+- Keep main Community as center feed only.
+- Prepare layout to work with separated Left Sidebar / Right Sidebar plugins.
+
+Changes
+1. community-content.php now includes center-feed module only.
+2. Layout controller critical CSS is center-only.
+3. Added v42231 body/html class and CSS overrides to hide old sidebar containers if cached markup appears.
+4. Main feed is centered with max width around 720px.
+5. Left/right sidebar module files remain in package but are no longer rendered by the main Community page.
+
+Expected result
+- Main Community page has no built-in sidebar.
+- Separate sidebar plugins can handle left/right desktop sidebars independently.

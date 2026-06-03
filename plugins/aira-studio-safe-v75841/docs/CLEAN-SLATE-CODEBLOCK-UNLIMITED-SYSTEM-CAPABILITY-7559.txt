@@ -1,0 +1,64 @@
+AiRA Studio Clean Slate v7.5.5.9
+Code Block Unlimited System Capability Engine
+
+เป้าหมาย:
+เพิ่มความสามารถของ code block ให้สร้างระบบได้หลากหลายฟังก์ชันมากขึ้น โดยไม่ทิ้งคุณค่าผู้ใช้งาน ความปลอดภัย และของเดิมที่มีประโยชน์
+
+สิ่งที่เพิ่ม:
+1) เพิ่มปุ่ม “ขยายฟังก์ชัน” ใต้ code block
+- ปุ่มนี้ใช้ขยายโค้ดเดิมให้เป็นระบบที่มีหลาย module มากขึ้น
+- กดแล้วระบบสร้าง prompt อัตโนมัติจากโค้ดจริงใน code block
+- บังคับให้รักษาของเดิม เพิ่มของใหม่ และส่งโค้ดเต็มในรอบถัดไป
+
+2) เพิ่ม Unlimited System Capability Engine
+ระบบตรวจจับความสามารถที่มีใน code block เช่น:
+- Dashboard/Admin
+- User UI
+- Forms/Input
+- API/REST/AJAX
+- Data/Storage
+- Permission/Auth
+- Security Guard
+- Preview/QC
+- Responsive/A11y
+- Automation/Scheduler
+- Media/Image/Audio
+- Export/Import
+- Search/Filter
+- Analytics/Chart
+- Notifications
+- Gutenberg Block
+- Elementor Widget
+- Shortcode
+- Docs/Guide
+- Backup/Rollback
+
+3) เพิ่ม Capability Score
+- แสดงคะแนนว่า code block ตอนนี้มีความเป็นระบบหลากหลายแค่ไหน
+- แสดงฟังก์ชันที่พบแล้ว
+- แสดงฟังก์ชันที่ควรต่อยอด
+
+4) ผสานกับ Human Value Guard เดิม
+- ทุกฟังก์ชันต้องช่วยผู้ใช้จริง
+- ทุกปุ่มต้องมี feedback
+- ทุกคำสั่งต้องมีเหตุผลและทดสอบได้
+- ห้ามมีปุ่มหลอก ปุ่มลอย หรือฟังก์ชันที่ไม่มี handler/fallback
+
+5) Safety/Legal/Respect Guard
+แม้ระบบจะขยายฟังก์ชันได้กว้างขึ้น แต่ต้องอยู่บนหลัก:
+- ปลอดภัย
+- ถูกกฎหมาย
+- ไม่ละเมิดสิทธิ์
+- ไม่เก็บข้อมูลเกินจำเป็น
+- ไม่ทำลายของเดิมที่มีประโยชน์
+
+วิธีทดสอบ:
+1) ให้ AiRA สร้าง code block ใหม่
+2) ดูแผง Unlimited System Capability Engine ใต้ code block
+3) กด “ขยายฟังก์ชัน”
+4) ตรวจว่าระบบส่งคำสั่งต่อเพื่อเพิ่ม Dashboard/User UI/API/Data/Security/Preview/QC/Docs ตามความเหมาะสม
+5) ตรวจว่า code block รอบใหม่ยังมี Human Value Map, Command Benefit Map, Capability Map และวิธีทดสอบ
+
+สถานะ:
+พร้อมทดสอบใช้งานจริงในหน้าแชท AiRA Studio
+Settings | โดย Thinkb4do | ดูรายละเอียด

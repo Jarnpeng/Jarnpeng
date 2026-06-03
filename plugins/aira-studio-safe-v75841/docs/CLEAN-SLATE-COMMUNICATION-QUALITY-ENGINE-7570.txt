@@ -1,0 +1,18 @@
+AiRA Studio v7.5.7.0 — Communication Quality Engine
+
+เป้าหมาย:
+- เพิ่มทักษะการสื่อสารของ AiRA Studio ให้ชัด อบอุ่น ตรงประเด็น และช่วยผู้ใช้ทำงานสำเร็จจริง
+- เชื่อมความหมายของทุกปุ่ม ทุกคำสั่ง ทุก API status ทุก error และทุกคู่มือให้มีประโยชน์ต่อผู้ใช้
+
+สิ่งที่เพิ่ม:
+1) ปุ่ม “สื่อสารคุณภาพ” ใต้ code block
+2) แผง Communication Quality Engine พร้อมคะแนน Communication %
+3) ตรวจ 10 มิติ: feedback, button language, error recovery, step guide, answer structure, inclusive access, context continuity, human tone, multilingual, smooth delivery
+4) Prompt ใหม่สำหรับยกระดับคำตอบ ปุ่ม คำสั่ง API copy คู่มือ และโค้ดให้สื่อสารดีขึ้น
+5) เพิ่ม Answer Contract ในข้อความที่ส่ง API เพื่อให้ AiRA ตอบผลลัพธ์ก่อน รายละเอียดเท่าที่จำเป็น และซื่อสัตย์เรื่องสถานะจริง
+
+QC:
+- ทุกปุ่มต้องมี handler/feedback/test path
+- ทุก error ต้องมีคำอธิบาย + ทางแก้ + retry/fallback
+- ทุกคำสั่งสำคัญต้องอธิบายว่าช่วยผู้ใช้อย่างไร
+- ไม่สร้างปุ่มหลอก ไม่เคลมว่าเสร็จถ้ายังไม่ได้ทดสอบจริง

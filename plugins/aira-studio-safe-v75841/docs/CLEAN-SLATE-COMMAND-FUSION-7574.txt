@@ -1,0 +1,9 @@
+AiRA Studio v7.5.7.4 Command Fusion Intelligence Engine
+
+เพิ่มระบบประยุกต์ทุกคำสั่งใน Code block และ AiRA Studio ให้ทำงานร่วมกันเป็นความสามารถอัจฉริยะ:
+- ปุ่ม/คำสั่ง/API/state/file/preview/QC เชื่อมเป็น Relationship Map เดียว
+- สี/พาเลตต์/brand tone แปลงเป็นไฟล์ตัวอย่าง เช่น sample CSS, SVG, design token, preview HTML
+- คำสั่งหนึ่งคำสั่งต่อยอดเป็น game, theme, web app, utility, PWA, WordPress, API, data tool ได้
+- ทุกปุ่มมี purpose, handler, feedback, error/retry, aria-label, test path และ human value
+- มี Fusion %, Command Matrix, Example Routes และ prompt ส่งต่อเพื่อสร้างโค้ดเต็ม
+- ไม่สร้างปุ่มหลอก ไม่ bypass ความปลอดภัย กฎหมาย ความเป็นส่วนตัว หรือข้อจำกัดจริง

@@ -1,0 +1,17 @@
+Thinkb4do Community Members v4.2.280
+Task: Fix Member page mobile UI based on screenshot.
+
+What changed:
+- Post filter menu is forced into one horizontal row with left-right scrolling on mobile.
+- Added quick links in the same row: กลุ่ม / ตลาด / แชท.
+- Cleaned Member > Posts grid so cards no longer stack/overlap.
+- Forced member post cards to use safe flow layout (no floating action row over image/content).
+- Normalized post media blocks and action icons.
+- Improved spacing on mobile/tablet/desktop.
+- Kept scope to Member page only.
+- Reused Noto Sans Thai / Kanit stack to avoid Thai font issues.
+
+Safety:
+- No Header / Feed / Comment / Sidebar system removal.
+- No backend logic removal.
+- CSS/HTML only for Member page and post menu area.

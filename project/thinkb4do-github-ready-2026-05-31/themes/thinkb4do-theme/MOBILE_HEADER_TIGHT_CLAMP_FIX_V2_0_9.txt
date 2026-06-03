@@ -1,0 +1,10 @@
+Thinkb4do Theme v2.0.9 — Mobile Header Tight Clamp Fix
+
+แก้ไขหลัก:
+1. เพิ่มตัวควบคุมตำแหน่ง dropdown ชุดเดียว: tb4-mobile-header-tight-v209.js
+2. เพิ่ม CSS clamp ชุดใหม่: tb4-mobile-header-tight-v209.css
+3. เมนูสามขีด / แจ้งเตือน / โปรไฟล์ เริ่มชิดส่วนหัวสีขาว ไม่บวกความสูงแถบประกาศเขียว
+4. Popup ใช้ fixed + top จากตำแหน่งส่วนหัว/ปุ่มจริง และทับแถบเขียวได้ด้วย z-index สูง
+5. กันล้นซ้าย/ขวาด้วย left/right 12px และ max-width calc(100vw - 24px)
+6. ไม่ล็อก overflow ของ body เพื่อเลี่ยงอาการฝืด หน้าค้าง และย่อ/ขยายไม่ได้
+7. อัปเวอร์ชันเป็น 2.0.9 เพื่อบังคับโหลด CSS/JS ใหม่

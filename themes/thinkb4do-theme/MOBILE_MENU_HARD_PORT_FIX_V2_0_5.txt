@@ -1,0 +1,21 @@
+Thinkb4do Theme Core v2.0.5 — Mobile Menu Hard-Port Fix
+
+ปัญหาที่แก้:
+1) เมนูมือถือยังไม่ชิดส่วนหัว แม้เพิ่ม CSS แล้ว
+2) Dropdown ถูกดันลงใต้แถบประกาศสีเขียว
+3) บางเครื่องกดสามขีดแล้ว handler เดิมชนกัน
+4) Overlay อยู่ภายใน #site-header ที่เป็น fixed/transform/contain ทำให้ position:fixed ทำงานไม่ตรงบนมือถือบาง browser
+
+วิธีแก้หลัก:
+- เพิ่ม js/tb4-mobile-menu-hard-port-v205.js
+- เพิ่ม css/tb4-mobile-menu-hard-port-v205.css
+- ย้าย #mobileMenuOverlay ออกจาก #site-header ไปไว้ท้าย body ด้วย JS
+- คำนวณ top จาก .header-inner ของส่วนหัวสีขาวจริง
+- บังคับ overlay ให้ top ชิดใต้ส่วนหัวและอยู่เหนือแถบประกาศสีเขียว
+- จำกัด width/max-width/overflow ไม่ให้ล้นซ้ายขวา
+- เพิ่ม inline fallback ที่ wp_footer เพื่อช่วยกรณี cache จับ style.css/js เก่า
+
+ตรวจสอบแล้ว:
+- JS syntax ผ่าน
+- PHP syntax ผ่าน
+- ZIP ไม่เสีย

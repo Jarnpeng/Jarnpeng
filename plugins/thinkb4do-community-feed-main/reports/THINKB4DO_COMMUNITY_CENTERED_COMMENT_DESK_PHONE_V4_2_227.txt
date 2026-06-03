@@ -1,0 +1,11 @@
+Thinkb4do Community v4.2.227 — Centered Comment Desk/Phone
+
+ปรับตาม reference ที่ขีดแดง:
+1) จัด single post/comment column ให้อยู่กลางหน้าจอทั้ง desktop และ phone
+2) ลดพื้นที่ว่างขวาขนาดใหญ่บน desktop โดยเปลี่ยน single layout เป็น one centered column
+3) ทำ comment section, comment list, comment form ให้กว้างพอดีและอยู่กลางการ์ดเดียว
+4) ปรับ owner tools บนหัวโพสต์จาก absolute right ให้เข้ากับ grid เดียวกัน ไม่ดันเวลา/ชื่อให้เพี้ยน
+5) คง media/image/video เต็มความกว้างของการ์ดกลาง
+6) ปุ่มส่งคอมเมนต์ยังเป็นวงกลมและบาลานซ์
+
+สถานะ: พร้อมทดสอบบน desktop/phone หลังอัปโหลดปลั๊กอินแล้ว clear cache/browser cache

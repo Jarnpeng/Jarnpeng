@@ -1,0 +1,1 @@
+v4.2.242 Hard Override: บังคับ Members plugin เป็นเจ้าของ shortcode [thinkb4do_member_area]/[thinkb4do_members], บังคับ render หน้า /member-area/ ผ่าน the_content priority 99999 และใส่ inline CSS ชั้นสุดท้ายใน wp_head priority 99999 เพื่อป้องกันธีมหรือปลั๊กอินเดิมทับ UI responsive desktop/tablet/phone.

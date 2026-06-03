@@ -1,0 +1,38 @@
+Thinkb4do Theme Core v2.3.1 — Modern Refresh
+
+ฐานที่ใช้:
+- ปรับจากไฟล์ thinkb4do-theme-core-v2.3.0.zip ที่อัปโหลด
+
+เป้าหมาย:
+- ปรับดีไซน์ให้ทันสมัยขึ้น
+- ไม่เพิ่มระบบที่ไม่เกี่ยวข้อง
+- คง WordPress Admin Bar
+- คงโครงธีมหลักของ v2.3.0
+- เพิ่มชั้น responsive/browser/device layout ที่ปลอดภัยขึ้น
+
+ไฟล์ที่เพิ่ม:
+- css/tb4-modern-refresh-v231.css
+- js/tb4-modern-refresh-v231.js
+- MODERN_REFRESH_V2_3_1.txt
+
+ไฟล์ที่ปรับ:
+- style.css: อัปเดตเวอร์ชันและคำอธิบายธีม
+- functions.php: อัปเดต TB4_VERSION และ enqueue Modern Refresh CSS/JS
+- front-page.php: ปรับหน้าแรกให้เป็นดีไซน์ modern clean web/app
+
+สิ่งที่ยังคงไว้:
+- โครง WordPress theme เดิม
+- Header / footer / template หลัก
+- WordPress Admin Bar restore logic
+- Legal / policy / trust helper
+- Customizer / page sync / theme functions เดิม
+
+สิ่งที่ลดบนหน้าแรก:
+- หน้าแรกไม่แสดง compatibility block ใหญ่
+- ลดความรกของระบบหลายชุด
+- ลดภาษาที่พูดเรื่องเบื้องหลังบนหน้าเว็บ
+
+สถานะตรวจสอบ:
+- PHP syntax: ต้องผ่านก่อนส่งมอบ
+- JS syntax: ต้องผ่านก่อนส่งมอบ
+- ZIP integrity: ต้องผ่านก่อนส่งมอบ

@@ -1,0 +1,19 @@
+AiRA Studio v7.1.2 Clean Slate Rendered Code Result
+
+เป้าหมาย
+- แก้หน้า Result/Code ให้เป็นผลลัพธ์ที่เรนเดอร์จากโค้ดจริงมากขึ้น
+- ไม่แสดง code block ชุดแรกเป็นค่าเริ่มต้น
+- ใช้ผลลัพธ์จาก HTML/CSS/JS ที่เกี่ยวข้องร่วมกันใน iframe sandbox
+- เอา Open ออกจาก flow ของ code preview ต่อไป
+
+สิ่งที่เปลี่ยน
+1. Code block ค่าเริ่มต้น = ผลลัพธ์จากโค้ด
+2. ถ้ามี HTML + CSS + JS หลาย block ระบบจะรวมเพื่อแสดงผลลัพธ์เดียวกันใน preview
+3. CSS-only และ JS-only มี sandbox sample เพื่อเห็นผลจริง
+4. PHP/WordPress ไม่รันใน browser เพื่อความปลอดภัย จะแสดง source preview พร้อมคำอธิบาย
+5. แก้บั๊กตอบซ้ำใน sendChat ที่อาจเพิ่มคำตอบ assistant ซ้ำสองครั้ง
+
+QC
+- PHP syntax: ต้องผ่าน php -l
+- JS syntax: ต้องผ่าน node --check
+- ZIP ต้องมีโฟลเดอร์ aira-studio และไฟล์ปลั๊กอินหลัก

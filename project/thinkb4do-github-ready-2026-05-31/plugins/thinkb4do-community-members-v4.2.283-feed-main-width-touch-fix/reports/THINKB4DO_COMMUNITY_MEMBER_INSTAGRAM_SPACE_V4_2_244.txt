@@ -1,0 +1,21 @@
+Thinkb4do Community Members v4.2.244
+
+เป้าหมาย:
+- ใช้พื้นที่หน้าสมาชิกให้คุ้มค่าคล้าย Instagram
+- ลด Hero / Stats / Tabs ให้กระชับ
+- เปลี่ยนฟีดสมาชิกเป็นกริด 3 คอลัมน์
+- รองรับ Desktop / Tablet / Phone
+- ไม่ลบระบบเดิม ไม่แตะฐานข้อมูล ไม่เปลี่ยน shortcode
+
+สิ่งที่ปรับ:
+1) เพิ่ม hard override CSS ลำดับท้ายสุดใน wp_head
+2) Hero เป็น compact profile header
+3) Stats เป็น inline count bar
+4) Tabs เป็น underline tabs แบบ Instagram
+5) Overview/Posts เป็น square grid 3 columns
+6) Text-only post มี fallback card สีเขียว
+7) Mobile ใช้ grid 3 columns ช่องเล็กเหมือน social profile
+
+ตรวจแล้ว:
+- PHP syntax: ต้องรัน php -l ก่อนส่งมอบ
+- Shortcode เดิมยังอยู่ [thinkb4do_member_area]

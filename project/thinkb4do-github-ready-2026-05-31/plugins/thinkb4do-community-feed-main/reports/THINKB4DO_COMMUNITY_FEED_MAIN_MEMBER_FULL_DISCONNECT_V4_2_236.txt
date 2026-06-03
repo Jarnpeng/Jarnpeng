@@ -1,0 +1,19 @@
+Thinkb4do Community Feed Main v4.2.236
+
+สิ่งที่แก้เพิ่มจาก v4.2.235:
+- เพิ่ม hard guard ไม่ให้ Feed Main โหลด CSS/JS บนหน้า member-area / members / หน้าที่มี member-area markup
+- เอา following/follow ออกจากฟีดหลักและปิด AJAX tb4c_toggle_follow_user ใน Feed Main
+- ปิด global avatar/profile override ของ Feed Main เพื่อไม่ชนปลั๊กอินสมาชิก
+- เอาตัวเลือก visibility “เฉพาะสมาชิก” ออกจาก Composer และบังคับ fallback เป็น public
+- เอา member-area runtime JS: profile form, avatar/cover preview, premium flow, theme bridge, resize binding ออกจาก legacy JS
+- ตัด selector member-area ออกจาก runtime/critical loader เท่าที่เกี่ยวกับการโหลดพื้นผิวสมาชิก
+
+สถานะ:
+Feed Main เหลือเฉพาะ community feed, composer, reels, comments, single post และ load more.
+ปลั๊กอินสมาชิกควรเป็นเจ้าของหน้า/เมนู/โปรไฟล์/follow/รายชื่อสมาชิกทั้งหมด
+
+เพิ่มเติมรอบสุดท้าย:
+- ลบ follow/following helper และปุ่ม follow renderer ออกจาก PHP
+- ลบ JS handler data-tb4c-follow ออกจาก legacy runtime
+- ลบ avatar/profile override functions ที่ไม่ได้ใช้ใน Feed Main
+- เปลี่ยน wording สมาชิกใน active UI เป็น ผู้ใช้/ผู้ร่วมชุมชน/ชุมชน

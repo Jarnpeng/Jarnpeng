@@ -1,0 +1,14 @@
+AiRA Studio v7.5.5.5 — Code Block Success Loop
+
+เป้าหมาย:
+ทำให้ code block ไม่หยุดแค่แสดงโค้ดหรือแผน แต่พาไปสู่ระบบที่สำเร็จจริงมากขึ้นด้วยลูป Build Until Success
+
+สิ่งที่เพิ่ม:
+1. ปุ่ม “ทำจนสำเร็จ” ใต้ code block
+2. Success Loop status: ตรวจ → สร้าง → Preview/QC → แก้ซ้ำ → Package/Upgrade
+3. Success panel แสดงคะแนน, phase, สิ่งที่ยังขาด และปุ่ม Copy/Composer/ส่งแก้จนสำเร็จ
+4. Prompt รอบอัปเกรดและ Next ถูกบังคับให้ส่งโค้ดเต็ม แก้จริง ไม่หยุดที่แผน
+5. คง Preview, Debug สด, System Builder, Package, Upgrade และ Composer Bottom Lock ของเดิมไว้ครบ
+
+สถานะ:
+พร้อมใช้งานในระดับ UI/Prompt Orchestration และตรวจ static/preview/package ก่อนติดตั้งจริง

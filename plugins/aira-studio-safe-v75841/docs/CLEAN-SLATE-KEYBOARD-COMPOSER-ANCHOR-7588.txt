@@ -1,0 +1,35 @@
+AiRA Studio v7.5.8.8 Keyboard Composer Anchor
+
+เป้าหมาย:
+- แก้ Composer บนมือถือให้ยึดขอบบนของแป้นคีย์บอร์ดโดยตรง
+- ลดอาการ Composer ลอยขึ้นไปกลางจอหรือทิ้งช่องว่างขนาดใหญ่
+- ไม่แก้ระบบปุ่ม / ไม่เพิ่ม data-action / ไม่แตะ action router
+
+สิ่งที่แก้:
+1) เพิ่ม CSS variables:
+   - --aira-composer-anchor-top
+   - --aira-visual-bottom
+   - --aira-keyboard-lock-bottom
+
+2) เปลี่ยน keyboard-open composer dock จาก bottom: keyboard inset เป็น top: visualViewport bottom - composer height
+   เหตุผล: บาง Android Chrome/Samsung Internet จะนับ keyboard inset ซ้ำ ทำให้ Composer ถูกดันสูงเกินจริง
+
+3) เพิ่ม JS lockComposerToKeyboardEdge()
+   ใช้ visualViewport.offsetTop + visualViewport.height เป็นขอบล่างจริงของพื้นที่ที่มองเห็น แล้ววาง composer ชิดขอบนั้น
+
+4) เพิ่ม keyboardAnchorBurst()
+   วัดซ้ำระหว่างแป้นคีย์บอร์ดกำลัง animate เพื่อไม่ให้ตำแหน่งกระโดด
+
+QC:
+- ไม่เพิ่ม/ลด data-action
+- ไม่แก้ handler ปุ่ม
+- PHP lint ผ่าน
+- JS syntax ผ่าน
+- ZIP integrity ผ่าน
+
+วิธีทดสอบบนมือถือ:
+1) เปิด AiRA Studio ในมือถือ
+2) แตะ Composer ให้แป้นคีย์บอร์ดขึ้น
+3) Composer ต้องอยู่ชิดขอบบนแป้นคีย์บอร์ด ไม่ลอยกลางจอ
+4) พิมพ์หลายบรรทัด Composer ต้องขยายขึ้นแบบนุ่ม ไม่เด้งตำแหน่ง
+5) ปิดคีย์บอร์ด Composer ต้องกลับมายึดล่างเหมือนเดิม

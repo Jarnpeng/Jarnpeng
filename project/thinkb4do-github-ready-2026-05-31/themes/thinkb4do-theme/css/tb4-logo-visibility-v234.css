@@ -1,0 +1,165 @@
+/*
+ * Thinkb4do Logo Visibility v2.3.4
+ * Purpose: make the logo clearer and support automatic light/dark logo selection.
+ */
+
+:root {
+  --tb4-logo-plate-bg: rgba(255, 255, 255, .94);
+  --tb4-logo-plate-border: rgba(30, 107, 69, .16);
+  --tb4-logo-plate-shadow: 0 8px 22px rgba(15, 23, 42, .08);
+  --tb4-logo-plate-size: clamp(42px, 4.2vw, 52px);
+}
+
+.site-logo {
+  position: relative !important;
+  gap: 11px !important;
+  isolation: isolate !important;
+}
+
+.site-logo .site-logo-img-wrap,
+.site-logo .logo-icon {
+  width: var(--tb4-logo-plate-size) !important;
+  height: var(--tb4-logo-plate-size) !important;
+  min-width: var(--tb4-logo-plate-size) !important;
+  border-radius: 15px !important;
+  background: var(--tb4-logo-plate-bg) !important;
+  border: 1px solid var(--tb4-logo-plate-border) !important;
+  box-shadow: var(--tb4-logo-plate-shadow) !important;
+  padding: 5px !important;
+  overflow: hidden !important;
+}
+
+.site-logo .logo-icon {
+  background: linear-gradient(135deg, #1E6B45, #154d31) !important;
+  color: #fff !important;
+  padding: 0 !important;
+}
+
+.site-logo .site-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: translateZ(0) !important;
+  filter: saturate(1.08) contrast(1.08) drop-shadow(0 1px 1px rgba(0,0,0,.08)) !important;
+}
+
+.site-logo .site-logo-img--light {
+  display: none !important;
+}
+
+.site-logo--has-light-logo.site-logo--mode-light .site-logo-img--dark,
+.site-logo--has-light-logo.site-logo--mode-auto.tb4-logo-bg-dark .site-logo-img--dark {
+  display: none !important;
+}
+
+.site-logo--has-light-logo.site-logo--mode-light .site-logo-img--light,
+.site-logo--has-light-logo.site-logo--mode-auto.tb4-logo-bg-dark .site-logo-img--light {
+  display: block !important;
+}
+
+.site-logo--mode-dark .site-logo-img--dark,
+.site-logo--mode-auto.tb4-logo-bg-light .site-logo-img--dark,
+.site-logo--mode-auto.site-logo--default-dark:not(.tb4-logo-bg-dark):not(.tb4-logo-bg-light) .site-logo-img--dark {
+  display: block !important;
+}
+
+.site-logo.tb4-logo-bg-dark .site-logo-img-wrap,
+.site-logo--mode-light .site-logo-img-wrap {
+  background: rgba(30, 107, 69, .18) !important;
+  border-color: rgba(255, 255, 255, .20) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .16) !important;
+}
+
+.site-logo.tb4-logo-bg-dark .logo-text,
+.site-logo--mode-light .logo-text {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.22) !important;
+}
+
+.site-logo.tb4-logo-bg-dark .logo-tagline,
+.site-logo--mode-light .logo-tagline {
+  color: rgba(255,255,255,.78) !important;
+}
+
+.site-logo.tb4-logo-bg-light .logo-text,
+.site-logo--mode-dark .logo-text,
+#site-header .site-logo .logo-text,
+#site-footer .site-logo .logo-text {
+  color: #102017 !important;
+  text-shadow: none !important;
+}
+
+.site-logo.tb4-logo-bg-light .logo-tagline,
+.site-logo--mode-dark .logo-tagline,
+#site-header .site-logo .logo-tagline,
+#site-footer .site-logo .logo-tagline {
+  color: #66736b !important;
+  text-shadow: none !important;
+}
+
+#site-header .site-logo.site-logo--header {
+  max-width: min(310px, 58vw) !important;
+}
+
+#site-header .site-logo.site-logo--header .logo-text {
+  font-size: clamp(1.08rem, 1.8vw, 1.34rem) !important;
+  font-weight: 850 !important;
+  letter-spacing: -.032em !important;
+  line-height: 1.05 !important;
+}
+
+#site-header .site-logo.site-logo--header .logo-tagline {
+  font-size: clamp(.64rem, .88vw, .74rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+}
+
+#site-footer .site-logo.site-logo--footer {
+  max-width: min(300px, 100%) !important;
+  margin-bottom: 8px !important;
+}
+
+#site-footer .site-logo.site-logo--footer .site-logo-img-wrap {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.86) !important;
+  border-color: rgba(30,107,69,.14) !important;
+  box-shadow: none !important;
+}
+
+#site-footer .site-logo.site-logo--footer .logo-text {
+  color: #26342b !important;
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
+}
+
+#site-footer .site-logo.site-logo--footer .logo-tagline {
+  color: #718078 !important;
+}
+
+@media (max-width: 760px) {
+  :root { --tb4-logo-plate-size: 42px; }
+  #site-header .site-logo.site-logo--header { max-width: calc(100vw - 150px) !important; gap: 9px !important; }
+  #site-header .site-logo.site-logo--header .logo-text { font-size: 1.02rem !important; max-width: 38vw !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+  #site-header .site-logo.site-logo--header .logo-tagline { display: none !important; }
+}
+
+@media (max-width: 420px) {
+  :root { --tb4-logo-plate-size: 38px; }
+  #site-header .site-logo.site-logo--header { max-width: calc(100vw - 126px) !important; }
+  #site-header .site-logo.site-logo--header .logo-text { max-width: 34vw !important; font-size: .96rem !important; }
+}
+
+@media (forced-colors: active) {
+  .site-logo .site-logo-img-wrap,
+  .site-logo .logo-icon {
+    border: 1px solid CanvasText !important;
+    box-shadow: none !important;
+    background: Canvas !important;
+  }
+}

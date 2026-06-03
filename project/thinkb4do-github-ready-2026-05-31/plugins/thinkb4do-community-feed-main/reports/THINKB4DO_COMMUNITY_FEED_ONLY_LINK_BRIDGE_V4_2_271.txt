@@ -1,0 +1,14 @@
+Thinkb4do Community Feed Main v4.2.271
+
+งานที่ปรับตามโจทย์:
+1) ลบหน้าแสดงความคิดเห็น/Single Post template ออกจากแพ็ก Feed Main
+2) ลบ comments-community.php ออกจากแพ็ก Feed Main เพื่อไม่ให้มีหน้าแสดงความคิดเห็นซ้อน
+3) หน้าสมาชิกยังไม่ถูกสร้าง/ไม่ถูกแสดงใน Feed Main
+4) คงลิงก์เชื่อมต่อไว้ผ่าน helper/filter:
+   - tb4cf_get_post_link()
+   - tb4cf_get_comment_link()
+   - tb4cf_get_member_link()
+5) ปุ่มคอมเมนต์ใน Feed/Reel ยังมีลิงก์ไปยัง post permalink + #comments เพื่อให้ปลั๊กอิน Comment Page หรือธีมรับช่วงต่อได้
+6) ลิงก์สมาชิก/โปรไฟล์ไม่เปิดหน้าสมาชิกจาก Feed Main แต่ส่งเป็นลิงก์ปลอดภัยบน /community/?tb4c_user={id} และรองรับ filter tb4cf_member_link สำหรับปลั๊กอินสมาชิก
+
+สถานะ: Feed Main เหลือเฉพาะฟีดหลัก/Composer/Reels/Load More และไม่ bundle หน้า Comment/Member แล้ว

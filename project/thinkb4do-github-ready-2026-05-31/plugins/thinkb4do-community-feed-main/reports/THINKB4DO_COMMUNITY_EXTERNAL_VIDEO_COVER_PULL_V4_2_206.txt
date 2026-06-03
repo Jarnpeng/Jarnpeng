@@ -1,0 +1,21 @@
+Thinkb4do Community v4.2.206 — External Video Cover Pull
+
+สิ่งที่แก้:
+- ดึงปกวิดีโอจากแหล่งภายนอกจริง โดยเฉพาะ YouTube และ Vimeo
+- แก้กรณีวิดีโอเป็น WordPress oEmbed/iframe แล้วปกเดิมกลายเป็นสีเทา placeholder
+- เพิ่ม data attributes ให้ปุ่มเล่นวิดีโอรู้ URL/provider/video id
+- เพิ่ม JS ตรวจ iframe src, data-src, data-lazy-src, srcdoc, outerHTML และ URL ที่ฝังอยู่ใน slot
+- เลือก YouTube hqdefault เป็นปกหลัก เพราะเป็น thumbnail ที่เสถียรกว่า maxresdefault
+- เพิ่ม fallback Vimeo ผ่าน vumbnail สำหรับกรณีที่ server oEmbed ยังไม่มี thumbnail
+- คงตำแหน่งปุ่มเล่นกลางวิดีโอและปุ่มเล่นวิดีโอด้านล่างซ้ายตาม reference เดิม
+
+ไฟล์ที่แก้:
+- thinkb4do-community.php
+- assets/community.js
+- assets/community-clean-ui-reset.css
+- README-THINKB4DO-COMMUNITY.txt
+
+สถานะ:
+- PHP syntax: ผ่าน
+- JS syntax: ผ่าน
+- CSS brace balance: ผ่าน

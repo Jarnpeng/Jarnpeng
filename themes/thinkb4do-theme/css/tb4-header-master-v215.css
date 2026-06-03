@@ -1,0 +1,435 @@
+/*
+ * Thinkb4do Header Master Stabilizer v2.1.3
+ * Final layer for: white header, popup/menu positioning, message panel, and non-overlapping green development notice.
+ */
+html {
+  --tb4-v213-admin-h: 0px;
+  --tb4-v213-header-h: 64px;
+  --tb4-v213-header-bottom: calc(var(--tb4-v213-admin-h) + var(--tb4-v213-header-h));
+  --tb4-sticky-top: var(--tb4-v213-admin-h);
+  --tb4-header-real-h: var(--tb4-v213-header-h);
+  --tb4-white-header-bottom: var(--tb4-v213-header-bottom);
+  --tb4-popup-top: var(--tb4-v213-header-bottom);
+  --tb4-mobile-menu-top: var(--tb4-v213-header-bottom);
+  --tb4-fixed-header-stack-h: var(--tb4-v213-header-h);
+  --tb4-v172-header-stack-h: var(--tb4-v213-header-h);
+  --tb4-v213-popup-max-h: calc(100vh - var(--tb4-v213-header-bottom) - 10px);
+}
+
+html.tb4-v213-admin-on { --tb4-v213-admin-h: 32px; }
+@media screen and (max-width: 782px) {
+  html.tb4-v213-admin-on { --tb4-v213-admin-h: 46px; }
+}
+
+body.thinkb4do-theme,
+body.thinkb4do-theme * {
+  box-sizing: border-box;
+}
+
+body.thinkb4do-theme {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header,
+body.admin-bar.thinkb4do-theme.tb4-sticky-header,
+body.thinkb4do-theme.tb4-dev-notice-on.tb4-sticky-header,
+body.thinkb4do-theme.tb4-dev-notice-off.tb4-sticky-header,
+body.thinkb4do-theme.tb4-dev-notice-dismissed.tb4-sticky-header {
+  padding-top: var(--tb4-v213-header-h) !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header {
+  position: fixed !important;
+  top: var(--tb4-v213-admin-h) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: var(--tb4-v213-header-h) !important;
+  min-height: var(--tb4-v213-header-h) !important;
+  max-height: var(--tb4-v213-header-h) !important;
+  background: rgba(255,255,255,.99) !important;
+  border-bottom: 1px solid rgba(15,23,42,.08) !important;
+  box-shadow: 0 8px 24px rgba(15,23,42,.045) !important;
+  z-index: 2147483200 !important;
+  overflow: visible !important;
+  contain: none !important;
+  isolation: isolate !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header .container,
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: visible !important;
+  contain: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header a,
+body.thinkb4do-theme.tb4-sticky-header #site-header button,
+body.thinkb4do-theme.tb4-sticky-header #site-header input,
+body.thinkb4do-theme.tb4-sticky-header #site-header [role="button"],
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-icon-btn,
+body.thinkb4do-theme.tb4-sticky-header #site-header .user-avatar-btn,
+body.thinkb4do-theme.tb4-sticky-header #site-header .hamburger {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 2147483220 !important;
+}
+
+/* v2.1.3: green development notice is no longer a fixed overlay. It flows under the white header. */
+body.thinkb4do-theme .tb4-dev-notice,
+body.thinkb4do-theme .tb4-dev-notice-topmost,
+body.thinkb4do-theme [data-tb4-dev-notice="topmost"] {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: auto !important;
+  min-height: 38px !important;
+  max-height: none !important;
+  margin: 0 !important;
+  z-index: 5 !important;
+  overflow: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  contain: none !important;
+}
+
+body.thinkb4do-theme.tb4-dev-notice-off .tb4-dev-notice,
+body.thinkb4do-theme.tb4-dev-notice-dismissed .tb4-dev-notice,
+body.thinkb4do-theme.tb4-dev-notice-off .tb4-dev-notice-topmost,
+body.thinkb4do-theme.tb4-dev-notice-dismissed .tb4-dev-notice-topmost,
+body.thinkb4do-theme.tb4-dev-notice-off [data-tb4-dev-notice="topmost"],
+body.thinkb4do-theme.tb4-dev-notice-dismissed [data-tb4-dev-notice="topmost"] {
+  display: none !important;
+}
+
+body.thinkb4do-theme .tb4-dev-notice__inner {
+  min-width: 0 !important;
+}
+
+body.thinkb4do-theme .tb4-dev-notice__body {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body.thinkb4do-theme .tb4-notification-panel,
+body.thinkb4do-theme #userMenuDropdown,
+body.thinkb4do-theme #tb4MessagePanel,
+body.thinkb4do-theme .tb4-message-panel,
+body.thinkb4do-theme #searchResults,
+body.thinkb4do-theme #mobileMenuOverlay,
+body.thinkb4do-theme .tb4-mobile-menu-overlay {
+  contain: none !important;
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 20px) !important;
+}
+
+body.thinkb4do-theme .tb4-notification-panel.is-open,
+body.thinkb4do-theme #userMenuDropdown.is-open,
+body.thinkb4do-theme #tb4MessagePanel.is-open,
+body.thinkb4do-theme .tb4-message-panel.is-open,
+body.thinkb4do-theme #searchResults:not([hidden]) {
+  display: block !important;
+  position: fixed !important;
+  top: var(--tb4-v213-header-bottom) !important;
+  margin-top: 0 !important;
+  z-index: 2147483230 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  transform: none !important;
+  background: #fff !important;
+  box-shadow: 0 18px 44px rgba(15,23,42,.13) !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay.is-open,
+body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open {
+  display: block !important;
+  position: fixed !important;
+  top: var(--tb4-v213-header-bottom) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  inset: var(--tb4-v213-header-bottom) 0 0 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: calc(100vh - var(--tb4-v213-header-bottom)) !important;
+  max-height: calc(100vh - var(--tb4-v213-header-bottom)) !important;
+  background: #fff !important;
+  z-index: 2147483228 !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 18px max(16px, env(safe-area-inset-left)) 28px max(16px, env(safe-area-inset-right)) !important;
+  border-top: 1px solid rgba(15,23,42,.08) !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay a,
+body.thinkb4do-theme .tb4-mobile-menu-overlay a {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body.thinkb4do-theme .tb4-message-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+body.thinkb4do-theme .tb4-message-panel {
+  display: none;
+  position: fixed;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 22px;
+  box-shadow: 0 18px 44px rgba(15,23,42,.13);
+  width: min(360px, calc(100vw - 24px));
+  max-height: var(--tb4-v213-popup-max-h);
+  overflow: hidden;
+  z-index: 2147483230;
+}
+
+body.thinkb4do-theme .tb4-message-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  color: #111827;
+}
+
+body.thinkb4do-theme .tb4-message-head strong {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+body.thinkb4do-theme .tb4-message-head span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff3e8;
+  color: #b45309;
+  font-weight: 800;
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
+body.thinkb4do-theme .tb4-message-list {
+  display: flex;
+  flex-direction: column;
+}
+
+body.thinkb4do-theme .tb4-message-item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 18px;
+  color: #111827;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15,23,42,.06);
+}
+
+body.thinkb4do-theme .tb4-message-item:last-child {
+  border-bottom: 0;
+}
+
+body.thinkb4do-theme .tb4-message-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  font-size: 1.15rem;
+}
+
+body.thinkb4do-theme .tb4-message-item strong {
+  display: block;
+  font-size: .95rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 3px;
+}
+
+body.thinkb4do-theme .tb4-message-item small {
+  display: block;
+  font-size: .84rem;
+  line-height: 1.45;
+  color: #6b7280;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  html { --tb4-v213-header-h: 72px; }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    gap: 8px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .site-logo {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-right {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    gap: 6px !important;
+  }
+
+  body.thinkb4do-theme .tb4-notification-panel.is-open,
+  body.thinkb4do-theme #userMenuDropdown.is-open,
+  body.thinkb4do-theme #tb4MessagePanel.is-open,
+  body.thinkb4do-theme .tb4-message-panel.is-open,
+  body.thinkb4do-theme #searchResults:not([hidden]) {
+    top: var(--tb4-v213-header-bottom) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 24px) !important;
+    border-radius: 0 0 22px 22px !important;
+    max-height: calc(100vh - var(--tb4-v213-header-bottom) - 10px) !important;
+  }
+
+  body.thinkb4do-theme .tb4-dev-notice,
+  body.thinkb4do-theme .tb4-dev-notice-topmost,
+  body.thinkb4do-theme [data-tb4-dev-notice="topmost"] {
+    min-height: 40px !important;
+    overflow: hidden !important;
+  }
+
+  body.thinkb4do-theme .tb4-dev-notice__inner {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  body.thinkb4do-theme .tb4-dev-notice__body,
+  body.thinkb4do-theme .tb4-dev-notice__edit {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme .tb4-notification-panel.is-open,
+  body.thinkb4do-theme #tb4MessagePanel.is-open,
+  body.thinkb4do-theme .tb4-message-panel.is-open {
+    width: min(380px, calc(100vw - 40px)) !important;
+    right: var(--tb4-v213-popup-right, 24px) !important;
+    left: auto !important;
+    max-height: calc(100vh - var(--tb4-v213-header-bottom) - 12px) !important;
+  }
+
+  body.thinkb4do-theme #userMenuDropdown.is-open {
+    width: max-content !important;
+    min-width: 220px !important;
+    max-width: min(320px, calc(100vw - 40px)) !important;
+    right: var(--tb4-v213-popup-right, 24px) !important;
+    left: auto !important;
+    max-height: calc(100vh - var(--tb4-v213-header-bottom) - 12px) !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay,
+  body.thinkb4do-theme #mobileMenuOverlay.is-open,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open {
+    display: none !important;
+  }
+}
+
+body.tb4-menu-open {
+  overflow: auto !important;
+  touch-action: auto !important;
+}
+
+/* v2.1.5: Keep stray orange dots out of the white header/menu, but restore the green-bar status dot. */
+body.thinkb4do-theme #site-header .tb4-dev-dot,
+body.thinkb4do-theme .header-inner .tb4-dev-dot,
+body.thinkb4do-theme .tb4-header-center .tb4-dev-dot,
+body.thinkb4do-theme .main-nav .tb4-dev-dot {
+  display: none !important;
+}
+body.thinkb4do-theme .tb4-dev-notice .tb4-dev-dot,
+body.thinkb4do-theme .tb4-dev-notice-topmost .tb4-dev-dot,
+body.thinkb4do-theme [data-tb4-dev-notice="topmost"] .tb4-dev-dot {
+  position: relative !important;
+  inset: auto !important;
+  display: inline-flex !important;
+  width: 7px !important;
+  height: 7px !important;
+  min-width: 7px !important;
+  min-height: 7px !important;
+  margin: 0 3px 0 0 !important;
+  border-radius: 999px !important;
+  background: var(--tb4-orange, #f97316) !important;
+  box-shadow: 0 0 0 0 rgba(249,115,22,.36) !important;
+  flex: 0 0 7px !important;
+  transform: none !important;
+  animation: tb4DevNoticeDotPulse 1.65s ease-out infinite !important;
+}
+body.thinkb4do-theme .tb4-dev-notice__inner {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+}
+body.thinkb4do-theme #site-header .main-nav a::before,
+body.thinkb4do-theme #site-header .main-nav a::after,
+body.thinkb4do-theme .tb4-header-center .main-nav a::before,
+body.thinkb4do-theme .tb4-header-center .main-nav a::after {
+  content: none !important;
+  display: none !important;
+}
+@keyframes tb4DevNoticeDotPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(249,115,22,.42); opacity: 1; }
+  70%  { box-shadow: 0 0 0 7px rgba(249,115,22,0); opacity: .88; }
+  100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.thinkb4do-theme .tb4-dev-notice .tb4-dev-dot,
+  body.thinkb4do-theme .tb4-dev-notice-topmost .tb4-dev-dot,
+  body.thinkb4do-theme [data-tb4-dev-notice="topmost"] .tb4-dev-dot {
+    animation: none !important;
+    box-shadow: 0 0 0 4px rgba(249,115,22,.16) !important;
+  }
+}

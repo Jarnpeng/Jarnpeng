@@ -1,0 +1,18 @@
+AiRA Studio v7.1.0 Clean Slate Inline Code Preview
+
+Update goal:
+- Move the code preview UI out of the floating popup and place it directly inside each code block area.
+- Keep Copy and Download.
+- Remove the Open button from the code preview workflow.
+
+Changes:
+1. Fenced code blocks still render as clean code cards.
+2. Preview now toggles an inline sandbox iframe that replaces the code area in-place.
+3. The inline preview uses the nicer popup visual style: compact head, filename, safety note, close button, and framed preview body.
+4. The Open action is removed from the visible UI and click handler.
+5. The code can return by pressing Preview again or the inline close button.
+
+Compatibility:
+- Works inside chat bubbles and Artifact Code tab.
+- Keeps Composer fixed at the bottom and avoids overlay collisions.
+- HTML/SVG/CSS/JavaScript/Markdown preview inline. PHP/other languages are shown as text in sandbox for safety.

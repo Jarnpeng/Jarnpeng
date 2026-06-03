@@ -1,0 +1,5 @@
+v1.0.9
+- เปลี่ยนไอคอนความคิดเห็น/ตอบกลับ/แก้ไข/ลบเป็น WordPress Dashicons มาตรฐาน
+- Enqueue dashicons เพื่อไม่พึ่ง CDN/Phosphor/SVG mask
+- ปิด pseudo icon fallback ที่ทำให้เกิดเส้นเล็กหรือไอคอนหาย
+- คง Enter ส่ง, Shift+Enter ขึ้นบรรทัดใหม่, dots ตอนส่ง และ media scroll safe

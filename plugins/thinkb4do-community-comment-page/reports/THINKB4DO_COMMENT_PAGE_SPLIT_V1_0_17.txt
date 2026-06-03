@@ -1,0 +1,17 @@
+Thinkb4do Community Comment Page v1.0.17
+
+สิ่งที่แก้:
+- แยก class action ของหน้าแสดงความคิดเห็นออกจาก class เดิม เพื่อหนี CSS/overlay จากปลั๊กอินหลักหรือชุดเก่าที่อาจบังไอคอน
+- เอา class เดิมของปุ่มแก้ไข/ลบ/คัดลอก/ตอบกลับออกจาก markup หลัก
+- ปุ่มแก้ไข/ลบใช้ data-tb4ccp-owner-tools + tb4ccp-owner-action-*
+- แถวคัดลอก/ตอบกลับใช้ data-tb4ccp-action-row + tb4ccp-row-action
+- JS ยังจับผ่าน data-tb4ccp-comment-action จึงทำงานต่อได้
+- คอมเมนต์หลักมี คัดลอก + ตอบกลับ
+- คอมเมนต์ย่อยไม่มีตอบกลับ แต่เจ้าของยังมีแก้ไข/ลบด้านขวา
+
+ตรวจแล้ว:
+- PHP syntax OK
+- JS syntax OK
+- ZIP แตกไฟล์ได้ปกติ
+
+เพิ่มเติม: ตัด selector action เดิมออกจาก CSS/JS หลักแล้ว เหลือ class เฉพาะ tb4ccp-* สำหรับ action เท่านั้น เพื่อลดชั้นบังซ้ำ.

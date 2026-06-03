@@ -1,0 +1,20 @@
+AiRA Studio v7.1.1 Clean Slate Real Preview First
+
+Purpose
+- Change fenced code block rendering from raw-code-first to real-preview-first.
+- Use the attractive code preview shell directly inside the original code block area.
+- Remove dependency on a floating code preview popup and avoid any Open button for code preview.
+
+What changed
+1. Code cards now show Result first by default.
+2. The original raw code block UI is hidden until the user presses Code.
+3. Pressing Code toggles to the source code; pressing Result returns to the rendered preview.
+4. Copy and Download remain available from the compact code card toolbar.
+5. Added an ensureCodePreviewPanel compatibility shim so the clean slate runtime no longer breaks if older boot code calls it.
+6. HTML / SVG / CSS / JavaScript / Markdown render inside a sandbox iframe as a real browser preview.
+7. PHP / WordPress / server-side code is not executed in the browser; it is displayed safely as source text when preview is not possible.
+
+QA
+- PHP syntax: pass.
+- JavaScript syntax: pass.
+- Composer / plus popup / scroll latest / inline audio remain unchanged.

@@ -1,0 +1,5 @@
+Thinkb4do Community Members v4.2.247 Clean Focus
+- Removed duplicate right activity/debug widgets.
+- Reduced left system menu to essential items.
+- Removed duplicate saved button from hero actions.
+- Added scoped clean-focus CSS for desktop/tablet/phone.

@@ -1,0 +1,6 @@
+Thinkb4do Community v4.2.209
+- Force visible edit/delete owner icons with CSS pseudo icons so it does not depend on icon font loading.
+- Force mobile feed card width to use screen space more efficiently.
+- Force video/media cover to full card width edge-to-edge inside the post card.
+- Force 5-action row: Like / Comment / Share / Save / View.
+- Added v4.2.209 runtime classes in community.js.

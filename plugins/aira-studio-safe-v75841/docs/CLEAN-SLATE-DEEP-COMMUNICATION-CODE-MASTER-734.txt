@@ -1,0 +1,22 @@
+AiRA Studio v7.3.4 Clean Slate Deep Communication Code Master
+
+เพิ่มในรอบนี้
+1. Deep Communication Skill
+- อ่านเจตนาแฝงแบบปลอดภัยจากคำสั้น/คำบ่น/คำสั่งซ้ำ
+- ช่วยตีความว่าผู้ใช้ต้องการผลลัพธ์ที่ขึ้นจริง ความต่อเนื่อง คำตอบสั้น หรือไฟล์/โค้ดใช้ต่อได้
+- ไม่อ้างว่าอ่านใจหรืออ่านจิตใต้สำนึกจริง และไม่เดาข้อมูลอ่อนไหว เช่น เพศ อายุ สุขภาพ ศาสนา การเมือง
+
+2. Code Master Skill
+- ยกระดับ prompt สำหรับเขียนโค้ดแบบ senior engineer
+- บังคับแนวทางโค้ดเต็ม, ไฟล์ชัดเจน, module/component/theme/widget/block relationship
+- เพิ่ม security checklist: capability, nonce, sanitize, escape, permission_callback, uninstall guard
+- รองรับ WordPress Install / Upgrade / Next loop โดยตอบ code block เต็มเพื่อทำงานต่อได้
+
+3. UI Context
+- เพิ่มชิป Deep talk และ Code master เหนือ Composer
+- เพิ่มการ์ดทักษะสื่อสารลึกและ Code Master ใน Context Reader
+- Prompt Processing แสดงเจตนาแฝงและสถานะ Code Skill ก่อนคำตอบจริง
+
+สถานะ
+- ของเดิมยังอยู่: code block, Upgrade, Next, Result, File, image flow, Vision, Prompt Processing, Result Resolver
+- PHP syntax ผ่าน, JS syntax ผ่าน, ZIP พร้อมติดตั้ง

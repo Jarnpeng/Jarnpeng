@@ -1,0 +1,3839 @@
+/* Thinkb4do UI CSS Bundle v2.4.2 — bundled to reduce HTTP requests and mobile lag. */
+
+
+/* ===== Source: css/tb4-header-master-v215.css ===== */
+
+/*
+ * Thinkb4do Header Master Stabilizer v2.1.3
+ * Final layer for: white header, popup/menu positioning, message panel, and non-overlapping green development notice.
+ */
+html {
+  --tb4-v213-admin-h: 0px;
+  --tb4-v213-header-h: 64px;
+  --tb4-v213-header-bottom: calc(var(--tb4-v213-admin-h) + var(--tb4-v213-header-h));
+  --tb4-sticky-top: var(--tb4-v213-admin-h);
+  --tb4-header-real-h: var(--tb4-v213-header-h);
+  --tb4-white-header-bottom: var(--tb4-v213-header-bottom);
+  --tb4-popup-top: var(--tb4-v213-header-bottom);
+  --tb4-mobile-menu-top: var(--tb4-v213-header-bottom);
+  --tb4-fixed-header-stack-h: var(--tb4-v213-header-h);
+  --tb4-v172-header-stack-h: var(--tb4-v213-header-h);
+  --tb4-v213-popup-max-h: calc(100vh - var(--tb4-v213-header-bottom) - 10px);
+}
+
+html.tb4-v213-admin-on { --tb4-v213-admin-h: 32px; }
+@media screen and (max-width: 782px) {
+  html.tb4-v213-admin-on { --tb4-v213-admin-h: 46px; }
+}
+
+body.thinkb4do-theme,
+body.thinkb4do-theme * {
+  box-sizing: border-box;
+}
+
+body.thinkb4do-theme {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header,
+body.admin-bar.thinkb4do-theme.tb4-sticky-header,
+body.thinkb4do-theme.tb4-dev-notice-on.tb4-sticky-header,
+body.thinkb4do-theme.tb4-dev-notice-off.tb4-sticky-header,
+body.thinkb4do-theme.tb4-dev-notice-dismissed.tb4-sticky-header {
+  padding-top: var(--tb4-v213-header-h) !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header {
+  position: fixed !important;
+  top: var(--tb4-v213-admin-h) !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: var(--tb4-v213-header-h) !important;
+  min-height: var(--tb4-v213-header-h) !important;
+  max-height: var(--tb4-v213-header-h) !important;
+  background: rgba(255,255,255,.99) !important;
+  border-bottom: 1px solid rgba(15,23,42,.08) !important;
+  box-shadow: 0 8px 24px rgba(15,23,42,.045) !important;
+  z-index: 2147483200 !important;
+  overflow: visible !important;
+  contain: none !important;
+  isolation: isolate !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header .container,
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  overflow: visible !important;
+  contain: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
+body.thinkb4do-theme.tb4-sticky-header #site-header a,
+body.thinkb4do-theme.tb4-sticky-header #site-header button,
+body.thinkb4do-theme.tb4-sticky-header #site-header input,
+body.thinkb4do-theme.tb4-sticky-header #site-header [role="button"],
+body.thinkb4do-theme.tb4-sticky-header #site-header .header-icon-btn,
+body.thinkb4do-theme.tb4-sticky-header #site-header .user-avatar-btn,
+body.thinkb4do-theme.tb4-sticky-header #site-header .hamburger {
+  pointer-events: auto !important;
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 2147483220 !important;
+}
+
+/* v2.1.3: green development notice is no longer a fixed overlay. It flows under the white header. */
+body.thinkb4do-theme .tb4-dev-notice,
+body.thinkb4do-theme .tb4-dev-notice-topmost,
+body.thinkb4do-theme [data-tb4-dev-notice="topmost"] {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  height: auto !important;
+  min-height: 38px !important;
+  max-height: none !important;
+  margin: 0 !important;
+  z-index: 5 !important;
+  overflow: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  contain: none !important;
+}
+
+body.thinkb4do-theme.tb4-dev-notice-off .tb4-dev-notice,
+body.thinkb4do-theme.tb4-dev-notice-dismissed .tb4-dev-notice,
+body.thinkb4do-theme.tb4-dev-notice-off .tb4-dev-notice-topmost,
+body.thinkb4do-theme.tb4-dev-notice-dismissed .tb4-dev-notice-topmost,
+body.thinkb4do-theme.tb4-dev-notice-off [data-tb4-dev-notice="topmost"],
+body.thinkb4do-theme.tb4-dev-notice-dismissed [data-tb4-dev-notice="topmost"] {
+  display: none !important;
+}
+
+body.thinkb4do-theme .tb4-dev-notice__inner {
+  min-width: 0 !important;
+}
+
+body.thinkb4do-theme .tb4-dev-notice__body {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body.thinkb4do-theme .tb4-notification-panel,
+body.thinkb4do-theme #userMenuDropdown,
+body.thinkb4do-theme #tb4MessagePanel,
+body.thinkb4do-theme .tb4-message-panel,
+body.thinkb4do-theme #searchResults,
+body.thinkb4do-theme #mobileMenuOverlay,
+body.thinkb4do-theme .tb4-mobile-menu-overlay {
+  contain: none !important;
+  box-sizing: border-box !important;
+  max-width: calc(100vw - 20px) !important;
+}
+
+body.thinkb4do-theme .tb4-notification-panel.is-open,
+body.thinkb4do-theme #userMenuDropdown.is-open,
+body.thinkb4do-theme #tb4MessagePanel.is-open,
+body.thinkb4do-theme .tb4-message-panel.is-open,
+body.thinkb4do-theme #searchResults:not([hidden]) {
+  display: block !important;
+  position: fixed !important;
+  top: var(--tb4-v213-header-bottom) !important;
+  margin-top: 0 !important;
+  z-index: 2147483230 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  transform: none !important;
+  background: #fff !important;
+  box-shadow: 0 18px 44px rgba(15,23,42,.13) !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay.is-open,
+body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open {
+  display: block !important;
+  position: fixed !important;
+  top: var(--tb4-v213-header-bottom) !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  inset: var(--tb4-v213-header-bottom) 0 0 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: calc(100vh - var(--tb4-v213-header-bottom)) !important;
+  max-height: calc(100vh - var(--tb4-v213-header-bottom)) !important;
+  background: #fff !important;
+  z-index: 2147483228 !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 18px max(16px, env(safe-area-inset-left)) 28px max(16px, env(safe-area-inset-right)) !important;
+  border-top: 1px solid rgba(15,23,42,.08) !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay a,
+body.thinkb4do-theme .tb4-mobile-menu-overlay a {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body.thinkb4do-theme .tb4-message-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+body.thinkb4do-theme .tb4-message-panel {
+  display: none;
+  position: fixed;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 22px;
+  box-shadow: 0 18px 44px rgba(15,23,42,.13);
+  width: min(360px, calc(100vw - 24px));
+  max-height: var(--tb4-v213-popup-max-h);
+  overflow: hidden;
+  z-index: 2147483230;
+}
+
+body.thinkb4do-theme .tb4-message-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  color: #111827;
+}
+
+body.thinkb4do-theme .tb4-message-head strong {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+body.thinkb4do-theme .tb4-message-head span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff3e8;
+  color: #b45309;
+  font-weight: 800;
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
+body.thinkb4do-theme .tb4-message-list {
+  display: flex;
+  flex-direction: column;
+}
+
+body.thinkb4do-theme .tb4-message-item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 18px;
+  color: #111827;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(15,23,42,.06);
+}
+
+body.thinkb4do-theme .tb4-message-item:last-child {
+  border-bottom: 0;
+}
+
+body.thinkb4do-theme .tb4-message-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  font-size: 1.15rem;
+}
+
+body.thinkb4do-theme .tb4-message-item strong {
+  display: block;
+  font-size: .95rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 3px;
+}
+
+body.thinkb4do-theme .tb4-message-item small {
+  display: block;
+  font-size: .84rem;
+  line-height: 1.45;
+  color: #6b7280;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  html { --tb4-v213-header-h: 72px; }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    gap: 8px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .site-logo {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-right {
+    flex: 0 0 auto !important;
+    min-width: max-content !important;
+    gap: 6px !important;
+  }
+
+  body.thinkb4do-theme .tb4-notification-panel.is-open,
+  body.thinkb4do-theme #userMenuDropdown.is-open,
+  body.thinkb4do-theme #tb4MessagePanel.is-open,
+  body.thinkb4do-theme .tb4-message-panel.is-open,
+  body.thinkb4do-theme #searchResults:not([hidden]) {
+    top: var(--tb4-v213-header-bottom) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 24px) !important;
+    border-radius: 0 0 22px 22px !important;
+    max-height: calc(100vh - var(--tb4-v213-header-bottom) - 10px) !important;
+  }
+
+  body.thinkb4do-theme .tb4-dev-notice,
+  body.thinkb4do-theme .tb4-dev-notice-topmost,
+  body.thinkb4do-theme [data-tb4-dev-notice="topmost"] {
+    min-height: 40px !important;
+    overflow: hidden !important;
+  }
+
+  body.thinkb4do-theme .tb4-dev-notice__inner {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  body.thinkb4do-theme .tb4-dev-notice__body,
+  body.thinkb4do-theme .tb4-dev-notice__edit {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme .tb4-notification-panel.is-open,
+  body.thinkb4do-theme #tb4MessagePanel.is-open,
+  body.thinkb4do-theme .tb4-message-panel.is-open {
+    width: min(380px, calc(100vw - 40px)) !important;
+    right: var(--tb4-v213-popup-right, 24px) !important;
+    left: auto !important;
+    max-height: calc(100vh - var(--tb4-v213-header-bottom) - 12px) !important;
+  }
+
+  body.thinkb4do-theme #userMenuDropdown.is-open {
+    width: max-content !important;
+    min-width: 220px !important;
+    max-width: min(320px, calc(100vw - 40px)) !important;
+    right: var(--tb4-v213-popup-right, 24px) !important;
+    left: auto !important;
+    max-height: calc(100vh - var(--tb4-v213-header-bottom) - 12px) !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay,
+  body.thinkb4do-theme #mobileMenuOverlay.is-open,
+  body.thinkb4do-theme .tb4-mobile-menu-overlay.is-open {
+    display: none !important;
+  }
+}
+
+body.tb4-menu-open {
+  overflow: auto !important;
+  touch-action: auto !important;
+}
+
+/* v2.1.5: Keep stray orange dots out of the white header/menu, but restore the green-bar status dot. */
+body.thinkb4do-theme #site-header .tb4-dev-dot,
+body.thinkb4do-theme .header-inner .tb4-dev-dot,
+body.thinkb4do-theme .tb4-header-center .tb4-dev-dot,
+body.thinkb4do-theme .main-nav .tb4-dev-dot {
+  display: none !important;
+}
+body.thinkb4do-theme .tb4-dev-notice .tb4-dev-dot,
+body.thinkb4do-theme .tb4-dev-notice-topmost .tb4-dev-dot,
+body.thinkb4do-theme [data-tb4-dev-notice="topmost"] .tb4-dev-dot {
+  position: relative !important;
+  inset: auto !important;
+  display: inline-flex !important;
+  width: 7px !important;
+  height: 7px !important;
+  min-width: 7px !important;
+  min-height: 7px !important;
+  margin: 0 3px 0 0 !important;
+  border-radius: 999px !important;
+  background: var(--tb4-orange, #f97316) !important;
+  box-shadow: 0 0 0 0 rgba(249,115,22,.36) !important;
+  flex: 0 0 7px !important;
+  transform: none !important;
+  animation: tb4DevNoticeDotPulse 1.65s ease-out infinite !important;
+}
+body.thinkb4do-theme .tb4-dev-notice__inner {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+}
+body.thinkb4do-theme #site-header .main-nav a::before,
+body.thinkb4do-theme #site-header .main-nav a::after,
+body.thinkb4do-theme .tb4-header-center .main-nav a::before,
+body.thinkb4do-theme .tb4-header-center .main-nav a::after {
+  content: none !important;
+  display: none !important;
+}
+@keyframes tb4DevNoticeDotPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(249,115,22,.42); opacity: 1; }
+  70%  { box-shadow: 0 0 0 7px rgba(249,115,22,0); opacity: .88; }
+  100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.thinkb4do-theme .tb4-dev-notice .tb4-dev-dot,
+  body.thinkb4do-theme .tb4-dev-notice-topmost .tb4-dev-dot,
+  body.thinkb4do-theme [data-tb4-dev-notice="topmost"] .tb4-dev-dot {
+    animation: none !important;
+    box-shadow: 0 0 0 4px rgba(249,115,22,.16) !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-header-center-v216.css ===== */
+
+/*
+ * Thinkb4do Header Center Fix v2.1.6
+ * Removes WordPress menu list bullets in the white header and centers the desktop nav/search group.
+ */
+body.thinkb4do-theme #site-header .main-nav,
+body.thinkb4do-theme #site-header .main-nav ul,
+body.thinkb4do-theme #site-header .main-nav li,
+body.thinkb4do-theme .tb4-header-center .main-nav,
+body.thinkb4do-theme .tb4-header-center .main-nav ul,
+body.thinkb4do-theme .tb4-header-center .main-nav li {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav li::marker,
+body.thinkb4do-theme .tb4-header-center .main-nav li::marker {
+  content: "" !important;
+  font-size: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav > li,
+body.thinkb4do-theme .tb4-header-center .main-nav > li {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-width: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav > li > a,
+body.thinkb4do-theme .tb4-header-center .main-nav > li > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav > li::before,
+body.thinkb4do-theme #site-header .main-nav > li::after,
+body.thinkb4do-theme .tb4-header-center .main-nav > li::before,
+body.thinkb4do-theme .tb4-header-center .main-nav > li::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme.tb4-sticky-header #site-header .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: clamp(20px, 3vw, 56px) !important;
+    padding-right: clamp(20px, 3vw, 56px) !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    display: grid !important;
+    grid-template-columns: minmax(190px, 280px) minmax(520px, 1fr) minmax(150px, 280px) !important;
+    align-items: center !important;
+    column-gap: clamp(12px, 2vw, 32px) !important;
+    width: 100% !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .site-logo.site-logo--header {
+    justify-self: start !important;
+    margin: 0 !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-header-center {
+    justify-self: center !important;
+    align-self: center !important;
+    width: min(100%, 940px) !important;
+    max-width: min(940px, calc(100vw - 520px)) !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(8px, 1.3vw, 18px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: hidden !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-header-center .main-nav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: clamp(1px, .35vw, 7px) !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-desktop-header-search.header-search {
+    flex: 0 1 clamp(210px, 24vw, 360px) !important;
+    min-width: 190px !important;
+    max-width: 360px !important;
+    margin-left: 0 !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-right {
+    justify-self: end !important;
+    margin-left: 0 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.current-menu-item > a,
+  body.thinkb4do-theme #site-header .main-nav li.current_page_item > a,
+  body.thinkb4do-theme #site-header .main-nav li.current-menu-ancestor > a {
+    color: var(--tb4-green, #1E6B45) !important;
+    background: rgba(30,107,69,.09) !important;
+    font-weight: 750 !important;
+    border-bottom: 0 !important;
+    border-radius: 999px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1180px) {
+  body.thinkb4do-theme.tb4-sticky-header #site-header .header-inner {
+    grid-template-columns: minmax(165px, 220px) minmax(430px, 1fr) minmax(130px, 220px) !important;
+    column-gap: 10px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-header-center {
+    max-width: min(760px, calc(100vw - 400px)) !important;
+    gap: 7px !important;
+  }
+
+  body.thinkb4do-theme.tb4-sticky-header #site-header .tb4-desktop-header-search.header-search {
+    flex-basis: 190px !important;
+    min-width: 140px !important;
+    max-width: 220px !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-legal-menu-v217.css ===== */
+
+/*
+ * Thinkb4do v2.1.7 — Thai Legal/Policy Pages Menu Sync
+ * Adds safe desktop submenu support and mobile legal menu grouping.
+ */
+
+body.thinkb4do-theme #site-header,
+body.thinkb4do-theme #site-header .container,
+body.thinkb4do-theme #site-header .header-inner,
+body.thinkb4do-theme #site-header .tb4-header-center,
+body.thinkb4do-theme #site-header .main-nav {
+  overflow: visible !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav {
+  position: relative !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav ul,
+body.thinkb4do-theme #site-header .main-nav li,
+body.thinkb4do-theme #mobileMenuOverlay ul,
+body.thinkb4do-theme #mobileMenuOverlay li {
+  list-style: none !important;
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.thinkb4do-theme #site-header .main-nav li::marker,
+body.thinkb4do-theme #mobileMenuOverlay li::marker {
+  content: "" !important;
+  font-size: 0 !important;
+}
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme #site-header .main-nav > li {
+    position: relative !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > a::after {
+    content: "⌄" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 5px !important;
+    font-size: .72rem !important;
+    line-height: 1 !important;
+    color: currentColor !important;
+    opacity: .72 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(6px) !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+    min-width: 230px !important;
+    max-width: min(320px, calc(100vw - 32px)) !important;
+    padding: 10px !important;
+    border: 1px solid rgba(15, 23, 42, .08) !important;
+    border-radius: 18px !important;
+    background: #fff !important;
+    box-shadow: 0 18px 46px rgba(15, 23, 42, .14) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 10050 !important;
+    transition: opacity .16s ease, transform .16s ease, visibility .16s ease !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children:hover > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children:focus-within > .sub-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 38px !important;
+    padding: 9px 12px !important;
+    border-radius: 12px !important;
+    color: var(--tb4-gray-700, #374151) !important;
+    font-size: .86rem !important;
+    font-weight: 650 !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a:hover,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a:focus-visible,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li.current-menu-item > a,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li.current_page_item > a {
+    background: rgba(30, 107, 69, .09) !important;
+    color: var(--tb4-green, #1E6B45) !important;
+  }
+}
+
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  width: 100% !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list > li > a,
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list .sub-menu a {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  border-radius: 16px !important;
+  color: var(--tb4-gray-900, #111827) !important;
+  text-decoration: none !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list > li > a {
+  min-height: 50px !important;
+  padding: 12px 16px !important;
+  font-size: 1rem !important;
+  font-weight: 750 !important;
+  background: #fff !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list .sub-menu {
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 6px !important;
+  margin: 7px 0 8px 12px !important;
+  padding-left: 10px !important;
+  border-left: 3px solid rgba(30, 107, 69, .18) !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: none !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list .sub-menu a {
+  min-height: 42px !important;
+  padding: 10px 13px !important;
+  font-size: .94rem !important;
+  font-weight: 650 !important;
+  color: var(--tb4-gray-700, #374151) !important;
+  background: rgba(30, 107, 69, .045) !important;
+  border: 1px solid rgba(30, 107, 69, .08) !important;
+}
+
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list a:hover,
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list a:focus-visible,
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list li.current-menu-item > a,
+body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list li.current_page_item > a {
+  color: var(--tb4-green, #1E6B45) !important;
+  background: var(--tb4-green-light, #e8f5ee) !important;
+}
+
+@media (max-width: 1024px) {
+  body.thinkb4do-theme #site-header .tb4-header-center .main-nav .sub-menu {
+    display: none !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-legal-dropdown-v218.css ===== */
+
+/*
+ * Thinkb4do v2.1.8 — Legal dropdown click/hover restore
+ * - Opens the “นโยบาย” submenu on desktop without being clipped by the centered header group.
+ * - Keeps the submenu attached to the white header layer, not the green development notice.
+ */
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme #site-header,
+  body.thinkb4do-theme #site-header .container,
+  body.thinkb4do-theme #site-header .header-inner,
+  body.thinkb4do-theme #site-header .tb4-header-center,
+  body.thinkb4do-theme #site-header .main-nav {
+    overflow: visible !important;
+  }
+
+  body.thinkb4do-theme #site-header .tb4-header-center {
+    position: relative !important;
+    z-index: 10040 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav {
+    position: relative !important;
+    z-index: 10060 !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children {
+    position: relative !important;
+    isolation: isolate !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > a {
+    cursor: pointer !important;
+    gap: 4px !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > a::after,
+  body.thinkb4do-theme .tb4-header-center .main-nav > li.menu-item-has-children > a::after {
+    content: "▾" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 4px !important;
+    width: auto !important;
+    height: auto !important;
+    font-size: .66rem !important;
+    line-height: 1 !important;
+    color: currentColor !important;
+    opacity: .75 !important;
+    background: transparent !important;
+    transform: translateY(1px) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children.tb4-submenu-open > a,
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children:hover > a,
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children:focus-within > a {
+    color: var(--tb4-green, #1E6B45) !important;
+    background: rgba(30, 107, 69, .08) !important;
+    border-radius: 999px !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children > .sub-menu {
+    display: grid !important;
+    position: absolute !important;
+    top: calc(100% + 12px) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) translateY(8px) !important;
+    min-width: 260px !important;
+    max-width: min(360px, calc(100vw - 32px)) !important;
+    padding: 10px !important;
+    margin: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 5px !important;
+    list-style: none !important;
+    border: 1px solid rgba(15, 23, 42, .08) !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, .98) !important;
+    box-shadow: 0 20px 52px rgba(15, 23, 42, .16) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    z-index: 99999 !important;
+    overflow: visible !important;
+    transition: opacity .16s ease, transform .16s ease, visibility .16s ease !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children:hover > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children:focus-within > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children.tb4-submenu-open > .sub-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -7px !important;
+    left: 50% !important;
+    width: 14px !important;
+    height: 14px !important;
+    transform: translateX(-50%) rotate(45deg) !important;
+    background: #fff !important;
+    border-left: 1px solid rgba(15, 23, 42, .08) !important;
+    border-top: 1px solid rgba(15, 23, 42, .08) !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li::before,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li::after,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu li::marker {
+    list-style: none !important;
+    content: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 38px !important;
+    width: 100% !important;
+    padding: 9px 12px !important;
+    border-radius: 12px !important;
+    color: var(--tb4-gray-700, #374151) !important;
+    font-size: .86rem !important;
+    font-weight: 650 !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    text-decoration: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a:hover,
+  body.thinkb4do-theme #site-header .main-nav .sub-menu a:focus-visible {
+    background: rgba(30, 107, 69, .09) !important;
+    color: var(--tb4-green, #1E6B45) !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list li.menu-item-has-children > a::after {
+    content: "▾" !important;
+    display: inline-flex !important;
+    margin-left: auto !important;
+    opacity: .75 !important;
+  }
+
+  body.thinkb4do-theme #mobileMenuOverlay .tb4-mobile-nav-list li.menu-item-has-children > .sub-menu {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-legal-portal-v219.css ===== */
+
+/*
+ * Thinkb4do v2.1.9 — Policy menu portal dropdown fix
+ * Fixes the desktop “นโยบาย” menu when native WordPress sub-menu is clipped or the parent link navigates instead of opening.
+ */
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav .tb4-fallback-legal-menu > .sub-menu {
+    display: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav a[data-tb4-policy-trigger="true"],
+  body.thinkb4do-theme #site-header .main-nav li.tb4-policy-trigger > a,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children > a[href*="legal-center"] {
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav a[data-tb4-policy-trigger="true"]::after,
+  body.thinkb4do-theme #site-header .main-nav li.tb4-policy-trigger > a::after,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children > a[href*="legal-center"]::after {
+    content: "▾" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 5px !important;
+    font-size: .66rem !important;
+    line-height: 1 !important;
+    opacity: .75 !important;
+    background: transparent !important;
+    color: currentColor !important;
+  }
+}
+
+.tb4-policy-portal-dropdown {
+  position: fixed !important;
+  display: none !important;
+  min-width: 270px !important;
+  max-width: min(360px, calc(100vw - 28px)) !important;
+  padding: 10px !important;
+  margin: 0 !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, .99) !important;
+  box-shadow: 0 22px 58px rgba(15, 23, 42, .18) !important;
+  z-index: 2147483000 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(6px) !important;
+  transition: opacity .14s ease, transform .14s ease, visibility .14s ease !important;
+  font-family: var(--font-main) !important;
+}
+
+.tb4-policy-portal-dropdown.is-open {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 5px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.tb4-policy-portal-dropdown::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -7px !important;
+  left: var(--tb4-policy-arrow-left, 50%) !important;
+  width: 14px !important;
+  height: 14px !important;
+  transform: translateX(-50%) rotate(45deg) !important;
+  background: #fff !important;
+  border-left: 1px solid rgba(15, 23, 42, .08) !important;
+  border-top: 1px solid rgba(15, 23, 42, .08) !important;
+}
+
+.tb4-policy-portal-dropdown a {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  width: 100% !important;
+  padding: 9px 12px !important;
+  border-radius: 12px !important;
+  color: var(--tb4-gray-700, #374151) !important;
+  font-size: .86rem !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+.tb4-policy-portal-dropdown a:hover,
+.tb4-policy-portal-dropdown a:focus-visible {
+  background: rgba(30, 107, 69, .09) !important;
+  color: var(--tb4-green, #1E6B45) !important;
+  outline: none !important;
+}
+
+.tb4-policy-portal-dropdown a:first-child {
+  color: var(--tb4-green, #1E6B45) !important;
+  background: rgba(30, 107, 69, .07) !important;
+}
+
+@media (max-width: 1024px) {
+  .tb4-policy-portal-dropdown {
+    display: none !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-smart-sidebar-v222.css ===== */
+
+/* Thinkb4do Public Daily Ideas Sidebar v2.2.2
+   Modern public-facing daily-life sidebar that replaces raw WordPress default widgets. */
+
+#sidebar.tb4-smart-sidebar,
+.tb4-smart-sidebar {
+  position: sticky;
+  top: calc(var(--header-h, 76px) + var(--space-lg, 24px));
+  align-self: start;
+  width: min(100%, 360px);
+  display: grid;
+  gap: 16px;
+  font-family: var(--font-main, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans Thai", "Kanit", sans-serif);
+  color: var(--tb4-gray-900, #0f172a);
+}
+
+.tb4-smart-sidebar * { box-sizing: border-box; }
+
+.tb4-smart-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, .08);
+  backdrop-filter: blur(18px);
+  padding: 18px;
+}
+
+.tb4-smart-card h3,
+.tb4-smart-card h4,
+.tb4-smart-card p { margin: 0; }
+
+.tb4-smart-card h3 {
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  line-height: 1.25;
+  letter-spacing: -.03em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.tb4-smart-card h4 {
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: -.01em;
+  margin-bottom: 8px;
+}
+
+.tb4-smart-card p,
+.tb4-muted {
+  color: rgba(51, 65, 85, .86);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.tb4-smart-kicker,
+.tb4-card-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--tb4-green, #1E6B45);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.tb4-pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--tb4-orange, #F97316);
+  box-shadow: 0 0 0 0 rgba(249, 115, 22, .36);
+  animation: tb4SidebarPulse 1.9s ease-out infinite;
+}
+
+@keyframes tb4SidebarPulse {
+  0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, .38); }
+  70% { box-shadow: 0 0 0 9px rgba(249, 115, 22, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+}
+
+.tb4-smart-card-hero {
+  color: #fff;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.22), transparent 26%),
+    linear-gradient(135deg, #0f7a50 0%, #0b5d3e 58%, #0b3f31 100%);
+  border-color: rgba(255,255,255,.18);
+  min-height: 190px;
+}
+
+.tb4-smart-card-hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.2) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: .25;
+  pointer-events: none;
+}
+
+.tb4-smart-card-hero > * { position: relative; z-index: 1; }
+.tb4-smart-card-hero .tb4-smart-kicker { color: rgba(255,255,255,.86); }
+.tb4-smart-card-hero p { color: rgba(255,255,255,.82); max-width: 86%; }
+
+.tb4-smart-score {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, .2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.tb4-smart-score strong { font-size: 1.35rem; line-height: 1; }
+.tb4-smart-score span { font-size: .62rem; opacity: .78; text-align: center; }
+
+.tb4-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tb4-weather-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: var(--tb4-green-light, #e8f5ee);
+  font-size: 1.35rem;
+}
+
+.tb4-weather-location {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(30, 107, 69, .08);
+  color: var(--tb4-green, #1E6B45);
+  font-weight: 800;
+  font-size: .78rem;
+  margin-bottom: 10px;
+}
+
+.tb4-weather-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tb4-weather-grid span {
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  padding: 7px 8px;
+  border-radius: 14px;
+  background: rgba(15,23,42,.04);
+  color: rgba(15,23,42,.76);
+  font-size: .76rem;
+  font-weight: 800;
+}
+
+.tb4-tool-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tb4-tool-list a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 11px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(248,250,252,.92), rgba(241,245,249,.84));
+  border: 1px solid rgba(15,23,42,.06);
+  color: rgba(15,23,42,.9);
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.tb4-tool-list a:hover,
+.tb4-tool-list a:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, .08);
+  border-color: rgba(30, 107, 69, .18);
+  outline: none;
+}
+
+.tb4-tool-list span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(15,23,42,.06);
+}
+
+.tb4-tool-list strong { font-size: .84rem; line-height: 1.25; }
+
+.tb4-search-card form,
+.tb4-search-card .search-form {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  margin: 0;
+}
+
+.tb4-search-card input[type="search"],
+.tb4-search-card .search-field {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(15,23,42,.1);
+  background: rgba(248,250,252,.92);
+  border-radius: 15px;
+  min-height: 44px;
+  padding: 0 12px;
+  font: inherit;
+  outline: none;
+}
+
+.tb4-search-card input[type="search"]:focus,
+.tb4-search-card .search-field:focus {
+  border-color: rgba(30,107,69,.45);
+  box-shadow: 0 0 0 4px rgba(30,107,69,.1);
+}
+
+.tb4-search-card button,
+.tb4-search-card .search-submit {
+  border: 0;
+  min-height: 44px;
+  border-radius: 15px;
+  padding: 0 15px;
+  background: var(--tb4-green, #1E6B45);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tb4-sidebar-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  min-height: 46px;
+  border-radius: 999px;
+  background: var(--tb4-green, #1E6B45);
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.tb4-recent-list { display: grid; gap: 8px; }
+
+.tb4-recent-item {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(248,250,252,.8);
+  border: 1px solid rgba(15,23,42,.05);
+  color: inherit;
+  text-decoration: none;
+}
+
+.tb4-recent-item span {
+  display: grid;
+  place-items: center;
+  height: 34px;
+  border-radius: 12px;
+  background: rgba(30,107,69,.1);
+  color: var(--tb4-green, #1E6B45);
+  font-size: .72rem;
+  font-weight: 900;
+}
+
+.tb4-recent-item strong {
+  min-width: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: .86rem;
+  line-height: 1.35;
+}
+
+.tb4-admin-note-card {
+  padding: 12px 14px;
+  text-align: center;
+  background: rgba(15,23,42,.035);
+  box-shadow: none;
+}
+.tb4-admin-note-card small { color: rgba(71,85,105,.78); font-weight: 700; }
+
+.tb4-wp-widget-zone {
+  display: grid;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.tb4-wp-widget-title {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .05);
+  color: rgba(51, 65, 85, .88);
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.tb4-wp-widget-zone .widget {
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, .07);
+  list-style: none;
+}
+
+.tb4-wp-widget-zone .widget-title,
+.tb4-wp-widget-zone h2,
+.tb4-wp-widget-zone h3,
+.tb4-wp-widget-zone h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  letter-spacing: -.01em;
+}
+
+.tb4-wp-widget-zone ul,
+.tb4-wp-widget-zone ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.tb4-wp-widget-zone li a,
+.tb4-wp-widget-zone a {
+  color: rgba(15, 23, 42, .82);
+  text-decoration: none;
+}
+
+.tb4-wp-widget-zone li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(15,23,42,.06);
+}
+.tb4-wp-widget-zone li:last-child { border-bottom: 0; }
+
+/* Hide raw list markers that caused the old sidebar to look broken. */
+.tb4-smart-sidebar ul,
+.tb4-smart-sidebar ol,
+.tb4-smart-sidebar li { list-style: none; }
+.tb4-smart-sidebar li::marker { content: ""; }
+
+@media (max-width: 1100px) {
+  #sidebar.tb4-smart-sidebar,
+  .tb4-smart-sidebar {
+    position: static;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tb4-smart-card-hero,
+  .tb4-search-card,
+  .tb4-wp-widget-zone { grid-column: 1 / -1; }
+}
+
+@media (max-width: 720px) {
+  #sidebar.tb4-smart-sidebar,
+  .tb4-smart-sidebar { grid-template-columns: 1fr; gap: 12px; }
+  .tb4-smart-card { border-radius: 20px; padding: 16px; }
+  .tb4-tool-list { grid-template-columns: 1fr; }
+  .tb4-weather-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .tb4-search-card form,
+  .tb4-search-card .search-form { flex-direction: column; }
+  .tb4-search-card button,
+  .tb4-search-card .search-submit { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tb4-pulse-dot { animation: none; }
+  .tb4-tool-list a { transition: none; }
+}
+
+/* v2.2.2 Public Daily Ideas Sidebar: daily-life cards, no private/internal wording. */
+.tb4-card-emoji {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(248,250,252,.88));
+  border: 1px solid rgba(15,23,42,.06);
+  box-shadow: 0 12px 24px rgba(15,23,42,.07);
+  font-size: 1.25rem;
+}
+
+.tb4-event-card,
+.tb4-food-card,
+.tb4-calendar-card,
+.tb4-ads-card {
+  background:
+    radial-gradient(circle at 88% 0%, rgba(30,107,69,.08), transparent 34%),
+    rgba(255,255,255,.9);
+}
+
+.tb4-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tb4-chip-row a,
+.tb4-mini-link-grid a,
+.tb4-agenda-list a,
+.tb4-sidebar-soft-cta {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tb4-chip-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(30,107,69,.08);
+  color: var(--tb4-green, #1E6B45);
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.tb4-mini-link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tb4-mini-link-grid a {
+  display: grid;
+  place-items: center;
+  min-height: 38px;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(15,23,42,.045);
+  border: 1px solid rgba(15,23,42,.055);
+  font-size: .78rem;
+  font-weight: 900;
+  color: rgba(15,23,42,.78);
+}
+
+.tb4-agenda-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 8px;
+}
+
+.tb4-agenda-list a {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(248,250,252,.84);
+  border: 1px solid rgba(15,23,42,.055);
+}
+
+.tb4-agenda-list a > span {
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(15,23,42,.06);
+}
+
+.tb4-agenda-list strong {
+  font-size: .86rem;
+  line-height: 1.25;
+}
+
+.tb4-agenda-list small {
+  color: rgba(71,85,105,.74);
+  font-size: .74rem;
+  line-height: 1.45;
+}
+
+.tb4-ads-card {
+  border-color: rgba(249,115,22,.18);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(249,115,22,.14), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,247,237,.88));
+}
+
+.tb4-sidebar-soft-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 14px;
+  min-height: 44px;
+  border-radius: 999px;
+  background: rgba(249,115,22,.12);
+  color: #9a3412;
+  font-weight: 900;
+}
+
+.tb4-chip-row a:hover,
+.tb4-chip-row a:focus-visible,
+.tb4-mini-link-grid a:hover,
+.tb4-mini-link-grid a:focus-visible,
+.tb4-agenda-list a:hover,
+.tb4-agenda-list a:focus-visible,
+.tb4-sidebar-soft-cta:hover,
+.tb4-sidebar-soft-cta:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15,23,42,.07);
+}
+
+@media (max-width: 720px) {
+  .tb4-mini-link-grid { grid-template-columns: 1fr 1fr; }
+  .tb4-smart-score strong { font-size: .92rem; }
+}
+
+
+
+
+/* ===== Source: css/tb4-modern-refresh-v231.css ===== */
+
+/*
+ * Thinkb4do Modern Refresh v2.3.1
+ * Clean web/app layout layer. Keeps existing theme functions but modernizes visual rhythm.
+ */
+:root {
+  --tb4-modern-bg: #f6f8f5;
+  --tb4-modern-surface: rgba(255,255,255,.92);
+  --tb4-modern-card: #ffffff;
+  --tb4-modern-ink: #111111;
+  --tb4-modern-muted: #5f6b63;
+  --tb4-modern-line: rgba(17,17,17,.09);
+  --tb4-modern-green: #1E6B45;
+  --tb4-modern-green-2: #0f4e31;
+  --tb4-modern-orange: #F97316;
+  --tb4-modern-soft-green: #edf7f1;
+  --tb4-modern-soft-orange: #fff4eb;
+  --tb4-modern-radius: 22px;
+  --tb4-modern-radius-sm: 14px;
+  --tb4-modern-shadow: 0 16px 50px rgba(17, 24, 39, .08);
+  --tb4-modern-shadow-soft: 0 10px 30px rgba(17, 24, 39, .055);
+  --tb4-adminbar-h: 0px;
+  --tb4-header-real-h: 68px;
+  --tb4-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tb4-vh: 1vh;
+}
+
+html { background: var(--tb4-modern-bg); }
+body.thinkb4do-theme,
+body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(30,107,69,.10), transparent 32rem),
+    radial-gradient(circle at 92% 8%, rgba(249,115,22,.08), transparent 28rem),
+    var(--tb4-modern-bg) !important;
+  color: var(--tb4-modern-ink);
+  overflow-x: clip;
+}
+body.admin-bar { --tb4-adminbar-h: 32px; }
+@media screen and (max-width: 782px) { body.admin-bar { --tb4-adminbar-h: 46px; } }
+
+/* Safer global media and blocks */
+img, svg, video, canvas, iframe { max-width: 100%; }
+iframe { border: 0; }
+pre, code, .wp-block-code { max-width: 100%; overflow-x: auto; }
+table { width: 100%; max-width: 100%; border-collapse: collapse; }
+.wp-block-table { overflow-x: auto; }
+
+.container {
+  width: min(100% - 32px, 1180px);
+  max-width: 1180px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+@media (max-width: 520px) { .container { width: min(100% - 22px, 1180px); } }
+
+/* Header refresh — keeps native WordPress Admin Bar visible. */
+#site-header {
+  position: sticky;
+  top: var(--tb4-adminbar-h, 0px) !important;
+  z-index: 999;
+  background: rgba(255,255,255,.88) !important;
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  border-bottom: 1px solid rgba(17,17,17,.08) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,.65) inset;
+}
+#site-header .header-inner {
+  min-height: 68px;
+  gap: 18px;
+}
+.site-logo { min-width: 0; gap: 10px; }
+.logo-icon,
+.site-logo-img-wrap {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 13px !important;
+  background: linear-gradient(135deg, var(--tb4-modern-green), #2d8a5c) !important;
+  box-shadow: 0 12px 28px rgba(30,107,69,.18);
+}
+.logo-text { font-weight: 800 !important; letter-spacing: -.025em; color: var(--tb4-modern-ink) !important; }
+.logo-tagline { color: var(--tb4-modern-muted) !important; }
+.tb4-header-center { flex: 1 1 auto; min-width: 0; }
+.main-nav { gap: 4px !important; }
+.main-nav a,
+.main-nav > .menu-item > a {
+  min-height: 38px;
+  padding: 9px 12px !important;
+  border-radius: 999px;
+  color: #2d3a31 !important;
+  font-weight: 650 !important;
+  font-size: .91rem !important;
+  line-height: 1.1;
+}
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav a.active,
+.main-nav .current-menu-item > a,
+.main-nav .current_page_item > a {
+  background: var(--tb4-modern-soft-green) !important;
+  color: var(--tb4-modern-green) !important;
+}
+.header-search {
+  height: 42px !important;
+  min-width: min(280px, 28vw) !important;
+  border: 1px solid var(--tb4-modern-line) !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  box-shadow: 0 8px 24px rgba(17,24,39,.045) !important;
+}
+.header-search input { font-weight: 500; }
+.kbd-hint { opacity: .58; }
+.header-right { gap: 8px !important; }
+.header-icon-btn,
+.lang-btn,
+.hamburger {
+  border: 1px solid var(--tb4-modern-line) !important;
+  background: #fff !important;
+  box-shadow: 0 8px 22px rgba(17,24,39,.04) !important;
+}
+.btn, button, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+.btn { min-height: 42px; }
+.btn-primary { background: var(--tb4-modern-green) !important; box-shadow: 0 16px 30px rgba(30,107,69,.20) !important; }
+.btn-orange { background: var(--tb4-modern-orange) !important; }
+
+/* Modern homepage */
+.tb4-modern-main { padding-bottom: 72px; }
+.tb4-modern-hero { padding: clamp(42px, 7vw, 92px) 0 34px; }
+.tb4-modern-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, .72fr);
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+}
+.tb4-modern-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(30,107,69,.15);
+  background: rgba(237,247,241,.88);
+  color: var(--tb4-modern-green);
+  border-radius: 999px;
+  font-size: .86rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+.tb4-modern-title {
+  margin: 18px 0 14px;
+  color: var(--tb4-modern-ink);
+  font-size: clamp(2.28rem, 5.2vw, 5.15rem);
+  line-height: .98;
+  letter-spacing: -.065em;
+  font-weight: 850;
+  text-wrap: balance;
+}
+.tb4-modern-title span { color: var(--tb4-modern-green); }
+.tb4-modern-lead {
+  max-width: 680px;
+  color: var(--tb4-modern-muted);
+  font-size: clamp(1.02rem, 1.6vw, 1.18rem);
+  line-height: 1.86;
+}
+.tb4-modern-search {
+  width: min(100%, 660px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  margin: 26px 0 18px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid rgba(17,17,17,.08);
+  border-radius: 999px;
+  box-shadow: var(--tb4-modern-shadow-soft);
+}
+.tb4-modern-search input {
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  padding: 0 12px 0 18px;
+  background: transparent;
+  color: var(--tb4-modern-ink);
+  font-size: 1rem;
+  font-weight: 550;
+}
+.tb4-modern-search button {
+  border: 0;
+  border-radius: 999px;
+  background: var(--tb4-modern-green);
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 22px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tb4-modern-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.tb4-modern-pills a,
+.tb4-modern-pill {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: #233128;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(17,17,17,.08);
+  font-size: .9rem;
+  font-weight: 750;
+}
+.tb4-modern-pills a:hover { color: var(--tb4-modern-green); border-color: rgba(30,107,69,.28); }
+
+.tb4-modern-panel {
+  border-radius: 32px;
+  padding: 18px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(17,17,17,.08);
+  box-shadow: var(--tb4-modern-shadow);
+}
+.tb4-modern-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 6px 6px 16px;
+}
+.tb4-modern-panel-head strong { font-size: 1.05rem; letter-spacing: -.02em; }
+.tb4-modern-panel-head span { color: var(--tb4-modern-orange); font-size: .82rem; font-weight: 850; }
+.tb4-modern-feature-card {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff, #eef8f2);
+  border: 1px solid rgba(30,107,69,.12);
+}
+.tb4-modern-feature-card small { color: var(--tb4-modern-green); font-weight: 850; }
+.tb4-modern-feature-card h2 { font-size: clamp(1.35rem, 2.4vw, 2rem); line-height: 1.18; letter-spacing: -.04em; }
+.tb4-modern-feature-card p { color: var(--tb4-modern-muted); line-height: 1.78; }
+.tb4-modern-mini-list { display: grid; gap: 10px; margin-top: 12px; }
+.tb4-modern-mini-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid rgba(17,17,17,.07);
+}
+.tb4-modern-mini-num {
+  width: 42px; height: 42px; border-radius: 14px;
+  display: inline-grid; place-items: center;
+  color: var(--tb4-modern-green);
+  background: var(--tb4-modern-soft-green);
+  font-weight: 900;
+}
+.tb4-modern-mini-item b { display: block; line-height: 1.25; }
+.tb4-modern-mini-item span { display: block; margin-top: 3px; color: var(--tb4-modern-muted); font-size: .88rem; }
+
+.tb4-modern-section { padding: clamp(28px, 5vw, 60px) 0; }
+.tb4-modern-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.tb4-modern-section-head h2 {
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
+  letter-spacing: -.045em;
+}
+.tb4-modern-section-head p { max-width: 560px; color: var(--tb4-modern-muted); }
+.tb4-modern-section-head a { color: var(--tb4-modern-green); font-weight: 850; }
+.tb4-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.tb4-modern-card {
+  min-width: 0;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--tb4-modern-card);
+  border: 1px solid rgba(17,17,17,.08);
+  box-shadow: 0 12px 30px rgba(17,24,39,.045);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.tb4-modern-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--tb4-modern-shadow-soft);
+  border-color: rgba(30,107,69,.18);
+}
+.tb4-modern-card-label {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: var(--tb4-modern-green);
+  font-size: .78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.tb4-modern-card h3 { margin-bottom: 8px; font-size: 1.18rem; letter-spacing: -.025em; }
+.tb4-modern-card p { color: var(--tb4-modern-muted); line-height: 1.76; font-size: .96rem; }
+.tb4-modern-card a { display: inline-flex; margin-top: 14px; color: var(--tb4-modern-green); font-weight: 850; }
+
+.tb4-modern-feed-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  gap: 18px;
+}
+.tb4-modern-post-list { display: grid; gap: 12px; }
+.tb4-modern-post {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  padding: 14px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(17,17,17,.08);
+}
+.tb4-modern-post-thumb {
+  width: 96px; height: 72px; border-radius: 16px;
+  background: linear-gradient(135deg, rgba(30,107,69,.16), rgba(249,115,22,.10));
+  overflow: hidden;
+}
+.tb4-modern-post-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.tb4-modern-post h3 { font-size: 1rem; line-height: 1.36; margin: 0 0 5px; }
+.tb4-modern-post p { font-size: .9rem; color: var(--tb4-modern-muted); line-height: 1.55; }
+.tb4-modern-side-box {
+  padding: 20px;
+  border-radius: 24px;
+  background: #111111;
+  color: #fff;
+  box-shadow: var(--tb4-modern-shadow-soft);
+}
+.tb4-modern-side-box h3 { color: #fff; margin-bottom: 10px; }
+.tb4-modern-side-box p { color: rgba(255,255,255,.74); }
+.tb4-modern-side-box a { display: inline-flex; margin-top: 14px; color: #fff; font-weight: 850; }
+.tb4-modern-cta-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 34px);
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--tb4-modern-green), var(--tb4-modern-green-2));
+  color: #fff;
+  box-shadow: 0 22px 52px rgba(30,107,69,.22);
+}
+.tb4-modern-cta-card h2 { color: #fff; letter-spacing: -.04em; }
+.tb4-modern-cta-card p { color: rgba(255,255,255,.78); }
+.tb4-modern-cta-card a {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--tb4-modern-orange);
+  color: #fff;
+  font-weight: 900;
+}
+
+/* Existing sections get cleaner defaults if still rendered elsewhere. */
+.tb4-premium-trust-card,
+.tb4-premium-info-card,
+.tb4-premium-newsletter-card,
+.tb4-suite-card,
+.tb4-timeline-item {
+  border-radius: 24px !important;
+  border: 1px solid rgba(17,17,17,.08) !important;
+  box-shadow: 0 12px 30px rgba(17,24,39,.045) !important;
+}
+.tb4-premium-compat { display: none !important; }
+
+/* Mobile web/app feel without visual clutter */
+.tb4-mobile-app-nav {
+  display: none;
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  bottom: calc(10px + var(--tb4-safe-bottom));
+  z-index: 900;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  padding: 7px;
+  border: 1px solid rgba(17,17,17,.10);
+  border-radius: 24px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 42px rgba(17,24,39,.12);
+}
+.tb4-mobile-app-nav a {
+  min-width: 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+  border-radius: 18px;
+  color: var(--tb4-modern-muted);
+  font-size: .78rem;
+  font-weight: 850;
+}
+.tb4-mobile-app-nav a:first-child { background: var(--tb4-modern-soft-green); color: var(--tb4-modern-green); }
+
+@media (max-width: 1120px) {
+  .tb4-header-center { display: none !important; }
+  .hamburger { display: inline-flex !important; }
+  #mobileMenuOverlay.tb4-mobile-menu-overlay {
+    top: calc(var(--tb4-adminbar-h,0px) + var(--tb4-header-real-h,68px)) !important;
+    inset: calc(var(--tb4-adminbar-h,0px) + var(--tb4-header-real-h,68px)) 0 0 0 !important;
+    padding: 14px !important;
+  }
+  .tb4-mobile-nav-list a {
+    min-height: 46px;
+    border-radius: 16px;
+    padding: 12px 14px;
+  }
+}
+@media (max-width: 900px) {
+  .tb4-modern-hero-grid,
+  .tb4-modern-feed-grid,
+  .tb4-modern-cta-card { grid-template-columns: 1fr; }
+  .tb4-modern-panel { order: -1; }
+  .tb4-modern-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tb4-modern-section-head { align-items: start; flex-direction: column; }
+}
+@media (max-width: 640px) {
+  body { padding-bottom: calc(74px + var(--tb4-safe-bottom)); }
+  #site-header .header-inner { min-height: 62px; }
+  .logo-tagline { display: none !important; }
+  .tb4-modern-hero { padding-top: 28px; }
+  .tb4-modern-title { font-size: clamp(2.05rem, 12vw, 3.1rem); }
+  .tb4-modern-search { grid-template-columns: 1fr; border-radius: 22px; }
+  .tb4-modern-search input { min-height: 44px; padding: 0 12px; }
+  .tb4-modern-search button { width: 100%; min-height: 44px; }
+  .tb4-modern-grid { grid-template-columns: 1fr; }
+  .tb4-modern-post { grid-template-columns: 76px 1fr; padding: 12px; }
+  .tb4-modern-post-thumb { width: 76px; height: 64px; }
+  .tb4-modern-panel { border-radius: 26px; padding: 14px; }
+  .tb4-modern-feature-card { border-radius: 22px; }
+  .tb4-mobile-app-nav { display: grid; }
+  .header-right .btn-secondary,
+  .header-right .lang-btn { display: none !important; }
+}
+@media (max-width: 380px) {
+  .container { width: min(100% - 18px, 1180px); }
+  .tb4-modern-pills a { width: 100%; justify-content: center; }
+  .tb4-modern-mini-item { grid-template-columns: 36px 1fr; }
+  .tb4-modern-mini-num { width: 36px; height: 36px; }
+}
+@supports not (backdrop-filter: blur(10px)) {
+  #site-header,
+  .tb4-mobile-app-nav { background: #fff !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+@media (forced-colors: active) {
+  .tb4-modern-card,
+  .tb4-modern-panel,
+  .tb4-modern-post,
+  #site-header { border: 1px solid CanvasText !important; box-shadow: none !important; }
+  .tb4-modern-search button,
+  .tb4-modern-cta-card a { border: 1px solid CanvasText !important; }
+}
+@media print {
+  #site-header, .tb4-mobile-app-nav, .hamburger, .header-search { display: none !important; }
+  body { background: #fff !important; color: #000 !important; padding: 0 !important; }
+  .tb4-modern-card, .tb4-modern-panel, .tb4-modern-post, .tb4-modern-cta-card { box-shadow: none !important; border: 1px solid #bbb !important; }
+}
+
+
+
+
+/* ===== Source: css/tb4-modern-polish-v232.css ===== */
+
+/*
+ * Thinkb4do Modern Polish v2.3.2
+ * Modernizes v2.3.1, fixes sunken colors, spacing, alignment, and device/browser layout.
+ */
+:root {
+  --tb4-v232-bg: #f7f8f4;
+  --tb4-v232-surface: #ffffff;
+  --tb4-v232-surface-2: #fbfdf9;
+  --tb4-v232-ink: #101510;
+  --tb4-v232-heading: #0b1f14;
+  --tb4-v232-muted: #4f5f55;
+  --tb4-v232-soft: #6d7b72;
+  --tb4-v232-line: rgba(16, 21, 16, .12);
+  --tb4-v232-line-strong: rgba(16, 21, 16, .18);
+  --tb4-v232-green: #1E6B45;
+  --tb4-v232-green-strong: #155739;
+  --tb4-v232-green-soft: #e9f5ee;
+  --tb4-v232-orange: #f97316;
+  --tb4-v232-orange-strong: #d95f0e;
+  --tb4-v232-orange-soft: #fff2e8;
+  --tb4-v232-radius-xl: 30px;
+  --tb4-v232-radius-lg: 24px;
+  --tb4-v232-radius-md: 18px;
+  --tb4-v232-radius-sm: 12px;
+  --tb4-v232-shadow: 0 20px 60px rgba(13, 26, 18, .10);
+  --tb4-v232-shadow-soft: 0 10px 30px rgba(13, 26, 18, .07);
+  --tb4-v232-shadow-card: 0 2px 0 rgba(255,255,255,.72) inset, 0 12px 34px rgba(13,26,18,.055);
+  --tb4-v232-container: 1160px;
+}
+
+html {
+  background: var(--tb4-v232-bg) !important;
+  color-scheme: light;
+}
+
+body.thinkb4do-theme,
+body {
+  background:
+    linear-gradient(180deg, #fbfcf8 0%, var(--tb4-v232-bg) 42%, #f5f6f1 100%) !important;
+  color: var(--tb4-v232-ink) !important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { text-decoration-thickness: .08em; text-underline-offset: .18em; }
+a:hover { text-decoration: none; }
+
+.container,
+.tb4-container,
+.site-main .container {
+  width: min(calc(100% - 40px), var(--tb4-v232-container)) !important;
+  max-width: var(--tb4-v232-container) !important;
+  margin-inline: auto !important;
+}
+
+/* Keep WordPress admin bar visible and prevent theme header overlap. */
+#wpadminbar {
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 2147483647 !important;
+}
+body.admin-bar { --tb4-adminbar-h: 32px; }
+@media screen and (max-width: 782px) { body.admin-bar { --tb4-adminbar-h: 46px; } }
+
+#site-header {
+  top: var(--tb4-adminbar-h, 0px) !important;
+  background: rgba(255,255,255,.94) !important;
+  border-bottom: 1px solid var(--tb4-v232-line) !important;
+  box-shadow: 0 8px 24px rgba(13,26,18,.045) !important;
+  backdrop-filter: blur(14px) saturate(1.08) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.08) !important;
+}
+
+#site-header .header-inner {
+  min-height: 66px !important;
+  align-items: center !important;
+  gap: clamp(10px, 1.8vw, 20px) !important;
+}
+
+.logo-text,
+.site-title,
+.site-title a {
+  color: var(--tb4-v232-heading) !important;
+  letter-spacing: -.035em !important;
+}
+.logo-tagline,
+.site-description {
+  color: var(--tb4-v232-muted) !important;
+}
+
+.main-nav a,
+.main-nav > .menu-item > a,
+.tb4-mobile-nav-list a {
+  color: #26352b !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+}
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav .current-menu-item > a,
+.main-nav .current_page_item > a,
+.tb4-mobile-nav-list a:hover,
+.tb4-mobile-nav-list a:focus-visible {
+  color: var(--tb4-v232-green-strong) !important;
+  background: var(--tb4-v232-green-soft) !important;
+  border-color: rgba(30,107,69,.16) !important;
+}
+
+.header-search {
+  border-color: var(--tb4-v232-line-strong) !important;
+  box-shadow: none !important;
+  background: #fff !important;
+}
+.header-search:focus-within {
+  border-color: rgba(30,107,69,.45) !important;
+  box-shadow: 0 0 0 4px rgba(30,107,69,.10) !important;
+}
+
+.btn-primary,
+.tb4-modern-search button,
+.tb4-modern-cta-card a {
+  background: var(--tb4-v232-green) !important;
+  color: #fff !important;
+  border: 1px solid rgba(9, 65, 39, .18) !important;
+  box-shadow: 0 10px 22px rgba(30,107,69,.18) !important;
+}
+.btn-primary:hover,
+.tb4-modern-search button:hover,
+.tb4-modern-cta-card a:hover {
+  background: var(--tb4-v232-green-strong) !important;
+  color: #fff !important;
+}
+.btn-orange,
+.tb4-modern-panel-head span {
+  color: var(--tb4-v232-orange-strong) !important;
+}
+
+/* Modern front page: clearer hierarchy, less color sinking. */
+.tb4-modern-main {
+  background: transparent !important;
+}
+.tb4-modern-hero {
+  position: relative;
+  padding: clamp(42px, 6.5vw, 88px) 0 clamp(32px, 5vw, 64px) !important;
+  overflow: clip;
+}
+.tb4-modern-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px max(16px, calc((100vw - var(--tb4-v232-container)) / 2)) auto;
+  height: min(420px, 52vw);
+  border-radius: 42px;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(30,107,69,.11), transparent 34%),
+    radial-gradient(circle at 86% 14%, rgba(249,115,22,.10), transparent 30%),
+    linear-gradient(135deg, rgba(255,255,255,.78), rgba(239,248,242,.62));
+  border: 1px solid rgba(30,107,69,.10);
+  z-index: 0;
+  pointer-events: none;
+}
+.tb4-modern-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr) !important;
+  align-items: center !important;
+  gap: clamp(22px, 4vw, 54px) !important;
+}
+.tb4-modern-copy {
+  min-width: 0;
+  display: grid;
+  gap: clamp(14px, 2vw, 20px);
+}
+.tb4-modern-kicker {
+  width: fit-content;
+  display: inline-flex !important;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px !important;
+  border-radius: 999px !important;
+  color: var(--tb4-v232-green-strong) !important;
+  background: rgba(233,245,238,.92) !important;
+  border: 1px solid rgba(30,107,69,.18) !important;
+  font-size: .86rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+}
+.tb4-modern-title {
+  max-width: 800px;
+  color: var(--tb4-v232-heading) !important;
+  font-size: clamp(2.35rem, 6.2vw, 5.35rem) !important;
+  line-height: .98 !important;
+  letter-spacing: -.072em !important;
+  text-wrap: balance;
+}
+.tb4-modern-title span {
+  color: var(--tb4-v232-green) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+.tb4-modern-lead {
+  max-width: 660px;
+  color: var(--tb4-v232-muted) !important;
+  font-size: clamp(1.02rem, 1.55vw, 1.22rem) !important;
+  line-height: 1.82 !important;
+}
+
+.tb4-modern-search {
+  max-width: 720px;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 8px !important;
+  align-items: center !important;
+  min-height: 62px;
+  padding: 8px !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  border: 1px solid var(--tb4-v232-line-strong) !important;
+  box-shadow: var(--tb4-v232-shadow-soft) !important;
+}
+.tb4-modern-search:focus-within {
+  border-color: rgba(30,107,69,.46) !important;
+  box-shadow: 0 0 0 5px rgba(30,107,69,.10), var(--tb4-v232-shadow-soft) !important;
+}
+.tb4-modern-search input {
+  min-width: 0 !important;
+  min-height: 46px !important;
+  padding-inline: 18px 8px !important;
+  color: var(--tb4-v232-ink) !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+}
+.tb4-modern-search input::placeholder { color: #7b887f !important; opacity: 1 !important; }
+.tb4-modern-search button {
+  min-height: 46px !important;
+  padding-inline: 24px !important;
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+}
+
+.tb4-modern-pills { gap: 10px !important; }
+.tb4-modern-pills a,
+.tb4-modern-pill {
+  background: rgba(255,255,255,.88) !important;
+  color: #26352b !important;
+  border: 1px solid var(--tb4-v232-line) !important;
+  box-shadow: none !important;
+}
+.tb4-modern-pills a:hover,
+.tb4-modern-pill:hover {
+  color: var(--tb4-v232-green-strong) !important;
+  border-color: rgba(30,107,69,.26) !important;
+  background: #fff !important;
+}
+
+.tb4-modern-panel,
+.tb4-modern-card,
+.tb4-modern-post,
+.tb4-modern-side-box,
+.tb4-modern-cta-card {
+  transform: translateZ(0);
+}
+.tb4-modern-panel {
+  align-self: stretch;
+  border-radius: var(--tb4-v232-radius-xl) !important;
+  padding: clamp(16px, 2.2vw, 22px) !important;
+  background: rgba(255,255,255,.94) !important;
+  border: 1px solid var(--tb4-v232-line) !important;
+  box-shadow: var(--tb4-v232-shadow) !important;
+}
+.tb4-modern-feature-card {
+  background: linear-gradient(160deg, #fff 0%, #f0f8f3 100%) !important;
+  border: 1px solid rgba(30,107,69,.16) !important;
+  box-shadow: none !important;
+}
+.tb4-modern-feature-card h2,
+.tb4-modern-card h3,
+.tb4-modern-post h3,
+.tb4-modern-side-box h3,
+.tb4-modern-section-head h2,
+.tb4-modern-cta-card h2 {
+  color: var(--tb4-v232-heading) !important;
+  text-wrap: balance;
+}
+.tb4-modern-feature-card p,
+.tb4-modern-card p,
+.tb4-modern-post p,
+.tb4-modern-section-head p {
+  color: var(--tb4-v232-muted) !important;
+}
+.tb4-modern-mini-item {
+  border-color: var(--tb4-v232-line) !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+.tb4-modern-mini-num {
+  color: var(--tb4-v232-green-strong) !important;
+  background: var(--tb4-v232-green-soft) !important;
+}
+.tb4-modern-mini-item div > span,
+.tb4-modern-mini-item span:not(.tb4-modern-mini-num) {
+  color: var(--tb4-v232-soft) !important;
+}
+
+.tb4-modern-section {
+  padding: clamp(30px, 5vw, 70px) 0 !important;
+}
+.tb4-modern-section-head {
+  margin-bottom: clamp(16px, 2.5vw, 24px) !important;
+  align-items: end !important;
+}
+.tb4-modern-section-head a,
+.tb4-modern-card a {
+  color: var(--tb4-v232-green-strong) !important;
+}
+.tb4-modern-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2vw, 20px) !important;
+}
+.tb4-modern-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+  padding: clamp(18px, 2.3vw, 24px) !important;
+  border-radius: var(--tb4-v232-radius-lg) !important;
+  background: var(--tb4-v232-surface) !important;
+  border: 1px solid var(--tb4-v232-line) !important;
+  box-shadow: var(--tb4-v232-shadow-card) !important;
+}
+.tb4-modern-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(30,107,69,.22) !important;
+  box-shadow: 0 18px 42px rgba(13,26,18,.09) !important;
+}
+.tb4-modern-card a { margin-top: auto !important; padding-top: 16px; }
+.tb4-modern-card-label {
+  width: fit-content;
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: var(--tb4-v232-green-strong) !important;
+  background: var(--tb4-v232-green-soft);
+  border: 1px solid rgba(30,107,69,.13);
+}
+
+.tb4-modern-feed-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr) !important;
+  gap: clamp(16px, 2.6vw, 26px) !important;
+}
+.tb4-modern-post-list { gap: 14px !important; }
+.tb4-modern-post {
+  grid-template-columns: 108px minmax(0, 1fr) !important;
+  padding: 14px !important;
+  border-radius: var(--tb4-v232-radius-lg) !important;
+  background: #fff !important;
+  border: 1px solid var(--tb4-v232-line) !important;
+  box-shadow: 0 8px 22px rgba(13,26,18,.045) !important;
+}
+.tb4-modern-post:hover { border-color: rgba(30,107,69,.22) !important; }
+.tb4-modern-post-thumb {
+  width: 108px !important;
+  height: 82px !important;
+  border-radius: var(--tb4-v232-radius-md) !important;
+  background: linear-gradient(135deg, rgba(30,107,69,.18), rgba(249,115,22,.12)) !important;
+}
+.tb4-modern-post h3 a { color: var(--tb4-v232-heading) !important; }
+.tb4-modern-post h3 a:hover { color: var(--tb4-v232-green-strong) !important; }
+
+.tb4-modern-side-box {
+  background: #0f1f16 !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  box-shadow: var(--tb4-v232-shadow) !important;
+  border-radius: var(--tb4-v232-radius-lg) !important;
+}
+.tb4-modern-side-box h3 { color: #fff !important; }
+.tb4-modern-side-box p { color: rgba(255,255,255,.80) !important; }
+.tb4-modern-side-box a { color: #fff !important; }
+
+.tb4-modern-cta-card {
+  background: linear-gradient(135deg, #155739 0%, #1E6B45 58%, #287a50 100%) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  box-shadow: 0 20px 54px rgba(30,107,69,.22) !important;
+  border-radius: var(--tb4-v232-radius-xl) !important;
+}
+.tb4-modern-cta-card h2 { color: #fff !important; }
+.tb4-modern-cta-card p { color: rgba(255,255,255,.82) !important; }
+.tb4-modern-cta-card a {
+  background: #fff !important;
+  color: var(--tb4-v232-green-strong) !important;
+  box-shadow: none !important;
+}
+.tb4-modern-cta-card a:hover {
+  background: var(--tb4-v232-orange) !important;
+  color: #fff !important;
+}
+
+/* General content positions and color contrast in inner templates. */
+.entry-content,
+.page-content,
+.archive-description,
+.site-footer,
+.widget {
+  color: var(--tb4-v232-ink) !important;
+}
+.entry-content p,
+.page-content p,
+.widget p,
+.site-footer p,
+.site-footer li,
+.site-footer a {
+  color: #4c5a51 !important;
+}
+.entry-title,
+.page-title,
+.widget-title {
+  color: var(--tb4-v232-heading) !important;
+}
+.site-footer {
+  background: #0f1f16 !important;
+  color: #fff !important;
+}
+.site-footer a,
+.site-footer .widget-title { color: #fff !important; }
+
+/* Mobile bottom navigation: keep it modern but not visually heavy. */
+.tb4-mobile-app-nav {
+  left: max(10px, env(safe-area-inset-left, 0px)) !important;
+  right: max(10px, env(safe-area-inset-right, 0px)) !important;
+  bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+  border-color: var(--tb4-v232-line-strong) !important;
+  background: rgba(255,255,255,.96) !important;
+  box-shadow: 0 16px 38px rgba(13,26,18,.13) !important;
+}
+.tb4-mobile-app-nav a {
+  color: #526058 !important;
+}
+.tb4-mobile-app-nav a:first-child,
+.tb4-mobile-app-nav a:hover,
+.tb4-mobile-app-nav a:focus-visible {
+  background: var(--tb4-v232-green-soft) !important;
+  color: var(--tb4-v232-green-strong) !important;
+}
+
+/* Browser and device layout hardening. */
+img, video, iframe, embed, object { max-width: 100% !important; height: auto; }
+iframe { aspect-ratio: 16/9; }
+pre, code, .wp-block-code, .wp-block-preformatted {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre;
+}
+.wp-block-table,
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+input, textarea, select, button { font: inherit; }
+button, a, input, textarea, select { touch-action: manipulation; }
+:focus-visible {
+  outline: 3px solid rgba(249,115,22,.55) !important;
+  outline-offset: 3px !important;
+}
+
+@media (min-width: 1280px) {
+  .tb4-modern-hero-grid { grid-template-columns: minmax(0, 1.12fr) minmax(360px, .68fr) !important; }
+  .tb4-modern-panel { max-width: 430px; justify-self: end; }
+}
+
+@media (max-width: 1120px) {
+  #mobileMenuOverlay.tb4-mobile-menu-overlay {
+    top: calc(var(--tb4-adminbar-h, 0px) + var(--tb4-header-real-h, 66px)) !important;
+    max-height: calc(100svh - var(--tb4-adminbar-h, 0px) - var(--tb4-header-real-h, 66px)) !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 960px) {
+  .tb4-modern-hero-grid,
+  .tb4-modern-feed-grid,
+  .tb4-modern-cta-card {
+    grid-template-columns: 1fr !important;
+  }
+  .tb4-modern-panel {
+    order: initial !important;
+    max-width: none !important;
+  }
+  .tb4-modern-title { max-width: 760px; }
+  .tb4-modern-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .tb4-modern-section-head {
+    align-items: start !important;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .container,
+  .tb4-container,
+  .site-main .container {
+    width: min(calc(100% - 24px), var(--tb4-v232-container)) !important;
+  }
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important; }
+  #site-header .header-inner { min-height: 62px !important; }
+  .tb4-modern-hero {
+    padding-top: 30px !important;
+    padding-bottom: 28px !important;
+  }
+  .tb4-modern-hero::before {
+    inset: 10px 10px auto !important;
+    height: 460px;
+    border-radius: 28px;
+  }
+  .tb4-modern-title {
+    font-size: clamp(2.16rem, 13vw, 3.45rem) !important;
+    line-height: 1.03 !important;
+    letter-spacing: -.064em !important;
+  }
+  .tb4-modern-lead { font-size: 1rem !important; line-height: 1.78 !important; }
+  .tb4-modern-search {
+    grid-template-columns: 1fr !important;
+    border-radius: 24px !important;
+    min-height: 0 !important;
+  }
+  .tb4-modern-search input {
+    min-height: 48px !important;
+    padding-inline: 12px !important;
+  }
+  .tb4-modern-search button { width: 100% !important; }
+  .tb4-modern-pills a,
+  .tb4-modern-pill { flex: 1 1 calc(50% - 8px); justify-content: center; }
+  .tb4-modern-grid { grid-template-columns: 1fr !important; }
+  .tb4-modern-card { min-height: 0; }
+  .tb4-modern-post {
+    grid-template-columns: 86px minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+  .tb4-modern-post-thumb {
+    width: 86px !important;
+    height: 72px !important;
+  }
+  .tb4-modern-cta-card { text-align: left; }
+  .tb4-modern-cta-card a { justify-content: center; width: 100%; }
+}
+
+@media (max-width: 390px) {
+  .container,
+  .tb4-container,
+  .site-main .container { width: min(calc(100% - 18px), var(--tb4-v232-container)) !important; }
+  .tb4-modern-pills a,
+  .tb4-modern-pill { flex-basis: 100%; }
+  .tb4-modern-post {
+    grid-template-columns: 1fr !important;
+  }
+  .tb4-modern-post-thumb {
+    width: 100% !important;
+    height: 150px !important;
+  }
+  .tb4-modern-mini-item { grid-template-columns: 38px minmax(0,1fr) !important; }
+}
+
+@supports not (overflow: clip) {
+  body { overflow-x: hidden !important; }
+  .tb4-modern-hero { overflow: hidden !important; }
+}
+@supports not (height: 100svh) {
+  #mobileMenuOverlay.tb4-mobile-menu-overlay { max-height: calc(100vh - var(--tb4-adminbar-h, 0px) - var(--tb4-header-real-h, 66px)) !important; }
+}
+@supports not (backdrop-filter: blur(10px)) {
+  #site-header,
+  .tb4-mobile-app-nav { background: #fff !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tb4-modern-card:hover { transform: none !important; }
+}
+
+@media (forced-colors: active) {
+  .tb4-modern-hero::before { display: none; }
+  .tb4-modern-card,
+  .tb4-modern-panel,
+  .tb4-modern-post,
+  .tb4-modern-search,
+  #site-header { border: 1px solid CanvasText !important; box-shadow: none !important; }
+}
+
+
+
+
+/* ===== Source: css/tb4-footer-quiet-v233.css ===== */
+
+/*
+ * Thinkb4do Footer Quiet v2.3.3
+ * Purpose: make the footer useful but visually quieter, lighter and less dominant.
+ */
+
+:root {
+  --tb4-footer-quiet-bg: #f7faf8;
+  --tb4-footer-quiet-border: #e3ebe6;
+  --tb4-footer-quiet-text: #536158;
+  --tb4-footer-quiet-heading: #26342b;
+  --tb4-footer-quiet-muted: #718078;
+  --tb4-footer-quiet-link: #355241;
+  --tb4-footer-quiet-link-hover: #1E6B45;
+}
+
+#site-footer.site-footer,
+.site-footer,
+footer#site-footer {
+  margin-top: clamp(32px, 5vw, 72px) !important;
+  padding: clamp(28px, 4vw, 46px) 0 max(20px, env(safe-area-inset-bottom, 0px)) !important;
+  background: var(--tb4-footer-quiet-bg) !important;
+  color: var(--tb4-footer-quiet-text) !important;
+  border-top: 1px solid var(--tb4-footer-quiet-border) !important;
+  box-shadow: none !important;
+}
+
+#site-footer .container {
+  max-width: min(1120px, calc(100vw - 32px)) !important;
+}
+
+#site-footer .footer-top {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 1.2fr) repeat(3, minmax(140px, .8fr)) !important;
+  gap: clamp(18px, 3vw, 34px) !important;
+  align-items: start !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+#site-footer .footer-brand,
+#site-footer .footer-col {
+  min-width: 0 !important;
+}
+
+#site-footer .footer-brand p,
+#site-footer .footer-col p,
+#site-footer .tb4-footer-note,
+#site-footer .footer-bottom p {
+  color: var(--tb4-footer-quiet-muted) !important;
+  font-size: .86rem !important;
+  line-height: 1.75 !important;
+  margin: 0 0 12px !important;
+  max-width: 46ch !important;
+}
+
+#site-footer .tb4-footer-note-small {
+  font-size: .75rem !important;
+  opacity: .78 !important;
+  margin-top: 8px !important;
+}
+
+#site-footer h5,
+#site-footer .widget-title {
+  color: var(--tb4-footer-quiet-heading) !important;
+  font-size: .88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  margin: 0 0 10px !important;
+}
+
+#site-footer a,
+#site-footer .footer-links a,
+#site-footer .footer-bottom-links a {
+  color: var(--tb4-footer-quiet-link) !important;
+  text-decoration: none !important;
+  font-size: .84rem !important;
+  line-height: 1.65 !important;
+  opacity: .86 !important;
+  transition: color .16s ease, opacity .16s ease, background .16s ease !important;
+}
+
+#site-footer a:hover,
+#site-footer a:focus-visible,
+#site-footer .footer-links a:hover,
+#site-footer .footer-bottom-links a:hover {
+  color: var(--tb4-footer-quiet-link-hover) !important;
+  opacity: 1 !important;
+}
+
+#site-footer a:focus-visible {
+  outline: 2px solid rgba(30,107,69,.28) !important;
+  outline-offset: 3px !important;
+  border-radius: 8px !important;
+}
+
+#site-footer .footer-links {
+  display: grid !important;
+  gap: 5px !important;
+}
+
+#site-footer .footer-socials {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+}
+
+#site-footer .footer-social {
+  width: 34px !important;
+  height: 34px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--tb4-footer-quiet-border) !important;
+  color: var(--tb4-footer-quiet-link) !important;
+  box-shadow: none !important;
+}
+
+#site-footer .footer-social i {
+  font-size: 1rem !important;
+  color: currentColor !important;
+}
+
+#site-footer .footer-newsletter {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#site-footer .footer-newsletter input {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  height: 40px !important;
+  border: 1px solid var(--tb4-footer-quiet-border) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: var(--tb4-footer-quiet-heading) !important;
+  padding: 0 12px !important;
+  box-shadow: none !important;
+}
+
+#site-footer .footer-newsletter input::placeholder {
+  color: #8a978f !important;
+}
+
+#site-footer .footer-newsletter button {
+  flex: 0 0 auto !important;
+  height: 40px !important;
+  min-width: 76px !important;
+  border: 1px solid var(--tb4-footer-quiet-border) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: var(--tb4-footer-quiet-link) !important;
+  font-size: .82rem !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+#site-footer .footer-newsletter button:hover,
+#site-footer .footer-newsletter button:focus-visible {
+  border-color: rgba(30,107,69,.35) !important;
+  color: var(--tb4-footer-quiet-link-hover) !important;
+  background: #fdfefd !important;
+}
+
+#site-footer .tb4-footer-compat,
+#site-footer .tb4-dbd-block,
+#site-footer [class*="dbd"],
+#site-footer [class*="compat"] {
+  background: transparent !important;
+  border: 1px solid var(--tb4-footer-quiet-border) !important;
+  color: var(--tb4-footer-quiet-muted) !important;
+  box-shadow: none !important;
+  opacity: .78 !important;
+}
+
+#site-footer .footer-bottom {
+  margin-top: clamp(20px, 3vw, 30px) !important;
+  padding-top: 16px !important;
+  border-top: 1px solid var(--tb4-footer-quiet-border) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  color: var(--tb4-footer-quiet-muted) !important;
+}
+
+#site-footer .footer-bottom p {
+  margin: 0 !important;
+  font-size: .78rem !important;
+}
+
+#site-footer .footer-bottom-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-end !important;
+  gap: 10px 16px !important;
+}
+
+#site-footer .footer-bottom-links a {
+  font-size: .78rem !important;
+  color: var(--tb4-footer-quiet-muted) !important;
+}
+
+@media (max-width: 920px) {
+  #site-footer .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  #site-footer .footer-brand {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #site-footer.site-footer,
+  .site-footer,
+  footer#site-footer {
+    margin-top: 30px !important;
+    padding-top: 24px !important;
+  }
+  #site-footer .container {
+    max-width: min(100% - 24px, 1120px) !important;
+  }
+  #site-footer .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  #site-footer .footer-brand p,
+  #site-footer .footer-col p,
+  #site-footer .tb4-footer-note {
+    max-width: none !important;
+  }
+  #site-footer .footer-newsletter {
+    flex-direction: column !important;
+  }
+  #site-footer .footer-newsletter button,
+  #site-footer .footer-newsletter input {
+    width: 100% !important;
+  }
+  #site-footer .footer-bottom {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+  #site-footer .footer-bottom-links {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #site-footer a,
+  #site-footer button { transition: none !important; }
+}
+
+
+
+
+/* ===== Source: css/tb4-logo-visibility-v234.css ===== */
+
+/*
+ * Thinkb4do Logo Visibility v2.3.4
+ * Purpose: make the logo clearer and support automatic light/dark logo selection.
+ */
+
+:root {
+  --tb4-logo-plate-bg: rgba(255, 255, 255, .94);
+  --tb4-logo-plate-border: rgba(30, 107, 69, .16);
+  --tb4-logo-plate-shadow: 0 8px 22px rgba(15, 23, 42, .08);
+  --tb4-logo-plate-size: clamp(42px, 4.2vw, 52px);
+}
+
+.site-logo {
+  position: relative !important;
+  gap: 11px !important;
+  isolation: isolate !important;
+}
+
+.site-logo .site-logo-img-wrap,
+.site-logo .logo-icon {
+  width: var(--tb4-logo-plate-size) !important;
+  height: var(--tb4-logo-plate-size) !important;
+  min-width: var(--tb4-logo-plate-size) !important;
+  border-radius: 15px !important;
+  background: var(--tb4-logo-plate-bg) !important;
+  border: 1px solid var(--tb4-logo-plate-border) !important;
+  box-shadow: var(--tb4-logo-plate-shadow) !important;
+  padding: 5px !important;
+  overflow: hidden !important;
+}
+
+.site-logo .logo-icon {
+  background: linear-gradient(135deg, #1E6B45, #154d31) !important;
+  color: #fff !important;
+  padding: 0 !important;
+}
+
+.site-logo .site-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  transform: translateZ(0) !important;
+  filter: saturate(1.08) contrast(1.08) drop-shadow(0 1px 1px rgba(0,0,0,.08)) !important;
+}
+
+.site-logo .site-logo-img--light {
+  display: none !important;
+}
+
+.site-logo--has-light-logo.site-logo--mode-light .site-logo-img--dark,
+.site-logo--has-light-logo.site-logo--mode-auto.tb4-logo-bg-dark .site-logo-img--dark {
+  display: none !important;
+}
+
+.site-logo--has-light-logo.site-logo--mode-light .site-logo-img--light,
+.site-logo--has-light-logo.site-logo--mode-auto.tb4-logo-bg-dark .site-logo-img--light {
+  display: block !important;
+}
+
+.site-logo--mode-dark .site-logo-img--dark,
+.site-logo--mode-auto.tb4-logo-bg-light .site-logo-img--dark,
+.site-logo--mode-auto.site-logo--default-dark:not(.tb4-logo-bg-dark):not(.tb4-logo-bg-light) .site-logo-img--dark {
+  display: block !important;
+}
+
+.site-logo.tb4-logo-bg-dark .site-logo-img-wrap,
+.site-logo--mode-light .site-logo-img-wrap {
+  background: rgba(30, 107, 69, .18) !important;
+  border-color: rgba(255, 255, 255, .20) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .16) !important;
+}
+
+.site-logo.tb4-logo-bg-dark .logo-text,
+.site-logo--mode-light .logo-text {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.22) !important;
+}
+
+.site-logo.tb4-logo-bg-dark .logo-tagline,
+.site-logo--mode-light .logo-tagline {
+  color: rgba(255,255,255,.78) !important;
+}
+
+.site-logo.tb4-logo-bg-light .logo-text,
+.site-logo--mode-dark .logo-text,
+#site-header .site-logo .logo-text,
+#site-footer .site-logo .logo-text {
+  color: #102017 !important;
+  text-shadow: none !important;
+}
+
+.site-logo.tb4-logo-bg-light .logo-tagline,
+.site-logo--mode-dark .logo-tagline,
+#site-header .site-logo .logo-tagline,
+#site-footer .site-logo .logo-tagline {
+  color: #66736b !important;
+  text-shadow: none !important;
+}
+
+#site-header .site-logo.site-logo--header {
+  max-width: min(310px, 58vw) !important;
+}
+
+#site-header .site-logo.site-logo--header .logo-text {
+  font-size: clamp(1.08rem, 1.8vw, 1.34rem) !important;
+  font-weight: 850 !important;
+  letter-spacing: -.032em !important;
+  line-height: 1.05 !important;
+}
+
+#site-header .site-logo.site-logo--header .logo-tagline {
+  font-size: clamp(.64rem, .88vw, .74rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.15 !important;
+}
+
+#site-footer .site-logo.site-logo--footer {
+  max-width: min(300px, 100%) !important;
+  margin-bottom: 8px !important;
+}
+
+#site-footer .site-logo.site-logo--footer .site-logo-img-wrap {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.86) !important;
+  border-color: rgba(30,107,69,.14) !important;
+  box-shadow: none !important;
+}
+
+#site-footer .site-logo.site-logo--footer .logo-text {
+  color: #26342b !important;
+  font-size: 1.02rem !important;
+  font-weight: 800 !important;
+}
+
+#site-footer .site-logo.site-logo--footer .logo-tagline {
+  color: #718078 !important;
+}
+
+@media (max-width: 760px) {
+  :root { --tb4-logo-plate-size: 42px; }
+  #site-header .site-logo.site-logo--header { max-width: calc(100vw - 150px) !important; gap: 9px !important; }
+  #site-header .site-logo.site-logo--header .logo-text { font-size: 1.02rem !important; max-width: 38vw !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+  #site-header .site-logo.site-logo--header .logo-tagline { display: none !important; }
+}
+
+@media (max-width: 420px) {
+  :root { --tb4-logo-plate-size: 38px; }
+  #site-header .site-logo.site-logo--header { max-width: calc(100vw - 126px) !important; }
+  #site-header .site-logo.site-logo--header .logo-text { max-width: 34vw !important; font-size: .96rem !important; }
+}
+
+@media (forced-colors: active) {
+  .site-logo .site-logo-img-wrap,
+  .site-logo .logo-icon {
+    border: 1px solid CanvasText !important;
+    box-shadow: none !important;
+    background: Canvas !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-community-footer-hidden-v236.css ===== */
+
+/**
+ * Thinkb4do Theme Core v2.3.6 — Community Footer Hidden
+ * Purpose: remove public footer space only on community contexts while preserving wp_footer().
+ */
+body.tb4-community-footer-hidden #site-footer {
+  display: none !important;
+}
+
+body.tb4-community-footer-hidden #main-content,
+body.tb4-community-footer-hidden .tb4-page-main {
+  min-height: calc(100svh - var(--header-h, 68px) - var(--tb4-sticky-top, 0px));
+}
+
+body.tb4-community-footer-hidden .tb4-page-main {
+  padding-bottom: clamp(24px, 5vw, 56px) !important;
+}
+
+@supports not (height: 100svh) {
+  body.tb4-community-footer-hidden #main-content,
+  body.tb4-community-footer-hidden .tb4-page-main {
+    min-height: calc(100vh - var(--header-h, 68px) - var(--tb4-sticky-top, 0px));
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-app-grid-menu-v238.css ===== */
+
+/* Thinkb4do v2.3.7 — Minimal center menu + visible 9-square app/product menu */
+:root {
+  --tb4-app-grid-panel-w: 390px;
+  --tb4-app-grid-top-gap: 10px;
+}
+
+body.thinkb4do-theme #site-header .tb4-header-center {
+  justify-content: center !important;
+  gap: clamp(10px, 1.4vw, 18px) !important;
+}
+
+body.thinkb4do-theme #site-header .tb4-header-center .main-nav {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 3px !important;
+  border: 1px solid rgba(17, 24, 39, .08) !important;
+  background: rgba(255, 255, 255, .86) !important;
+  border-radius: 999px !important;
+}
+
+body.thinkb4do-theme #site-header .tb4-header-center .main-nav a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 36px !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  color: #334155 !important;
+  font-size: .93rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -.01em !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  background: transparent !important;
+}
+
+body.thinkb4do-theme #site-header .tb4-header-center .main-nav a:hover,
+body.thinkb4do-theme #site-header .tb4-header-center .main-nav a:focus-visible {
+  color: #1E6B45 !important;
+  background: rgba(30, 107, 69, .08) !important;
+  outline: none !important;
+}
+
+body.thinkb4do-theme #site-header .tb4-header-center .main-nav a.active,
+body.thinkb4do-theme #site-header .tb4-header-center .main-nav a[aria-current="page"] {
+  color: #fff !important;
+  background: #1E6B45 !important;
+  box-shadow: 0 7px 18px rgba(30, 107, 69, .18) !important;
+}
+
+body.thinkb4do-theme #site-header .tb4-desktop-header-search.header-search {
+  width: clamp(210px, 24vw, 340px) !important;
+  max-width: 34vw !important;
+  border-color: rgba(17, 24, 39, .10) !important;
+  background: #fff !important;
+}
+
+body.thinkb4do-theme .tb4-app-grid-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+}
+
+body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid rgba(17, 24, 39, .10) !important;
+  background: #fff !important;
+  border-radius: 13px !important;
+  color: #111827 !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, .06) !important;
+}
+
+body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger:hover,
+body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger:focus-visible,
+body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger.is-open {
+  border-color: rgba(30, 107, 69, .28) !important;
+  background: rgba(30, 107, 69, .07) !important;
+  outline: none !important;
+}
+
+body.thinkb4do-theme .tb4-nine-grid-icon {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  grid-template-rows: repeat(3, 4px);
+  gap: 3px;
+  align-content: center;
+  justify-content: center;
+}
+
+body.thinkb4do-theme .tb4-nine-grid-icon span {
+  width: 4px;
+  height: 4px;
+  border-radius: 1.5px;
+  background: currentColor;
+  display: block;
+}
+
+body.thinkb4do-theme .tb4-app-grid-panel {
+  position: fixed;
+  top: calc(var(--tb4-sticky-top, 0px) + var(--tb4-header-real-h, var(--header-h, 64px)) + var(--tb4-app-grid-top-gap));
+  right: max(16px, calc((100vw - min(1180px, calc(100vw - 32px))) / 2));
+  width: min(var(--tb4-app-grid-panel-w), calc(100vw - 24px));
+  z-index: 1006;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, .10);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, .18);
+  overflow: hidden;
+  color: #111827;
+}
+
+body.thinkb4do-theme .tb4-app-grid-panel[hidden] {
+  display: none !important;
+}
+
+body.thinkb4do-theme .tb4-app-grid-panel.is-open {
+  display: block;
+  animation: tb4AppGridIn .16s ease-out both;
+}
+
+@keyframes tb4AppGridIn {
+  from { opacity: 0; transform: translateY(-6px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+body.thinkb4do-theme .tb4-app-grid-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid rgba(17, 24, 39, .07);
+}
+
+body.thinkb4do-theme .tb4-app-grid-head strong {
+  font-size: 1rem;
+  letter-spacing: -.02em;
+}
+
+body.thinkb4do-theme .tb4-app-grid-close {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body.thinkb4do-theme .tb4-app-grid-close:hover,
+body.thinkb4do-theme .tb4-app-grid-close:focus-visible {
+  background: #e5e7eb;
+  outline: none;
+}
+
+body.thinkb4do-theme .tb4-app-grid-content {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  max-height: min(70vh, 560px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.thinkb4do-theme .tb4-app-grid-section h2 {
+  margin: 0 0 8px;
+  color: #64748b;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+body.thinkb4do-theme .tb4-app-grid-items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+body.thinkb4do-theme .tb4-app-grid-item {
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid rgba(17, 24, 39, .08);
+  border-radius: 16px;
+  background: #f8faf9;
+  text-decoration: none;
+  color: #111827;
+}
+
+body.thinkb4do-theme .tb4-app-grid-item:hover,
+body.thinkb4do-theme .tb4-app-grid-item:focus-visible {
+  border-color: rgba(30, 107, 69, .26);
+  background: rgba(30, 107, 69, .06);
+  outline: none;
+}
+
+body.thinkb4do-theme .tb4-app-grid-item-title {
+  font-size: .92rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+body.thinkb4do-theme .tb4-app-grid-item small {
+  color: #64748b;
+  font-size: .76rem;
+  line-height: 1.35;
+}
+
+body.thinkb4do-theme .tb4-mobile-nav-list--minimal a {
+  min-height: 48px !important;
+  border-radius: 14px !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 1180px) {
+  body.thinkb4do-theme #site-header .tb4-desktop-header-search.header-search {
+    width: clamp(180px, 22vw, 260px) !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  body.thinkb4do-theme #site-header .tb4-header-center .main-nav a {
+    padding-inline: 11px !important;
+    font-size: .9rem !important;
+  }
+  body.thinkb4do-theme #site-header .tb4-desktop-header-search.header-search {
+    max-width: 240px !important;
+  }
+}
+
+@media (max-width: 920px) {
+  body.thinkb4do-theme #site-header .tb4-header-center .main-nav,
+  body.thinkb4do-theme #site-header .tb4-desktop-header-search.header-search {
+    display: none !important;
+  }
+}
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme .tb4-app-grid-panel {
+    top: calc(var(--tb4-sticky-top, 46px) + var(--tb4-header-real-h, 64px) + 8px);
+    right: 12px;
+    left: 12px;
+    width: auto;
+    border-radius: 20px;
+  }
+
+  body.thinkb4do-theme .tb4-app-grid-items {
+    grid-template-columns: 1fr;
+  }
+
+  body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body.thinkb4do-theme .tb4-app-grid-panel {
+    left: 8px;
+    right: 8px;
+  }
+
+  body.thinkb4do-theme .tb4-app-grid-content {
+    padding: 12px;
+  }
+
+  body.thinkb4do-theme .tb4-app-grid-head {
+    padding: 14px 14px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.thinkb4do-theme .tb4-app-grid-panel.is-open {
+    animation: none;
+  }
+}
+
+/* v2.3.8 — App Grid Popup Anchor Fix
+   Purpose: the 9-square menu panel should appear close to the 9-square trigger,
+   not drift toward the page/container center when notification/user controls are present. */
+:root {
+  --tb4-app-grid-panel-left: auto;
+  --tb4-app-grid-panel-top: calc(var(--tb4-sticky-top, 0px) + var(--tb4-header-real-h, var(--header-h, 64px)) + 8px);
+}
+
+body.thinkb4do-theme .tb4-app-grid-panel {
+  top: var(--tb4-app-grid-panel-top) !important;
+  left: var(--tb4-app-grid-panel-left) !important;
+  right: auto !important;
+  margin: 0 !important;
+  transform-origin: top right !important;
+}
+
+body.thinkb4do-theme .tb4-app-grid-wrap {
+  position: relative !important;
+}
+
+body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger {
+  position: relative !important;
+}
+
+body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger.is-open::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 10px;
+  height: 10px;
+  transform: translateX(-50%) rotate(45deg);
+  background: #fff;
+  border-left: 1px solid rgba(17, 24, 39, .10);
+  border-top: 1px solid rgba(17, 24, 39, .10);
+  z-index: 1008;
+  pointer-events: none;
+}
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme .tb4-app-grid-panel {
+    left: max(10px, env(safe-area-inset-left)) !important;
+    right: max(10px, env(safe-area-inset-right)) !important;
+    width: auto !important;
+    top: var(--tb4-app-grid-panel-top) !important;
+  }
+
+  body.thinkb4do-theme .header-icon-btn.tb4-app-grid-trigger.is-open::after {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  body.thinkb4do-theme .tb4-app-grid-panel {
+    left: max(8px, env(safe-area-inset-left)) !important;
+    right: max(8px, env(safe-area-inset-right)) !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-mobile-instagram-nav-v239.css ===== */
+
+/* Thinkb4do v2.3.9 — Mobile icon bar inspired by Instagram, with direct Community link */
+body.thinkb4do-theme {
+  --tb4-mobile-bottom-nav-h: 76px;
+}
+
+.tb4-mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme {
+    padding-bottom: calc(var(--tb4-mobile-bottom-nav-h) + env(safe-area-inset-bottom, 0px) + 14px);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+    z-index: 1008;
+    display: block;
+    pointer-events: none;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__inner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    align-items: center;
+    min-height: var(--tb4-mobile-bottom-nav-h);
+    padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+    border: 1px solid rgba(17, 24, 39, .08);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, .16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    pointer-events: auto;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    min-height: 54px;
+    padding: 6px 2px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 18px;
+    color: #4b5563;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    transition: transform .14s ease, background-color .14s ease, color .14s ease;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item:active {
+    transform: scale(.97);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item:hover,
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item:focus-visible {
+    color: var(--tb4-green);
+    background: rgba(30, 107, 69, .08);
+    outline: none;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item.is-active {
+    color: var(--tb4-green);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item.is-active .tb4-mobile-bottom-nav__icon {
+    background: rgba(30, 107, 69, .10);
+    box-shadow: inset 0 0 0 1px rgba(30, 107, 69, .08);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__icon {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: currentColor;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__label {
+    font-size: .69rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community .tb4-mobile-bottom-nav__icon,
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community.is-active .tb4-mobile-bottom-nav__icon {
+    color: var(--tb4-orange);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community.is-active {
+    color: var(--tb4-orange);
+  }
+
+  body.thinkb4do-theme .tb4-mobile-bottom-nav__item--community.is-active .tb4-mobile-bottom-nav__icon {
+    background: rgba(249, 115, 22, .10);
+    box-shadow: inset 0 0 0 1px rgba(249, 115, 22, .08);
+  }
+
+  body.thinkb4do-theme #site-footer {
+    margin-bottom: calc(var(--tb4-mobile-bottom-nav-h) + env(safe-area-inset-bottom, 0px) + 14px);
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-community-clean-shell-v240.css ===== */
+
+/* Thinkb4do v2.4.10 — Community clean shell adjusted
+   Goal: keep community pages focused while keeping Discovery / ชุมชน / ผลิตภัณฑ์ visible.
+   Footer can stay hidden on community pages, but header/app-grid/mobile menu must remain available. */
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 0 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    background: linear-gradient(to top, rgba(255,255,255,.98), rgba(255,255,255,.82), rgba(255,255,255,0)) !important;
+  }
+
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__inner {
+    min-height: 68px !important;
+    border-radius: 22px !important;
+  }
+}
+
+body.thinkb4do-theme.tb4-is-community-page #site-footer,
+body.thinkb4do-theme.tb4-community-clean-shell #site-footer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body.thinkb4do-theme.tb4-is-community-page #site-header .main-nav a[href*="/community"],
+body.thinkb4do-theme.tb4-is-community-page #site-header .main-nav a[href*="thinkb4do-community"] {
+  display: inline-flex !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.thinkb4do-theme.tb4-is-community-page .tb4-app-grid-panel a[href*="/community"],
+body.thinkb4do-theme.tb4-is-community-page .tb4-app-grid-panel a[href*="thinkb4do-community"],
+body.thinkb4do-theme.tb4-is-community-page .tb4-mobile-bottom-nav__item--community {
+  display: flex !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 782px) {
+  body.thinkb4do-theme.tb4-is-community-page,
+  body.thinkb4do-theme.tb4-community-clean-shell {
+    padding-bottom: calc(var(--tb4-mobile-bottom-nav-h, 76px) + env(safe-area-inset-bottom, 0px) + 14px) !important;
+  }
+
+  body.thinkb4do-theme.tb4-is-community-page .tb4-mobile-bottom-nav,
+  body.thinkb4do-theme.tb4-community-clean-shell .tb4-mobile-bottom-nav {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    padding: 0 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    background: linear-gradient(to top, rgba(255,255,255,.98), rgba(255,255,255,.82), rgba(255,255,255,0)) !important;
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: none !important;
+  }
+
+  body.thinkb4do-theme.tb4-is-community-page .tb4-mobile-bottom-nav__inner,
+  body.thinkb4do-theme.tb4-community-clean-shell .tb4-mobile-bottom-nav__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    max-width: 430px;
+    margin-inline: auto;
+    pointer-events: auto !important;
+  }
+
+  body.thinkb4do-theme.tb4-is-community-page #main-content,
+  body.thinkb4do-theme.tb4-community-clean-shell #main-content {
+    padding-bottom: calc(var(--tb4-mobile-bottom-nav-h, 76px) + env(safe-area-inset-bottom, 0px) + 14px) !important;
+  }
+}
+
+
+
+
+/* ===== Source: css/tb4-mobile-bottom-nav-simple-v241.css ===== */
+
+/* Thinkb4do v2.4.1 — Simplified mobile bottom nav: remove Search and Menu */
+@media (max-width: 782px) {
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    max-width: 430px;
+    margin-inline: auto;
+  }
+
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__item--search,
+  body.thinkb4do-theme:not(.tb4-is-community-page) .tb4-mobile-bottom-nav__item--menu {
+    display: none !important;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   Thinkb4do Performance Lite v2.4.2
+   เป้าหมาย: ลดความหน่วง ลด repaint/reflow และทำให้เลื่อนมือถือสมูทขึ้น
+   ========================================================= */
+:root {
+  --tb4-perf-transform: translate3d(0,0,0);
+}
+
+html.tb4-perf-ready {
+  text-rendering: optimizeLegibility;
+}
+
+body.thinkb4do-theme {
+  overflow-x: clip;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  image-rendering: auto;
+}
+
+.tb4-card,
+.card,
+.post-card,
+.product-card,
+.widget,
+.site-footer,
+.entry-content > section,
+.tb4-section,
+.tb4-feed-card,
+.tb4-community-card,
+.tb4-sidebar-card,
+article.post,
+article.page {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 520px;
+}
+
+.site-header,
+#site-header,
+.tb4-mobile-app-nav,
+.tb4-app-grid-panel,
+.tb4-floating-video,
+.tb4-video-mini-player,
+.tb4-comment-popup,
+.tb4-modal,
+.tb4-popup {
+  transform: var(--tb4-perf-transform);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout paint style;
+}
+
+.tb4-mobile-app-nav,
+.tb4-app-grid-panel,
+.tb4-floating-video,
+.tb4-video-mini-player {
+  will-change: transform, opacity;
+}
+
+.tb4-feed,
+.site-main,
+.content-area,
+.tb4-community-shell,
+.tb4-community-main,
+.tb4-main-column {
+  contain: layout style;
+}
+
+html.tb4-is-scrolling .tb4-card,
+html.tb4-is-scrolling .post-card,
+html.tb4-is-scrolling .product-card,
+html.tb4-is-scrolling .widget,
+html.tb4-is-scrolling .tb4-feed-card,
+html.tb4-is-scrolling .tb4-community-card {
+  transition-duration: 80ms !important;
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,.08)) !important;
+}
+
+@media (max-width: 768px) {
+  html { scroll-behavior: auto; }
+  .site-main,
+  .content-area,
+  .tb4-community-shell,
+  .tb4-feed,
+  .tb4-main-column {
+    contain: layout style;
+  }
+  .tb4-card,
+  .post-card,
+  .product-card,
+  .widget,
+  .tb4-feed-card,
+  .tb4-community-card,
+  article.post,
+  article.page {
+    contain-intrinsic-size: 1px 420px;
+  }
+  .site-header,
+  #site-header,
+  .tb4-mobile-app-nav {
+    touch-action: manipulation;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,21 @@
+Thinkb4do Community Comment Page v1.0.19
+
+แก้ปัญหาไอคอนแก้ไข/ลบเห็นแวบเดียวแล้วหาย
+
+สาเหตุจริง:
+- JS dedupeCommentItems() ใช้ selector [data-comment-id] กว้างเกินไป
+- ปุ่มแก้ไข/ลบ/ตอบกลับมี data-comment-id เหมือนกับ li ความคิดเห็น
+- หลัง DOMContentLoaded ระบบจึงมองปุ่มเป็นรายการคอมเมนต์ซ้ำและ remove() ปุ่มทิ้ง
+
+การแก้ไข:
+1. เปลี่ยน dedupeCommentItems ให้จับเฉพาะ .tb4c-comment-item[data-comment-id]
+2. เปลี่ยนปุ่ม action ให้ใช้ data-tb4ccp-target-comment แทน data-comment-id
+3. เพิ่ม getActionCommentId() เพื่ออ่าน target comment id จาก attribute ใหม่
+4. จำกัด closest() ใน edit/delete/save ให้จับเฉพาะ li.tb4c-comment-item[data-comment-id]
+5. เพิ่ม normalize visibility เฉพาะ owner rail และ owner button
+
+ผลลัพธ์:
+- ไอคอนแก้ไข/ลบไม่ถูก JS ลบทิ้งหลังโหลดหน้า
+- คอมเมนต์หลักยังมี คัดลอก + ตอบกลับ
+- คอมเมนต์ย่อยไม่มีตอบกลับ
+- เจ้าของคอมเมนต์ทุกระดับมีแก้ไข/ลบด้านขวา

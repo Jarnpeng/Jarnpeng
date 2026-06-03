@@ -1,0 +1,113 @@
+/*
+ * Thinkb4do v2.1.9 — Policy menu portal dropdown fix
+ * Fixes the desktop “นโยบาย” menu when native WordPress sub-menu is clipped or the parent link navigates instead of opening.
+ */
+
+@media (min-width: 1025px) {
+  body.thinkb4do-theme #site-header .main-nav > li.menu-item-has-children > .sub-menu,
+  body.thinkb4do-theme #site-header .main-nav .tb4-fallback-legal-menu > .sub-menu {
+    display: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav a[data-tb4-policy-trigger="true"],
+  body.thinkb4do-theme #site-header .main-nav li.tb4-policy-trigger > a,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children > a[href*="legal-center"] {
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+
+  body.thinkb4do-theme #site-header .main-nav a[data-tb4-policy-trigger="true"]::after,
+  body.thinkb4do-theme #site-header .main-nav li.tb4-policy-trigger > a::after,
+  body.thinkb4do-theme #site-header .main-nav li.menu-item-has-children > a[href*="legal-center"]::after {
+    content: "▾" !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-left: 5px !important;
+    font-size: .66rem !important;
+    line-height: 1 !important;
+    opacity: .75 !important;
+    background: transparent !important;
+    color: currentColor !important;
+  }
+}
+
+.tb4-policy-portal-dropdown {
+  position: fixed !important;
+  display: none !important;
+  min-width: 270px !important;
+  max-width: min(360px, calc(100vw - 28px)) !important;
+  padding: 10px !important;
+  margin: 0 !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, .99) !important;
+  box-shadow: 0 22px 58px rgba(15, 23, 42, .18) !important;
+  z-index: 2147483000 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(6px) !important;
+  transition: opacity .14s ease, transform .14s ease, visibility .14s ease !important;
+  font-family: var(--font-main) !important;
+}
+
+.tb4-policy-portal-dropdown.is-open {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 5px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+.tb4-policy-portal-dropdown::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -7px !important;
+  left: var(--tb4-policy-arrow-left, 50%) !important;
+  width: 14px !important;
+  height: 14px !important;
+  transform: translateX(-50%) rotate(45deg) !important;
+  background: #fff !important;
+  border-left: 1px solid rgba(15, 23, 42, .08) !important;
+  border-top: 1px solid rgba(15, 23, 42, .08) !important;
+}
+
+.tb4-policy-portal-dropdown a {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 38px !important;
+  width: 100% !important;
+  padding: 9px 12px !important;
+  border-radius: 12px !important;
+  color: var(--tb4-gray-700, #374151) !important;
+  font-size: .86rem !important;
+  font-weight: 650 !important;
+  line-height: 1.35 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+.tb4-policy-portal-dropdown a:hover,
+.tb4-policy-portal-dropdown a:focus-visible {
+  background: rgba(30, 107, 69, .09) !important;
+  color: var(--tb4-green, #1E6B45) !important;
+  outline: none !important;
+}
+
+.tb4-policy-portal-dropdown a:first-child {
+  color: var(--tb4-green, #1E6B45) !important;
+  background: rgba(30, 107, 69, .07) !important;
+}
+
+@media (max-width: 1024px) {
+  .tb4-policy-portal-dropdown {
+    display: none !important;
+  }
+}

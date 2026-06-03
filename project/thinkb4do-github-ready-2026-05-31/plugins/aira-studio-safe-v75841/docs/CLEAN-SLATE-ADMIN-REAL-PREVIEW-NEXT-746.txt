@@ -1,0 +1,23 @@
+AiRA Studio v7.4.6 Clean Slate Admin Real Preview Next
+
+เพิ่มระบบ Code Block Preview ให้แสดงหน้า Admin จริงจากโค้ดก่อนติดตั้ง
+
+สิ่งที่เพิ่ม:
+1. Admin Real Preview
+- อ่าน add_menu_page/add_submenu_page จากโค้ด PHP
+- ตรวจ slug, menu title, capability และ callback
+- ดึง HTML จาก callback function ที่ admin จะเห็นหลังติดตั้ง
+- แสดงในกรอบจำลอง WordPress Admin เพื่อให้เห็นภาพก่อนกดติดตั้งจริง
+
+2. Preview Next ทำงานต่อทันที
+- ใน Preview มีช่องพิมพ์ Next ปรับทันที
+- ส่งคำสั่งกลับไปที่ code block รอบถัดไป
+- ปุ่ม Fix สดส่งบริบทหน้า Admin จริงกลับเข้า Live Dev QC
+
+3. Interaction ในหน้าจริง
+- คลิกปุ่มใน Admin Real Preview เพื่อจำลอง flow
+- ส่งสถานะกลับ Live QC ด้านนอก
+- ไม่ execute PHP ดิบ ไม่เขียน DB และไม่ Activate plugin ก่อนยืนยัน
+
+สถานะ:
+พร้อมทดสอบบน WordPress staging ก่อนใช้งานจริง

@@ -1,0 +1,25 @@
+AiRA Studio v7.5.8.19 Backdrop Only Safe Rebase
+
+ฐานที่ใช้:
+- v7.5.8.13-stable-desktop-menu-rebase
+
+เหตุผล:
+- เวอร์ชัน 7.5.8.14-7.5.8.18 ตีความผิดและมีการขยับขอบ/ฐาน/ตำแหน่งเมนูมากเกินโจทย์
+- รอบนี้ตัดสาขาที่ผิดออก และกลับมาใช้ฐานที่เมนูอยู่ตำแหน่งเดียวกับ Composer/Chat อยู่แล้ว
+
+แก้เฉพาะ:
+- พื้นหลังเบลอของเมนู (composer-menu-backdrop) ให้เริ่มจากขอบ Sidebar / adminmenu
+
+ไม่แก้:
+- ไม่ย้ายกล่อง Popup Menu
+- ไม่ย้าย Chat Log
+- ไม่ย้าย Composer
+- ไม่แก้ action router
+- ไม่เพิ่ม/ลบปุ่ม
+- ไม่แก้ตำแหน่ง content หลัก
+
+QC:
+- PHP lint
+- JavaScript syntax
+- ZIP integrity
+- data-action count compared with base

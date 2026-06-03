@@ -1,0 +1,8 @@
+THINKB4DO Community Feed Main v4.2.257
+
+Patch summary:
+- Rebuilt mini video popup UI as one body-level stable portal dock.
+- Moves the active video/iframe into a single dock to stop old mini-video systems from overlapping.
+- Hides legacy remote control bars and duplicate mini players.
+- Keeps video + control bar attached in the same component.
+- Supports pause, close, and drag-to-close from the dock handle.

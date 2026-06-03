@@ -1,0 +1,47 @@
+Thinkb4do Theme v2.0.1 — Responsive Resize Recovery Hotfix
+
+ปัญหาที่แก้:
+- ธีมย่อหน้าจอแล้วขยายกลับ แต่ยังค้าง layout มือถือ/เมนูมือถือ/ส่วนหัวแบบย่อ
+- สาเหตุหลักคือ class `tb4-actual-mobile` ถูกเพิ่มแล้วไม่ถูกถอดกลับ
+- mobile menu hard anchor ใส่ inline style แบบ !important ให้ overlay และอาจค้างหลังกลับ desktop
+
+ไฟล์ที่แก้:
+1) functions.php
+   - ปรับ TB4_VERSION เป็น 2.0.1 เพื่อบังคับ WordPress โหลด CSS/JS ใหม่ ไม่ใช้ cache เก่า
+
+2) style.css
+   - ปรับ Version เป็น 2.0.1
+   - เพิ่ม `v2.0.1 Responsive Resize Recovery Hotfix`
+   - เพิ่ม fail-safe media query สำหรับหน้าจอกว้างกว่า 900px ให้ desktop layout กลับมา
+
+3) js/compat.js
+   - เพิ่ม remove/toggle class
+   - ทำให้ `tb4-actual-mobile`, `tb4-desktop-mode-on-phone`, `tb4-viewport-mobile` อัปเดตตาม resize/orientationchange
+   - ไม่ปล่อย class มือถือค้างเมื่อขยายกลับ
+
+4) js/main.js
+   - ไม่ใช้ class เก่าเป็นตัวตัดสินว่าเป็น mobile
+   - คำนวณสถานะ mobile จาก touch + physical screen สดทุกครั้ง
+   - เมื่อ viewport > 900 และไม่ใช่มือถือจริง จะปิด mobile menu, ถอด `tb4-menu-open`, ล้าง inline style ของ overlay
+
+5) js/mobile-menu-anchor-fix.js
+   - เพิ่ม isActualMobileNow()
+   - เพิ่ม clearHardAttachStyles()
+   - ป้องกัน hard attach ทำงานต่อบน desktop หลังขยายหน้าจอกลับ
+
+การทดสอบเบื้องต้น:
+- ตรวจ syntax JavaScript ด้วย node --check ผ่าน
+- ตรวจ PHP functions.php ด้วย php -l ผ่าน
+
+วิธีติดตั้ง:
+1) WordPress > Appearance > Themes > Add New > Upload Theme
+2) อัปโหลดไฟล์ ZIP เวอร์ชันนี้
+3) Activate หรือ Replace ธีมเดิม
+4) ล้าง cache เว็บไซต์/ปลั๊กอิน cache/CDN/เบราว์เซอร์
+5) ทดสอบ: เปิดเว็บ > ย่อหน้าจอให้ต่ำกว่า 900px > ขยายกลับมากกว่า 900px
+
+ผลที่ควรได้:
+- เมนู desktop กลับมา
+- Hamburger หายบน desktop
+- Header/search/button กลับมาแสดงตาม desktop
+- หน้าจอไม่ติด overflow hidden จากเมนูมือถือ

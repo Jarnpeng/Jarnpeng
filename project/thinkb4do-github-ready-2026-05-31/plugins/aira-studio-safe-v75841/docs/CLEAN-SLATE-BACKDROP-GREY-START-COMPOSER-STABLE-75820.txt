@@ -1,0 +1,23 @@
+AiRA Studio v7.5.8.20 Backdrop Grey Start + Composer Stable
+
+ฐานที่ใช้:
+- v7.5.8.19-backdrop-only-safe-rebase
+
+โจทย์จากภาพล่าสุด:
+- ไม่ย้ายกล่อง Popup Menu
+- Popup ต้องยังอยู่ตรง Composer
+- เลื่อนเฉพาะพื้นหลังสีเทา/เบลอให้เริ่มชิดขอบ Sidebar WordPress
+
+สิ่งที่แก้:
+1. เพิ่มตัวแปร --aira-menu-backdrop-left สำหรับพื้นหลังเมนูเท่านั้น
+2. เพิ่ม JS วัดขอบขวาของ WordPress Sidebar จริงจาก #adminmenuwrap / #adminmenuback / #adminmenu
+3. เพิ่มระบบตรวจว่า position:fixed ของ backdrop อ้างอิง viewport หรือถูก scope ใน #airaApp
+4. ถ้า fixed ถูก scope ใน #airaApp จะใช้ left:0 เพื่อไม่บวก Sidebar ซ้ำ
+5. ถ้า fixed อ้างอิง viewport จะใช้ค่า sidebar edge จริง
+6. ไม่แก้ตำแหน่ง #composerMenu, Composer, Chat Log, Smart Tags หรือปุ่มเดิม
+
+QC:
+- PHP lint
+- JS syntax
+- ZIP integrity
+- data-action ไม่เพิ่ม/ไม่ลด

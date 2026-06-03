@@ -1,0 +1,13 @@
+Thinkb4do Community Feed Main v4.2.237
+
+สิ่งที่แก้:
+- Feed Main เหลือเฉพาะ center-feed เท่านั้นใน layout-controller
+- ลบไฟล์ left-sidebar.php และ right-sidebar.php ออกจากแพ็ก Feed Main
+- ปิดเส้นทาง author/avatar ไม่ให้ถูก filter กลับไปหน้าสมาชิกจากปลั๊กอินสมาชิก
+- เพิ่ม Mobile Click Safe Guard เพื่อบังคับหน้า Community บนมือถือให้เป็น single column หลังการคลิก/แตะ
+- ซ่อน member/sidebar fragment ที่อาจหลุดมาจาก cache หรือปลั๊กอินแยกเมื่ออยู่บนหน้า community
+- เพิ่ม CSS โพล/โหวตให้ไม่ล้น ไม่ซ้อน และแสดงเต็มความกว้างมือถือ
+
+สถานะ:
+- พร้อมอัปโหลดทดสอบแทน v4.2.236
+- ถ้ายังเห็นซ้อน ให้ล้าง cache/CDN และปิดปลั๊กอิน sidebar/member เก่าที่ซ้ำชั่วคราวเพื่อตรวจแยกต้นเหตุ

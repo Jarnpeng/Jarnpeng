@@ -1,0 +1,25 @@
+AiRA Studio v7.0.7 — Clean Slate Keyboard Fusion
+
+เป้าหมาย:
+- แก้ composer มีช่องว่าง/ลอยผิดตำแหน่งเมื่อคีย์บอร์ดมือถือโผล่
+- ให้ composer ผสานกับขอบบนของคีย์บอร์ดโดยตรง
+- เมนูปุ่ม + ดันขึ้นเหนือ composer ภายใน dock เดียวกัน
+
+สิ่งที่เพิ่ม:
+1) Keyboard Fusion runtime
+   - ตรวจ visualViewport, keyboard inset, active editable element
+   - เพิ่ม class keyboard-open เฉพาะตอนมีคีย์บอร์ดจริง
+
+2) Composer dock guard
+   - เมื่อ keyboard-open ให้ #airaComposerDock fixed เหนือคีย์บอร์ด
+   - chatLog เพิ่ม padding-bottom เท่าความสูง composer เพื่อไม่ทับข้อความ
+
+3) Plus menu behavior
+   - เมนู + เปิดเหนือ composer
+   - เมนู scroll ภายใน ไม่ดัน composer หลุดจากขอบคีย์บอร์ด
+
+ยังรักษา:
+- Clean Slate single CSS + single JS
+- Header ชิด WordPress admin bar
+- ChatLog เป็น native scroll หลัก
+- เมนูและเครื่องมือข้อความเดิมครบ

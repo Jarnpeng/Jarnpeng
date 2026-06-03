@@ -1,0 +1,36 @@
+AiRA Studio v7.3.5 Clean Slate Global Communication Code Universe
+
+เป้าหมาย
+- เพิ่มความสามารถสื่อสารแบบ GPT ให้กว้างขึ้น โดยอ่านคำสั่งสั้น คำบ่น คำสั่งไม่ครบ ภาษาเทคนิค ภาษาคนทั่วไป หลายภาษา และหลายบทบาทเชิงงาน แล้วแปลงเป็นผลลัพธ์ที่ผู้ใช้เข้าใจง่าย
+- เพิ่มความสามารถเขียนโค้ด/ออกแบบระบบให้กว้างขึ้น โดยมองความสัมพันธ์ frontend, backend, database, API, auth, storage, server, deploy, logs, WordPress, plugin, module, component, theme, widget, Gutenberg และ Elementor เป็นระบบเดียว
+
+สิ่งที่เพิ่ม
+1) Global Communication Lens
+- วิเคราะห์ layer การสื่อสาร เช่น literal meaning, task intent, desired output, blocker/friction, fast clear answer, global plain language, audience adaptation, technical translation
+- แสดง card ใน Context Reader
+- เพิ่ม chip เหนือ Composer: สื่อสารโลก xx/100
+- ส่ง global_communication_context_735 เข้า backend เพื่อช่วยให้ API ตอบแบบเข้าใจบริบทการสื่อสารมากขึ้น
+
+2) Universal System Code Engine
+- วิเคราะห์ domain ของระบบ เช่น WordPress, Frontend, Backend, Database, API, DevOps, App
+- เพิ่ม checklist สำหรับ file map, data flow, API contracts, environment variables, error handling, deployment notes
+- แสดง card ใน Context Reader
+- เพิ่ม chip เหนือ Composer: ระบบ xx/100
+- ส่ง universal_code_context_735 เข้า backend เพื่อช่วยให้ API เขียนโค้ด/ระบบแบบเชื่อมความสัมพันธ์มากขึ้น
+
+3) ปรับ Answer Contract
+- เพิ่ม Global Communication rule
+- เพิ่ม Universal System Code rule
+- ย้ำว่าไม่อ้างว่าเข้าใจทุกคน/ทุกระบบแบบสมบูรณ์ หากขาดสเปก API สิทธิ์ หรือข้อมูลระบบต้องบอกข้อจำกัดจริง
+
+สิ่งที่ยังคงอยู่
+- Code block พร้อม Copy / Download / Result / File
+- Upgrade / Next loop ใต้ code block
+- Prompt Processing + จุดสามจุดนุ่ม ๆ + เวลาประมวลผล
+- Image generation / Vision attachment / Popup save
+- Context Reader / Result Resolver / Deep Communication / Code Master
+
+ข้อจำกัดที่ตั้งใจใส่ไว้
+- ระบบไม่อ้างว่าอ่านใจหรือรู้จิตใต้สำนึกจริง
+- ระบบไม่เดาข้อมูลส่วนตัวหรือข้อมูลอ่อนไหว
+- ระบบไม่อ้างว่ารู้ทุก private/proprietary system หากผู้ใช้ยังไม่ให้สเปกหรือ API

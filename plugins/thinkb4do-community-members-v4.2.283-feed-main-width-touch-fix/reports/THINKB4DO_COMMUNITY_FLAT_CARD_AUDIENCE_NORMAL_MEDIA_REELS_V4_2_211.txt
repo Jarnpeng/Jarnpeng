@@ -1,0 +1,8 @@
+Thinkb4do Community v4.2.211
+- Removed rounded post card edges for a flatter Instagram-style feed.
+- Added audience/visibility row under the username: public, members, groups.
+- Added 'groups' visibility option to the composer and AJAX validation.
+- Adjusted image media to preserve natural aspect ratio.
+- Adjusted video media to use standard 16:9 ratio.
+- Adjusted Reels viewer/cards to 9:16 standard and prevented distorted covers.
+- Added runtime classes for targeted CSS override.

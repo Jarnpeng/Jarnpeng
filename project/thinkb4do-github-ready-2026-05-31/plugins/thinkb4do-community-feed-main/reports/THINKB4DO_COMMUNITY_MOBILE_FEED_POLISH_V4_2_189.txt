@@ -1,0 +1,7 @@
+Thinkb4do Community v4.2.189
+
+- Refined phone UI/UX using a single final visual layer.
+- Styled Smart Back button to integrate cleanly with the feed.
+- Fixed duplicate/empty icon treatment in post context chips and post owner tools.
+- Polished mobile feed header, composer, reels rail, post cards, action row, and comment preview.
+- Preserved left / center / right layout on desktop and simplified mobile navigation chips.

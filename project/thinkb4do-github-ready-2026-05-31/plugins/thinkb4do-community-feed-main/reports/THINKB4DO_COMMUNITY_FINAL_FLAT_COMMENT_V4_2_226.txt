@@ -1,0 +1,15 @@
+Thinkb4do Community v4.2.226
+
+เป้าหมาย
+- เอาเส้น/จุดล่างช่องแสดงความคิดเห็นออก
+- ย้ายปุ่มแก้ไข/ลบให้อยู่แถวเดียวกับชื่อ user ของคอมเมนต์
+- ลดการ์ดซ้อนใน comment thread ให้เป็น layout แบนและสะอาดขึ้น
+- แก้ empty state ไม่ให้แสดงซ้อนเมื่อมีคอมเมนต์แล้ว
+
+สิ่งที่แก้
+1. เพิ่ม body class: tb4c-v42226-comment-final-flat-body
+2. แก้ markup ของ comment bubble ไม่ให้ใช้ class เดิมที่โดน CSS เก่าทำเป็นการ์ด
+3. ลด class form เดิมที่ทำให้เกิด popup/card styling
+4. เพิ่ม CSS override ท้าย community.css และ community-clean-ui-reset.css
+5. ซ่อน form status / pseudo line / after line เพื่อเอาจุดล่างช่องคอมเมนต์ออก
+6. บังคับ owner tools ให้อยู่ใน grid แถวเดียวกับ comment meta

@@ -1,0 +1,8 @@
+THINKB4DO Community Feed Main v4.2.253
+
+Patch summary:
+- Based on stable v4.2.250 instead of the broken v4.2.252 hard fix.
+- Restored mini video to a small floating bottom-right player.
+- Added external Pause / Close / Drag-to-close controls below the video, so buttons do not cover video content.
+- Dragging is handled from a separate control strip, safer for iframe videos.
+- Inline feed videos are not forced into giant feed blocks.

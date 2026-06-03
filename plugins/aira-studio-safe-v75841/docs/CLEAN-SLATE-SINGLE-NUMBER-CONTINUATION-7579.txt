@@ -1,0 +1,18 @@
+AiRA Studio v7.5.7.9 Single Number Continuation Row
+
+เป้าหมาย:
+- ตัดปัญหาแถวคุยต่อด้วยตัวเลข/รับรู้ต่อด้วยเลขซ้อนกันใต้คำตอบ
+- เหลือชุดเดียวที่รวมตัวเลือกเดิมและตัวเลือกอธิบายความหมายไว้ด้วยกัน
+
+สิ่งที่แก้:
+1. รวม createContinuationChoiceRow + createAnswerInsightIconRow เป็น createUnifiedNumberContinuationRow สำหรับการแสดงผลจริง
+2. removeAnswerContinuationRows ลบ .message-choice-continuation ด้วย เพื่อไม่เหลือแถวเก่าค้างก่อนสไลด์จบ
+3. appendPostSlideAnswerRows แสดงเฉพาะแถว unified หลังสไลด์คำตอบจบ
+4. เพิ่ม enforceSingleNumberContinuationRows เพื่อกันแถวซ้ำจาก history/render เก่า
+5. Prompt processor ยังสะอาด ไม่แสดงชุดรับรู้เลขระหว่างประมวลผล
+
+วิธีเช็ก:
+- ส่งคำถามที่มีตัวเลือก 1,2,3 และมีเงื่อนไข/ตัวอย่าง
+- ระหว่าง processor ต้องไม่เห็นเลขคุยต่อ
+- หลังสไลด์จบ ใต้คำตอบต้องมีแถวเดียว เช่น คุยต่อด้วยเลข: 1 2 3 4 ความหมาย 5 ตัวอย่าง ...
+- กดเลขแล้ว Composer ต้องขึ้นเลขอย่างเดียวและพิมพ์ต่อได้

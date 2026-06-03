@@ -1,0 +1,29 @@
+AiRA Studio v7.5.8.29 — Processor Time Polish
+
+Goal
+- Keep the processor-time receipt after the answer, but make it visually cleaner than v7.5.8.28.
+- Do not bring back the large Prompt Processing card after the answer is done.
+- Do not touch buttons, action router, Composer, Popup Menu, or Sidebar behavior.
+
+What changed
+1. The collapsed Processor time receipt is now a polished compact chip:
+   - clock icon
+   - clear Processor time label
+   - duration text
+   - small completed status badge
+2. Styling was improved:
+   - softer green/orange gradient
+   - lighter border and shadow
+   - better spacing
+   - mobile-friendly wrapping
+3. The full Prompt Processing card still disappears after the real answer is visible.
+4. The receipt remains in chat as a short processing-time record.
+
+Expected flow
+User asks -> Prompt Processor appears -> answer is released -> full processor card collapses -> polished Processor time receipt remains.
+
+QC
+- PHP lint passed
+- JavaScript syntax check passed
+- ZIP integrity passed
+- data-action/button router not modified

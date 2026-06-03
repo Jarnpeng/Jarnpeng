@@ -1,0 +1,33 @@
+AiRA Studio v7.5.5.2 — Thinking Slide Processor
+
+ฐานหลัก: v7.5.5.1 Stable Codeblock Reality Patch
+
+ของเดิมยังอยู่:
+- Answer / Continuous Choice Composer
+- ระบบเลือก 1 2 3 เพื่อคุยต่อ
+- Stable Codeblock Reality / Real Code Workflow
+- System Builder / Preview / QC / Package / Install Gate
+- Composer layout เดิมของ v7.5.5 ไม่ถูกรื้อ
+
+สิ่งที่เพิ่ม:
+1. Assistant Slide Answer Cadence
+   - ปรับการสไลด์ตัวอักษรคำตอบให้มีจังหวะคิดมากขึ้น
+   - เพิ่ม pause หลังเครื่องหมายวรรคตอน, ขึ้นบรรทัดใหม่, paragraph และ code fence
+   - ลด chunk สั้นลงเพื่อให้เหมือนการพิมพ์/stream คำตอบมากขึ้น
+
+2. Continuous Reading Processor
+   - ระหว่างรอ API ระบบจะสลับข้อความอ่านข้อมูลไปเรื่อย ๆ จนกว่าจะได้คำตอบจริง
+   - แสดงสถานะอ่านคำถาม, เชื่อมบริบท, ตรวจตัวเลือก 1 2 3, ตรวจ code/system flow และเรียบเรียงคำตอบ
+   - มีจุดสามจุดนุ่ม ๆ ทั้งใน processor และแถบ processing
+
+3. Runtime Safety
+   - เมื่อได้คำตอบจริง processor loop จะหยุดทันที
+   - เมื่อลบ processor หรือเกิด error จะ clear timer ป้องกัน loop ค้าง
+
+ตรวจบั๊ก:
+- JS syntax: node --check ผ่าน
+- PHP syntax: php -l ผ่าน
+- ZIP integrity: ตรวจหลังแพ็ก
+
+สถานะ:
+พร้อมติดตั้งทดสอบใน WordPress แล้ว ควรทดสอบด้วยคำถามสั้น/ยาว/โค้ด/ตัวเลือก 1 2 3 เพื่อดูจังหวะสไลด์และ processor ระหว่างรอคำตอบจริง

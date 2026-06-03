@@ -1,0 +1,22 @@
+Thinkb4do Theme v2.1.8 — Legal Dropdown + Privacy Contact Fix
+
+สิ่งที่แก้:
+1) เมนู “นโยบาย” บน Desktop เปิด dropdown ได้ด้วยการกด และยังรองรับ hover/focus
+2) แก้ overflow ของส่วน header center / main-nav ที่ทำให้ sub-menu ถูกตัดจนเหมือน dropdown ไม่ขึ้น
+3) เพิ่ม CSS/JS เฉพาะ v2.1.8 เพื่อไม่ชนกับเมนูมือถือและปุ่มแจ้งเตือนเดิม
+4) เพิ่ม fallback เมนูนโยบายแบบมี sub-menu กรณียังไม่ได้ผูก WordPress menu
+5) ซ่อนอีเมลผู้ดูแลระบบ/อีเมลส่วนตัวจากหน้ากฎหมายสาธารณะ
+6) ถ้าใส่อีเมล Gmail/Hotmail/Outlook/Yahoo/iCloud หรืออีเมล admin ระบบจะแสดงข้อความซ่อนข้อมูลติดต่อส่วนตัวแทน
+7) ซ่อนอีเมลใน dropdown โปรไฟล์หน้าเว็บ โดยแสดงข้อความความเป็นส่วนตัวแทน
+
+ตำแหน่งไฟล์หลัก:
+- functions.php
+- header.php
+- inc/tb4-page-sync.php
+- css/tb4-legal-dropdown-v218.css
+- js/tb4-legal-dropdown-v218.js
+
+หลังติดตั้ง:
+- ล้าง cache
+- เข้า Appearance > เชื่อมหน้า / Components > กด “ซิงก์หน้าและเมนูตอนนี้”
+- ทดสอบด้วย https://thinkb4do.com/?v=218

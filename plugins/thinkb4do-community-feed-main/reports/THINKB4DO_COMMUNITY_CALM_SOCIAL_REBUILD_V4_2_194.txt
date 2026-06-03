@@ -1,0 +1,25 @@
+Thinkb4do Community v4.2.194 — UI/UX Calm Social Rebuild
+
+สิ่งที่รื้อ/ปรับใหม่:
+1) ล็อกโครงตำแหน่ง Desktop เป็น Left / Center / Right แบบนิ่ง ไม่ขยับ layout จากเวอร์ชันก่อน
+2) ลดความรกของ Composer: เหลือปุ่มลัดหน้า feed เฉพาะรูป/วิดีโอ และโหวต ส่วนอารมณ์/แท็กยังอยู่ใน popup composer
+3) ลด action ใต้โพสต์ให้เหลือ 4 ปุ่มหลัก: ถูกใจ / ความคิดเห็น / แชร์ / บันทึก
+4) ซ่อนประเภท/สถานะที่ซ้ำบนการ์ดโพสต์ เหลือ custom tag ใต้คำอธิบายตามแนว social feed
+5) จัดปุ่มแก้ไข/ลบของเจ้าของโพสต์ให้อยู่ขวาบนของการ์ดแบบไอคอนเล็ก ไม่ดันข้อความ
+6) ปรับมือถือให้ feed อ่านง่ายขึ้น ปุ่มไม่ล้น และ Reels rail เล็กลง
+7) คงสีแบรนด์ Think Control: เขียว #1E6B45, ส้ม #F97316, ขาว, ดำ
+8) ไม่เพิ่ม library ใหม่ และไม่แตะข้อมูลหลังบ้าน/ฐานข้อมูล
+
+ไฟล์ที่แก้หลัก:
+- thinkb4do-community.php
+- assets/community-clean-ui-reset.css
+- assets/community.js
+- templates/community-content.php
+- templates/community-composer.php
+- includes/modules/center-feed.php
+
+สถานะ:
+- ระบบเดิมยังอยู่: CPT, ฟีด, Reels, composer, member area, follow, like/bookmark/share ยังอยู่
+- สิ่งใหม่: active skin v4.2.194 + CSS layout lock + ลด UI ซ้ำ
+- ใช้งานได้: พร้อมติดตั้งเป็น WordPress plugin ZIP
+- ข้อควรเช็กหลังติดตั้ง: ล้าง cache/browser cache แล้วเปิดหน้า /community/ บน desktop และ mobile

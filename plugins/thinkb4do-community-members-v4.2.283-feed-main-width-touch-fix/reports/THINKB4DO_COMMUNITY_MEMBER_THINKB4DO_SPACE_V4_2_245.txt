@@ -1,0 +1,19 @@
+Thinkb4do Community Members v4.2.245 - Thinkb4do Space Polish
+
+เป้าหมาย
+- จัดพื้นที่หน้าสมาชิกให้สวยขึ้นตามสไตล์ Thinkb4do
+- ใช้พื้นที่ Desktop/Tablet/Phone ให้คุ้มขึ้น
+- คงแนว Instagram profile/grid แต่เพิ่มเอกลักษณ์แบรนด์เขียว ขาว ส้ม ดำ
+
+สิ่งที่ปรับ
+- ขยาย container desktop เป็น 1280px และ 1360px บนจอกว้าง
+- ปรับ hero เป็นการ์ดโปรไฟล์ Thinkb4do พร้อม cover, avatar, title, action buttons
+- จัด metrics เป็นแถบเดียว ลดความรกและลดช่องว่าง
+- ปรับ tabs เป็น app-style rail แบบคลีน
+- Feed grid: desktop 4 คอลัมน์, จอกว้าง 5 คอลัมน์, tablet/phone 3 คอลัมน์
+- เพิ่ม CSS hard override priority 100001 เพื่อกันของเดิมทับ
+
+สถานะ
+- ไม่เปลี่ยนฐานข้อมูล
+- ไม่เปลี่ยน shortcode เดิม
+- ใช้กับ [thinkb4do_member_area]

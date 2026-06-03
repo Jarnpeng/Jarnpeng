@@ -1,0 +1,25 @@
+AiRA Studio v7.1.5 Clean Slate Image Generation
+
+Goal:
+- Add a practical image generation system to the existing clean WordPress UI without breaking composer, code blocks, rooms, settings, voice or artifact.
+
+Added:
+1. Visual / Image menu now includes "สร้างภาพจริง" and "Prompt ภาพ".
+2. Generate Image calls the existing secure WordPress AJAX endpoint aira3194_generate_image.
+3. If OpenAI/Universal API key is configured, the system attempts Images API generation.
+4. If Image API is not configured or fails, AiRA creates a local SVG fallback preview so the workflow still works.
+5. Data images are saved into wp-content/uploads/aira-studio-images/ when possible, then returned as a normal URL.
+6. Image preview panel shows the generated result, prompt, API mode/status and download button.
+7. Download Image now downloads the latest generated image instead of showing a placeholder toast.
+8. Native Settings now exposes image_generation_model, image_generation_size and image output format.
+
+Kept:
+- Code block first view remains active.
+- Result/Code toggle remains inline.
+- Composer fixed bottom, popup plus menu and scroll-latest behavior remain unchanged.
+- Open button is not added to the image panel.
+
+Test status:
+- PHP syntax check: pass.
+- JavaScript syntax check: pass.
+- ZIP package ready for WordPress plugin upload.

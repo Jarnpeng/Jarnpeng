@@ -1,0 +1,27 @@
+Thinkb4do Community v4.2.193 — UI/UX Clarity Rebuild
+
+สรุปงาน:
+- รื้อ UI/UX layer ใหม่อีกครั้งจาก v4.2.192 โดยเปลี่ยน active class เป็น tb4c-v42193-clarity-rebuild
+- ปรับ Desktop layout เป็น left / center feed / right ที่นิ่งขึ้น กว้างพอดี และไม่ดึงสายตาออกจากฟีดกลาง
+- ปรับ Mobile layout ให้เหลือฟีดกลางอ่านง่าย เมนูบนเลื่อนแนวนอน และปุ่มสร้างโพสต์ไม่บังเนื้อหา
+- ปรับสีเป็นมาตรฐาน Think Control: primary green #1E6B45, CTA orange #F97316, white, black
+- ปรับ wording บน Composer ไม่ให้โชว์ภาษาหลังบ้านหรือคำอธิบายเทคนิคมากเกินไป
+- เพิ่ม final JS marker 4.2.193 เพื่อแทน marker 4.2.192 และล้าง class เก่าออกจาก surface หลัก
+
+ไฟล์ที่แก้:
+- thinkb4do-community.php
+- assets/community-clean-ui-reset.css
+- assets/community.js
+- templates/community-content.php
+- templates/community-form.php
+- README-THINKB4DO-COMMUNITY.txt
+
+QC:
+- PHP lint ผ่าน
+- JS syntax ผ่าน
+- CSS brace balance ผ่าน
+- ZIP integrity ผ่าน
+
+สถานะ:
+- เพียงพอสำหรับติดตั้งทับ v4.2.192 และทดสอบบนหน้า Community จริง
+- หลังติดตั้งให้ล้าง cache แล้วเช็ก data-ui-version="4.2.193"

@@ -1,0 +1,33 @@
+AiRA Studio v7.5.4 Code Block System Builder
+
+เป้าหมาย:
+- ต่อจาก v7.5.3 โดยไม่ลบระบบเดิม
+- เพิ่มชั้น System Builder ให้ code block ช่วยสร้างระบบ/แอพ/ปลั๊กอิน/เว็บ/โมดูลต่อได้
+- ยึดขั้นตอน: ของเดิมยังอยู่ → สิ่งที่เพิ่ม → วิธีใช้ → ตรวจบั๊ก → ไฟล์/สถานะ
+
+ของเดิมยังอยู่:
+- Copy / Download / Preview / Debug / Package / Upgrade ยังอยู่
+- Preview ก่อนติดตั้งและ Live Dev QC ยังอยู่
+- Authorized Preview และ Pre-install Gate ยังอยู่
+
+สิ่งที่เพิ่ม:
+- ปุ่ม “สร้างระบบ” ใต้ code block
+- System Builder Panel พร้อม readiness %, file plan, QC summary
+- ปุ่มใส่ Composer เพื่อคุยต่อจาก code block เดิม
+- Copy/Download System Builder Report TXT
+- ปุ่มเปิด Preview+QC จากแผง System Builder
+
+วิธีใช้:
+1. ให้ AiRA ตอบเป็น code block
+2. กด “สร้างระบบ” ใต้ code block
+3. ตรวจ 5 ส่วนใน System Builder Panel
+4. กด “ใส่ Composer” เพื่อให้ AiRA สร้าง/อัปเกรดต่อจาก code block เดิม
+5. กด “เปิด Preview+QC” ก่อนติดตั้งหรือโหลดแพ็ก
+
+ตรวจบั๊ก:
+- ตรวจ syntax ของ PHP หลักแล้ว
+- ตรวจ JS เบื้องต้นด้วย node --check
+- ตรวจแพ็ก zip หลังประกอบ
+
+สถานะ:
+- พร้อมใช้งานเป็น v7.5.4-codeblock-system-builder

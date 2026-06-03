@@ -1,0 +1,12 @@
+AiRA Studio v7.3.8 Clean Slate Live Dev Preinstall
+
+เพิ่มจาก v7.3.7:
+- เพิ่มปุ่ม Debug สด ใต้ code block และใน file row
+- เปิด Live Dev QC ก่อนติดตั้งได้จริงในระดับ static/runtime simulation
+- เพิ่ม WordPress server-side Preinstall Check ผ่าน AJAX โดยไม่ execute PHP, ไม่เขียนฐานข้อมูล และไม่ activate plugin
+- Sandbox iframe ส่งสถานะกลับมาที่ code block ได้ผ่าน postMessage
+- ปุ่ม “ส่งให้ AiRA แก้ต่อ / Fix สด” ส่งบริบทโค้ด + QC report กลับเข้าแชท เพื่อสร้าง code block รอบใหม่
+- Package ZIP เพิ่ม docs/live-dev-qc.txt
+
+ขอบเขตความจริง:
+ระบบทำงานจริงก่อนติดตั้งในระดับ UI/flow/package/static QC/server capability check แต่ยังไม่ execute PHP ดิบก่อนติดตั้ง เพื่อความปลอดภัย ต้องติดตั้งบน staging หากต้องการ runtime 100%.

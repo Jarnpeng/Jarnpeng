@@ -1,0 +1,8 @@
+Thinkb4do Community v4.2.220
+- พัฒนาหน้าแสดงความคิดเห็นตาม reference
+- ปรับ post detail card ให้กว้างขึ้นและมี hierarchy ใกล้ feed
+- ปรับรูป/วิดีโอให้เต็ม card และมุมภาพเป็นเหลี่ยม
+- จัด header user + สถานะสาธารณะ + ปุ่มแก้ไข/ลบให้ตรง mood and tone
+- เหลือปุ่มกลับฟีดเดียว
+- ปรับ comment section ให้เป็น empty-state card + composer สะอาดขึ้น
+- เพิ่ม runtime/body class v42220-reference-comment-system

@@ -1,0 +1,6 @@
+Thinkb4do Community v4.2.214
+- จัดหน้าแสดงความคิดเห็นให้เป็น inline feed-tone ไม่ใช้ popup ซ้อนในหน้า
+- ซ่อน/ถอดปุ่มย้อนกลับที่ซ้ำจาก Smart Back
+- คงปุ่มเดียวคือ “กลับฟีด”
+- ปรับกล่องคอมเมนต์, empty state และ input ให้ตรง mood & tone ของ feed
+- ลดโอกาส layout ซ้อน/ล้นบนมือถือ

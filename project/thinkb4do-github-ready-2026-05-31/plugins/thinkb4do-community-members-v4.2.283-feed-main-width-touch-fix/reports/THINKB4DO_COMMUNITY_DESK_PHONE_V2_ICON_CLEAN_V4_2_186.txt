@@ -1,0 +1,28 @@
+Thinkb4do Community v4.2.186 — Better Desk/Phone UI + Icon Clean
+
+ทบทวนโจทย์:
+- ปรับ UI/UX ให้ดีขึ้นกว่า v4.2.185
+- แยกความเหมาะสม Desktop / Phone
+- ลดไอคอนซ้ำ
+- ไม่ขยับตำแหน่งซ้าย / กลาง / ขวาที่ล็อกไว้แล้ว
+
+สิ่งที่ทำ:
+1) เพิ่ม final CSS layer: assets/community-desk-phone-v2.css
+2) โหลด CSS v4.2.186 ต่อท้าย community-desk-phone-ui.css เพื่อให้ชนะ CSS เก่า
+3) เพิ่ม class tb4c-v42186-desk-phone-v2 และ data-ui-version="4.2.186"
+4) ซ่อน fallback icon/emoji ที่ซ้อนกับ Phosphor icon ทั้งระดับ markup และ CSS
+5) ปรับเมนูซ้ายให้ไอคอนเหลือชุดเดียว และ label อ่านง่ายขึ้น
+6) ปรับ Feed กลางให้เป็น social card มากขึ้น: composer, reels, post card, actions, tags, comment preview
+7) ปรับ Phone: เมนูบนมือถือเป็น horizontal pill, ลด header ที่กินพื้นที่, ทำการ์ด/รีล/ปุ่มอ่านง่ายขึ้น
+8) ไม่เพิ่มไลบรารีใหม่ และไม่เพิ่ม JS หนัก
+
+ไฟล์ที่แก้:
+- thinkb4do-community.php
+- templates/community-content.php
+- assets/community-desk-phone-v2.css
+
+สถานะตรวจสอบ:
+- PHP lint: ผ่าน
+- JS syntax: ผ่าน
+- CSS brace balance: ผ่าน
+- ZIP test: ผ่าน

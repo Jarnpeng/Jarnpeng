@@ -1,0 +1,22 @@
+AiRA Studio v7.5.8.34 Processor Release Commit
+
+Goal:
+- Prompt Processor must visually complete before the real answer appears.
+- The answer must always appear, even for simple questions or when admin-ajax/API is slow.
+
+What changed:
+1) Replaced the fragile answer gate with a deterministic release commit.
+2) API and local answer fallback now race safely.
+3) Simple direct questions such as 7+7, greetings, and Thailand capital can render from Local Direct Answer after the processor completes.
+4) Non-direct questions still call API first, but Answer Rescue appears if API takes too long.
+5) Processing Time Card remains after the answer is shown.
+6) No data-action, action router, Composer, Popup Menu, Sidebar, or button bindings were changed.
+
+Expected order:
+User message -> Prompt Processor running -> Prompt Processor complete -> Answer appears -> Processing Time Card remains.
+
+Tests:
+- PHP lint
+- JS syntax check
+- ZIP integrity
+- data-action count unchanged from v7.5.8.33

@@ -1,0 +1,18 @@
+Thinkb4do Theme Core v2.3.0 - Theme / Community Split
+======================================================
+
+What changed:
+- Community page template was moved out of the theme.
+- Member profile template was moved out of the theme.
+- Member custom post type, member meta, member AJAX submission, and member helper functions were moved to the separate plugin: Thinkb4do Community.
+- Theme header, mobile menu, user menu, message panel, sidebar agenda, sidebar quick tools, and search post types now expose filters so the Community plugin can attach itself without hard-coding community logic into the theme.
+- Theme remains responsible for visual layout, brand UI, header/footer, products, trust pages, compatibility, and public frontend styling.
+
+Install order:
+1. Upload/activate thinkb4do-theme-core.zip as the theme.
+2. Upload/activate thinkb4do-community.zip as a plugin when community/member features are needed.
+3. Go to Settings > Permalinks and click Save once after activation if /member/ links do not load.
+
+Status:
+- Theme core syntax checked.
+- Community feature split prepared as plugin package.

@@ -1,0 +1,16 @@
+AiRA Studio v7.4.4 Clean Slate Authorized ID Sync
+
+เพิ่มระบบเชื่อม ID ผู้มีสิทธิ์ เพื่อให้ห้องแชท Memory สถิติถูกใจ และสถานะการทำงานใช้ร่วมกันได้เมื่อเปลี่ยนอุปกรณ์ โดยผูกกับ WordPress user ที่ล็อกอินและมี capability ถูกต้อง
+
+สิ่งที่เพิ่ม:
+1. Authorized ID ต่อผู้ใช้ WordPress ที่มีสิทธิ์
+2. Device ID ฝั่ง browser เพื่อบันทึกว่าอุปกรณ์ไหนเคยเชื่อม
+3. Storage namespace ใหม่ตาม Authorized ID แทนผูกแค่เครื่องเดิม
+4. AJAX get/rotate/status สำหรับตรวจสถานะและเปลี่ยน ID
+5. Workplace > Authorized ID แสดงสถานะ ID, sync mode, device count และ export TXT
+6. save_user_sync บันทึก payload พร้อม authorizedIdentity/deviceId ผ่าน nonce + capability
+
+ข้อจำกัดความปลอดภัย:
+Authorized ID เป็นตัวระบุ ไม่ใช่ password และไม่เปิดให้ข้ามสิทธิ์ WordPress ได้ การอ่าน/บันทึกยังต้องผ่าน login, nonce และ capability เสมอ
+
+สถานะ: พร้อมทดสอบบน WordPress staging หลัง clear cache

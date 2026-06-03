@@ -1,0 +1,7 @@
+THINKB4DO Community Feed Main v4.2.254
+
+Patch summary:
+- Attached mini video and control bar visually with no gap.
+- Locked mini video width/height/aspect ratio during scroll/resize.
+- Locked control bar and button alignment during scroll.
+- Added runtime normalizer to prevent mini video collapse and drifting controls after scroll/AJAX/render.

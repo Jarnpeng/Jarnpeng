@@ -1,0 +1,11 @@
+Thinkb4do Theme Core v2.3.9
+Mobile Instagram-style Icon Bar
+
+What changed:
+- Added a mobile-only fixed bottom icon bar.
+- Added direct Community link for mobile users.
+- Added Home, Products, Search and Menu actions.
+- Menu button reuses the existing 9-grid menu/products popup.
+- Search button focuses the first visible search field.
+- Added safe-area spacing so the bar works better on iPhone/Android.
+- Keeps WordPress Admin Bar and existing header behavior.

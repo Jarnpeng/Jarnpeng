@@ -1,0 +1,31 @@
+AiRA Studio v7.5.6.7 — Codeblock Beyond-Limit Value Engine
+
+Goal
+- Upgrade every Code block from normal code display into a safe, high-ambition system builder that searches for hidden potential, unexpected capability and human value.
+
+Added
+- New Code block button: เหนือคาดหมาย
+- New panel: Beyond-Limit Value Engine
+- New score: Beyond Value %
+- Hidden Potential Map: extension points, event/hook/module/data/action/API opportunities
+- Unexpected Capability Matrix: automation, adaptive context, offline/cache/worker, preview lab, QC generator, rollback, impact report
+- Performance Energy Plan: cache, lazy render, debounce/throttle, AbortController, worker/service worker/offline/streaming when appropriate
+- Safe Innovation Guard: no unsafe bypass, no privacy/legal/copyright/security shortcuts, no fake buttons, no risky commands without permission/rollback
+- Human Benefit Loop: every new capability must explain who it helps, what benefit it gives, what feedback appears, how to test it and what risk it reduces
+
+Kept
+- Universal Platform Builder
+- Code Quality Engine
+- Performance Builder
+- Humanity System Builder
+- Dev Master
+- Success Loop
+- Preview, Debug, Package, Upgrade
+
+User meaning
+- “ไร้ขีดจำกัด” is interpreted as unlimited effort, creativity and system-improvement ambition, while still respecting real technical, legal, privacy, security and safety limits.
+
+QC
+- PHP lint: pass
+- JavaScript syntax: pass
+- ZIP integrity: pass

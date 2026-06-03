@@ -1,0 +1,24 @@
+AiRA Studio v7.5.8.35 Answer Visible Commit
+
+เป้าหมาย:
+- แก้อาการคำถามง่ายก็ไม่ตอบ
+- Prompt Processor ต้องเสร็จก่อนคำตอบจริงแสดง แต่ห้ามบล็อกคำตอบอีก
+
+สิ่งที่เปลี่ยน:
+1) เปลี่ยน renderer จาก Gate ที่รอ animation เป็น Visible Commit
+2) บังคับ Prompt Processor เป็นสถานะเสร็จ แล้ว nextPaint สั้น ๆ ก่อนแสดงคำตอบ
+3) คำตอบถูก render ด้วย addMessage โดยตรง เพื่อให้คำตอบขึ้นแน่นอน
+4) Local Direct Answer เช่น 7+7 ยังใช้ตอบได้แม้ API ช้า
+5) ลด stale sending lock จาก 54 วินาทีเหลือ 9 วินาที เพื่อไม่ให้แชทค้างนาน
+6) หลังคำตอบขึ้น ยังเก็บ Processing Time Card เหมือนเดิม
+
+ไม่ได้แก้:
+- ไม่เพิ่มปุ่ม
+- ไม่ลบปุ่ม
+- ไม่แก้ action router
+- ไม่แก้ Composer/Menu/Sidebar
+
+วิธีทดสอบ:
+- ถาม 7+7 ต้องได้ 14
+- ถาม สวัสดี ต้องตอบกลับ
+- Prompt Processor ต้องแสดงเสร็จก่อน แล้วคำตอบจึงแสดง

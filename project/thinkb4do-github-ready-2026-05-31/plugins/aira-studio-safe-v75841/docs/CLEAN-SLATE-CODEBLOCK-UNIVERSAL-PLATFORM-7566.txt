@@ -1,0 +1,28 @@
+AiRA Studio v7.5.6.6 — Codeblock Universal Platform Builder
+
+Goal:
+Make every Code block capable of thinking beyond one platform. It can now evaluate and upgrade systems for games, web themes, web apps, utility programs, PWA/mobile app structures, desktop utility concepts, WordPress plugins/themes/blocks/widgets, API/backend, data/storage, media tools, analytics, deployment, and global-standard QC.
+
+Added:
+- New Code block button: รองรับทุกระบบ
+- New panel: Codeblock Universal Platform Builder
+- New Universal Platform % score
+- Platform Target Matrix prompt
+- Device + Browser Matrix prompt
+- Game / Theme / Utility / App / WordPress / API / Data / Web domain detection
+- Cross-browser/device capability detection
+- Global-standard QC detection
+- Command Benefit extensions for game loop, theme/design tokens, app shell/router/PWA, cross-browser fallback
+- Capability extensions for game engine, web theme/design system, PWA/mobile readiness, desktop/utility program, cross-browser/device matrix, deployment/package/handoff, global-standard QC
+
+Rules:
+- Keep useful existing code.
+- Never create fake buttons or placeholders that do not help users.
+- Every platform expansion must include input/output contract, feedback, error handling, security/privacy, accessibility, performance budget, and test matrix.
+- State honest limits when a platform requires additional environment, SDK, server, or permissions.
+
+Test:
+- PHP lint must pass.
+- JS syntax check must pass.
+- ZIP integrity must pass.
+- In browser: generate a code block, press “รองรับทุกระบบ”, confirm the Universal Platform panel updates and Composer/AI receives a platform-expansion prompt.
