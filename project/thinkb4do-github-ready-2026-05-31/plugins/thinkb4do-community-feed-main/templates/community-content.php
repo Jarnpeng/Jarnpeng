@@ -10,6 +10,9 @@ $is_logged_in = is_user_logged_in();
 $current_user = $is_logged_in ? wp_get_current_user() : null;
 $active_topic = isset( $_GET['topic'] ) ? sanitize_key( wp_unslash( $_GET['topic'] ) ) : 'all';
 $search_query = isset( $_GET['tb4c_search'] ) ? sanitize_text_field( wp_unslash( $_GET['tb4c_search'] ) ) : '';
+$active_sort  = isset( $_GET['sort'] ) ? sanitize_key( wp_unslash( $_GET['sort'] ) ) : '';
+$allowed_sort = [ '', 'latest', 'trending', 'popular', 'commented', 'saved' ];
+if ( ! in_array( $active_sort, $allowed_sort, true ) ) { $active_sort = ''; }
 
 $tabs = [
     // v4.2.200: keep the left position but reduce navigation to primary filters only.
@@ -22,7 +25,7 @@ $tabs = [
 $tb4c_feed_per_page = 6;
 $tb4c_feed_paged    = 1;
 $query_args         = function_exists( 'tb4cf_get_community_feed_query_args' )
-    ? tb4cf_get_community_feed_query_args( $active_topic, $search_query, $tb4c_feed_paged, $tb4c_feed_per_page )
+    ? tb4cf_get_community_feed_query_args( $active_topic, $search_query, $tb4c_feed_paged, $tb4c_feed_per_page, $active_sort )
     : [
         'post_type'           => 'tb4_community_post',
         'posts_per_page'      => $tb4c_feed_per_page,

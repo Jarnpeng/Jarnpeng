@@ -957,6 +957,7 @@
     var maxPages = parseInt(button.getAttribute('data-max-pages') || '1', 10);
     var topic = button.getAttribute('data-topic') || 'all';
     var search = button.getAttribute('data-search') || '';
+    var sort = button.getAttribute('data-sort') || '';
     var formData;
 
     if (!list || button.disabled || !page || page > maxPages) return;
@@ -969,6 +970,7 @@
     formData.append('per_page', '6');
     formData.append('topic', topic);
     formData.append('search', search);
+    formData.append('sort', sort);
 
     setButtonState(button, true, 'กำลังโหลด...');
 

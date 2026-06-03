@@ -64,9 +64,30 @@ defined( 'ABSPATH' ) || exit;
       <!-- v4.2.145: duplicate topic tab rail removed; left social nav is the canonical topic navigation. -->
 
       <div class="tb4c-feed-section-line" aria-label="ลำดับฟีด">
-        <strong>โพสต์ล่าสุด</strong>
+        <strong>Think Feed</strong>
         <span>อัปเดตจากชุมชน</span>
       </div>
+
+      <?php
+      // Think Feed sort tabs — Reddit-style ordering, Thinkb4do labels.
+      $tb4c_current_sort = isset( $active_sort ) ? (string) $active_sort : '';
+      if ( '' === $tb4c_current_sort ) { $tb4c_current_sort = 'latest'; }
+      $tb4c_sort_tabs = [
+          'latest'    => 'ล่าสุด',
+          'trending'  => 'กำลังมาแรง',
+          'popular'   => 'ยอดนิยม',
+          'commented' => 'มีคอมเมนต์มาก',
+          'saved'     => 'บันทึกไว้',
+      ];
+      ?>
+      <nav class="tb4c-think-sort-tabs" aria-label="เรียงลำดับฟีด" data-tb4c-think-sort>
+        <?php foreach ( $tb4c_sort_tabs as $tb4c_sort_key => $tb4c_sort_label ) :
+            $tb4c_sort_url = add_query_arg( [ 'sort' => $tb4c_sort_key ], home_url( '/community/' ) );
+            $tb4c_is_active = ( $tb4c_current_sort === $tb4c_sort_key );
+        ?>
+          <a class="tb4c-think-sort-tab<?php echo $tb4c_is_active ? ' is-active' : ''; ?>" href="<?php echo esc_url( $tb4c_sort_url ); ?>" data-sort="<?php echo esc_attr( $tb4c_sort_key ); ?>"><?php echo esc_html( $tb4c_sort_label ); ?></a>
+        <?php endforeach; ?>
+      </nav>
 
       <div class="tb4c-feed-list" id="tb4cFeedList">
         <?php if ( $feed->have_posts() ) : ?>
@@ -98,6 +119,7 @@ defined( 'ABSPATH' ) || exit;
             data-max-pages="<?php echo esc_attr( $tb4c_feed_max_pages ); ?>"
             data-topic="<?php echo esc_attr( $active_topic ); ?>"
             data-search="<?php echo esc_attr( $search_query ); ?>"
+            data-sort="<?php echo esc_attr( isset( $active_sort ) ? $active_sort : '' ); ?>"
             aria-controls="tb4cFeedList"
           >
             <span class="tb4c-load-more-label">โหลดเพิ่มเติม</span>

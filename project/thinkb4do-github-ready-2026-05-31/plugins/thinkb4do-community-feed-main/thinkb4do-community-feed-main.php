@@ -1807,14 +1807,21 @@ function tb4cf_visibility_icon_class( $visibility ) {
 /**
  * Build the canonical Community feed query used by the first render and load-more AJAX.
  */
-function tb4cf_get_community_feed_query_args( $active_topic = 'all', $search_query = '', $paged = 1, $per_page = 6 ) {
+function tb4cf_get_community_feed_query_args( $active_topic = 'all', $search_query = '', $paged = 1, $per_page = 6, $sort = '' ) {
     $active_topic = sanitize_key( $active_topic ?: 'all' );
     $paged        = max( 1, absint( $paged ) );
     $per_page     = min( 20, max( 1, absint( $per_page ) ) );
+    $sort         = sanitize_key( $sort ?: '' );
 
     $allowed_topics = [ 'all', 'latest', 'popular', 'question', 'idea', 'project', 'event', 'creator' ];
     if ( ! in_array( $active_topic, $allowed_topics, true ) ) {
         $active_topic = 'all';
+    }
+
+    // Think Feed sort modes (extends topic filter). Empty/unknown sort falls through to legacy topic logic.
+    $allowed_sorts = [ '', 'latest', 'trending', 'popular', 'commented', 'saved' ];
+    if ( ! in_array( $sort, $allowed_sorts, true ) ) {
+        $sort = '';
     }
 
     $query_args = [
@@ -1841,7 +1848,48 @@ function tb4cf_get_community_feed_query_args( $active_topic = 'all', $search_que
         ];
     }
 
-    if ( 'popular' === $active_topic ) {
+    // New Think Feed sort modes take priority when provided.
+    if ( '' !== $sort ) {
+        switch ( $sort ) {
+            case 'popular':
+                // Order by combined vote score (fallback to like count).
+                $query_args['meta_key'] = '_tb4d_vote_score';
+                $query_args['orderby']  = [ 'meta_value_num' => 'DESC', 'date' => 'DESC' ];
+                $query_args['order']    = 'DESC';
+                break;
+            case 'trending':
+                // Recent (last 7d) sorted by like count as engagement proxy.
+                $query_args['date_query'] = [ [ 'after' => '7 days ago' ] ];
+                $query_args['meta_key']   = 'tb4_like_count';
+                $query_args['orderby']    = [ 'meta_value_num' => 'DESC', 'date' => 'DESC' ];
+                $query_args['order']      = 'DESC';
+                break;
+            case 'commented':
+                $query_args['orderby'] = 'comment_count';
+                $query_args['order']   = 'DESC';
+                break;
+            case 'saved':
+                $uid = get_current_user_id();
+                if ( $uid ) {
+                    $saved_ids = (array) get_user_meta( $uid, '_tb4d_saved_posts', true );
+                    $saved_ids = array_filter( array_map( 'absint', $saved_ids ) );
+                    if ( empty( $saved_ids ) ) {
+                        $query_args['post__in'] = [ 0 ]; // force empty result
+                    } else {
+                        $query_args['post__in'] = $saved_ids;
+                        $query_args['orderby']  = 'post__in';
+                    }
+                } else {
+                    $query_args['post__in'] = [ 0 ];
+                }
+                break;
+            case 'latest':
+            default:
+                $query_args['orderby'] = 'date';
+                $query_args['order']   = 'DESC';
+                break;
+        }
+    } elseif ( 'popular' === $active_topic ) {
         $query_args['meta_key'] = 'tb4_like_count';
         $query_args['orderby']  = 'meta_value_num';
         $query_args['order']    = 'DESC';
@@ -1854,7 +1902,7 @@ function tb4cf_get_community_feed_query_args( $active_topic = 'all', $search_que
         unset( $query_args['meta_query'] );
     }
 
-    return apply_filters( 'tb4c_community_feed_query_args', $query_args, $active_topic, $search_query, $paged, $per_page );
+    return apply_filters( 'tb4c_community_feed_query_args', $query_args, $active_topic, $search_query, $paged, $per_page, $sort );
 }
 
 /**
@@ -1867,8 +1915,9 @@ function tb4cf_load_more_community_feed() {
     $per_page     = min( 20, max( 1, absint( $_POST['per_page'] ?? 6 ) ) );
     $active_topic = sanitize_key( wp_unslash( $_POST['topic'] ?? 'all' ) );
     $search_query = sanitize_text_field( wp_unslash( $_POST['search'] ?? '' ) );
+    $sort         = sanitize_key( wp_unslash( $_POST['sort'] ?? '' ) );
 
-    $query_args = tb4cf_get_community_feed_query_args( $active_topic, $search_query, $page, $per_page );
+    $query_args = tb4cf_get_community_feed_query_args( $active_topic, $search_query, $page, $per_page, $sort );
     $feed       = new WP_Query( $query_args );
 
     ob_start();

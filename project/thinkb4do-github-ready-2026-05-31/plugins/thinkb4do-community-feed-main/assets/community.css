@@ -8021,3 +8021,76 @@ html.tb4c-v4278-natural-image-card body #tb4c-community-app .tb4c-post-card :whe
     max-height:none!important;
   }
 }
+
+/* === Think Feed sort tabs (Thinkb4do Community Reddit-style sort) === */
+.tb4c-think-sort-tabs{
+  display:flex;flex-wrap:wrap;gap:6px;
+  padding:8px 4px;margin:6px 0 12px;
+  border-bottom:1px solid var(--tb4c-line,rgba(17,17,17,.09));
+  font-family:var(--font-main);
+}
+.tb4c-think-sort-tab{
+  display:inline-flex;align-items:center;
+  padding:6px 14px;border-radius:999px;
+  font:600 13px/1.2 var(--font-main);
+  color:var(--tb4c-text,#1f2937);
+  background:transparent;
+  text-decoration:none;
+  transition:background .15s ease,color .15s ease;
+  border:1px solid transparent;
+}
+.tb4c-think-sort-tab:hover{
+  background:var(--tb4c-soft-green,#eef8f2);
+  color:var(--tb4c-green,#1E6B45);
+}
+.tb4c-think-sort-tab.is-active{
+  background:var(--tb4c-green,#1E6B45);
+  color:#fff;
+  border-color:var(--tb4c-green,#1E6B45);
+}
+
+/* === Think Vote bar (เห็นด้วย / น่าสนใจ / มีประโยชน์ / ต้องตรวจสอบ) === */
+.tb4d-vote-bar{
+  display:flex;flex-wrap:wrap;gap:6px;
+  padding:8px 0 4px;margin:0;
+  font-family:var(--font-main);
+}
+.tb4d-vote-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 10px;border-radius:999px;
+  font:600 12px/1.2 var(--font-main);
+  color:var(--tb4c-muted,#66736a);
+  background:var(--tb4c-soft,#f6f8f5);
+  border:1px solid var(--tb4c-line,rgba(17,17,17,.09));
+  cursor:pointer;transition:background .15s,color .15s,border-color .15s;
+}
+.tb4d-vote-btn:hover{background:var(--tb4c-soft-green,#eef8f2);color:var(--tb4c-green,#1E6B45);border-color:var(--tb4c-green,#1E6B45);}
+.tb4d-vote-btn.is-mine{background:var(--tb4c-green,#1E6B45);color:#fff;border-color:var(--tb4c-green,#1E6B45);}
+.tb4d-vote-btn[data-vote="needs_check"].is-mine{background:var(--tb4c-orange,#F97316);border-color:var(--tb4c-orange,#F97316);}
+.tb4d-vote-count{font-weight:700;min-width:1ch;text-align:center;}
+.tb4d-vote-score{
+  display:inline-flex;align-items:center;
+  margin-left:auto;padding:4px 10px;
+  border-radius:999px;
+  background:var(--tb4c-soft-green,#eef8f2);
+  color:var(--tb4c-green,#1E6B45);
+  font:700 12px/1.2 var(--font-main);
+}
+
+/* === Room chip on cards === */
+.tb4d-room-chip{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 9px;border-radius:999px;
+  font:600 11px/1.2 var(--font-main);
+  background:var(--tb4c-soft-orange,#fff4eb);
+  color:var(--tb4c-orange,#F97316);
+  text-decoration:none;
+  border:1px solid transparent;
+  margin-right:6px;
+}
+.tb4d-room-chip:hover{border-color:var(--tb4c-orange,#F97316);}
+
+@media (max-width:520px){
+  .tb4c-think-sort-tabs{gap:4px;padding:6px 2px;}
+  .tb4c-think-sort-tab{padding:5px 10px;font-size:12px;}
+}
